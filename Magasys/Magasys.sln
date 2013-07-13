@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dyn.Database", "Dyn.Database\Dyn.Database.csproj", "{4A77F3E5-AF94-4E22-AE41-567E45A874B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dyn.Web", "Dyn.Web\Dyn.Web.csproj", "{B7540F0A-17C9-457F-9707-F39988084366}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A77F3E5-AF94-4E22-AE41-567E45A874B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A77F3E5-AF94-4E22-AE41-567E45A874B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A77F3E5-AF94-4E22-AE41-567E45A874B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A77F3E5-AF94-4E22-AE41-567E45A874B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7540F0A-17C9-457F-9707-F39988084366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7540F0A-17C9-457F-9707-F39988084366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7540F0A-17C9-457F-9707-F39988084366}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7540F0A-17C9-457F-9707-F39988084366}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
