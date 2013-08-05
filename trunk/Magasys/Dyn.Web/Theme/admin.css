@@ -1,0 +1,197 @@
+﻿body
+{
+	background-color: #fff;
+	font-family: Arial, Helvetica, sans-serif;	
+	font-style:normal;
+	font-variant:normal;
+	/*font-size:11px;*/
+	font-size:83%;
+	margin:0;
+	padding:0;
+}
+h2
+{
+	font-size:1.5em;
+}
+input , select
+{
+	border:solid 1px #7f7f7f;
+	padding:3px;
+}
+.adminbutton
+{
+	border:solid 1px #7f7f7f;
+	padding: 0 3px 0 3px;
+}
+a:link , a:visited 
+{
+	color: #2A6CA6;
+	text-decoration:none;
+	font-size:12px;	
+	font-weight:bold;
+}
+
+a:hover {
+border-bottom: solid 1px #007ED2;
+}
+
+div
+{
+    margin:0;
+	padding:0;
+	margin-bottom:0;
+	padding-bottom:0;
+	/*overflow:hidden;*/
+}
+.tittlepromo
+{
+    font-size: 11px;
+	font-style: normal;
+	color: #ed9d19;
+	font-weight:bold;
+
+	/*font-size: 11px;
+	font-style: normal;
+	color: Orange;
+	font-weight:bold;*/
+}
+.tittlemenu
+{
+	font-size: 11px;
+	font-style: normal;
+	color: #0e85cd;
+	margin-left: 36px;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+.tittlecategorias h4
+{
+    font-size: 11px;
+	font-style: normal;
+	color: #0e85cd;
+	margin-left: 36px;
+	text-decoration: none;
+	font-weight:bold;
+    /*
+	font-size: 12px;
+	font-style: normal;
+	color: #0e85cd;
+	margin-left: 20px;
+	text-decoration: none;
+	font-weight:bold;
+*/
+}
+
+.tittleproducto
+{
+    font-weight:bold;
+	font-style: normal;
+	color: #0e85cd;
+	text-decoration: none;
+	font-weight:bold;
+	/*
+	font-style: normal;
+	color: #0e85cd;
+	text-decoration: none;
+	font-weight:bold;
+*/
+}
+
+.tittlemenuinferior
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #0e85cd;
+	text-decoration: underline;
+	font-weight:bold;
+}
+
+.tittleprecios01
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #7f7f7f;
+	text-decoration: line-through;
+	font-weight:bold;
+}
+
+.tittleprecios02
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #ff0101;
+	font-weight:bold;
+}
+
+.tittleprecios03
+{
+	font-style: normal;
+	color: #7f7f7f;
+	/*font-size: 11px;*/
+	font-weight:bold;
+}
+
+.tittleadicionar
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #7f7f7f;
+	text-decoration: underline;
+	font-weight:bold;
+}
+
+.productcarrito p
+{
+	float: right;
+}
+
+.productcarrito img
+{
+	float: left;
+	margin-left: 5px;
+	margin-right: 11px;
+}
+
+.listadoparticipantes
+{
+	list-style-type:none;
+	font-size:0.8em;
+}
+.listadoparticipantes li
+{
+	float:left;
+	width:25%;
+	height:220px;
+	text-align:center;
+}
+.listadoparticipantes a:link, .listadoparticipantes a:visited
+{
+	text-decoration:none;
+	color:#fff;
+}
+a:link img, a:visited img
+{
+	border: none;
+}
+.mostrar
+{
+	visibility:visible;
+	visibility:visible;
+}
+
+.ocultar
+{
+	visibility:collapse;
+	visibility:hidden;
+}
+
+.adminbutton
+{
+	border:solid 1px #7f7f7f;
+	padding: 0 3px 0 3px;
+}

@@ -32,6 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=1.0.20229.36398, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="CollectionPager, Version=0.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\CollectionPager.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -51,16 +59,33 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="Account\ChangePassword.aspx" />
-    <Content Include="Account\ChangePasswordSuccess.aspx" />
-    <Content Include="Account\Login.aspx" />
-    <Content Include="Account\Register.aspx" />
-    <Content Include="Styles\Site.css" />
-    <Content Include="Default.aspx" />
+    <Content Include="Admin\Genero.aspx" />
+    <Content Include="Admin\ListadoGenero.aspx" />
+    <Content Include="Admin\ListadoProveedor.aspx" />
+    <Content Include="Admin\ListadoRevista.aspx" />
+    <Content Include="controls\Login.ascx" />
+    <Content Include="controls\MenuAdmin.ascx" />
+    <Content Include="controls\MenuAdminCategoria.ascx" />
+    <Content Include="Home.aspx" />
+    <Content Include="images\BarraMenuCategorias_01.jpg" />
+    <Content Include="images\BarraMenuCategorias_02.jpg" />
+    <Content Include="images\BarraMenuInferior.jpg" />
+    <Content Include="images\BarraMenuSubCategorias_02.jpg" />
+    <Content Include="images\BarraTituloMenuCategorias_03.jpg" />
+    <Content Include="images\BarraTituloSeccion_02.jpg" />
+    <Content Include="images\BGFechaYHora.jpg" />
+    <Content Include="images\Flecha.gif" />
+    <Content Include="images\Header.jpg" />
+    <Content Include="images\PixelContentDer.jpg" />
+    <Content Include="images\PixelContentIzq.jpg" />
+    <Content Include="images\PixelRepeticionDer_admin.jpg" />
+    <Content Include="images\TopInferiorContentIzq.jpg" />
+    <Content Include="images\TopInferiorDer_admin.jpg" />
+    <Content Include="images\TopSuperiorDer_admin.jpg" />
+    <Content Include="mainBanner.swf" />
+    <Content Include="scripts\AC_RunActiveContent.js" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.4.1.js" />
-    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Theme\admin.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -68,6 +93,8 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="WebService\AutoComplete.asmx" />
+    <Content Include="xml\banner_main.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -77,59 +104,88 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\ChangePassword.aspx.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    <Compile Include="Admin\Genero.aspx.cs">
+      <DependentUpon>Genero.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\ChangePassword.aspx.designer.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    <Compile Include="Admin\Genero.aspx.designer.cs">
+      <DependentUpon>Genero.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
-      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    <Compile Include="Admin\ListadoGenero.aspx.cs">
+      <DependentUpon>ListadoGenero.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
-      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    <Compile Include="Admin\ListadoGenero.aspx.designer.cs">
+      <DependentUpon>ListadoGenero.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="Admin\ListadoProveedor.aspx.cs">
+      <DependentUpon>ListadoProveedor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="Admin\ListadoProveedor.aspx.designer.cs">
+      <DependentUpon>ListadoProveedor.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Register.aspx.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
+    <Compile Include="Admin\ListadoRevista.aspx.cs">
+      <DependentUpon>ListadoRevista.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Register.aspx.designer.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
+    <Compile Include="Admin\ListadoRevista.aspx.designer.cs">
+      <DependentUpon>ListadoRevista.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="controls\Login.ascx.cs">
+      <DependentUpon>Login.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="controls\Login.ascx.designer.cs">
+      <DependentUpon>Login.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\MenuAdmin.ascx.cs">
+      <DependentUpon>MenuAdmin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\MenuAdmin.ascx.designer.cs">
+      <DependentUpon>MenuAdmin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\MenuAdminCategoria.ascx.cs">
+      <DependentUpon>MenuAdminCategoria.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\MenuAdminCategoria.ascx.designer.cs">
+      <DependentUpon>MenuAdminCategoria.ascx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Site.Master.cs">
-      <DependentUpon>Site.Master</DependentUpon>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Site.Master.designer.cs">
-      <DependentUpon>Site.Master</DependentUpon>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebService\AutoComplete.cs">
+      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Account\Web.config" />
-    <Content Include="Site.Master" />
+    <Content Include="Masters\Admin.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dyn.Database\Dyn.Database.csproj">
+      <Project>{4A77F3E5-AF94-4E22-AE41-567E45A874B3}</Project>
+      <Name>Dyn.Database</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

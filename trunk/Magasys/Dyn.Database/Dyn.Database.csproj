@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,8 +41,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="entities\Coleccion.cs" />
+    <Compile Include="entities\DetalleDevolucion.cs" />
+    <Compile Include="entities\DetalleIngresoProducto.cs" />
+    <Compile Include="entities\DetallePedido.cs" />
+    <Compile Include="entities\DetalleVenta.cs" />
+    <Compile Include="entities\Devolucion.cs" />
+    <Compile Include="entities\Diario.cs" />
+    <Compile Include="entities\Genero.cs" />
+    <Compile Include="entities\IngresoProducto.cs" />
+    <Compile Include="entities\Libro.cs" />
+    <Compile Include="entities\Localidad.cs" />
+    <Compile Include="entities\MenuCategoria.cs" />
+    <Compile Include="entities\Pedido.cs" />
+    <Compile Include="entities\Pelicula.cs" />
+    <Compile Include="entities\Periodicidad.cs" />
+    <Compile Include="entities\Producto.cs" />
+    <Compile Include="entities\ProductoFoto.cs" />
+    <Compile Include="entities\Proveedor.cs" />
+    <Compile Include="entities\Provincia.cs" />
+    <Compile Include="entities\Revista.cs" />
+    <Compile Include="entities\Suplemento.cs" />
+    <Compile Include="entities\TipoProducto.cs" />
+    <Compile Include="entities\Venta.cs" />
+    <Compile Include="logic\FactoryBase.cs" />
+    <Compile Include="logic\Genero.cs" />
+    <Compile Include="logic\MenuCategoria.cs" />
+    <Compile Include="logic\Producto.cs" />
+    <Compile Include="logic\Revista.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
