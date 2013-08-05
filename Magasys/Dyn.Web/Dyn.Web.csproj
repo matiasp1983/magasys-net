@@ -58,7 +58,6 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
     <Content Include="Admin\Genero.aspx" />
     <Content Include="Admin\ListadoGenero.aspx" />
     <Content Include="Admin\ListadoProveedor.aspx" />
@@ -97,13 +96,6 @@
     <Content Include="xml\banner_main.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\Genero.aspx.cs">
       <DependentUpon>Genero.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
