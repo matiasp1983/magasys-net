@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace Dyn.Database.entities
 {
-    class Producto
+    public class Producto
     {
 
         #region Constructores
@@ -22,6 +22,17 @@ namespace Dyn.Database.entities
             idTiposProducto = idTiposProd;
             idProveedor = idProv;
         }
+
+        public Producto(IDataRecord obj)
+		{
+            idProducto = Convert.ToInt32(obj["idProducto"]);
+            fechacreacion = Convert.ToDateTime(obj["fechaCreacion"]);
+            nombre = Convert.ToString(obj["nombre"]);
+            descripcion = Convert.ToString(obj["descripcion"]);
+            estado = Convert.ToInt16(obj["estado"]);
+            idProveedor = Convert.ToInt32(obj["idProveedor"]);
+
+		}
 
         #endregion
 

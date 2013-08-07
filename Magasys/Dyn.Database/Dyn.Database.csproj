@@ -64,8 +64,10 @@
     <Compile Include="entities\Suplemento.cs" />
     <Compile Include="entities\TipoProducto.cs" />
     <Compile Include="entities\Venta.cs" />
+    <Compile Include="logic\Coleccion.cs" />
     <Compile Include="logic\FactoryBase.cs" />
     <Compile Include="logic\Genero.cs" />
+    <Compile Include="logic\Libro.cs" />
     <Compile Include="logic\MenuCategoria.cs" />
     <Compile Include="logic\Producto.cs" />
     <Compile Include="logic\Revista.cs" />
