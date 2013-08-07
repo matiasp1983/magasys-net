@@ -17,7 +17,7 @@ namespace Dyn.Database.entities
             idGenero = idGen;
             idPeriodicidad = idPeriod;
             precio = prec;
-            cantidadEntrega = cantEnt;
+            cantidadEntregas = cantEnt;
         }
 
         public Coleccion(IDataRecord obj)
@@ -26,7 +26,7 @@ namespace Dyn.Database.entities
             idGenero = Convert.ToInt32(obj["idGenero"]);
             idPeriodicidad = Convert.ToInt32(obj["idPeriodicidad"]);
             precio = Convert.ToDouble(obj["precio"]);
-            cantidadEntrega = Convert.ToInt16(obj["cantidadEntrega"]);
+            cantidadEntregas = Convert.ToInt16(obj["cantidadEntrega"]);
 		}
         #endregion
 
@@ -60,11 +60,11 @@ namespace Dyn.Database.entities
             set { precio = value; }
         }
 
-        private Int16? cantidadEntrega;
-        public Int16? CantidadEntrega
+        private Int16? cantidadEntregas;
+        public Int16? CantidadEntregas
         {
-            get { return cantidadEntrega; }
-            set { cantidadEntrega = value; }
+            get { return cantidadEntregas; }
+            set { cantidadEntregas = value; }
         }
 
         #endregion
