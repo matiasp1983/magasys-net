@@ -93,14 +93,6 @@
         </tr>
 
 
-
-
-
-
-
-<%--  Control de Botones --%>
-
-
         <tr>
             <td class="tittleprecios03" align="left" width="100">
                 Cantidad de Entregas(*)
@@ -113,7 +105,11 @@
         </tr>
 
 
-        <tr>
+
+
+<%--  Control de Botones --%>
+
+       <tr>
             <td colspan="2" style="height: 24px">
                 <br />
                 <asp:Button CssClass="adminbutton" ID="btnGuardar" runat="server" Text="Guardar"
@@ -124,7 +120,11 @@
                     OnClick="btnEliminar_Click" CausesValidation="False" />
             </td>
         </tr>
-    </table>
+
+
+
+
+</table>
 
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphReserva" runat="server">
