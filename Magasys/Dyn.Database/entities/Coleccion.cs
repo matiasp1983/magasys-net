@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace Dyn.Database.entities
 {
@@ -20,6 +20,14 @@ namespace Dyn.Database.entities
             cantidadEntrega = cantEnt;
         }
 
+        public Coleccion(IDataRecord obj)
+		{
+            idColeccion = Convert.ToInt32(obj["idColeccion"]);
+            idGenero = Convert.ToInt32(obj["idGenero"]);
+            idPeriodicidad = Convert.ToInt32(obj["idPeriodicidad"]);
+            precio = Convert.ToDouble(obj["precio"]);
+            cantidadEntrega = Convert.ToInt16(obj["cantidadEntrega"]);
+		}
         #endregion
 
         #region Propiedades
