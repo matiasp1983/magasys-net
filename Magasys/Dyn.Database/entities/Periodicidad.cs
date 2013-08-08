@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace Dyn.Database.entities
 {
-    class Periodicidad
+    public class Periodicidad
     {
         #region Constructores
 
@@ -17,6 +17,20 @@ namespace Dyn.Database.entities
             nombre = nomb;
             descripcion = descrip;
         }
+
+        public Periodicidad(IDataRecord obj)
+		{
+            idPeriodicidad = Convert.ToInt32(obj["idPeriodicidad"]);
+            nombre = Convert.ToString(obj["nombre"]);
+            if (obj["descripcion"] != DBNull.Value)
+            {
+                descripcion = Convert.ToString(obj["descripcion"]);
+            }
+            else
+            {
+                descripcion = null;
+            }          
+		}
 
         #endregion
 

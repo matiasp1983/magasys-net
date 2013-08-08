@@ -36,8 +36,8 @@
                             Width="234"></asp:TextBox><br />
                         <act:AutoCompleteExtender ID="AutoCompleteExtender1" runat="server" MinimumPrefixLength="1"
                             TargetControlID="txtNombreRevista" ServicePath="~/WebService/AutoComplete.asmx"
-                            ServiceMethod="InformacionAutocompletarRevistasPorProveedor" CompletionInterval="1000" CompletionSetCount="12"
-                            UseContextKey="True">
+                            ServiceMethod="InformacionAutocompletarRevistasPorProveedor" CompletionInterval="1000"
+                            CompletionSetCount="12" UseContextKey="True">
                         </act:AutoCompleteExtender>
                     </td>
                     <td width="233" align="left">
@@ -67,11 +67,11 @@
                                     <br />
                                     <hr />
                                 </td>
-                                <td width="233" class="tittleproducto">
+                                <%-- <td width="233" class="tittleproducto">
                                     Cantidad
                                     <br />
                                     <hr />
-                                </td>
+                                </td>--%>
                                 <td width="233" class="tittleproducto">
                                     Proveedor
                                     <br />
@@ -95,11 +95,11 @@
                                                 <asp:Label ID="lblDescripcion" CssClass="tittleprecios03" Text='<%# Eval("Descripcion") %>'
                                                     runat="server"></asp:Label>
                                             </td>
-                                            <td width="233">
+                                            <%--                                            <td width="233">
                                                 <asp:Label ID="lblCantidad" CssClass="tittleprecios03" Text='<%# Eval("Cantidaddisponible") %>'
                                                     runat="server"></asp:Label>
-                                            </td>
-                                             <td width="233">
+                                            </td>--%>
+                                            <td width="233">
                                                 <asp:Label ID="lblProveedor" CssClass="tittleprecios03" Text='<%# Eval("NombreProv") %>'
                                                     runat="server"></asp:Label>
                                             </td>

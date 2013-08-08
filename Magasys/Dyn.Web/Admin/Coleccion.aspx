@@ -5,8 +5,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="cphMenu" runat="server">
-</asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
 <table width="100%" cellpadding="0" cellspacing="5" border="0">
         
