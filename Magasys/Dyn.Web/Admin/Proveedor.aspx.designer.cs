@@ -128,5 +128,17 @@ namespace Dyn.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnEliminar;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new Dyn.Web.Masters.Admin Master {
+            get {
+                return ((Dyn.Web.Masters.Admin)(base.Master));
+            }
+        }
     }
 }

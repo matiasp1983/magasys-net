@@ -1,10 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Admin.Master" AutoEventWireup="true" CodeBehind="Proveedor.aspx.cs" Inherits="Dyn.Web.Admin.Proveedor" %>
+
+<%@ MasterType VirtualPath="~/Masters/Admin.Master" %>
+<%@ Register Src="../controls/Login.ascx" TagName="Login" TagPrefix="uc2" %>
+<%@ Register Src="../controls/MenuAdminCategoria.ascx" TagName="MenuAdmin" TagPrefix="uc1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphMenu" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
-</asp:Content>
+
  <table width="100%" cellpadding="0" cellspacing="5" border="0">
 
         <tr>
@@ -99,7 +104,10 @@
                     OnClick="btnEliminar_Click" CausesValidation="False" />
             </td>
         </tr>
-    </table>
+</table>
+
+</asp:Content>
+
 
 <asp:Content ID="Content4" ContentPlaceHolderID="cphReserva" runat="server">
 </asp:Content>
