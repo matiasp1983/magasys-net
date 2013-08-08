@@ -18,7 +18,7 @@
                 Nombre(*)
             </td>
             <td align="left" width="150">
-                <asp:TextBox ID="txtNombre" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Nombre %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtNombre" runat="server" CssClass="tittleprecios03" Text="<%# base.Entity.Nombre %>"></asp:TextBox><br />
                 <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ErrorMessage="Debe ingresar el nombre"
                     ControlToValidate="txtNombre" CssClass="tittleprecios03" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
@@ -30,7 +30,7 @@
             </td>
             <td>
                 <asp:TextBox ID="txtDescripcion" runat="server" Height="100px" Width="400px" CssClass="tittleprecios03"
-                    Text="<%# Entity.Descripcion %>" TextMode="MultiLine"></asp:TextBox><br />
+                    Text="<%# base.Entity.Descripcion %>" TextMode="MultiLine"></asp:TextBox><br />
             </td>
         </tr>
 
@@ -38,13 +38,7 @@
             <td class="tittleprecios03" align="left" width="100">
                 Proveedor(*)
             </td>
-            <td>
-                <select id="cmbProveedor" name="D1" size="25, 400px">
-                    <option></option>
-                </select><br />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Debe seleccionar un Proveedor"
-                    ControlToValidate="cmbProveedor" CssClass="tittleprecios03" ForeColor="Red"></asp:RequiredFieldValidator>
-            </td>
+
         </tr>
 
 
@@ -57,11 +51,10 @@
                 Genero(*)
             </td>
             <td>
-                <select id="cmbGenero" name="D1" size="25, 100">
-                    <option></option>
-                </select><br />
+                <asp:DropDownList CssClass="tittleprecios03" ID="lstGenero" runat="server">
+                </asp:DropDownList><br />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Debe seleccionar un Genero"
-                    ControlToValidate="cmbGenero" CssClass="tittleprecios03" ForeColor="Red"></asp:RequiredFieldValidator>
+                    ControlToValidate="lstGenero" CssClass="tittleprecios03" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -70,11 +63,10 @@
                 Periodicidad(*)
             </td>
             <td>
-                <select id="cmbPeriodicidad" name="D1" size="25, 100">
-                    <option></option>
-                </select><br />
+                <asp:DropDownList CssClass="tittleprecios03" ID="lstPeriodicidad" runat="server">
+                </asp:DropDownList><br />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Debe seleccionar una Periodicidad"
-                    ControlToValidate="cmbPeriodicidad" CssClass="tittleprecios03" ForeColor="Red"></asp:RequiredFieldValidator>
+                    ControlToValidate="lstPeriodicidad" CssClass="tittleprecios03" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
