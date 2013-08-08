@@ -23,17 +23,17 @@ namespace Dyn.Database.logic
             return objColeccion;
         }
 
-        //public DataSet SeleccionarGenerosPorNombrePaginadoAdmin(string nombre, int paginaactual, ref int numeropaginas)
-        //{
-        //    CreateCommand("usp_SeleccionarGenerosPorNombrePaginado", true);
-        //    AddCmdParameter("@nombre", nombre, ParameterDirection.Input);
-        //    AddCmdParameter("@CurrentPage", paginaactual, ParameterDirection.Input);
-        //    AddCmdParameter("@PageSize", 100, ParameterDirection.Input);
-        //    AddCmdParameter("@TotalRecords", ParameterDirection.Output);
-        //    DataSet ds = GetDataSet();
-        //    numeropaginas = (int)GetValueCmdParameter("@TotalRecords");
-        //    return ds;
-        //}
+        public DataSet SeleccionarColeccionPorNombrePaginadoAdmin(string nombre, int paginaactual, ref int numeropaginas)
+        {
+            CreateCommand("usp_SeleccionarGenerosPorNombrePaginado", true);
+            AddCmdParameter("@nombre", nombre, ParameterDirection.Input);
+            AddCmdParameter("@CurrentPage", paginaactual, ParameterDirection.Input);
+            AddCmdParameter("@PageSize", 100, ParameterDirection.Input);
+            AddCmdParameter("@TotalRecords", ParameterDirection.Output);
+            DataSet ds = GetDataSet();
+            numeropaginas = (int)GetValueCmdParameter("@TotalRecords");
+            return ds;
+        }
 
         private void AddParameters(Dyn.Database.entities.Coleccion objusuario)
         {
@@ -68,15 +68,15 @@ namespace Dyn.Database.logic
             ExecuteNonQuery();
         }
 
-        //public void Delete(int idColeccion)
-        //{
+        public void Delete(int idColeccion)
+        {
         //    CreateCommand("usp_Coleccion", true);
         //    AddCmdParameter("@idColeccion", idColeccion, ParameterDirection.Input);
         //    AddCmdParameter("@idGenero", 0, ParameterDirection.Input);
         //    AddCmdParameter("@idPeriodicidad", 3, ParameterDirection.Input);
 
         //    ExecuteNonQuery();
-        //}
+        }
 
     }
 }
