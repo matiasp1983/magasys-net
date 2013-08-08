@@ -34,5 +34,14 @@ namespace Dyn.Database.logic
             numeropaginas = (int)GetValueCmdParameter("@TotalRecords");
             return ds;
         }
+
+        public void Delete(int idRevista)
+        {
+            CreateCommand("usp_Revista", true);
+            AddCmdParameter("@idRevista", idRevista, ParameterDirection.Input);
+            AddCmdParameter("@estado", 0, ParameterDirection.Input);
+            AddCmdParameter("@Action", 3, ParameterDirection.Input);
+            ExecuteNonQuery();
+        }
     }
 }

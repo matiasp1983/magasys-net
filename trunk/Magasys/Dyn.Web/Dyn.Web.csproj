@@ -58,10 +58,13 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Coleccion.aspx" />
+    <Content Include="Admin\Diario.aspx" />
     <Content Include="Admin\Genero.aspx" />
     <Content Include="Admin\ListadoGenero.aspx" />
     <Content Include="Admin\ListadoProveedor.aspx" />
     <Content Include="Admin\ListadoRevista.aspx" />
+    <Content Include="Admin\Revista.aspx" />
     <Content Include="controls\Login.ascx" />
     <Content Include="controls\MenuAdmin.ascx" />
     <Content Include="controls\MenuAdminCategoria.ascx" />
@@ -95,6 +98,20 @@
     <Content Include="xml\banner_main.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Coleccion.aspx.cs">
+      <DependentUpon>Coleccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Coleccion.aspx.designer.cs">
+      <DependentUpon>Coleccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Diario.aspx.cs">
+      <DependentUpon>Diario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Diario.aspx.designer.cs">
+      <DependentUpon>Diario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Genero.aspx.cs">
       <DependentUpon>Genero.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -122,6 +139,13 @@
     </Compile>
     <Compile Include="Admin\ListadoRevista.aspx.designer.cs">
       <DependentUpon>ListadoRevista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Revista.aspx.cs">
+      <DependentUpon>Revista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Revista.aspx.designer.cs">
+      <DependentUpon>Revista.aspx</DependentUpon>
     </Compile>
     <Compile Include="controls\Login.ascx.cs">
       <DependentUpon>Login.ascx</DependentUpon>
@@ -183,7 +207,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>12796</DevelopmentServerPort>
+          <DevelopmentServerPort>3130</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

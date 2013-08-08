@@ -12,27 +12,25 @@ namespace Dyn.Database.entities
 
         public Producto() { }
 
-        public Producto(Int32? idProd, DateTime? fechcreac, string nomb, string descrip, Int16? est, Int32? idTiposProd, Int32? idProv)
+        public Producto(Int32? idProd, DateTime? fechcreac, string nomb, string descrip, Int16? est, Int32? idProv)
         {
             idProducto = idProd;
             fechacreacion = fechcreac;
             nombre = nomb;
             descripcion = descrip;
             estado = est;
-            idTiposProducto = idTiposProd;
             idProveedor = idProv;
         }
 
         public Producto(IDataRecord obj)
-		{
+        {
             idProducto = Convert.ToInt32(obj["idProducto"]);
             fechacreacion = Convert.ToDateTime(obj["fechaCreacion"]);
             nombre = Convert.ToString(obj["nombre"]);
             descripcion = Convert.ToString(obj["descripcion"]);
             estado = Convert.ToInt16(obj["estado"]);
             idProveedor = Convert.ToInt32(obj["idProveedor"]);
-
-		}
+        }
 
         #endregion
 
@@ -73,20 +71,12 @@ namespace Dyn.Database.entities
             set { estado = value; }
         }
 
-        private Int32? idTiposProducto;
-        public Int32? IdTiposProducto
-        {
-            get { return idTiposProducto; }
-            set { idTiposProducto = value; }
-        }
-
         private Int32? idProveedor;
         public Int32? IdProveedor
         {
             get { return idProveedor; }
             set { idProveedor = value; }
         }
-
 
         #endregion
 

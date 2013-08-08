@@ -65,7 +65,7 @@ namespace Dyn.Web.Admin
 
         protected void btnAdicionarRevista_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("/Admin/Revista.aspx");
         }
     }
 }

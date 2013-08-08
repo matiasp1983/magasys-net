@@ -35,6 +35,18 @@ namespace Dyn.Database.logic
             return ds;
         }
 
+        public List<Dyn.Database.entities.Genero> SeleccionarTodosLosGeneros()
+        {
+            List<Dyn.Database.entities.Genero> Collection = new List<Dyn.Database.entities.Genero>();
+            CreateCommand("usp_SeleccionarTodosLosGeneros", true);
+            ExecuteReader();
+            while (Read())
+            {
+                Collection.Add(new Dyn.Database.entities.Genero(GetDataReader()));
+            }
+            return Collection;
+        }
+
         private void AddParameters(Dyn.Database.entities.Genero objusuario)
         {
             CreateCommand("usp_Genero", true);

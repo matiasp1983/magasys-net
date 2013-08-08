@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace Dyn.Database.entities
 {
-    class Proveedor
+    public class Proveedor
     {
         #region Constructores
 
         public Proveedor() { }
 
-        public Proveedor(Int32? idProv, string cui, string nom, string det, string domCalle, int domNro, string domDpto, string domPiso, Int32? idLocal,
+        public Proveedor(Int32? idProv, string cui, string nom, string det, string domCalle, Int32? domNro, string domDpto, string domPiso, Int32? idLocal,
             string emai, Int16? est, string razonSoc, string responApellido, string responNombre, string responEmail, string tel)
         {
             idProveedor = idProv;
@@ -31,6 +31,42 @@ namespace Dyn.Database.entities
             responsableEmail = responEmail;
             telefono = tel;
         }
+
+        public Proveedor(IDataRecord obj)
+		{            
+            idProveedor = Convert.ToInt32(obj["idProveedor"]);
+            nombre = Convert.ToString(obj["nombre"]);
+            estado = Convert.ToInt16(obj["estado"]);
+            cuit = Convert.ToString(obj["cuit"]);
+            detalle = Convert.ToString(obj["detalle"]);
+            domicilioCalle = Convert.ToString(obj["domicilioCalle"]);
+            if (obj["domicilioNro"]!= DBNull.Value)
+            {
+                domicilioNro = Convert.ToInt32(obj["domicilioNro"]);
+            }
+            else
+            {
+                domicilioNro = null;
+            }          
+            //domicilioNro = Convert.ToInt32(obj["domicilioNro"]);
+            domicilioDpto = Convert.ToString(obj["domicilioDpto"]);
+            domicilioPiso = Convert.ToString(obj["domicilioPiso"]);
+            if (obj["idLocalidad"] != DBNull.Value)
+            {
+                domicilioNro = Convert.ToInt32(obj["idLocalidad"]);
+            }
+            else
+            {
+                domicilioNro = null;
+            } 
+            //idLocalidad = Convert.ToInt32(obj["idLocalidad"]);
+            email = Convert.ToString(obj["email"]);
+            razonSocial = Convert.ToString(obj["razonSocial"]);
+            //responsableApellido = Convert.ToString(obj["responsableApellido"]);
+            //responsableNombre = Convert.ToString(obj["responsableNombre"]);
+            //responsableEmail = Convert.ToString(obj["responsableEmail"]);
+            //telefono = Convert.ToString(obj["telefono"]);   
+		}
 
         #endregion
 
@@ -59,7 +95,7 @@ namespace Dyn.Database.entities
             get { return nombre; }
             set { nombre = value; }
         }
-        
+
         private string detalle;
 
         public string Detalle
@@ -76,9 +112,9 @@ namespace Dyn.Database.entities
             set { domicilioCalle = value; }
         }
 
-        private int domicilioNro;
+        private Int32? domicilioNro;
 
-        public int DomicilioNro
+        public Int32? DomicilioNro
         {
             get { return domicilioNro; }
             set { domicilioNro = value; }
@@ -157,6 +193,7 @@ namespace Dyn.Database.entities
         }
 
         private string telefono;
+        private System.Data.SqlClient.SqlDataReader sqlDataReader;
 
         public string Telefono
         {

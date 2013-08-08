@@ -1,14 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Admin.Master" AutoEventWireup="true" CodeBehind="Diario.aspx.cs" Inherits="Dyn.Web.Admin.Diario" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Admin.Master" AutoEventWireup="true"
+    CodeBehind="Diario.aspx.cs" Inherits="Dyn.Web.Admin.Diario" %>
+
 <%@ MasterType VirtualPath="~/Masters/Admin.Master" %>
 <%@ Register Src="../controls/Login.ascx" TagName="Login" TagPrefix="uc2" %>
 <%@ Register Src="../controls/MenuAdminCategoria.ascx" TagName="MenuAdmin" TagPrefix="uc1" %>
-
-
-
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="cphMenu" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
 <table width="100%" cellpadding="0" cellspacing="5" border="0">
