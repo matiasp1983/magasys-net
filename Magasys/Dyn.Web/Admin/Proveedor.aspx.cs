@@ -31,6 +31,9 @@ namespace Dyn.Web.Admin
             {
                 this.Master.TituloPagina = "Edici&oacute;n Proveedor";
                 lProveedor = new Dyn.Database.logic.Proveedor();
+                LlenarProvincias();
+                lstProvincias.SelectedIndex = 1;
+                LlenarLocalidades();
                 if (Request["Id"] == null)
                 {
                     IdEntity = 0;
@@ -50,7 +53,23 @@ namespace Dyn.Web.Admin
         {
             Entity = new Dyn.Database.entities.Proveedor();
             Entity.Cuit = txtCuit.Text.Trim();
+            Entity.RazonSocial = txtRazonSocial.Text.Trim();
+            Entity.Email =  txtEMail.Text.Trim();
             Entity.Detalle = txtDetalle.Text.Trim();
+            Entity.Telefono = txtTelefono.Text.Trim();
+            Entity.DomicilioCalle = txtCalle.Text.Trim();
+            if (txtNumero.Text == "")
+            {   Entity.DomicilioNro = null;}
+            else
+            {   Entity.DomicilioNro = Convert.ToInt16(txtNumero.Text);}
+            
+            Entity.DomicilioPiso = txtPiso.Text.Trim();
+            Entity.DomicilioDpto= txtDpto.Text.Trim();
+            Entity.IdLocalidad = lstLocalidades.SelectedIndex;
+            Entity.ResponsableApellido = txtResponsableApellido.Text.Trim();
+            Entity.ResponsableNombre = txtResponsableNombre.Text.Trim();
+            Entity.ResponsableEmail = txtResponsableEmail.Text.Trim();
+            Entity.Nombre = "";
             return Entity;
         }
 
@@ -72,6 +91,41 @@ namespace Dyn.Web.Admin
                     lProveedor.Update(Entity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se actualizaron los datos correctamente');", true);
                 }
+        }
+
+        public void LlenarProvincias()
+        {
+            Dyn.Database.logic.Provincia lProvincia = new Dyn.Database.logic.Provincia();
+            List<Dyn.Database.entities.Provincia> listaProvincias = lProvincia.SeleccionarTodasLasProvicias();
+            ListItem li;
+            for (int i = 0; i < listaProvincias.Count; i++)
+            {
+                li = new ListItem();
+                li = new ListItem(listaProvincias[i].Nombre, listaProvincias[i].IdProvincia.ToString());
+                lstProvincias.Items.Add(li);
+            }
+        }
+        public void LlenarLocalidades()
+        {
+            if (lstProvincias.SelectedIndex == -1)
+            { }
+            else
+            {
+                int idProvincia = Convert.ToInt16(lstProvincias.SelectedItem.Value.ToString());
+                Dyn.Database.logic.Localidad lLocalidad = new Dyn.Database.logic.Localidad();
+                List<Dyn.Database.entities.Localidad> listaLocalidades = lLocalidad.SeleccionarLocalidadesPorProvincia(idProvincia);
+                ListItem li;
+                lstLocalidades.Items.Clear();
+                
+                for (int i = 0; i < listaLocalidades.Count; i++)
+                {
+                    li = new ListItem();
+                    li = new ListItem(listaLocalidades[i].Nombre, listaLocalidades[i].Nombre.ToString());
+                    lstLocalidades.Items.Add(li);
+                }
+            
+            }
+
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
@@ -102,5 +156,10 @@ namespace Dyn.Web.Admin
             Response.Redirect("ListadoProveedor.aspx");
         }
 
+
+        protected void lstProvincias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LlenarLocalidades();
+        }
     }
 }
