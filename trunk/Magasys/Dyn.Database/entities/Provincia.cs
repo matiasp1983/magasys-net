@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace Dyn.Database.entities
 {
-    class Provincia
+    public class Provincia
     {
         #region Constructores
 
@@ -16,6 +16,11 @@ namespace Dyn.Database.entities
             idProvincia = idProv;
             nombre = nomb;
         }
+        public Provincia(IDataRecord obj)
+		{
+            idProvincia = Convert.ToInt32(obj["idProvincia"]);
+            nombre = Convert.ToString(obj["nombre"]);
+		}
 
         #endregion
 

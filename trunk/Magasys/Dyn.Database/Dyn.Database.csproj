@@ -68,10 +68,12 @@
     <Compile Include="logic\FactoryBase.cs" />
     <Compile Include="logic\Genero.cs" />
     <Compile Include="logic\Libro.cs" />
+    <Compile Include="logic\Localidad.cs" />
     <Compile Include="logic\MenuCategoria.cs" />
     <Compile Include="logic\Periodicidad.cs" />
     <Compile Include="logic\Producto.cs" />
     <Compile Include="logic\Proveedor.cs" />
+    <Compile Include="logic\Provincia.cs" />
     <Compile Include="logic\Revista.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
