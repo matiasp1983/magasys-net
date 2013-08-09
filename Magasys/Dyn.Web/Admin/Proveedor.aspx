@@ -6,8 +6,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="cphMenu" runat="server">
-</asp:Content>
+
 <asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
 
  <table width="100%" cellpadding="0" cellspacing="5" border="0">
@@ -17,9 +16,9 @@
                 CUIT(*)
             </td>
             <td align="left" width="150">
-                <asp:TextBox ID="txtCUIT" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Nombre %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtCuit" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Cuit %>"></asp:TextBox><br />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Debe ingresar Razon Social"
-                    ControlToValidate="txtCUIT" CssClass="tittleprecios03" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                    ControlToValidate="txtCuit" CssClass="tittleprecios03" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -28,7 +27,7 @@
                 Razon Social(*)
             </td>
             <td align="left" width="150">
-                <asp:TextBox ID="txtRazonSocial" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Nombre %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtRazonSocial" runat="server" CssClass="tittleprecios03" Text="<%# Entity.RazonSocial %>"></asp:TextBox><br />
                 <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ErrorMessage="Debe ingresar Razon Social"
                     ControlToValidate="txtRazonSocial" CssClass="tittleprecios03" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
@@ -40,7 +39,7 @@
             </td>
             <td>
                 <asp:TextBox ID="txtDetalle" runat="server" Height="100px" Width="400px" CssClass="tittleprecios03"
-                    Text="<%# Entity.Descripcion %>" TextMode="MultiLine"></asp:TextBox><br />
+                    Text="<%# Entity.Detalle %>" TextMode="MultiLine"></asp:TextBox><br />
             </td>
         </tr>
 
@@ -49,7 +48,7 @@
                 Correo Electronico(*)
             </td>
             <td align="left" width="150">
-                <asp:TextBox ID="txtEMail" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Nombre %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtEMail" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Email %>"></asp:TextBox><br />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Debe ingresar Razon Social"
                     ControlToValidate="txtEMail" CssClass="tittleprecios03" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
@@ -60,7 +59,7 @@
                 Telefono
             </td>
             <td align="left" width="150">
-                <asp:TextBox ID="txtTelefono" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Nombre %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtTelefono" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Telefono %>"></asp:TextBox><br />
             </td>
         </tr>
 

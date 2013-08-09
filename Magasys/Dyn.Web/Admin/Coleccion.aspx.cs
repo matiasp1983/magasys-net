@@ -35,7 +35,7 @@ namespace Dyn.Web.Admin
                 this.Master.TituloPagina = "Edici&oacute;n Revista";
                 lColeccion = new Dyn.Database.logic.Coleccion();
                 LlenarGeneros();
-                LlenarProveedor();
+    //            LlenarProveedor();
                 LlenarPeriodicidad();
                 if (Request["Id"] == null)
                 {
@@ -64,18 +64,18 @@ namespace Dyn.Web.Admin
                 lstGenero.Items.Add(li);
             }
         }
-        public void LlenarProveedor()
-        {
-            Dyn.Database.logic.Proveedor lProveedor = new Dyn.Database.logic.Proveedor();
-            List<Dyn.Database.entities.Proveedor> listaproveedor = lProveedor.SeleccionarTodosLosProveedores();
-            ListItem li;
-            for (int i = 0; i < listaproveedor.Count; i++)
-            {
-                li = new ListItem();
-                li = new ListItem(listaproveedor[i].Nombre, listaproveedor[i].IdProveedor.ToString());
-                // lstProveedor.Items.Add(li);
-            }
-        }
+        //public void LlenarProveedor()
+        //{
+        //    Dyn.Database.logic.Proveedor lProveedor = new Dyn.Database.logic.Proveedor();
+        //    List<Dyn.Database.entities.Proveedor> listaproveedor = lProveedor.SeleccionarTodosLosProveedores();
+        //    ListItem li;
+        //    for (int i = 0; i < listaproveedor.Count; i++)
+        //    {
+        //        li = new ListItem();
+        //        li = new ListItem(listaproveedor[i].Nombre, listaproveedor[i].IdProveedor.ToString());
+        //        // lstProveedor.Items.Add(li);
+        //    }
+        //}
 
         public void LlenarPeriodicidad()
         {
