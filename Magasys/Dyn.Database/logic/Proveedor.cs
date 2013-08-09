@@ -71,9 +71,9 @@ namespace Dyn.Database.logic
             AddCmdParameter("@email", objusuario.Email, ParameterDirection.Input);
             AddCmdParameter("@estado", objusuario.Estado, ParameterDirection.Input);
             AddCmdParameter("@razonSocial", objusuario.RazonSocial, ParameterDirection.Input);
-            AddCmdParameter("@responsableApellido", objusuario.ResponsableApellido, ParameterDirection.Input);
-            AddCmdParameter("@responsableNombre", objusuario.ResponsableNombre, ParameterDirection.Input);
-            AddCmdParameter("@responsableEmail", objusuario.ResponsableEmail, ParameterDirection.Input);
+            AddCmdParameter("@reponsableApellido", objusuario.ResponsableApellido, ParameterDirection.Input);
+            AddCmdParameter("@reponsableNombre", objusuario.ResponsableNombre, ParameterDirection.Input);
+            AddCmdParameter("@reponsableEmail", objusuario.ResponsableEmail, ParameterDirection.Input);
             AddCmdParameter("@telefono", objusuario.Telefono, ParameterDirection.Input);
             AddCmdParameter("@nombre", objusuario.Nombre, ParameterDirection.Input);
         }
