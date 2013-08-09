@@ -148,7 +148,16 @@ namespace Dyn.Web.Admin
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            Update();
+            lProveedor = new Dyn.Database.logic.Proveedor();
+            String idProveedor = txtCuit.Text;
+            if (lProveedor.existeCuit(idProveedor))
+            {
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Ya existe un proveedor con ese CUIT');location.href('/Admin/ListadoUsuario.aspx');", true);
+            }
+            else
+            { Update(); }
+            
+            
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)

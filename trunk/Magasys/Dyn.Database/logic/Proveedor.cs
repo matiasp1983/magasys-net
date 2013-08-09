@@ -83,6 +83,8 @@ namespace Dyn.Database.logic
             object IdProveedor = null;
             objProveedor.Estado = 1;
             AddParameters(objProveedor);
+
+
             AddCmdParameter("@Action", 2, ParameterDirection.Input);
             ExecuteReader();
             while (Read())
@@ -106,6 +108,19 @@ namespace Dyn.Database.logic
             AddCmdParameter("@estado", 0, ParameterDirection.Input);
             AddCmdParameter("@Action", 3, ParameterDirection.Input);
             ExecuteNonQuery();
+        }
+
+        public bool existeCuit(String idProveedor)
+        {
+            CreateCommand("usp_Proveedor", true);
+            AddCmdParameter("@cuit", idProveedor, ParameterDirection.Input);
+            AddCmdParameter("@estado", 1, ParameterDirection.Input);
+            AddCmdParameter("@Action", 4, ParameterDirection.Input);
+            System.Data.SqlClient.SqlDataReader datos = ExecuteReader();
+            if (datos.HasRows)
+                return false;
+            else
+                return true;
         }
 
     }

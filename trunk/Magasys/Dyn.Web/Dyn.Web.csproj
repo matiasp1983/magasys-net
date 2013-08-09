@@ -13,6 +13,7 @@
     <RootNamespace>Dyn.Web</RootNamespace>
     <AssemblyName>Dyn.Web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -61,9 +62,11 @@
     <Content Include="Admin\Coleccion.aspx" />
     <Content Include="Admin\Diario.aspx" />
     <Content Include="Admin\Genero.aspx" />
+    <Content Include="Admin\ListadoColeccion.aspx" />
     <Content Include="Admin\ListadoGenero.aspx" />
     <Content Include="Admin\ListadoProveedor.aspx" />
     <Content Include="Admin\ListadoRevista.aspx" />
+    <Content Include="Admin\Proveedor.aspx" />
     <Content Include="Admin\Revista.aspx" />
     <Content Include="controls\Login.ascx" />
     <Content Include="controls\MenuAdmin.ascx" />
@@ -87,7 +90,9 @@
     <Content Include="mainBanner.swf" />
     <Content Include="scripts\AC_RunActiveContent.js" />
     <Content Include="Theme\admin.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -119,6 +124,13 @@
     <Compile Include="Admin\Genero.aspx.designer.cs">
       <DependentUpon>Genero.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ListadoColeccion.aspx.cs">
+      <DependentUpon>ListadoColeccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ListadoColeccion.aspx.designer.cs">
+      <DependentUpon>ListadoColeccion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\ListadoGenero.aspx.cs">
       <DependentUpon>ListadoGenero.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -139,6 +151,13 @@
     </Compile>
     <Compile Include="Admin\ListadoRevista.aspx.designer.cs">
       <DependentUpon>ListadoRevista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Proveedor.aspx.cs">
+      <DependentUpon>Proveedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Proveedor.aspx.designer.cs">
+      <DependentUpon>Proveedor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Revista.aspx.cs">
       <DependentUpon>Revista.aspx</DependentUpon>
