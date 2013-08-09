@@ -73,7 +73,6 @@ namespace Dyn.Database.entities
         #region Propiedades
 
         private Int32? idProveedor;
-
         public Int32? IdProveedor
         {
             get { return idProveedor; }
@@ -81,7 +80,6 @@ namespace Dyn.Database.entities
         }
 
         private string cuit;
-
         public string Cuit
         {
             get { return cuit; }
@@ -89,7 +87,6 @@ namespace Dyn.Database.entities
         }
 
         private string nombre;
-
         public string Nombre
         {
             get { return nombre; }
@@ -97,7 +94,6 @@ namespace Dyn.Database.entities
         }
 
         private string detalle;
-
         public string Detalle
         {
             get { return detalle; }
@@ -105,7 +101,6 @@ namespace Dyn.Database.entities
         }
 
         private string domicilioCalle;
-
         public string DomicilioCalle
         {
             get { return domicilioCalle; }
@@ -113,7 +108,6 @@ namespace Dyn.Database.entities
         }
 
         private Int32? domicilioNro;
-
         public Int32? DomicilioNro
         {
             get { return domicilioNro; }
@@ -121,7 +115,6 @@ namespace Dyn.Database.entities
         }
 
         private string domicilioDpto;
-
         public string DomicilioDpto
         {
             get { return domicilioDpto; }
@@ -129,7 +122,6 @@ namespace Dyn.Database.entities
         }
 
         private string domicilioPiso;
-
         public string DomicilioPiso
         {
             get { return domicilioPiso; }
@@ -137,7 +129,6 @@ namespace Dyn.Database.entities
         }
 
         private Int32? idLocalidad;
-
         public Int32? IdLocalidad
         {
             get { return idLocalidad; }
@@ -145,7 +136,6 @@ namespace Dyn.Database.entities
         }
 
         private string email;
-
         public string Email
         {
             get { return email; }
@@ -153,7 +143,6 @@ namespace Dyn.Database.entities
         }
 
         private Int16? estado;
-
         public Int16? Estado
         {
             get { return estado; }
@@ -161,7 +150,6 @@ namespace Dyn.Database.entities
         }
 
         private string razonSocial;
-
         public string RazonSocial
         {
             get { return razonSocial; }
@@ -169,7 +157,6 @@ namespace Dyn.Database.entities
         }
 
         private string responsableApellido;
-
         public string ResponsableApellido
         {
             get { return responsableApellido; }
@@ -177,7 +164,6 @@ namespace Dyn.Database.entities
         }
 
         private string responsableNombre;
-
         public string ResponsableNombre
         {
             get { return responsableNombre; }
@@ -185,7 +171,6 @@ namespace Dyn.Database.entities
         }
 
         private string responsableEmail;
-
         public string ResponsableEmail
         {
             get { return responsableEmail; }
@@ -193,7 +178,7 @@ namespace Dyn.Database.entities
         }
 
         private string telefono;
-        private System.Data.SqlClient.SqlDataReader sqlDataReader;
+       // private System.Data.SqlClient.SqlDataReader sqlDataReader;
 
         public string Telefono
         {
