@@ -141,20 +141,20 @@ namespace Dyn.Web.Admin
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            //Dyn.Database.logic.Proveedor rev = new Dyn.Database.logic.Proveedor();
-            //if (IdEntity != 0 && IdEntity != int.MinValue)
-            //{
-            //    lProveedor = new Dyn.Database.logic.Proveedor();
-            //    if (rev.SeleccionarProveedorPorGenero(IdEntity) == 0)
-            //    {
-            //        lProveedor.Delete(IdEntity);
-            //        ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el género correctamente');document.location.href='/Admin/ListadoGenero.aspx';", true);
-            //    }
-            //    else
-            //    {
-            //        ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('No se puede eliminar el género, porque está asociado a un producto');", true);
-            //    }
-            //}
+            Dyn.Database.logic.Revista rev = new Dyn.Database.logic.Revista();
+            if (IdEntity != 0 && IdEntity != int.MinValue)
+            {
+                lProveedor = new Dyn.Database.logic.Proveedor();
+                if (rev.SeleccionarRevistaPorGenero(IdEntity) == 0)
+                {
+                    lProveedor.Delete(IdEntity);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el género correctamente');document.location.href='/Admin/ListadoGenero.aspx';", true);
+                }
+                else
+                {
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('No se puede eliminar el género, porque está asociado a un producto');", true);
+                }
+            }
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)

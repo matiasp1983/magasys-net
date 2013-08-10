@@ -165,7 +165,7 @@
                 Correo Electronico
             </td>
             <td align="left" class="style1">
-                <asp:TextBox ID="txtResponsableEmail" runat="server" CssClass="tittleprecios03" Text="<%# Entity.ResponsableApellido %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtResponsableEmail" runat="server" CssClass="tittleprecios03" Text="<%# Entity.ResponsableEmail %>"></asp:TextBox><br />
             </td>
         </tr>
 
