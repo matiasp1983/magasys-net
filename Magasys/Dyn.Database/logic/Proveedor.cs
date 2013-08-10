@@ -112,14 +112,24 @@ namespace Dyn.Database.logic
 
         public bool existeCuit(String idProveedor)
         {
-            //CreateCommand("usp_Proveedor", true);
-            //AddCmdParameter("@cuit", idProveedor, ParameterDirection.Input);
-            //AddCmdParameter("@estado", 1, ParameterDirection.Input);
-            //AddCmdParameter("@Action", 4, ParameterDirection.Input);
-            //ExecuteReader();
-            //Read();
-            //GetValue(0);
-            return false;
+            object IdProveedor = null;
+            CreateCommand("usp_Proveedor", true);
+            AddCmdParameter("@cuit", idProveedor, ParameterDirection.Input);
+            AddCmdParameter("@estado", 1, ParameterDirection.Input);
+            AddCmdParameter("@Action", 4, ParameterDirection.Input);
+            ExecuteReader();
+            while (Read())
+            {
+                IdProveedor = GetValue(0);
+            }
+            if (IdProveedor == null)
+            {
+                return false;
+            }
+            else
+            { 
+                return true; 
+            }
         }
     }
 }
