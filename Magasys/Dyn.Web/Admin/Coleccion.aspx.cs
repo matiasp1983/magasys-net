@@ -14,6 +14,7 @@ namespace Dyn.Web.Admin
 
         private Dyn.Database.logic.Coleccion lColeccion;
         public Dyn.Database.entities.Coleccion Entity;
+        private Dyn.Database.logic.Producto lProducto;
 
         public int IdEntity
         {
@@ -34,8 +35,9 @@ namespace Dyn.Web.Admin
             {
                 this.Master.TituloPagina = "Edici&oacute;n Revista";
                 lColeccion = new Dyn.Database.logic.Coleccion();
+                lProducto = new Dyn.Database.logic.Producto();
                 LlenarGeneros();
-    //            LlenarProveedor();
+                LlenarProveedor();
                 LlenarPeriodicidad();
                 if (Request["Id"] == null)
                 {
@@ -64,18 +66,18 @@ namespace Dyn.Web.Admin
                 lstGenero.Items.Add(li);
             }
         }
-        //public void LlenarProveedor()
-        //{
-        //    Dyn.Database.logic.Proveedor lProveedor = new Dyn.Database.logic.Proveedor();
-        //    List<Dyn.Database.entities.Proveedor> listaproveedor = lProveedor.SeleccionarTodosLosProveedores();
-        //    ListItem li;
-        //    for (int i = 0; i < listaproveedor.Count; i++)
-        //    {
-        //        li = new ListItem();
-        //        li = new ListItem(listaproveedor[i].Nombre, listaproveedor[i].IdProveedor.ToString());
-        //        // lstProveedor.Items.Add(li);
-        //    }
-        //}
+        public void LlenarProveedor()
+        {
+            Dyn.Database.logic.Proveedor lProveedor = new Dyn.Database.logic.Proveedor();
+            List<Dyn.Database.entities.Proveedor> listaproveedor = lProveedor.SeleccionarTodosLosProveedores();
+            ListItem li;
+            for (int i = 0; i < listaproveedor.Count; i++)
+            {
+                li = new ListItem();
+                li = new ListItem(listaproveedor[i].RazonSocial, listaproveedor[i].IdProveedor.ToString());
+                lstProveedor.Items.Add(li);
+            }
+        }
 
         public void LlenarPeriodicidad()
         {
@@ -88,6 +90,70 @@ namespace Dyn.Web.Admin
                 li = new ListItem(listaperiodicidad[i].Nombre, listaperiodicidad[i].IdPeriodicidad.ToString());
                 lstPeriodicidad.Items.Add(li);
             }
+        }
+        public void Update()
+        {
+            lColeccion = new Dyn.Database.logic.Coleccion();
+            lProducto = new Dyn.Database.logic.Producto();
+            Entity = new Dyn.Database.entities.Coleccion();
+
+
+
+            if (IdEntity == 0)
+            {
+
+                String nombre = txtNombre.Text.Trim();
+                Entity = CargarDatosColeccion();
+
+                if (lProducto.existeNombre(nombre))
+                {
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Ya existe un producto con ese nombre');location.href('/Admin/ListadoUsuario.aspx');", true);
+                }
+                else
+                {
+                    Entity.IdColeccion = Convert.ToInt16(lProducto.Insert(Entity));
+                    lColeccion.Insert(Entity);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
+                    // Response.Redirect("ListadoColeccion.aspx");
+                }
+
+            }
+            else
+                if (IdEntity > 0)
+                {
+                    //String idProveedor = txtCuit.Text;
+                    Entity = CargarDatosColeccion();
+                    //if (lProveedor.existeCuit(idProveedor))
+                    //{
+                    //    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Ya existe un proveedor con ese CUIT');location.href('/Admin/ListadoUsuario.aspx');", true);
+                    //}
+                    //else
+                    //{
+                    //    lProveedor.Insert(Entity);
+                    //    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
+                    //}
+                    Entity.IdProveedor = IdEntity;
+                    lColeccion.Update(Entity);
+                    lProducto.Update(Entity);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se actualizaron los datos correctamente');", true);
+                }
+        }
+        public Dyn.Database.entities.Coleccion CargarDatosColeccion()
+        {
+            Entity = new Dyn.Database.entities.Coleccion();
+            Entity.Nombre = txtNombre.Text.Trim();
+            Entity.Descripcion = txtDescripcion.Text.Trim();
+            Entity.IdProveedor = Convert.ToInt16(lstProveedor.SelectedValue);
+            Entity.Fechacreacion = DateTime.Now;
+
+            Entity.IdPeriodicidad = Convert.ToInt16(lstPeriodicidad.SelectedValue);
+            Entity.IdGenero = Convert.ToInt16(lstGenero.SelectedValue);
+            Entity.Precio = Convert.ToDouble(txtPrecio.Text.Trim());
+            Entity.CantidadEntregas = Convert.ToInt16(txtCantidad.Text.Trim());
+
+            return Entity;
+            
+
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -109,12 +175,12 @@ namespace Dyn.Web.Admin
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            //Update();
+            Update();
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            // Load();
+            Response.Redirect("ListadoColeccion.aspx");
         }
 
     }

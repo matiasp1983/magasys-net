@@ -37,24 +37,13 @@ namespace Dyn.Database.logic
             return objProducto;
         }
 
-        //public DataSet SeleccionarGenerosPorNombrePaginadoAdmin(string nombre, int paginaactual, ref int numeropaginas)
-        //{
-        //    CreateCommand("usp_SeleccionarGenerosPorNombrePaginado", true);
-        //    AddCmdParameter("@nombre", nombre, ParameterDirection.Input);
-        //    AddCmdParameter("@CurrentPage", paginaactual, ParameterDirection.Input);
-        //    AddCmdParameter("@PageSize", 100, ParameterDirection.Input);
-        //    AddCmdParameter("@TotalRecords", ParameterDirection.Output);
-        //    DataSet ds = GetDataSet();
-        //    numeropaginas = (int)GetValueCmdParameter("@TotalRecords");
-        //    return ds;
-        //}
-
         private void AddParameters(Dyn.Database.entities.Producto objusuario)
         {
             CreateCommand("usp_Producto", true);
             AddCmdParameter("@idProducto", objusuario.IdProducto, ParameterDirection.Input);
             AddCmdParameter("@fechaCreacion", objusuario.Fechacreacion , ParameterDirection.Input);
             AddCmdParameter("@nombre", objusuario.Nombre, ParameterDirection.Input);
+            AddCmdParameter("@descripcion", objusuario.Descripcion, ParameterDirection.Input);
             AddCmdParameter("@estado", objusuario.Estado, ParameterDirection.Input);
             AddCmdParameter("@idProveedor", objusuario.IdProveedor, ParameterDirection.Input);
 
@@ -89,6 +78,27 @@ namespace Dyn.Database.logic
             AddCmdParameter("@estado", 0, ParameterDirection.Input);
             AddCmdParameter("@Action", 3, ParameterDirection.Input);
             ExecuteNonQuery();
+        }
+        public bool existeNombre(String nombre)
+        {
+            object IdProducto = null;
+            CreateCommand("usp_Producto", true);
+            AddCmdParameter("@nombre", nombre, ParameterDirection.Input);
+            AddCmdParameter("@estado", 1, ParameterDirection.Input);
+            AddCmdParameter("@Action", 4, ParameterDirection.Input);
+            ExecuteReader();
+            while (Read())
+            {
+                IdProducto = GetValue(0);
+            }
+            if (IdProducto == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
     }

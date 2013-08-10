@@ -101,7 +101,7 @@ namespace Dyn.Web.Admin
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ListadoGenero.aspx");
+            Response.Redirect("/Home.aspx");
         }
 
     }

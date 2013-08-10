@@ -23,17 +23,17 @@ namespace Dyn.Database.logic
             return objProveedor;
         }
 
-        //public List<Dyn.Database.entities.Proveedor> SeleccionarTodosLosProveedores()
-        //{
-        //    List<Dyn.Database.entities.Proveedor> Collection = new List<Dyn.Database.entities.Proveedor>();
-        //    CreateCommand("usp_SeleccionarTodosLosProveedores", true);
-        //    ExecuteReader();
-        //    while (Read())
-        //    {                
-        //        Collection.Add(new Dyn.Database.entities.Proveedor(GetDataReader()));
-        //    }
-        //    return Collection;
-        //}
+        public List<Dyn.Database.entities.Proveedor> SeleccionarTodosLosProveedores()
+        {
+            List<Dyn.Database.entities.Proveedor> Collection = new List<Dyn.Database.entities.Proveedor>();
+            CreateCommand("usp_SeleccionarTodosLosProveedores", true);
+            ExecuteReader();
+            while (Read())
+            {
+                Collection.Add(new Dyn.Database.entities.Proveedor(GetDataReader()));
+            }
+            return Collection;
+        }
         public DataSet SeleccionarProveedorPorNombrePaginadoAdmin(string razonSocial, int paginaactual, ref int numeropaginas)
         {
             CreateCommand("usp_SeleccionarProveedoresPorNombrePaginado", true);
