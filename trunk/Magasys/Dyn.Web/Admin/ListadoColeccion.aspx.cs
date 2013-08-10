@@ -43,9 +43,21 @@ namespace Dyn.Web.Admin
             {
                 this.Master.TituloPagina = "Coleccion";
                 CargarColeccion("");
+                LlenarProveedor();
             }
         }
-
+        public void LlenarProveedor()
+        {
+            Dyn.Database.logic.Proveedor lProveedor = new Dyn.Database.logic.Proveedor();
+            List<Dyn.Database.entities.Proveedor> listaproveedor = lProveedor.SeleccionarTodosLosProveedores();
+            ListItem li;
+            for (int i = 0; i < listaproveedor.Count; i++)
+            {
+                li = new ListItem();
+                li = new ListItem(listaproveedor[i].RazonSocial, listaproveedor[i].IdProveedor.ToString());
+                lstProveedor.Items.Add(li);
+            }
+        }
         public void CargarColeccion(string criterio)
         {
             //lColeccion = new Dyn.Database.logic.Coleccion();

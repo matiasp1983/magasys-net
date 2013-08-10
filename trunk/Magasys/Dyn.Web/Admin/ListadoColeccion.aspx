@@ -47,9 +47,12 @@
                     <td width="233" class="style1" align="left" valign="middle">
                         Proveedor:
                     </td>
-                    <td width="234" align="left" valign="middle" class="style2">
-                        
-                    </td>
+            <td>
+                <asp:DropDownList CssClass="tittleprecios03" ID="lstProveedor" runat="server">
+                </asp:DropDownList><br />
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Debe seleccionar un Proveedor"
+                    ControlToValidate="lstProveedor" CssClass="tittleprecios03" ForeColor="Red"></asp:RequiredFieldValidator>
+            </td>
 
                 </tr>
                 <tr>
