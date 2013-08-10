@@ -13,7 +13,7 @@ namespace Dyn.Database.logic
         {
             Dyn.Database.entities.Proveedor objProveedor = new Dyn.Database.entities.Proveedor();
             CreateCommand("usp_Proveedor", true);
-            AddCmdParameter("@Proveedor", idProveedor, ParameterDirection.Input);
+            AddCmdParameter("@idProveedor", idProveedor, ParameterDirection.Input);
             AddCmdParameter("@Action", 0, ParameterDirection.Input);
             ExecuteReader();
             while (Read())
@@ -112,16 +112,14 @@ namespace Dyn.Database.logic
 
         public bool existeCuit(String idProveedor)
         {
-            CreateCommand("usp_Proveedor", true);
-            AddCmdParameter("@cuit", idProveedor, ParameterDirection.Input);
-            AddCmdParameter("@estado", 1, ParameterDirection.Input);
-            AddCmdParameter("@Action", 4, ParameterDirection.Input);
-            System.Data.SqlClient.SqlDataReader datos = ExecuteReader();
-            if (datos.HasRows)
-                return false;
-            else
-                return true;
+            //CreateCommand("usp_Proveedor", true);
+            //AddCmdParameter("@cuit", idProveedor, ParameterDirection.Input);
+            //AddCmdParameter("@estado", 1, ParameterDirection.Input);
+            //AddCmdParameter("@Action", 4, ParameterDirection.Input);
+            //ExecuteReader();
+            //Read();
+            //GetValue(0);
+            return false;
         }
-
     }
 }

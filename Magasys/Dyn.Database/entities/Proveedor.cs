@@ -48,7 +48,7 @@ namespace Dyn.Database.entities
             {
                 domicilioNro = null;
             }          
-            //domicilioNro = Convert.ToInt32(obj["domicilioNro"]);
+            domicilioNro = Convert.ToInt32(obj["domicilioNro"]);
             domicilioDpto = Convert.ToString(obj["domicilioDpto"]);
             domicilioPiso = Convert.ToString(obj["domicilioPiso"]);
             if (obj["idLocalidad"] != DBNull.Value)
@@ -59,13 +59,13 @@ namespace Dyn.Database.entities
             {
                 domicilioNro = null;
             } 
-            //idLocalidad = Convert.ToInt32(obj["idLocalidad"]);
+            idLocalidad = Convert.ToInt32(obj["idLocalidad"]);
             email = Convert.ToString(obj["email"]);
             razonSocial = Convert.ToString(obj["razonSocial"]);
-            //responsableApellido = Convert.ToString(obj["responsableApellido"]);
-            //responsableNombre = Convert.ToString(obj["responsableNombre"]);
-            //responsableEmail = Convert.ToString(obj["responsableEmail"]);
-            //telefono = Convert.ToString(obj["telefono"]);   
+            responsableApellido = Convert.ToString(obj["reponsableApellido"]);
+            responsableNombre = Convert.ToString(obj["reponsableNombre"]);
+            responsableEmail = Convert.ToString(obj["reponsableEmail"]);
+            telefono = Convert.ToString(obj["telefono"]);   
 		}
 
         #endregion
