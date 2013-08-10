@@ -77,6 +77,9 @@ namespace Dyn.Web.Admin
         {
             lProveedor = new Dyn.Database.logic.Proveedor();
             Entity = new Dyn.Database.entities.Proveedor();
+            
+            
+            
             if (IdEntity == 0)
             {
 
@@ -97,7 +100,17 @@ namespace Dyn.Web.Admin
             else
                 if (IdEntity > 0)
                 {
+                    //String idProveedor = txtCuit.Text;
                     Entity = CargarDatosProveedor();
+                    //if (lProveedor.existeCuit(idProveedor))
+                    //{
+                    //    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Ya existe un proveedor con ese CUIT');location.href('/Admin/ListadoUsuario.aspx');", true);
+                    //}
+                    //else
+                    //{
+                    //    lProveedor.Insert(Entity);
+                    //    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
+                    //}
                     Entity.IdProveedor = IdEntity;
                     lProveedor.Update(Entity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se actualizaron los datos correctamente');", true);
@@ -148,7 +161,7 @@ namespace Dyn.Web.Admin
                 if (rev.SeleccionarRevistaPorGenero(IdEntity) == 0)
                 {
                     lProveedor.Delete(IdEntity);
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el género correctamente');document.location.href='/Admin/ListadoGenero.aspx';", true);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el género correctamente');document.location.href='/Admin/ListadoProveedor.aspx';", true);
                 }
                 else
                 {

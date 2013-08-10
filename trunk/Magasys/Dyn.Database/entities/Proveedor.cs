@@ -48,17 +48,17 @@ namespace Dyn.Database.entities
             {
                 domicilioNro = null;
             }          
-            domicilioNro = Convert.ToInt32(obj["domicilioNro"]);
+            //domicilioNro = Convert.ToInt32(obj["domicilioNro"]);
             domicilioDpto = Convert.ToString(obj["domicilioDpto"]);
             domicilioPiso = Convert.ToString(obj["domicilioPiso"]);
-            //if (obj["idLocalidad"] != DBNull.Value)
-            //{
-            //    domicilioNro = Convert.ToInt32(obj["idLocalidad"]);
-            //}
-            //else
-            //{
-            //    domicilioNro = null;
-            //} 
+            if (obj["domicilioPiso"] != DBNull.Value)
+            {
+                domicilioNro = Convert.ToInt32(obj["idLocalidad"]);
+            }
+            else
+            {
+                domicilioNro = null;
+            } 
             idLocalidad = Convert.ToInt32(obj["idLocalidad"]);
             email = Convert.ToString(obj["email"]);
             razonSocial = Convert.ToString(obj["razonSocial"]);
