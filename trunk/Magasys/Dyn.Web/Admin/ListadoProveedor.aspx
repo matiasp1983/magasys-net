@@ -76,7 +76,7 @@
                         </table>
                         <div style="overflow: scroll; height: 295px; width: 100%">
                             <div>
-                                <asp:Repeater ID="repGeneros" runat="server">
+                                <asp:Repeater ID="repProveedor" runat="server">
                                     <HeaderTemplate>
                                         <table width="100%" border="0" cellpadding="0" cellspacing="0">
                                     </HeaderTemplate>

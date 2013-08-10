@@ -79,9 +79,20 @@ namespace Dyn.Web.Admin
             Entity = new Dyn.Database.entities.Proveedor();
             if (IdEntity == 0)
             {
+
+                String idProveedor = txtCuit.Text;
                 Entity = CargarDatosProveedor();
-                lProveedor.Insert(Entity);
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
+
+                if (lProveedor.existeCuit(idProveedor))
+                {
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Ya existe un proveedor con ese CUIT');location.href('/Admin/ListadoUsuario.aspx');", true);
+                }
+                else
+                {
+                    lProveedor.Insert(Entity);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
+                }
+                
             }
             else
                 if (IdEntity > 0)
@@ -148,16 +159,7 @@ namespace Dyn.Web.Admin
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            lProveedor = new Dyn.Database.logic.Proveedor();
-            String idProveedor = txtCuit.Text;
-            if (lProveedor.existeCuit(idProveedor))
-            {
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Ya existe un proveedor con ese CUIT');location.href('/Admin/ListadoUsuario.aspx');", true);
-            }
-            else
-            { Update(); }
-            
-            
+            Update();  
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)

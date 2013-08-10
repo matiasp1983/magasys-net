@@ -35,7 +35,7 @@ namespace Dyn.Web.Admin
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            CargarGeneros(txtNombreProveedor.Text.Trim());
+            CargarProveedor(txtNombreProveedor.Text.Trim());
 
             if (txtNombreProveedor.Text == string.Empty)
             {
@@ -51,7 +51,7 @@ namespace Dyn.Web.Admin
                 }
             }
         }
-        public void CargarGeneros(string criterio)
+        public void CargarProveedor(string criterio)
         {
             lProveedor = new Dyn.Database.logic.Proveedor();
             DataSet ds = lProveedor.SeleccionarProveedorPorNombrePaginadoAdmin(criterio, Pagina, ref numeropaginas);
@@ -59,8 +59,8 @@ namespace Dyn.Web.Admin
             array = new int[numeropaginas];
             CollectionPager.DataSource = array;
             CollectionPager.DataBind();
-            repGeneros.DataSource = ds;
-            repGeneros.DataBind();
+            repProveedor.DataSource = ds;
+            repProveedor.DataBind();
         }
         protected void btnAdicionarGenero_Click(object sender, EventArgs e)
         {
