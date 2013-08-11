@@ -126,7 +126,6 @@ namespace Dyn.Web.Admin
             else
                 if (IdEntity > 0)
                 {
-                    //String idProveedor = txtCuit.Text;
                     Entity = CargarDatosColeccion();
                     //if (lProveedor.existeCuit(idProveedor))
                     //{
@@ -137,7 +136,7 @@ namespace Dyn.Web.Admin
                     //    lProveedor.Insert(Entity);
                     //    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
                     //}
-                    Entity.IdProveedor = IdEntity;
+                    Entity.IdProducto = IdEntity;
                     lColeccion.Update(Entity);
                     lProducto.Update(Entity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se actualizaron los datos correctamente');", true);

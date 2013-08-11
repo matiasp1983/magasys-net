@@ -43,8 +43,7 @@ namespace Dyn.Web.Admin
                     if (Request["Id"] != null)
                     {
                         IdEntity = Convert.ToInt32(Request["Id"]);
-                      //  Entity = CargarDatosProveedor();
-                         Entity = lProveedor.Load(IdEntity);
+                        Entity = lProveedor.Load(IdEntity);
                         lstLocalidades.SelectedValue = Entity.IdLocalidad.ToString();
                     }
                 DataBind();
