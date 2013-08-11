@@ -43,7 +43,9 @@ namespace Dyn.Web.Admin
                     if (Request["Id"] != null)
                     {
                         IdEntity = Convert.ToInt32(Request["Id"]);
-                        Entity = lProveedor.Load(IdEntity);
+                      //  Entity = CargarDatosProveedor();
+                         Entity = lProveedor.Load(IdEntity);
+                        lstLocalidades.SelectedValue = Entity.IdLocalidad.ToString();
                     }
                 DataBind();
             }
@@ -64,8 +66,8 @@ namespace Dyn.Web.Admin
             {   Entity.DomicilioNro = Convert.ToInt16(txtNumero.Text);}
             
             Entity.DomicilioPiso = txtPiso.Text.Trim();
-            Entity.DomicilioDpto= txtDpto.Text.Trim();
-            Entity.IdLocalidad = Convert.ToInt16(lstLocalidades.SelectedValue);
+            Entity.DomicilioDpto = txtDpto.Text.Trim();
+            Entity.IdLocalidad = Convert.ToInt16(lstLocalidades.SelectedValue.ToString());
             Entity.ResponsableApellido = txtResponsableApellido.Text.Trim();
             Entity.ResponsableNombre = txtResponsableNombre.Text.Trim();
             Entity.ResponsableEmail = txtResponsableEmail.Text.Trim();
@@ -144,7 +146,7 @@ namespace Dyn.Web.Admin
                 for (int i = 0; i < listaLocalidades.Count; i++)
                 {
                     li = new ListItem();
-                    li = new ListItem(listaLocalidades[i].Nombre, listaLocalidades[i].Nombre.ToString());
+                    li = new ListItem(listaLocalidades[i].Nombre, listaLocalidades[i].IdLocalidad.ToString());
                     lstLocalidades.Items.Add(li);
                 }
             
