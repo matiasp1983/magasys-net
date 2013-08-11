@@ -10,34 +10,25 @@
 namespace Dyn.Web.Admin {
     
     
-    public partial class Diario {
+    public partial class ListadoDiario {
         
         /// <summary>
-        /// txtNombre control.
+        /// UpdatePanel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// rfvNombre control.
+        /// CollectionPager control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
-        
-        /// <summary>
-        /// txtDescripcion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
+        protected global::SiteUtils.CollectionPager CollectionPager;
         
         /// <summary>
         /// lstProveedor control.
@@ -58,94 +49,67 @@ namespace Dyn.Web.Admin {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// txtLunes control.
+        /// txtNombreDiario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLunes;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreDiario;
         
         /// <summary>
-        /// txtMartes control.
+        /// AutoCompleteExtender2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMartes;
+        protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender2;
         
         /// <summary>
-        /// txtMiercoles control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMiercoles;
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// txtJueves control.
+        /// btnAdicionarRevista control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtJueves;
+        protected global::System.Web.UI.WebControls.Button btnAdicionarRevista;
         
         /// <summary>
-        /// txtViernes control.
+        /// repDiario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtViernes;
+        protected global::System.Web.UI.WebControls.Repeater repDiario;
         
         /// <summary>
-        /// txtSabado control.
+        /// Login1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSabado;
+        protected global::Dyn.Web.controls.Login Login1;
         
         /// <summary>
-        /// txtDomingo control.
+        /// MenuAdmin1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDomingo;
-        
-        /// <summary>
-        /// btnGuardar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardar;
-        
-        /// <summary>
-        /// btnCancelar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancelar;
-        
-        /// <summary>
-        /// btnEliminar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEliminar;
+        protected global::Dyn.Web.controls.MenuAdminCategoria MenuAdmin1;
         
         /// <summary>
         /// Master property.

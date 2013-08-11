@@ -33,7 +33,7 @@ namespace Dyn.Web.Admin
             btnEliminar.Attributes.Add("onclick", "return confirm_delete('Desea eliminar el revista?');");
             if (!IsPostBack)
             {
-                this.Master.TituloPagina = "Edici&oacute;n Revista";
+                this.Master.TituloPagina = "Edici&oacute;n Coleccion";
                 lColeccion = new Dyn.Database.logic.Coleccion();
                 lProducto = new Dyn.Database.logic.Producto();
                 LlenarGeneros();

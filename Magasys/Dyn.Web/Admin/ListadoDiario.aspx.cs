@@ -6,13 +6,15 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 
+
 namespace Dyn.Web.Admin
 {
-    public partial class ListadoColeccion : System.Web.UI.Page
+    public partial class ListadoDiario : System.Web.UI.Page
     {
+
         private Dyn.Database.logic.Producto lProducto;
         private int numeropaginas;
-        public Dyn.Database.entities.Coleccion Entity;
+        public Dyn.Database.entities.Diario Entity;
 
         public int IdEntity
         {
@@ -25,8 +27,6 @@ namespace Dyn.Web.Admin
                 ViewState["IdEntity"] = value;
             }
         }
-
-
         public int Pagina
         {
             get
@@ -36,12 +36,13 @@ namespace Dyn.Web.Admin
                 return result == 0 ? 1 : result;
             }
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                this.Master.TituloPagina = "Coleccion";
-                CargarColeccion("","0");
+                this.Master.TituloPagina = "Diarios";
+                CargarDiario("", "0");
                 LlenarProveedor();
             }
         }
@@ -60,7 +61,7 @@ namespace Dyn.Web.Admin
                 lstProveedor.Items.Add(li);
             }
         }
-        public void CargarColeccion(string criterio, string idProveedor)
+        public void CargarDiario(string criterio, string idProveedor)
         {
             lProducto = new Dyn.Database.logic.Producto();
 
@@ -71,7 +72,7 @@ namespace Dyn.Web.Admin
                 array = new int[numeropaginas];
                 CollectionPager.DataSource = array;
                 CollectionPager.DataBind();
-                repColeccion.DataSource = ds;
+                repDiario.DataSource = ds;
             }
 
             else
@@ -81,22 +82,21 @@ namespace Dyn.Web.Admin
                 array = new int[numeropaginas];
                 CollectionPager.DataSource = array;
                 CollectionPager.DataBind();
-                repColeccion.DataSource = ds;
+                repDiario.DataSource = ds;
             }
-        
-            repColeccion.DataBind();
-        } 
 
+            repDiario.DataBind();
+        }
         protected void btnAdicionarRevista_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Admin/Coleccion.aspx");
+            Response.Redirect("/Admin/Diario.aspx");
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            CargarColeccion(txtNombreColeccion.Text.Trim(),lstProveedor.SelectedValue);
+            CargarDiario(txtNombreDiario.Text.Trim(), lstProveedor.SelectedValue);
 
-            if (txtNombreColeccion.Text == string.Empty)
+            if (txtNombreDiario.Text == string.Empty)
             {
                 string url = string.Empty;
                 if (Request.Url.ToString().Contains("?Page="))

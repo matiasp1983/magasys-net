@@ -48,6 +48,7 @@
     <Compile Include="entities\DetalleVenta.cs" />
     <Compile Include="entities\Devolucion.cs" />
     <Compile Include="entities\Diario.cs" />
+    <Compile Include="entities\DiarioPorDia.cs" />
     <Compile Include="entities\Genero.cs" />
     <Compile Include="entities\IngresoProducto.cs" />
     <Compile Include="entities\Libro.cs" />
@@ -65,6 +66,8 @@
     <Compile Include="entities\TipoProducto.cs" />
     <Compile Include="entities\Venta.cs" />
     <Compile Include="logic\Coleccion.cs" />
+    <Compile Include="logic\Diario.cs" />
+    <Compile Include="logic\DiarioPorDia.cs" />
     <Compile Include="logic\FactoryBase.cs" />
     <Compile Include="logic\Genero.cs" />
     <Compile Include="logic\Libro.cs" />
@@ -77,7 +80,9 @@
     <Compile Include="logic\Revista.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -40,11 +40,10 @@
                 Proveedor(*)
             </td>
             <td>
-                <select id="cmbProveedor" name="D1" size="25, 400px">
-                    <option></option>
-                </select><br />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Debe seleccionar un Proveedor"
-                    ControlToValidate="cmbProveedor" CssClass="tittleprecios03" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:DropDownList CssClass="tittleprecios03" ID="lstProveedor" runat="server">
+                </asp:DropDownList><br />
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Debe seleccionar un Genero"
+                    ControlToValidate="lstProveedor" CssClass="tittleprecios03" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
 

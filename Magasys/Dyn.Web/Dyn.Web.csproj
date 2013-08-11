@@ -63,9 +63,11 @@
     <Content Include="Admin\Diario.aspx" />
     <Content Include="Admin\Genero.aspx" />
     <Content Include="Admin\ListadoColeccion.aspx" />
+    <Content Include="Admin\ListadoDiario.aspx" />
     <Content Include="Admin\ListadoGenero.aspx" />
     <Content Include="Admin\ListadoProveedor.aspx" />
     <Content Include="Admin\ListadoRevista.aspx" />
+    <Content Include="Admin\ListadoSuplemento.aspx" />
     <Content Include="Admin\Proveedor.aspx" />
     <Content Include="Admin\Revista.aspx" />
     <Content Include="controls\Login.ascx" />
@@ -131,6 +133,13 @@
     <Compile Include="Admin\ListadoColeccion.aspx.designer.cs">
       <DependentUpon>ListadoColeccion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ListadoDiario.aspx.cs">
+      <DependentUpon>ListadoDiario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ListadoDiario.aspx.designer.cs">
+      <DependentUpon>ListadoDiario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\ListadoGenero.aspx.cs">
       <DependentUpon>ListadoGenero.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -151,6 +160,13 @@
     </Compile>
     <Compile Include="Admin\ListadoRevista.aspx.designer.cs">
       <DependentUpon>ListadoRevista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ListadoSuplemento.aspx.cs">
+      <DependentUpon>ListadoSuplemento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ListadoSuplemento.aspx.designer.cs">
+      <DependentUpon>ListadoSuplemento.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Proveedor.aspx.cs">
       <DependentUpon>Proveedor.aspx</DependentUpon>
