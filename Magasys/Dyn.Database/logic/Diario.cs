@@ -12,8 +12,8 @@ namespace Dyn.Database.logic
         public Dyn.Database.entities.Diario Load(int idDiario)
         {
             Dyn.Database.entities.Diario objDiario = new Dyn.Database.entities.Diario();
-            CreateCommand("usp_Coleccion", true);
-            AddCmdParameter("@idColeccion", idDiario, ParameterDirection.Input);
+            CreateCommand("usp_Diario", true);
+            AddCmdParameter("@idDiario", idDiario, ParameterDirection.Input);
             AddCmdParameter("@Action", 0, ParameterDirection.Input);
             ExecuteReader();
             while (Read())
@@ -27,6 +27,7 @@ namespace Dyn.Database.logic
         {
             CreateCommand("usp_Diario", true);
             AddCmdParameter("@idDiario", objusuario.IdDiario, ParameterDirection.Input);
+
         }
 
         public object Insert(Dyn.Database.entities.Diario objDiario)

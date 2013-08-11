@@ -78,37 +78,37 @@ namespace Dyn.Web.Admin
             List<Dyn.Database.entities.DiarioPorDia> listaDias = lDiarioPorDia.SeleccionarTodosLosDias(Entity);
             for (int i = 0; i < listaDias.Count; i++)
             {
-                if (listaDias[i].DiaSemana == "Lunes")
+                if (listaDias[i].DiaSemana == "Lunes     ")
                 {
                     txtLunes.Text = listaDias[i].Precio.ToString();
                 }
                 else
                 {
-                    if (listaDias[i].DiaSemana == "Martes")
+                    if (listaDias[i].DiaSemana == "Martes    ")
                     {
                     txtMartes.Text = listaDias[i].Precio.ToString();
                     }
                     else
                     {
-                        if (listaDias[i].DiaSemana == "Miercoles")
+                        if (listaDias[i].DiaSemana == "Miercoles ")
                         {
                         txtMiercoles.Text = listaDias[i].Precio.ToString();
                         }
                         else
                         {
-                            if (listaDias[i].DiaSemana == "Jueves")
+                            if (listaDias[i].DiaSemana == "Jueves    ")
                             {
                             txtJueves.Text = listaDias[i].Precio.ToString();
                             }
                             else
                             {
-                                if (listaDias[i].DiaSemana == "Viernes")
+                                if (listaDias[i].DiaSemana == "Viernes   ")
                                 {
                                 txtViernes.Text = listaDias[i].Precio.ToString();
                                 }
                                 else
                                 {
-                                    if (listaDias[i].DiaSemana == "Sabado")
+                                    if (listaDias[i].DiaSemana == "Sabado    ")
                                     {
                                     txtSabado.Text = listaDias[i].Precio.ToString();
                                     }
