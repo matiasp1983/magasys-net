@@ -55,7 +55,7 @@
                 Precio Lunes
             </td>
             <td align="left" width="150">
-                <asp:TextBox ID="txtLunes" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Nombre %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtLunes" runat="server" CssClass="tittleprecios03"></asp:TextBox><br />
             </td>
         </tr>
 
@@ -64,7 +64,7 @@
                 Precio Martes
             </td>
             <td align="left" width="150">
-                <asp:TextBox ID="txtMartes" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Nombre %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtMartes" runat="server" CssClass="tittleprecios03"></asp:TextBox><br />
             </td>
         </tr>
 
@@ -73,7 +73,7 @@
                 Precio Miercoles
             </td>
             <td align="left" width="150">
-                <asp:TextBox ID="txtMiercoles" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Nombre %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtMiercoles" runat="server" CssClass="tittleprecios03"></asp:TextBox><br />
             </td>
         </tr>
 
@@ -82,7 +82,7 @@
                 Precio Jueves
             </td>
             <td align="left" width="150">
-                <asp:TextBox ID="txtJueves" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Nombre %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtJueves" runat="server" CssClass="tittleprecios03"></asp:TextBox><br />
             </td>
         </tr>
 
@@ -91,7 +91,7 @@
                 Precio Viernes
             </td>
             <td align="left" width="150">
-                <asp:TextBox ID="txtViernes" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Nombre %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtViernes" runat="server" CssClass="tittleprecios03"></asp:TextBox><br />
             </td>
         </tr>
 
@@ -100,7 +100,7 @@
                 Precio Sabado
             </td>
             <td align="left" width="150">
-                <asp:TextBox ID="txtSabado" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Nombre %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtSabado" runat="server" CssClass="tittleprecios03"></asp:TextBox><br />
             </td>
         </tr>
 
@@ -109,7 +109,7 @@
                 Precio Domingo
             </td>
             <td align="left" width="150">
-                <asp:TextBox ID="txtDomingo" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Nombre %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtDomingo" runat="server" CssClass="tittleprecios03"></asp:TextBox><br />
             </td>
         </tr>
 
