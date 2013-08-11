@@ -18,7 +18,7 @@
                 Nombre(*)
             </td>
             <td align="left" width="150">
-                <asp:TextBox ID="txtNombre" runat="server" CssClass="tittleprecios03" Text="<%# base.Entity.Nombre %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtNombre" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Nombre %>"></asp:TextBox><br />
                 <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ErrorMessage="Debe ingresar el nombre"
                     ControlToValidate="txtNombre" CssClass="tittleprecios03" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
@@ -30,7 +30,7 @@
             </td>
             <td>
                 <asp:TextBox ID="txtDescripcion" runat="server" Height="100px" Width="400px" CssClass="tittleprecios03"
-                    Text="<%# base.Entity.Descripcion %>" TextMode="MultiLine"></asp:TextBox><br />
+                    Text="<%# Entity.Descripcion %>" TextMode="MultiLine"></asp:TextBox><br />
             </td>
         </tr>
 
@@ -94,7 +94,7 @@
                 Cantidad de Entregas(*)
             </td>
             <td align="left" width="150">
-                <asp:TextBox ID="txtCantidad" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Precio %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtCantidad" runat="server" CssClass="tittleprecios03" Text="<%# Entity.CantidadEntregas %>"></asp:TextBox><br />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Debe ingresar el Cantidad de Entregas"
                     ControlToValidate="txtCantidad" CssClass="tittleprecios03" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>

@@ -116,7 +116,7 @@
                                     <ItemTemplate>
                                         <tr>
                                             <td width="234">
-                                                <asp:HyperLink ID="hpNombre" CssClass="tittleprecios03" NavigateUrl='<%# "~/Admin/Coleccion.aspx?Id=" + Eval("IdColeccion") %>'
+                                                <asp:HyperLink ID="hpNombre" CssClass="tittleprecios03" NavigateUrl='<%# "~/Admin/Coleccion.aspx?Id=" + Eval("IdProducto") %>'
                                                     Text='<%# Eval("Nombre") %>' runat="server"></asp:HyperLink>
                                             </td>
                                             <td width="233">
@@ -128,7 +128,7 @@
                                                     runat="server"></asp:Label>
                                             </td>--%>
                                             <td width="233">
-                                                <asp:Label ID="lblProveedor" CssClass="tittleprecios03" Text='<%# Eval("NombreProv") %>'
+                                                <asp:Label ID="lblProveedor" CssClass="tittleprecios03" Text='<%# Eval("nomProveedor") %>'
                                                     runat="server"></asp:Label>
                                             </td>
                                         </tr>
