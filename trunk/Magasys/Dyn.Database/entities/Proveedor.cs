@@ -50,16 +50,24 @@ namespace Dyn.Database.entities
             }          
             //domicilioNro = Convert.ToInt32(obj["domicilioNro"]);
             domicilioDpto = Convert.ToString(obj["domicilioDpto"]);
-            domicilioPiso = Convert.ToString(obj["domicilioPiso"]);
+            // domicilioPiso = Convert.ToString(obj["domicilioPiso"]);
             if (obj["domicilioPiso"] != DBNull.Value)
             {
-                domicilioNro = Convert.ToInt32(obj["idLocalidad"]);
+                domicilioPiso = Convert.ToString(obj["domicilioPiso"]);
             }
             else
             {
-                domicilioNro = null;
-            } 
-            idLocalidad = Convert.ToInt32(obj["idLocalidad"]);
+                domicilioPiso = null;
+            }
+            if (obj["idLocalidad"] != DBNull.Value)
+            {
+                idLocalidad = Convert.ToInt32(obj["idLocalidad"]);
+            }
+            else
+            {
+                idLocalidad = null;
+            }
+            // idLocalidad = Convert.ToInt32(obj["idLocalidad"]);
             email = Convert.ToString(obj["email"]);
             razonSocial = Convert.ToString(obj["razonSocial"]);
             responsableApellido = Convert.ToString(obj["reponsableApellido"]);

@@ -148,11 +148,11 @@ namespace Dyn.Web.Admin
             Entity = new Dyn.Database.entities.Coleccion();
             Entity.Nombre = txtNombre.Text.Trim();
             Entity.Descripcion = txtDescripcion.Text.Trim();
-            Entity.IdProveedor = Convert.ToInt16(lstProveedor.SelectedValue);
+            Entity.IdProveedor = Convert.ToInt16(lstProveedor.SelectedValue.ToString());
             Entity.Fechacreacion = DateTime.Now;
 
-            Entity.IdPeriodicidad = Convert.ToInt16(lstPeriodicidad.SelectedValue);
-            Entity.IdGenero = Convert.ToInt16(lstGenero.SelectedValue);
+            Entity.IdPeriodicidad = Convert.ToInt16(lstPeriodicidad.SelectedValue.ToString());
+            Entity.IdGenero = Convert.ToInt16(lstGenero.SelectedValue.ToString());
             Entity.Precio = Convert.ToDouble(txtPrecio.Text.Trim());
             Entity.CantidadEntregas = Convert.ToInt16(txtCantidad.Text.Trim());
 
