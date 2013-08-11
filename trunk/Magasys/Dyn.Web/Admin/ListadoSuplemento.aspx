@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Admin.Master" AutoEventWireup="true" CodeBehind="ListadoColeccion.aspx.cs" Inherits="Dyn.Web.Admin.ListadoColeccion" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Admin.Master" AutoEventWireup="true" CodeBehind="ListadoSuplemento.aspx.cs" Inherits="Dyn.Web.Admin.ListadoSuplemento" %>
 
 <%@ MasterType VirtualPath="~/Masters/Admin.Master" %>
 <%@ Register Assembly="CollectionPager" Namespace="SiteUtils" TagPrefix="cc1" %>
@@ -7,11 +6,9 @@
 <%@ Register Src="../controls/Login.ascx" TagName="Login" TagPrefix="uc2" %>
 <%@ Register Src="../controls/MenuAdminCategoria.ascx" TagName="MenuAdmin" TagPrefix="uc1" %>
 
-
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-   
-    <style type="text/css">
+
+<style type="text/css">
         .style1
         {
             font-style: normal;
@@ -24,11 +21,13 @@
             height: 45px;
         }
     </style>
+
 </asp:Content>
 
-
 <asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+
+
+   <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <table width="100%" cellpadding="0" cellspacing="5">
                 <tr>
@@ -43,7 +42,7 @@
                 <tr>
                     <td colspan="3" class="tittleproducto" width="700" align="left">
                         <h2>
-                            Listado de Colecciones</h2>
+                            Listado de Suplemento</h2>
                     </td>
                 </tr>
                 <tr>
@@ -60,13 +59,13 @@
                 </tr>
                 <tr>
                     <td width="233" class="style1" align="left" valign="middle">
-                        Nombre Coleccion:
+                        Nombre Suplemento:
                     </td>
                     <td width="234" align="left" valign="middle" class="style2">
-                        <asp:TextBox ID="txtNombreColeccion" runat="server" CssClass="tittleprecios03" ValidationGroup="busqueda"
+                        <asp:TextBox ID="txtNombreSuplemento" runat="server" CssClass="tittleprecios03" ValidationGroup="busqueda"
                             Width="234"></asp:TextBox><br />
                         <act:AutoCompleteExtender ID="AutoCompleteExtender2" runat="server" MinimumPrefixLength="1"
-                            TargetControlID="txtNombreColeccion" ServicePath="~/WebService/AutoComplete.asmx"
+                            TargetControlID="txtNombreSuplemento" ServicePath="~/WebService/AutoComplete.asmx"
                             ServiceMethod="InformacionAutocompletarRevistasPorProveedor" CompletionInterval="1000"
                             CompletionSetCount="12" UseContextKey="True">
                         </act:AutoCompleteExtender>
@@ -78,7 +77,7 @@
 
                 <tr>
                     <td colspan="3" width="700" align="left">
-                        <asp:Button ID="btnAdicionarRevista" CssClass="adminbutton" runat="server" Text="Adicionar Coleccion"
+                        <asp:Button ID="btnAdicionarRevista" CssClass="adminbutton" runat="server" Text="Adicionar Suplemento"
                             CausesValidation="False" OnClick="btnAdicionarRevista_Click" />
                     </td>
                 </tr>
@@ -149,11 +148,14 @@
     </asp:UpdatePanel>
     <div style="clear: both">
     </div>
+
+
 </asp:Content>
 
 
 <asp:Content ID="Content4" ContentPlaceHolderID="cphReserva" runat="server">
 </asp:Content>
+
 <asp:Content ID="Content5" runat="server" ContentPlaceHolderID="cphMenu">
     <!--Control de login de ejemplo-->
     <uc2:Login ID="Login1" runat="server" />
