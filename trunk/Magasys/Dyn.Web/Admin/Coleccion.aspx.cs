@@ -48,7 +48,12 @@ namespace Dyn.Web.Admin
                     if (Request["Id"] != null)
                     {
                         IdEntity = Convert.ToInt32(Request["Id"]);
-                        //Entity = lRevista.Load(IdEntity);
+                        Entity = lColeccion.Load(IdEntity);
+                        lstGenero.SelectedValue = Entity.IdGenero.ToString();
+                        lstPeriodicidad.SelectedValue = Entity.IdPeriodicidad.ToString();
+                        lstProveedor.SelectedValue = Entity.IdProveedor.ToString();
+
+                        
                     }
                 DataBind();
             }

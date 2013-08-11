@@ -100,6 +100,29 @@ namespace Dyn.Database.logic
                 return true;
             }
         }
+        public DataSet SeleccionarProductoPorNombrePaginado(string nombre, int paginaactual, ref int numeropaginas)
+        {
+            CreateCommand("usp_SeleccionarProductoPorNombrePaginado", true);
+            AddCmdParameter("@nombre", nombre, ParameterDirection.Input);
+            AddCmdParameter("@CurrentPage", paginaactual, ParameterDirection.Input);
+            AddCmdParameter("@PageSize", 100, ParameterDirection.Input);
+            AddCmdParameter("@TotalRecords", ParameterDirection.Output);
+            DataSet ds = GetDataSet();
+            numeropaginas = (int)GetValueCmdParameter("@TotalRecords");
+            return ds;
+        }
+        public DataSet SeleccionarProductoPorNombreProveedorPaginado(string nombre, string idProveedor, int paginaactual, ref int numeropaginas)
+        {
+            CreateCommand("usp_SeleccionarProductoPorNombreProveedorPaginado", true);
+            AddCmdParameter("@nombre", nombre, ParameterDirection.Input);
+            AddCmdParameter("@idProveedor", idProveedor, ParameterDirection.Input);
+            AddCmdParameter("@CurrentPage", paginaactual, ParameterDirection.Input);
+            AddCmdParameter("@PageSize", 100, ParameterDirection.Input);
+            AddCmdParameter("@TotalRecords", ParameterDirection.Output);
+            DataSet ds = GetDataSet();
+            numeropaginas = (int)GetValueCmdParameter("@TotalRecords");
+            return ds;
+        }
 
     }
 

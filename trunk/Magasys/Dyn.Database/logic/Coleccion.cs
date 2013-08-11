@@ -23,17 +23,17 @@ namespace Dyn.Database.logic
             return objColeccion;
         }
 
-        public DataSet SeleccionarColeccionPorNombrePaginadoAdmin(string nombre, int paginaactual, ref int numeropaginas)
-        {
-            CreateCommand("usp_SeleccionarGenerosPorNombrePaginado", true);
-            AddCmdParameter("@nombre", nombre, ParameterDirection.Input);
-            AddCmdParameter("@CurrentPage", paginaactual, ParameterDirection.Input);
-            AddCmdParameter("@PageSize", 100, ParameterDirection.Input);
-            AddCmdParameter("@TotalRecords", ParameterDirection.Output);
-            DataSet ds = GetDataSet();
-            numeropaginas = (int)GetValueCmdParameter("@TotalRecords");
-            return ds;
-        }
+        //public DataSet SeleccionarColeccionPorNombrePaginado(string nombre, int paginaactual, ref int numeropaginas)
+        //{
+        //    CreateCommand("usp_SeleccionarProductoPorNombrePaginado", true);
+        //    AddCmdParameter("@nombre", nombre, ParameterDirection.Input);
+        //    AddCmdParameter("@CurrentPage", paginaactual, ParameterDirection.Input);
+        //    AddCmdParameter("@PageSize", 100, ParameterDirection.Input);
+        //    AddCmdParameter("@TotalRecords", ParameterDirection.Output);
+        //    DataSet ds = GetDataSet();
+        //    numeropaginas = (int)GetValueCmdParameter("@TotalRecords");
+        //    return ds;
+        //}
 
         private void AddParameters(Dyn.Database.entities.Coleccion objusuario)
         {

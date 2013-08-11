@@ -10,10 +10,10 @@ namespace Dyn.Web.Admin
 {
     public partial class ListadoColeccion : System.Web.UI.Page
     {
-        private Dyn.Database.logic.Coleccion lColeccion;
+        // private Dyn.Database.logic.Coleccion lColeccion;
+        private Dyn.Database.logic.Producto lProducto;
         private int numeropaginas;
-        private Dyn.Database.logic.Genero lGenero;
-        public Dyn.Database.entities.Genero Entity;
+        public Dyn.Database.entities.Coleccion Entity;
 
         public int IdEntity
         {
@@ -42,7 +42,7 @@ namespace Dyn.Web.Admin
             if (!IsPostBack)
             {
                 this.Master.TituloPagina = "Coleccion";
-                CargarColeccion("");
+                CargarColeccion("","0");
                 LlenarProveedor();
             }
         }
@@ -51,6 +51,9 @@ namespace Dyn.Web.Admin
             Dyn.Database.logic.Proveedor lProveedor = new Dyn.Database.logic.Proveedor();
             List<Dyn.Database.entities.Proveedor> listaproveedor = lProveedor.SeleccionarTodosLosProveedores();
             ListItem li;
+            li = new ListItem();
+            li = new ListItem("<< TODOS >>", "0");
+            lstProveedor.Items.Add(li);
             for (int i = 0; i < listaproveedor.Count; i++)
             {
                 li = new ListItem();
@@ -58,16 +61,31 @@ namespace Dyn.Web.Admin
                 lstProveedor.Items.Add(li);
             }
         }
-        public void CargarColeccion(string criterio)
+        public void CargarColeccion(string criterio, string idProveedor)
         {
-            //lColeccion = new Dyn.Database.logic.Coleccion();
-            //DataSet ds = lColeccion.SeleccionarColeccionPorNombrePaginadoAdmin(criterio, Pagina, ref numeropaginas);
-            //int[] array;
-            //array = new int[numeropaginas];
-            //CollectionPager.DataSource = array;
-            //CollectionPager.DataBind();
-            //repColeccion.DataSource = ds;
-            //repColeccion.DataBind();
+            lProducto = new Dyn.Database.logic.Producto();
+
+            if (lstProveedor.SelectedValue == "0")
+            {
+                DataSet ds = lProducto.SeleccionarProductoPorNombrePaginado(criterio, Pagina, ref numeropaginas);
+                int[] array;
+                array = new int[numeropaginas];
+                CollectionPager.DataSource = array;
+                CollectionPager.DataBind();
+                repColeccion.DataSource = ds;
+            }
+
+            else
+            {
+                DataSet ds = lProducto.SeleccionarProductoPorNombreProveedorPaginado(criterio, idProveedor, Pagina, ref numeropaginas);
+                int[] array;
+                array = new int[numeropaginas];
+                CollectionPager.DataSource = array;
+                CollectionPager.DataBind();
+                repColeccion.DataSource = ds;
+            }
+        
+            repColeccion.DataBind();
         } 
 
         protected void btnAdicionarRevista_Click(object sender, EventArgs e)
@@ -77,7 +95,22 @@ namespace Dyn.Web.Admin
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
+            CargarColeccion(txtNombreColeccion.Text.Trim(),lstProveedor.SelectedValue);
 
+            if (txtNombreColeccion.Text == string.Empty)
+            {
+                string url = string.Empty;
+                if (Request.Url.ToString().Contains("?Page="))
+                {
+                    url = Request.Url.PathAndQuery;
+                    Response.Redirect(url.Substring(0, url.Length - 1).Replace("?Page=", ""));
+                }
+                else
+                {
+                    Response.Redirect(url);
+                }
+            }
         }
+
     }
 }

@@ -65,7 +65,7 @@ namespace Dyn.Web.Admin
             
             Entity.DomicilioPiso = txtPiso.Text.Trim();
             Entity.DomicilioDpto= txtDpto.Text.Trim();
-            Entity.IdLocalidad = lstLocalidades.SelectedIndex;
+            Entity.IdLocalidad = Convert.ToInt16(lstLocalidades.SelectedValue);
             Entity.ResponsableApellido = txtResponsableApellido.Text.Trim();
             Entity.ResponsableNombre = txtResponsableNombre.Text.Trim();
             Entity.ResponsableEmail = txtResponsableEmail.Text.Trim();

@@ -26,7 +26,11 @@ namespace Dyn.Database.entities
             idGenero = Convert.ToInt32(obj["idGenero"]);
             idPeriodicidad = Convert.ToInt32(obj["idPeriodicidad"]);
             precio = Convert.ToDouble(obj["precio"]);
-            cantidadEntregas = Convert.ToInt16(obj["cantidadEntrega"]);
+            cantidadEntregas = Convert.ToInt16(obj["cantidadEntregas"]);
+            Nombre = obj["nombre"].ToString();
+            Descripcion = obj["descripcion"].ToString();
+            IdProveedor = Convert.ToInt16(obj["idProveedor"].ToString());
+
 		}
         #endregion
 
