@@ -36,10 +36,12 @@ namespace Dyn.Web.Admin
                 lSuplemento = new Dyn.Database.logic.Suplemento();
                 lProducto = new Dyn.Database.logic.Producto();
                 LlenarGeneros();
-                LlenarProveedor();
                 LlenarPeriodicidad();
                 LlenarProductos();
-                lstProveedor.Enabled = false;
+                LlenarDiaSemana();
+
+
+                txtProveedor.Enabled = false;
 
                 if (Request["Id"] == null)
                 {
@@ -53,9 +55,8 @@ namespace Dyn.Web.Admin
                         Entity = lSuplemento.Load(IdEntity);
                         lstGenero.SelectedValue = Entity.IdGenero.ToString();
                         lstPeriodicidad.SelectedValue = Entity.IdPeriodicidad.ToString();
-                        lstProveedor.SelectedValue = Entity.IdProveedor.ToString();
-
-
+                        LlenarProveedor(Convert.ToInt32(Entity.IdProveedor));
+                        lstDiario.SelectedValue = Entity.IdDiario.ToString();
                     }
                 DataBind();
             }
@@ -72,17 +73,11 @@ namespace Dyn.Web.Admin
                 lstGenero.Items.Add(li);
             }
         }
-        public void LlenarProveedor()
+        public void LlenarProveedor(int idProveedor)
         {
             Dyn.Database.logic.Proveedor lProveedor = new Dyn.Database.logic.Proveedor();
-            List<Dyn.Database.entities.Proveedor> listaproveedor = lProveedor.SeleccionarTodosLosProveedores();
-            ListItem li;
-            for (int i = 0; i < listaproveedor.Count; i++)
-            {
-                li = new ListItem();
-                li = new ListItem(listaproveedor[i].RazonSocial, listaproveedor[i].IdProveedor.ToString());
-                lstProveedor.Items.Add(li);
-            }
+            Dyn.Database.entities.Proveedor prov = lProveedor.Load(idProveedor);
+            txtProveedor.Text = prov.RazonSocial;
         }
 
         public void LlenarPeriodicidad()
@@ -109,6 +104,33 @@ namespace Dyn.Web.Admin
                 lstDiario.Items.Add(li);
             }
         }
+        public void LlenarDiaSemana()
+        {
+            ListItem li;
+            li = new ListItem();
+            li = new ListItem("Lunes     ", "0");
+            lstDiaSemana.Items.Add(li);
+            li = new ListItem();
+            li = new ListItem("Martes    ", "1");
+            lstDiaSemana.Items.Add(li);
+            li = new ListItem();
+            li = new ListItem("Miercoles ", "2");
+            lstDiaSemana.Items.Add(li);
+            li = new ListItem();
+            li = new ListItem("Jueves    ", "3");
+            lstDiaSemana.Items.Add(li);
+            li = new ListItem();
+            li = new ListItem("Viernes   ", "4");
+            lstDiaSemana.Items.Add(li);
+            li = new ListItem();
+            li = new ListItem("Sabado    ", "5");
+            lstDiaSemana.Items.Add(li);
+            li = new ListItem();
+            li = new ListItem("Domingo   ", "6");
+            lstDiaSemana.Items.Add(li);
+
+        }
+
         public void Update()
         {
             lSuplemento = new Dyn.Database.logic.Suplemento();
@@ -119,9 +141,10 @@ namespace Dyn.Web.Admin
 
             if (IdEntity == 0)
             {
+                LlenarProveedor(Convert.ToInt32(Entity.IdProveedor));
+                String nombre = String.Concat(txtNombre.Text.Trim() + " - " + lstDiario.SelectedItem.ToString());
+                Entity = CargarDatosSuplemento(nombre);
 
-                String nombre = txtNombre.Text.Trim();
-                Entity = CargarDatosSuplemento();
 
                 if (lProducto.existeNombre(nombre))
                 {
@@ -139,7 +162,8 @@ namespace Dyn.Web.Admin
             else
                 if (IdEntity > 0)
                 {
-                    Entity = CargarDatosSuplemento();
+                    String nombre = String.Concat(txtNombre.Text.Trim() + " - " + lstDiario.SelectedItem.ToString());
+                    Entity = CargarDatosSuplemento(nombre);
                     //if (lProveedor.existeCuit(idProveedor))
                     //{
                     //    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Ya existe un proveedor con ese CUIT');location.href('/Admin/ListadoUsuario.aspx');", true);
@@ -155,14 +179,16 @@ namespace Dyn.Web.Admin
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se actualizaron los datos correctamente');", true);
                 }
         }
-        public Dyn.Database.entities.Suplemento CargarDatosSuplemento()
+        public Dyn.Database.entities.Suplemento CargarDatosSuplemento(String nombre)
         {
             Entity = new Dyn.Database.entities.Suplemento();
-            Entity.Nombre = txtNombre.Text.Trim();
-            Entity.Descripcion = txtDescripcion.Text.Trim();
-            Entity.IdProveedor = Convert.ToInt16(lstProveedor.SelectedValue.ToString());
-            Entity.Fechacreacion = DateTime.Now;
 
+            Entity.Nombre = nombre;
+            Entity.Descripcion = txtDescripcion.Text.Trim();
+            // Entity.IdProveedor = Convert.ToInt16(lstProveedor.SelectedValue.ToString());
+            Entity.Fechacreacion = DateTime.Now;
+            Entity.DiaSemana = lstDiaSemana.SelectedItem.ToString();
+            Entity.IdDiario = Convert.ToInt16(lstDiario.SelectedValue.ToString());
             Entity.IdPeriodicidad = Convert.ToInt16(lstPeriodicidad.SelectedValue.ToString());
             Entity.IdGenero = Convert.ToInt16(lstGenero.SelectedValue.ToString());
             Entity.Precio = Convert.ToDouble(txtPrecio.Text.Trim());
@@ -199,10 +225,5 @@ namespace Dyn.Web.Admin
             Response.Redirect("ListadoSuplemento.aspx");
         }
 
-        protected void lstDiario_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //this.Update();
-            //lstProveedor.SelectedValue = lstDiario.SelectedValue;
-        }
     }
 }

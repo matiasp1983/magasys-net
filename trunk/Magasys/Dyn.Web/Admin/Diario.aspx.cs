@@ -114,7 +114,7 @@ namespace Dyn.Web.Admin
                                     }
                                     else
                                     {
-                                        if (listaDias[i].DiaSemana == "Domingo")
+                                        if (listaDias[i].DiaSemana == "Domingo   ")
                                         {
                                         txtDomingo.Text = listaDias[i].Precio.ToString();
                                         }

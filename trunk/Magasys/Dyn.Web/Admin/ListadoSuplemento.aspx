@@ -71,7 +71,7 @@
                         </act:AutoCompleteExtender>
                     </td>
                     <td width="233" align="left" class="style2">
-                        <asp:Button ID="Button1" CssClass="adminbutton" runat="server" Text="Buscar" OnClick="btnBuscar_Click"
+                        <asp:Button ID="btnBuscar" CssClass="adminbutton" runat="server" Text="Buscar" OnClick="btnBuscar_Click1"
                             ValidationGroup="busqueda" />
                     </td>
 
@@ -118,7 +118,7 @@
                                     <ItemTemplate>
                                         <tr>
                                             <td width="234">
-                                                <asp:HyperLink ID="hpNombre" CssClass="tittleprecios03" NavigateUrl='<%# "~/Admin/Suplemento.aspx?Id=" + Eval("IdProducto") %>'
+                                                <asp:HyperLink ID="hpNombre" CssClass="tittleprecios03" NavigateUrl='<%# "~/Admin/Suplementos.aspx?Id=" + Eval("IdProducto") %>'
                                                     Text='<%# Eval("Nombre") %>' runat="server"></asp:HyperLink>
                                             </td>
                                             <td width="233">
