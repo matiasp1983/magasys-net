@@ -78,6 +78,7 @@
     <Compile Include="logic\Proveedor.cs" />
     <Compile Include="logic\Provincia.cs" />
     <Compile Include="logic\Revista.cs" />
+    <Compile Include="logic\Suplemento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

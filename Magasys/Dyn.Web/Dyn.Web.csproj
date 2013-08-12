@@ -70,6 +70,7 @@
     <Content Include="Admin\ListadoSuplemento.aspx" />
     <Content Include="Admin\Proveedor.aspx" />
     <Content Include="Admin\Revista.aspx" />
+    <Content Include="Admin\Suplementos.aspx" />
     <Content Include="controls\Login.ascx" />
     <Content Include="controls\MenuAdmin.ascx" />
     <Content Include="controls\MenuAdminCategoria.ascx" />
@@ -181,6 +182,13 @@
     </Compile>
     <Compile Include="Admin\Revista.aspx.designer.cs">
       <DependentUpon>Revista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Suplementos.aspx.cs">
+      <DependentUpon>Suplementos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Suplementos.aspx.designer.cs">
+      <DependentUpon>Suplementos.aspx</DependentUpon>
     </Compile>
     <Compile Include="controls\Login.ascx.cs">
       <DependentUpon>Login.ascx</DependentUpon>

@@ -111,14 +111,14 @@
                         </table>
                         <div style="overflow: scroll; height: 295px; width: 100%">
                             <div>
-                                <asp:Repeater ID="repColeccion" runat="server">
+                                <asp:Repeater ID="repSuplemento" runat="server">
                                     <HeaderTemplate>
                                         <table width="100%" border="0" cellpadding="0" cellspacing="0">
                                     </HeaderTemplate>
                                     <ItemTemplate>
                                         <tr>
                                             <td width="234">
-                                                <asp:HyperLink ID="hpNombre" CssClass="tittleprecios03" NavigateUrl='<%# "~/Admin/Coleccion.aspx?Id=" + Eval("IdProducto") %>'
+                                                <asp:HyperLink ID="hpNombre" CssClass="tittleprecios03" NavigateUrl='<%# "~/Admin/Suplemento.aspx?Id=" + Eval("IdProducto") %>'
                                                     Text='<%# Eval("Nombre") %>' runat="server"></asp:HyperLink>
                                             </td>
                                             <td width="233">

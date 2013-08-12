@@ -35,12 +35,14 @@ namespace Dyn.Database.entities
             get { return idDiario; }
             set { idDiario = value; }
         }
+
         private string diaSemana;
         public string DiaSemana
         {
             get { return diaSemana; }
             set { diaSemana = value; }
         }
+
         private Double? precio;
         public Double? Precio
         {
