@@ -85,13 +85,13 @@ namespace Dyn.Web.Admin {
         protected global::System.Web.UI.WebControls.Button btnAdicionarRevista;
         
         /// <summary>
-        /// repColeccion control.
+        /// repSuplemento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repColeccion;
+        protected global::System.Web.UI.WebControls.Repeater repSuplemento;
         
         /// <summary>
         /// Login1 control.
