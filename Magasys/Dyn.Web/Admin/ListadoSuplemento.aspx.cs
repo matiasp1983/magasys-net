@@ -42,7 +42,7 @@ namespace Dyn.Web.Admin
             if (!IsPostBack)
             {
                 this.Master.TituloPagina = "Coleccion";
-                CargarColeccion("", "0");
+                CargarSuplemento("", "0");
                 LlenarProveedor();
             }
         }
@@ -61,13 +61,13 @@ namespace Dyn.Web.Admin
                 lstProveedor.Items.Add(li);
             }
         }
-        public void CargarColeccion(string criterio, string idProveedor)
+        public void CargarSuplemento(string criterio, string idProveedor)
         {
             lProducto = new Dyn.Database.logic.Producto();
 
             if (lstProveedor.SelectedValue == "0")
             {
-                DataSet ds = lProducto.SeleccionarProductoPorNombrePaginado(criterio, Pagina, ref numeropaginas);
+                DataSet ds = lProducto.SeleccionarProductoPorNombrePaginado(criterio, Pagina, ref numeropaginas,2);
                 int[] array;
                 array = new int[numeropaginas];
                 CollectionPager.DataSource = array;
@@ -77,7 +77,7 @@ namespace Dyn.Web.Admin
 
             else
             {
-                DataSet ds = lProducto.SeleccionarProductoPorNombreProveedorPaginado(criterio, idProveedor, Pagina, ref numeropaginas);
+                DataSet ds = lProducto.SeleccionarProductoPorNombreProveedorPaginado(criterio, idProveedor, Pagina, ref numeropaginas,2);
                 int[] array;
                 array = new int[numeropaginas];
                 CollectionPager.DataSource = array;
@@ -92,9 +92,10 @@ namespace Dyn.Web.Admin
             Response.Redirect("/Admin/Suplementos.aspx");
         }
 
-        protected void btnBuscar_Click(object sender, EventArgs e)
+
+        protected void btnBuscar_Click1(object sender, EventArgs e)
         {
-            CargarColeccion(txtNombreSuplemento.Text.Trim(), lstProveedor.SelectedValue);
+            CargarSuplemento(txtNombreSuplemento.Text.Trim(), lstProveedor.SelectedValue);
 
             if (txtNombreSuplemento.Text == string.Empty)
             {

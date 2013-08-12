@@ -21,7 +21,8 @@
                 Nombre(*)
             </td>
             <td align="left" width="150">
-                <asp:TextBox ID="txtNombre" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Nombre %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtNombre" runat="server" CssClass="tittleprecios03" 
+                    Text="<%# Entity.Nombre %>" Width="300px"></asp:TextBox><br />
                 <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ErrorMessage="Debe ingresar el nombre"
                     ControlToValidate="txtNombre" CssClass="tittleprecios03" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
@@ -41,11 +42,8 @@
             <td class="tittleprecios03" align="left" width="100">
                 Proveedor(*)
             </td>
-            <td>
-                <asp:DropDownList CssClass="tittleprecios03" ID="lstProveedor" runat="server">
-                </asp:DropDownList><br />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Debe seleccionar un Proveedor"
-                    ControlToValidate="lstProveedor" CssClass="tittleprecios03" ForeColor="Red"></asp:RequiredFieldValidator>
+            <td align="left" width="150">
+                <asp:TextBox ID="txtProveedor" runat="server" CssClass="tittleprecios03" Enabled="False"></asp:TextBox><br />
             </td>
 
         </tr>
@@ -60,8 +58,7 @@
                 Diario(*)
             </td>
             <td>
-                <asp:DropDownList CssClass="tittleprecios03" ID="lstDiario" runat="server" 
-                    onselectedindexchanged="lstDiario_SelectedIndexChanged">
+                <asp:DropDownList CssClass="tittleprecios03" ID="lstDiario" runat="server">
                 </asp:DropDownList><br />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Debe seleccionar un Diario"
                     ControlToValidate="lstDiario" CssClass="tittleprecios03" ForeColor="Red"></asp:RequiredFieldValidator>
