@@ -130,6 +130,7 @@ namespace Dyn.Web.Admin
                 lstProvincias.Items.Add(li);
             }
         }
+
         public void LlenarLocalidades()
         {
             if (lstProvincias.SelectedIndex == -1)
@@ -155,11 +156,11 @@ namespace Dyn.Web.Admin
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            Dyn.Database.logic.Revista rev = new Dyn.Database.logic.Revista();
+            Dyn.Database.logic.Genero gen = new Dyn.Database.logic.Genero();
             if (IdEntity != 0 && IdEntity != int.MinValue)
             {
                 lProveedor = new Dyn.Database.logic.Proveedor();
-                if (rev.SeleccionarRevistaPorGenero(IdEntity) == 0)
+                if (gen.VerificaRelacionGenero(IdEntity) == 0)
                 {
                     lProveedor.Delete(IdEntity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el género correctamente');document.location.href='/Admin/ListadoProveedor.aspx';", true);
