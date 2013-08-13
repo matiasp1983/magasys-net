@@ -62,6 +62,7 @@
     <Content Include="Admin\Coleccion.aspx" />
     <Content Include="Admin\Diario.aspx" />
     <Content Include="Admin\Genero.aspx" />
+    <Content Include="Admin\Ingresos.aspx" />
     <Content Include="Admin\ListadoColeccion.aspx" />
     <Content Include="Admin\ListadoDiario.aspx" />
     <Content Include="Admin\ListadoGenero.aspx" />
@@ -74,6 +75,7 @@
     <Content Include="controls\Login.ascx" />
     <Content Include="controls\MenuAdmin.ascx" />
     <Content Include="controls\MenuAdminCategoria.ascx" />
+    <Content Include="controls\WUCBuscarProducto.ascx" />
     <Content Include="Home.aspx" />
     <Content Include="images\BarraMenuCategorias_01.jpg" />
     <Content Include="images\BarraMenuCategorias_02.jpg" />
@@ -126,6 +128,13 @@
     </Compile>
     <Compile Include="Admin\Genero.aspx.designer.cs">
       <DependentUpon>Genero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Ingresos.aspx.cs">
+      <DependentUpon>Ingresos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Ingresos.aspx.designer.cs">
+      <DependentUpon>Ingresos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ListadoColeccion.aspx.cs">
       <DependentUpon>ListadoColeccion.aspx</DependentUpon>
@@ -210,6 +219,13 @@
     </Compile>
     <Compile Include="controls\MenuAdminCategoria.ascx.designer.cs">
       <DependentUpon>MenuAdminCategoria.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\WUCBuscarProducto.ascx.cs">
+      <DependentUpon>WUCBuscarProducto.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\WUCBuscarProducto.ascx.designer.cs">
+      <DependentUpon>WUCBuscarProducto.ascx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
