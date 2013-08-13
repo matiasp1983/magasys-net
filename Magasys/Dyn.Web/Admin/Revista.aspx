@@ -40,13 +40,18 @@
         </tr>
         <tr>
             <td class="tittleprecios03" align="left" width="100">
-                D&iacute;a de semana(*)
+                D&iacute;a de semana
             </td>
             <td align="left" width="150">
-                <asp:TextBox ID="txtDiaSemana" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DiaSemana %>"></asp:TextBox><br />
-                <asp:RequiredFieldValidator ID="rfvDiaSemana" runat="server" ErrorMessage="Debe ingresar el d&iacute;a de la semana"
-                    ControlToValidate="txtDiaSemana" CssClass="tittleprecios03" Display="Dynamic"
-                    ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:DropDownList CssClass="tittleprecios03" ID="lstDiaSemana" runat="server">
+                    <asp:ListItem Value="Lunes">Lunes</asp:ListItem>
+                    <asp:ListItem Value="Martes">Martes</asp:ListItem>
+                    <asp:ListItem Value="Miércoles">Miércoles</asp:ListItem>
+                    <asp:ListItem Value="Jueves">Jueves</asp:ListItem>
+                    <asp:ListItem Value="Viernes">Viernes</asp:ListItem>
+                    <asp:ListItem Value="Sábado">Sábado</asp:ListItem>
+                    <asp:ListItem Value="Domingo">Domingo</asp:ListItem>
+                </asp:DropDownList>
             </td>
             <td class="tittleprecios03" align="left" width="100">
                 Periodicidad
@@ -68,7 +73,7 @@
                 Precio(*)
             </td>
             <td align="left" width="150">
-                <asp:TextBox ID="txtPrecio" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Precio %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtPrecio" runat="server" CssClass="tittleprecios03" Text="<%# Convert.ToDouble(Entity.Precio).ToString() %>"></asp:TextBox><br />
                 <asp:RequiredFieldValidator ID="rfvPrecio" runat="server" ErrorMessage="Debe ingresar el precio"
                     ControlToValidate="txtPrecio" CssClass="tittleprecios03" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
@@ -81,7 +86,7 @@
                 <asp:Button CssClass="adminbutton" ID="btnCancelar" runat="server" Text="Cancelar"
                     OnClick="btnCancelar_Click" CausesValidation="False" />&nbsp;
                 <asp:Button CssClass="adminbutton" ID="btnEliminar" runat="server" Text="Eliminar"
-                    OnClick="btnEliminar_Click" CausesValidation="False" />
+                    OnClick="btnEliminar_Click" CausesValidation="False" OnClientClick="javascript:return confirm('Desea eliminar la revista?');"/>
             </td>
         </tr>
     </table>

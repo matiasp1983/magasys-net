@@ -28,7 +28,6 @@ namespace Dyn.Web.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            btnEliminar.Attributes.Add("onclick", "return confirm_delete('Desea eliminar el género?');");
             if (!IsPostBack)
             {
                 this.Master.TituloPagina = "Edici&oacute;n G&eacute;nero";
@@ -64,7 +63,7 @@ namespace Dyn.Web.Admin
             {
                 Entity = CargarDatosGenero();
                 lGenero.Insert(Entity);
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');", true);
             }
             else
                 if (IdEntity > 0)
@@ -78,11 +77,11 @@ namespace Dyn.Web.Admin
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            Dyn.Database.logic.Revista rev = new Dyn.Database.logic.Revista();
+            Dyn.Database.logic.Genero gen = new Dyn.Database.logic.Genero();
             if (IdEntity != 0 && IdEntity != int.MinValue)
             {
                 lGenero = new Dyn.Database.logic.Genero();
-                if (rev.SeleccionarRevistaPorGenero(IdEntity) == 0)
+                if (gen.VerificaRelacionGenero(IdEntity) == 0)
                 {
                     lGenero.Delete(IdEntity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el género correctamente');document.location.href='/Admin/ListadoGenero.aspx';", true);

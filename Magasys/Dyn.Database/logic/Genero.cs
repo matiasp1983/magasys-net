@@ -47,13 +47,26 @@ namespace Dyn.Database.logic
             return Collection;
         }
 
-        private void AddParameters(Dyn.Database.entities.Genero objusuario)
+        public int VerificaRelacionGenero(int idGenero)
+        {
+            CreateCommand("usp_SeleccionarRevistaConIdGenero", true);
+            AddCmdParameter("@idGenero", idGenero, ParameterDirection.Input);
+            ExecuteReader();
+            int i = 0;
+            if (Read())
+            {
+                i++;
+            }
+            return i;
+        }
+
+        private void AddParameters(Dyn.Database.entities.Genero objgenero)
         {
             CreateCommand("usp_Genero", true);
-            AddCmdParameter("@idGenero", objusuario.IdGenero, ParameterDirection.Input);
-            AddCmdParameter("@nombre", objusuario.Nombre, ParameterDirection.Input);
-            AddCmdParameter("@estado", objusuario.Estado, ParameterDirection.Input);
-            AddCmdParameter("@descripcion", objusuario.Descripcion, ParameterDirection.Input);
+            AddCmdParameter("@idGenero", objgenero.IdGenero, ParameterDirection.Input);
+            AddCmdParameter("@nombre", objgenero.Nombre, ParameterDirection.Input);
+            AddCmdParameter("@estado", objgenero.Estado, ParameterDirection.Input);
+            AddCmdParameter("@descripcion", objgenero.Descripcion, ParameterDirection.Input);
         }
 
         public object Insert(Dyn.Database.entities.Genero objGenero)

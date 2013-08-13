@@ -58,22 +58,13 @@ namespace Dyn.Web.Admin {
         protected global::System.Web.UI.WebControls.DropDownList lstProveedor;
         
         /// <summary>
-        /// txtDiaSemana control.
+        /// lstDiaSemana control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDiaSemana;
-        
-        /// <summary>
-        /// rfvDiaSemana control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDiaSemana;
+        protected global::System.Web.UI.WebControls.DropDownList lstDiaSemana;
         
         /// <summary>
         /// lstPeriodicidad control.
