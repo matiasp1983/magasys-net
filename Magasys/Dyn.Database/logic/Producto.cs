@@ -37,18 +37,6 @@ namespace Dyn.Database.logic
             return objProducto;
         }
 
-        public int VerificaRelacionProducto(int idProducto)
-        {
-            CreateCommand("usp_ExisteRelacionProducto", true);
-            AddCmdParameter("@idProducto", idProducto, ParameterDirection.Input);
-            AddCmdParameter("@idProductoOut", ParameterDirection.Output);
-            //ExecuteReader();
-            DataSet ds = GetDataSet();
-            int i = 0;
-            i = (int)GetValueCmdParameter("@idProductoOut");
-            return i;
-        }
-
         private void AddParameters(Dyn.Database.entities.Producto objproducto)
         {
             CreateCommand("usp_Producto", true);

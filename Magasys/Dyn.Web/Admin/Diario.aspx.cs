@@ -267,11 +267,11 @@ namespace Dyn.Web.Admin
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            Dyn.Database.logic.Revista rev = new Dyn.Database.logic.Revista();
+            Dyn.Database.logic.Producto pro = new Dyn.Database.logic.Producto();
             if (IdEntity != 0 && IdEntity != int.MinValue)
             {
                 lDiario = new Dyn.Database.logic.Diario();
-                if (rev.SeleccionarRevistaPorGenero(IdEntity) == 0)
+                if (pro.VerificaRelacionProducto(IdEntity) == 0)
                 {
                     lDiario.Delete(IdEntity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró la revista correctamente');document.location.href='/Admin/ListadoGenero.aspx';", true);
