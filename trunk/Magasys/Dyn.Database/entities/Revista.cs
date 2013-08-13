@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace Dyn.Database.entities
 {
@@ -9,15 +9,26 @@ namespace Dyn.Database.entities
     {
         #region Constructores
 
-        public Revista() { }
+        public Revista() : base() { }
 
-        public Revista(Int32? idRev, Int32? idGen, Int32? idPeriod, Double? prec, string dia)
+        public Revista(Int32? idProd, DateTime? fechcreac, string nomb, string descrip, Int16? est, Int32? idProv, Int32? idRev,
+            Int32? idGen, Int32? idPeriod, Double? prec, string dia)
+            : base(idProd, fechcreac, nomb, descrip, est, idProv)
         {
             idRevista = base.IdProducto;
             idGenero = idGen;
             idPeriodicidad = idPeriod;
             precio = prec;
             diaSemana = dia;
+        }
+
+        public Revista(IDataRecord objp, IDataRecord objr)
+            : base(objp)
+        {
+            idGenero = Convert.ToInt32(objr["idGenero"]);
+            idPeriodicidad = Convert.ToInt32(objr["idPeriodicidad"]);
+            precio = Convert.ToDouble(objr["precio"]);
+            diaSemana = Convert.ToString(objr["diaSemana"]);
         }
 
         #endregion
