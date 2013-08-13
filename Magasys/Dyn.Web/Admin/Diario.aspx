@@ -128,7 +128,7 @@
                 <asp:Button CssClass="adminbutton" ID="btnCancelar" runat="server" Text="Cancelar"
                     OnClick="btnCancelar_Click" CausesValidation="False" />&nbsp;
                 <asp:Button CssClass="adminbutton" ID="btnEliminar" runat="server" Text="Eliminar"
-                    OnClick="btnEliminar_Click" CausesValidation="False" />
+                    OnClick="btnEliminar_Click" CausesValidation="False" OnClientClick="javascript:return confirm('Desea eliminar el Diario?');" />
             </td>
         </tr>
 

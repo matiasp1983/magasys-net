@@ -70,7 +70,7 @@ namespace Dyn.Web.Admin
             Entity.ResponsableApellido = txtResponsableApellido.Text.Trim();
             Entity.ResponsableNombre = txtResponsableNombre.Text.Trim();
             Entity.ResponsableEmail = txtResponsableEmail.Text.Trim();
-            Entity.Nombre = "";
+            Entity.Nombre = txtRazonSocial.Text.Trim();
             return Entity;
         }
 
