@@ -53,12 +53,19 @@ namespace Dyn.Database.logic
 
         public void Delete(int idColeccion)
         {
-        //    CreateCommand("usp_Coleccion", true);
-        //    AddCmdParameter("@idColeccion", idColeccion, ParameterDirection.Input);
-        //    AddCmdParameter("@idGenero", 0, ParameterDirection.Input);
-        //    AddCmdParameter("@idPeriodicidad", 3, ParameterDirection.Input);
+            CreateCommand("usp_Diario", true);
+            AddCmdParameter("@idDiario", idColeccion, ParameterDirection.Input);
+            AddCmdParameter("@estado", 0, ParameterDirection.Input);
+            AddCmdParameter("@Action", 3, ParameterDirection.Input);
 
-        //    ExecuteNonQuery();
+            ExecuteNonQuery();
+        }
+
+        public bool validarVentas(int idEntity)
+        {
+            // FALTA REALIZAR FUNCIONAMIENTO, por ahora no valida nada 
+
+            return true;
         }
 
     

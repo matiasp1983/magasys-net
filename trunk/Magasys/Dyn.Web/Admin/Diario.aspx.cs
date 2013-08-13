@@ -167,7 +167,7 @@ namespace Dyn.Web.Admin
                     }
 
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
-                    // Response.Redirect("ListadoColeccion.aspx");
+                    Response.Redirect("ListadoDiario.aspx?IdMenuCategoria=3");
                 }
 
             }
@@ -267,18 +267,19 @@ namespace Dyn.Web.Admin
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            Dyn.Database.logic.Producto pro = new Dyn.Database.logic.Producto();
+            Dyn.Database.logic.Diario diario = new Dyn.Database.logic.Diario();
             if (IdEntity != 0 && IdEntity != int.MinValue)
             {
                 lDiario = new Dyn.Database.logic.Diario();
-                if (pro.VerificaRelacionProducto(IdEntity) == 0)
+                if (diario.validarVentas(IdEntity))
                 {
                     lDiario.Delete(IdEntity);
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró la revista correctamente');document.location.href='/Admin/ListadoGenero.aspx';", true);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el género correctamente');document.location.href='/Admin/ListadoUsuario.aspx';", true);
+                    Response.Redirect("ListadoDiario.aspx?IdMenuCategoria=3");
                 }
                 else
                 {
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('No se puede eliminar la revista, porque está asociado a una transacción');", true);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('No se puede eliminar la coleccion, porque está asociado a una venta o reserva');", true);
                 }
             }
         }
@@ -290,7 +291,7 @@ namespace Dyn.Web.Admin
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ListadoDiario.aspx");
+            Response.Redirect("ListadoDiario.aspx?IdMenuCategoria=3");
         }
 
     }

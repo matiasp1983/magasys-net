@@ -119,7 +119,7 @@ namespace Dyn.Web.Admin
                     Entity.IdColeccion = Convert.ToInt16(lProducto.Insert(Entity));
                     lColeccion.Insert(Entity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
-                    // Response.Redirect("ListadoColeccion.aspx");
+                    Response.Redirect("ListadoColeccion.aspx?IdMenuCategoria=3");
                 }
 
             }
@@ -161,18 +161,19 @@ namespace Dyn.Web.Admin
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            Dyn.Database.logic.Producto pro = new Dyn.Database.logic.Producto();
+            Dyn.Database.logic.Coleccion coleccion = new Dyn.Database.logic.Coleccion();
             if (IdEntity != 0 && IdEntity != int.MinValue)
             {
                 lColeccion = new Dyn.Database.logic.Coleccion();
-                if (pro.VerificaRelacionProducto(IdEntity) == 0)
+                if (coleccion.validarVentas(IdEntity))
                 {
                     lColeccion.Delete(IdEntity);
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró la revista correctamente');document.location.href='/Admin/ListadoGenero.aspx';", true);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el género correctamente');document.location.href='/Admin/ListadoUsuario.aspx';", true);
+                    Response.Redirect("ListadoColeccion.aspx?IdMenuCategoria=3");
                 }
                 else
                 {
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('No se puede eliminar la revista, porque está asociado a una transacción');", true);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('No se puede eliminar la coleccion, porque está asociado a una venta o reserva');", true);
                 }
             }
         }
@@ -184,7 +185,7 @@ namespace Dyn.Web.Admin
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ListadoColeccion.aspx");
+            Response.Redirect("ListadoColeccion.aspx?IdMenuCategoria=3");
         }
 
     }

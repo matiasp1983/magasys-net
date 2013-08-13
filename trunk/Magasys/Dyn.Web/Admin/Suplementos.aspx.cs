@@ -155,7 +155,7 @@ namespace Dyn.Web.Admin
                     Entity.IdSuplemento = Convert.ToInt16(lProducto.Insert(Entity));
                     lSuplemento.Insert(Entity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
-                    // Response.Redirect("ListadoColeccion.aspx");
+                    Response.Redirect("ListadoSuplemento.aspx?IdMenuCategoria=3");
                 }
 
             }
@@ -199,20 +199,21 @@ namespace Dyn.Web.Admin
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            //Dyn.Database.logic.Suplemento rev = new Dyn.Database.logic.Suplemento();
-            //if (IdEntity != 0 && IdEntity != int.MinValue)
-            //{
-            //    lSuplemento = new Dyn.Database.logic.Suplemento();
-            //    if (rev.SeleccionarRevistaPorGenero(IdEntity) == 0)
-            //    {
-            //        lSuplemento.Delete(IdEntity);
-            //        ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró la revista correctamente');document.location.href='/Admin/ListadoGenero.aspx';", true);
-            //    }
-            //    else
-            //    {
-            //        ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('No se puede eliminar la revista, porque está asociado a una transacción');", true);
-            //    }
-            //}
+            Dyn.Database.logic.Suplemento suplemento = new Dyn.Database.logic.Suplemento();
+            if (IdEntity != 0 && IdEntity != int.MinValue)
+            {
+                lSuplemento = new Dyn.Database.logic.Suplemento();
+                if (suplemento.validarVentas(IdEntity))
+                {
+                    lSuplemento.Delete(IdEntity);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el género correctamente');document.location.href='/Admin/ListadoUsuario.aspx';", true);
+                    Response.Redirect("ListadoSuplemento.aspx?IdMenuCategoria=3");
+                }
+                else
+                {
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('No se puede eliminar la coleccion, porque está asociado a una venta o reserva');", true);
+                }
+            }
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
@@ -222,7 +223,7 @@ namespace Dyn.Web.Admin
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ListadoSuplemento.aspx");
+            Response.Redirect("ListadoSuplemento.aspx?IdMenuCategoria=3");
         }
 
     }
