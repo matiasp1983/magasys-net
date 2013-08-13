@@ -37,15 +37,27 @@ namespace Dyn.Database.logic
             return objProducto;
         }
 
-        private void AddParameters(Dyn.Database.entities.Producto objusuario)
+        public int VerificaRelacionProducto(int idProducto)
+        {
+            CreateCommand("usp_ExisteRelacionProducto", true);
+            AddCmdParameter("@idProducto", idProducto, ParameterDirection.Input);
+            AddCmdParameter("@idProductoOut", ParameterDirection.Output);
+            //ExecuteReader();
+            DataSet ds = GetDataSet();
+            int i = 0;
+            i = (int)GetValueCmdParameter("@idProductoOut");
+            return i;
+        }
+
+        private void AddParameters(Dyn.Database.entities.Producto objproducto)
         {
             CreateCommand("usp_Producto", true);
-            AddCmdParameter("@idProducto", objusuario.IdProducto, ParameterDirection.Input);
-            AddCmdParameter("@fechaCreacion", objusuario.Fechacreacion , ParameterDirection.Input);
-            AddCmdParameter("@nombre", objusuario.Nombre, ParameterDirection.Input);
-            AddCmdParameter("@descripcion", objusuario.Descripcion, ParameterDirection.Input);
-            AddCmdParameter("@estado", objusuario.Estado, ParameterDirection.Input);
-            AddCmdParameter("@idProveedor", objusuario.IdProveedor, ParameterDirection.Input);
+            AddCmdParameter("@idProducto", objproducto.IdProducto, ParameterDirection.Input);
+            AddCmdParameter("@fechaCreacion", objproducto.Fechacreacion, ParameterDirection.Input);
+            AddCmdParameter("@nombre", objproducto.Nombre, ParameterDirection.Input);
+            AddCmdParameter("@descripcion", objproducto.Descripcion, ParameterDirection.Input);
+            AddCmdParameter("@estado", objproducto.Estado, ParameterDirection.Input);
+            AddCmdParameter("@idProveedor", objproducto.IdProveedor, ParameterDirection.Input);
 
         }
 
@@ -137,7 +149,19 @@ namespace Dyn.Database.logic
             }
             return Collection;
         }
+
+        public int VerificaRelacionProducto(int idProducto)
+        {
+            CreateCommand("usp_ExisteRelacionProducto", true);
+            AddCmdParameter("@idProducto", idProducto, ParameterDirection.Input);
+            AddCmdParameter("@idProductoOut", ParameterDirection.Output);
+            //ExecuteReader();
+            DataSet ds = GetDataSet();
+            int i = 0;
+            i = (int)GetValueCmdParameter("@idProductoOut");
+            return i;
+        }
     }
 
-    
+
 }
