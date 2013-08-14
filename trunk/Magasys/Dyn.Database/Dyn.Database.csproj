@@ -58,6 +58,7 @@
     <Compile Include="entities\Pelicula.cs" />
     <Compile Include="entities\Periodicidad.cs" />
     <Compile Include="entities\Producto.cs" />
+    <Compile Include="entities\ProductoEdicion.cs" />
     <Compile Include="entities\ProductoFoto.cs" />
     <Compile Include="entities\Proveedor.cs" />
     <Compile Include="entities\Provincia.cs" />
@@ -66,10 +67,12 @@
     <Compile Include="entities\TipoProducto.cs" />
     <Compile Include="entities\Venta.cs" />
     <Compile Include="logic\Coleccion.cs" />
+    <Compile Include="logic\DetalleIngreso.cs" />
     <Compile Include="logic\Diario.cs" />
     <Compile Include="logic\DiarioPorDia.cs" />
     <Compile Include="logic\FactoryBase.cs" />
     <Compile Include="logic\Genero.cs" />
+    <Compile Include="logic\Ingreso.cs" />
     <Compile Include="logic\Libro.cs" />
     <Compile Include="logic\Localidad.cs" />
     <Compile Include="logic\MenuCategoria.cs" />

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace Dyn.Database.entities
 {
-    class IngresoProducto
+    public class IngresoProducto
     {
         #region Constructores
 
@@ -18,6 +18,15 @@ namespace Dyn.Database.entities
             estado = est;
             idProveedor = idProv;
         }
+
+        public IngresoProducto(IDataRecord obj)
+		{
+            idIngresoProducto = Convert.ToInt32(obj["idIngresoProductos"]);
+            fecha = Convert.ToDateTime(obj["fecha"]);
+            estado = Convert.ToInt16(obj["estado"]);
+            idProveedor = Convert.ToInt32(obj["idProveedor"]);
+
+		}
 
         #endregion
 
@@ -55,6 +64,28 @@ namespace Dyn.Database.entities
             set { idProveedor = value; }
         }
 
+        private List<DetalleIngresoProducto> detalleIngreso = new List<DetalleIngresoProducto>();
+
         #endregion
+
+        #region Operaciones
+
+        public void CargarDetalles()
+        {
+            Dyn.Database.logic.DetalleIngreso lDetalleIngreso = new Dyn.Database.logic.DetalleIngreso();
+            detalleIngreso = lDetalleIngreso.SeleccionarDetallesPorIngreso(idIngresoProducto);
+        }
+        public List<DetalleIngresoProducto> ObtenerDetalles()
+        {
+            return detalleIngreso;
+        }
+        public void AgregarDetalle(Dyn.Database.entities.DetalleIngresoProducto objDetalle)
+        {
+            detalleIngreso.Add(objDetalle);
+        }
+        
+
     }
+
+
 }

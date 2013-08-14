@@ -12,7 +12,7 @@ namespace Dyn.Web.controls
     {
         private Dyn.Database.logic.Producto lProducto;
         private int numeropaginas;
-        public Dyn.Database.entities.Suplemento Entity;
+        public Dyn.Database.entities.Producto Entity;
 
         public int IdEntity
         {

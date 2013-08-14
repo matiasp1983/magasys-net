@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Data;
 using System.Text;
 
 namespace Dyn.Database.entities
 {
-    class DetalleIngresoProducto
+    public class DetalleIngresoProducto
     {
         #region Constructores
 
         public DetalleIngresoProducto() { }
 
         public DetalleIngresoProducto(Int32? idDetalleIngProd, Int32? idIngrProd, Int32? idProd, Int32? cantidadUnid, DateTime? fechaDevol,
-            Int16? est)
+            Int16? est, Int32? idProdEdi)
         {
             idDetalleIngresoProducto = idDetalleIngProd;
             idIngresoProductos = idIngrProd;
@@ -20,14 +20,26 @@ namespace Dyn.Database.entities
             cantidadUnidades = cantidadUnid;
             fechaDevolucion = fechaDevol;
             estado = est;
+            idProductoEdicion = idProdEdi;
         }
+
+        public DetalleIngresoProducto(IDataRecord obj)
+		{
+            idDetalleIngresoProducto = Convert.ToInt32(obj["idDetalleIngresoProducto"]);
+            idIngresoProductos = Convert.ToInt32(obj["idIngresoProductos"]);
+            cantidadUnidades = Convert.ToInt32(obj["cantidadUnidades"]);
+            fechaDevolucion = Convert.ToDateTime(obj["fechaDevolucion"]);
+            estado = Convert.ToInt16(obj["estado"]);
+            idProducto = Convert.ToInt32(obj["idProducto"]);
+            idProductoEdicion = Convert.ToInt32(obj["idProductoEdicion"]);
+
+		}
 
         #endregion
 
         #region Propiedades
 
         private Int32? idDetalleIngresoProducto;
-
         public Int32? IdDetalleIngresoProducto
         {
             get { return idDetalleIngresoProducto; }
@@ -35,7 +47,6 @@ namespace Dyn.Database.entities
         }
         
         private Int32? idIngresoProductos;
-
         public Int32? IdIngresoProductos
         {
             get { return idIngresoProductos; }
@@ -43,15 +54,20 @@ namespace Dyn.Database.entities
         }
 
         private Int32? idProducto;
-
         public Int32? IdProducto
         {
             get { return idProducto; }
             set { idProducto = value; }
         }
 
-        private Int32? cantidadUnidades;
+        private Int32? idProductoEdicion;
+        public Int32? IdProductoEdicion
+        {
+            get { return idProductoEdicion; }
+            set { idProductoEdicion = value; }
+        }
 
+        private Int32? cantidadUnidades;
         public Int32? CantidadUnidades
         {
             get { return cantidadUnidades; }
@@ -59,7 +75,6 @@ namespace Dyn.Database.entities
         }
 
         private DateTime? fechaDevolucion;
-
         public DateTime? FechaDevolucion
         {
             get { return fechaDevolucion; }
@@ -67,7 +82,6 @@ namespace Dyn.Database.entities
         }
 
         private Int16? estado;
-
         public Int16? Estado
         {
             get { return estado; }
