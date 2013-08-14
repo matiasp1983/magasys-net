@@ -11,7 +11,7 @@ namespace Dyn.Database.entities
 
         public ProductoEdicion() { }
 
-        public ProductoEdicion(Int32? idProdEdi, Int32? idProd, Int32? est, Double? prec, Int16? cantDisp, String? desc)
+        public ProductoEdicion(Int32? idProdEdi, Int32? idProd, Int32? est, Double? prec, Int16? cantDisp, string desc)
         {
             idProductoEdicion = idProdEdi;
             idProducto = idProd;
@@ -72,8 +72,8 @@ namespace Dyn.Database.entities
             set { precio = value; }
         }
 
-        private String? descripcion;
-        public String? Descripcion
+        private string descripcion;
+        public string Descripcion
         {
             get { return descripcion; }
             set { descripcion = value; }

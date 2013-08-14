@@ -2,6 +2,9 @@
 
 <%@ Register Assembly="CollectionPager" Namespace="SiteUtils" TagPrefix="cc1" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="act" %>
+<%@ Register src="../controls/Login.ascx" tagname="Login" tagprefix="uc2" %>
+<%@ Register src="../controls/MenuAdminCategoria.ascx" tagname="MenuAdmin" tagprefix="uc1" %>
+
 
     <style type="text/css">
         .style1
@@ -108,7 +111,7 @@
                                     <ItemTemplate>
                                         <tr>
                                             <td width="234">
-                                                <asp:HyperLink ID="hpNombre" CssClass="tittleprecios03" NavigateUrl='<%# "~/Admin/Ingresos.aspx?IdPrdo=" + Eval("IdProducto") %>'
+                                                <asp:HyperLink ID="hpNombre" CssClass="tittleprecios03" NavigateUrl='<%# "~/Admin/Ingresos.aspx?IdProd=" + Eval("IdProducto") %>'
                                                     Text='<%# Eval("Nombre") %>' runat="server"></asp:HyperLink>
                                             </td>
                                             <td width="233">

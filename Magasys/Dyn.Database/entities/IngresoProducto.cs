@@ -83,8 +83,8 @@ namespace Dyn.Database.entities
         {
             detalleIngreso.Add(objDetalle);
         }
-        
 
+        #endregion
     }
 
 
