@@ -13,6 +13,24 @@ namespace Dyn.Web.Admin {
     public partial class Ingresos {
         
         /// <summary>
+        /// txtNumeroVenta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNumeroVenta;
+        
+        /// <summary>
+        /// txtCliente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCliente;
+        
+        /// <summary>
         /// calFecha control.
         /// </summary>
         /// <remarks>
@@ -38,6 +56,15 @@ namespace Dyn.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Dyn.Web.controls.WUCBuscarProducto WUCBuscarProducto1;
+        
+        /// <summary>
+        /// repDetalle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repDetalle;
         
         /// <summary>
         /// btnGuardar control.

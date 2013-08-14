@@ -7,9 +7,10 @@
         .style1
         {
             font-style: normal;
-            color: #7f7f7f; /*font-size: 11px;*/
+            color: #7f7f7f;
             font-weight: bold;
             height: 45px;
+            width: 193px;
         }
         .style2
         {
@@ -30,11 +31,11 @@
                 <tr>
                     <td colspan="3" class="tittleproducto" width="700" align="left">
                         <h2>
-                            Listado de Colecciones</h2>
+                            Listado de Productos</h2>
                     </td>
                 </tr>
                 <tr>
-                    <td width="233" class="style1" align="left" valign="middle">
+                    <td class="style1" align="left" valign="middle">
                         Proveedor:
                     </td>
             <td>
@@ -46,14 +47,14 @@
 
                 </tr>
                 <tr>
-                    <td width="233" class="style1" align="left" valign="middle">
-                        Nombre Coleccion:
+                    <td class="style1" align="left" valign="middle">
+                        Nombre Producto:
                     </td>
                     <td width="234" align="left" valign="middle" class="style2">
-                        <asp:TextBox ID="txtNombreColeccion" runat="server" CssClass="tittleprecios03" ValidationGroup="busqueda"
+                        <asp:TextBox ID="txtNombreProducto" runat="server" CssClass="tittleprecios03" ValidationGroup="busqueda"
                             Width="234"></asp:TextBox><br />
                         <act:AutoCompleteExtender ID="AutoCompleteExtender2" runat="server" MinimumPrefixLength="1"
-                            TargetControlID="txtNombreColeccion" ServicePath="~/WebService/AutoComplete.asmx"
+                            TargetControlID="txtNombreProducto" ServicePath="~/WebService/AutoComplete.asmx"
                             ServiceMethod="InformacionAutocompletarRevistasPorProveedor" CompletionInterval="1000"
                             CompletionSetCount="12" UseContextKey="True">
                         </act:AutoCompleteExtender>
@@ -62,20 +63,17 @@
                        <%-- <asp:Button ID="Button1" CssClass="adminbutton" runat="server" Text="Buscar" OnClick="btnBuscar_Click"
                             ValidationGroup="busqueda" />--%>
                             <asp:Button ID="Button2" CssClass="adminbutton" runat="server" Text="Buscar" 
-                            ValidationGroup="busqueda" />
+                            ValidationGroup="busqueda" onclick="Button2_Click" />
                     </td>
+                </tr>
+
+                <tr>
+                    <td colspan="3" width="700" align="left">
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td colspan="3" width="700" align="left">
-                        <%--<asp:Button ID="btnAdicionarRevista" CssClass="adminbutton" runat="server" Text="Adicionar Coleccion"
-                            CausesValidation="False" OnClick="btnAdicionarRevista_Click" />--%>
-                            <asp:Button ID="btnAdicionarRevista" CssClass="adminbutton" runat="server" Text="Adicionar Coleccion"
-                            CausesValidation="False"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3" width="700" align="left">
-                        <div id="tableHeader">
+&nbsp;<div id="tableHeader">
                         </div>
                         <table width="100%" border="0" cellpadding="0" cellspacing="0">
                             <tr>
@@ -103,7 +101,7 @@
                         </table>
                         <div style="overflow: scroll; height: 295px; width: 100%">
                             <div>
-                                <asp:Repeater ID="repColeccion" runat="server">
+                                <asp:Repeater ID="repProducto" runat="server">
                                     <HeaderTemplate>
                                         <table width="100%" border="0" cellpadding="0" cellspacing="0">
                                     </HeaderTemplate>

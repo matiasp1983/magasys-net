@@ -21,6 +21,10 @@
         {
             height: 45px;
         }
+        .style3
+        {
+            height: 565px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
@@ -30,9 +34,21 @@
                 Numero de Venta:
             </td>
             <td align="left" width="150">
-               <%-- <asp:TextBox ID="txtNumeroVenta" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Nombre %>"></asp:TextBox><br />--%>
+                <asp:TextBox ID="txtNumeroVenta" runat="server" CssClass="tittleprecios03" 
+                    Enabled="False"></asp:TextBox><br />
             </td>
         </tr>
+
+                <tr>
+            <td class="style1" align="left">
+                Cliente:
+            </td>
+            <td align="left" width="150">
+                <asp:TextBox ID="txtCliente" runat="server" CssClass="tittleprecios03" 
+                    Enabled="False"></asp:TextBox><br />
+            </td>
+        </tr>
+
         <tr>
             <td class="style1" align="left">
                 Fecha (*)
@@ -45,15 +61,92 @@
             <td colspan="2">
                <%-- <asp:Button CssClass="adminbutton" ID="btnMostrarProductos" runat="server" Text="MostrarProductos"
                     OnClick="btnGuardar_Click" />&nbsp;--%>
-                     <asp:Button CssClass="adminbutton" ID="btnMostrarProductos" runat="server" Text="MostrarProductos"
+                     <asp:Button CssClass="adminbutton" ID="btnMostrarProductos" runat="server" 
+                    Text="MostrarProductos" onclick="btnMostrarProductos_Click"
                    />&nbsp;
             </td>
         </tr>
         <tr>
-            <td colspan="2">
-                <uc3:WUCBuscarProducto ID="WUCBuscarProducto1" runat="server" />
+            <td colspan="2" class="style3">
+                <uc3:WUCBuscarProducto ID="WUCBuscarProducto1" runat="server" Visible="False" />
             </td>
         </tr>
+
+        <tr>
+                    <td colspan="3" width="700" align="left">
+&nbsp;<div id="tableHeader">
+                        </div>
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="234" class="tittleproducto">
+                                    Nombre
+                                    <br />
+                                    <hr />
+                                </td>
+                                <td width="233" class="tittleproducto">
+                                    Descripci&oacute;n
+                                    <br />
+                                    <hr />
+                                </td>
+                                <%-- <td width="233" class="tittleproducto">
+                                    Cantidad
+                                    <br />
+                                    <hr />
+                                </td>--%>
+                                <td width="233" class="tittleproducto">
+                                    Precio
+                                    <br />
+                                    <hr />
+                                </td>
+                                <td width="233" class="tittleproducto">
+                                    Cantidad
+                                    <br />
+                                    <hr />
+                                </td>
+                                <td width="233" class="tittleproducto">
+                                    Subtotal
+                                    <br />
+                                    <hr />
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="overflow: scroll; height: 295px; width: 100%">
+                            <div>
+                                <asp:Repeater ID="repDetalle" runat="server">
+                                    <HeaderTemplate>
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <tr>
+                                            <td width="234">
+                                                <asp:Label ID="lblProducto" CssClass="tittleprecios03" Text='<%# Eval("Nombre") %>' runat="server"></asp:Label>
+                                            </td>
+                                            <td width="233">
+                                                <asp:Label ID="lblDescripcion" CssClass="tittleprecios03" Text='<%# Eval("Descripcion") %>'
+                                                    runat="server"></asp:Label>
+                                            </td>
+                                            <td width="233">
+                                                <asp:Label ID="lblPrecio" CssClass="tittleprecios03" Text='<%# Eval("Descripcion") %>'
+                                                    runat="server"></asp:Label>
+                                            </td>
+                                            <td width="233">
+                                                <asp:TextBox ID="txtCantidad" CssClass="tittleprecios03" Text='<%# Eval("nomProveedor") %>'
+                                                    runat="server"></asp:TextBox>
+                                            </td>
+                                                                                        <td width="233">
+                                                <asp:Label ID="lblSubtotal" CssClass="tittleprecios03" Text='<%# Eval("nomProveedor") %>'
+                                                    runat="server"></asp:Label>
+                                            </td>
+                                        </tr>
+                                    </ItemTemplate>
+                                    <FooterTemplate>
+                                        </table>
+                                    </FooterTemplate>
+                                </asp:Repeater>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
         <%--  Control de Botones --%>
         <tr>
             <td colspan="2" style="height: 24px">
