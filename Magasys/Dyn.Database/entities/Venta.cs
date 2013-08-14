@@ -1,22 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace Dyn.Database.entities
 {
-    class Venta
+    public class Venta
     {
         #region Constructores
+
         public Venta() { }
 
-        public Venta(Int32? idVen, DateTime fech, Int16? est, Double? montot)
+        public Venta(Int32? idVen, DateTime? fech, Int16? est, Double? montot)
         {
             idVenta = idVen;
             fecha = fech;
             estado = est;
             montotal = montot;
         }
+
+        public Venta(IDataRecord obj)
+		{
+            idVenta = Convert.ToInt32(obj["idVenta"]);
+            fecha = Convert.ToDateTime(obj["fecha"]);
+            estado = Convert.ToInt16(obj["estado"]);
+            montotal = Convert.ToDouble(obj["total"]);
+		}
 
         #endregion
 
@@ -30,20 +39,33 @@ namespace Dyn.Database.entities
             set { idVenta = value; }
         }
 
-        private DateTime fecha;
+        private DateTime? fecha;
 
-        public DateTime Fecha
+        public DateTime? Fecha
         {
             get { return fecha; }
             set { fecha = value; }
         }
 
-        private Int16? estado;
+        private Int16? estado = null;
 
-        public Int16? Estado
+        public enum VentaEstado
         {
-            get { return estado; }
-            set { estado = value; }
+            Confirmado = 1,
+            Elimado = 0,
+            Cancelado = 2
+        }
+
+        public VentaEstado Estado
+        {
+            get
+            {
+                return (VentaEstado)estado;
+            }
+            set
+            {
+                estado = (Int16)value;
+            }
         }
 
         private Double? montotal;
