@@ -25,6 +25,42 @@
         {
             height: 565px;
         }
+        .style8
+        {
+            font-weight: bold;
+            font-style: normal;
+            color: #0e85cd;
+            text-decoration: none;
+            font-weight: bold;
+            width: 92px;
+        }
+        .style9
+        {
+            font-weight: bold;
+            font-style: normal;
+            color: #0e85cd;
+            text-decoration: none;
+            font-weight: bold;
+            width: 100px;
+        }
+        .style10
+        {
+            font-weight: bold;
+            font-style: normal;
+            color: #0e85cd;
+            text-decoration: none;
+            font-weight: bold;
+            width: 287px;
+        }
+        .style11
+        {
+            font-weight: bold;
+            font-style: normal;
+            color: #0e85cd;
+            text-decoration: none;
+            font-weight: bold;
+            width: 190px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
@@ -78,12 +114,12 @@
                         </div>
                         <table width="100%" border="0" cellpadding="0" cellspacing="0">
                             <tr>
-                                <td width="234" class="tittleproducto">
+                                <td class="style11">
                                     Nombre
                                     <br />
                                     <hr />
                                 </td>
-                                <td width="233" class="tittleproducto">
+                                <td class="style10">
                                     Descripci&oacute;n
                                     <br />
                                     <hr />
@@ -93,12 +129,12 @@
                                     <br />
                                     <hr />
                                 </td>--%>
-                                <td width="233" class="tittleproducto">
+                                <td class="style8">
                                     Precio
                                     <br />
-                                    <hr />
+                                    <hr style="margin-right: 52px" />
                                 </td>
-                                <td width="233" class="tittleproducto">
+                                <td class="style9">
                                     Cantidad
                                     <br />
                                     <hr />
@@ -118,25 +154,31 @@
                                     </HeaderTemplate>
                                     <ItemTemplate>
                                         <tr>
-                                            <td width="234">
-                                                <asp:Label ID="lblProducto" CssClass="tittleprecios03" Text='<%# Eval("Nombre") %>' runat="server"></asp:Label>
+                                            <td>
+                                                <asp:Label ID="lblProducto" CssClass="tittleprecios03" Text='<%# Eval("Nombre") %>' runat="server" Width="100"></asp:Label>
                                             </td>
-                                            <td width="233">
+                                            <td>
                                                 <asp:Label ID="lblDescripcion" CssClass="tittleprecios03" Text='<%# Eval("Descripcion") %>'
-                                                    runat="server"></asp:Label>
+                                                    runat="server" Width="150"></asp:Label>
                                             </td>
-                                            <td width="233">
-                                                <asp:Label ID="lblPrecio" CssClass="tittleprecios03" Text='<%# Eval("Descripcion") %>'
-                                                    runat="server"></asp:Label>
+                                            <td>
+                                                <asp:TextBox ID="txtPrecio" CssClass="tittleprecios03" runat="server" Width="50"></asp:TextBox>
+                                                    
                                             </td>
-                                            <td width="233">
-                                                <asp:TextBox ID="txtCantidad" CssClass="tittleprecios03" Text='<%# Eval("nomProveedor") %>'
-                                                    runat="server"></asp:TextBox>
+                                            <td>
+                                                <asp:TextBox ID="txtCantidad" CssClass="tittleprecios03" runat="server" Width="50"></asp:TextBox>
+                                                    
                                             </td>
-                                                                                        <td width="233">
-                                                <asp:Label ID="lblSubtotal" CssClass="tittleprecios03" Text='<%# Eval("nomProveedor") %>'
-                                                    runat="server"></asp:Label>
+                                            <td>
+                                                <asp:TextBox ID="txtSubtotal" CssClass="tittleprecios03" runat="server" Enabled="False" Width="50"></asp:TextBox>
+                                                    
                                             </td>
+                                            <td>
+                                               <asp:Button CssClass="adminbutton" ID="btnQuitar" runat="server" Text="Quitar"
+                    />&nbsp;
+                                            </td>
+
+
                                         </tr>
                                     </ItemTemplate>
                                     <FooterTemplate>
@@ -151,13 +193,6 @@
         <tr>
             <td colspan="2" style="height: 24px">
                 <br />
-               <%-- <asp:Button CssClass="adminbutton" ID="btnGuardar" runat="server" Text="Guardar"
-                    OnClick="btnGuardar_Click" />&nbsp;
-                <asp:Button CssClass="adminbutton" ID="btnCancelar" runat="server" Text="Cancelar"
-                    OnClick="btnCancelar_Click" CausesValidation="False" />&nbsp;
-                <asp:Button CssClass="adminbutton" ID="btnEliminar" runat="server" Text="Anular"
-                    OnClick="btnEliminar_Click" CausesValidation="False" OnClientClick="javascript:return confirm('Desea eliminar la Coleccion?');"
-                    Visible="False" />--%>
                      <asp:Button CssClass="adminbutton" ID="btnGuardar" runat="server" Text="Guardar"
                     />&nbsp;
                 <asp:Button CssClass="adminbutton" ID="btnCancelar" runat="server" Text="Cancelar"
