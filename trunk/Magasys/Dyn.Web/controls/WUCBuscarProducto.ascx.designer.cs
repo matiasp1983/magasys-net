@@ -40,13 +40,13 @@ namespace Dyn.Web.controls {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// txtNombreColeccion control.
+        /// txtNombreProducto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreColeccion;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreProducto;
         
         /// <summary>
         /// AutoCompleteExtender2 control.
@@ -67,21 +67,12 @@ namespace Dyn.Web.controls {
         protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// btnAdicionarRevista control.
+        /// repProducto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdicionarRevista;
-        
-        /// <summary>
-        /// repColeccion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repColeccion;
+        protected global::System.Web.UI.WebControls.Repeater repProducto;
     }
 }
