@@ -59,14 +59,18 @@
                         </act:AutoCompleteExtender>
                     </td>
                     <td width="233" align="left" class="style2">
-                        <asp:Button ID="Button1" CssClass="adminbutton" runat="server" Text="Buscar" OnClick="btnBuscar_Click"
+                       <%-- <asp:Button ID="Button1" CssClass="adminbutton" runat="server" Text="Buscar" OnClick="btnBuscar_Click"
+                            ValidationGroup="busqueda" />--%>
+                            <asp:Button ID="Button2" CssClass="adminbutton" runat="server" Text="Buscar" 
                             ValidationGroup="busqueda" />
                     </td>
                 </tr>
                 <tr>
                     <td colspan="3" width="700" align="left">
-                        <asp:Button ID="btnAdicionarRevista" CssClass="adminbutton" runat="server" Text="Adicionar Coleccion"
-                            CausesValidation="False" OnClick="btnAdicionarRevista_Click" />
+                        <%--<asp:Button ID="btnAdicionarRevista" CssClass="adminbutton" runat="server" Text="Adicionar Coleccion"
+                            CausesValidation="False" OnClick="btnAdicionarRevista_Click" />--%>
+                            <asp:Button ID="btnAdicionarRevista" CssClass="adminbutton" runat="server" Text="Adicionar Coleccion"
+                            CausesValidation="False"/>
                     </td>
                 </tr>
                 <tr>
