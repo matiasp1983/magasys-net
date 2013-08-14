@@ -4,6 +4,7 @@
 <%@ MasterType VirtualPath="~/Masters/Admin.Master" %>
 <%@ Register Assembly="CollectionPager" Namespace="SiteUtils" TagPrefix="cc1" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="act" %>
+
 <%@ Register Src="../controls/Login.ascx" TagName="Login" TagPrefix="uc2" %>
 <%@ Register Src="../controls/MenuAdminCategoria.ascx" TagName="MenuAdmin" TagPrefix="uc1" %>
 <%@ Register Src="../controls/WUCBuscarProducto.ascx" TagName="WUCBuscarProducto"

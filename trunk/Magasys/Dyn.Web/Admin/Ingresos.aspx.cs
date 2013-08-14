@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Data;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-using System.logic;
+using Dyn.Database.logic;
+using Dyn.Database.entities;
 
 namespace Dyn.Web.Admin
 {
     public partial class Ingresos : System.Web.UI.Page
     {
-
+        private int numeropaginas;
         private Dyn.Database.logic.Producto lProducto;
         public Dyn.Database.entities.Producto newProducto;
         private Dyn.Database.logic.Ingreso lIngreso;
@@ -42,47 +42,9 @@ namespace Dyn.Web.Admin
         {
             if (!IsPostBack)
             {
-                //CargarProducto("", "0");
-                //LlenarProveedor();
                 WUCBuscarProducto1.Visible = false;
                 calFecha.SelectedDate = DateTime.Today;
-                if (Request["Id"] == null)
-                {
-                    IdEntity = 0;
-                    // Entity = new Dyn.Database.entities.Proveedor();
-                    //DataSet ds = lProveedor.SeleccionarProveedorPorNombrePaginadoAdmin(criterio, Pagina, ref numeropaginas);
-                    //int[] array;
-                    //array = new int[numeropaginas];
-                    //CollectionPager.DataSource = array;
-                    //CollectionPager.DataBind();
-                    repDetalle.DataSource = ds;
-                    repDetalle.DataBind();
-                }
-                else
-                    if (Request["Id"] != null)
-                    {
-                        IdEntity = Convert.ToInt32(Request["Id"]);
-                        //Entity = lProveedor.Load(IdEntity);
-                        //lstLocalidades.SelectedValue = Entity.IdLocalidad.ToString();
-                    }
-                DataBind();
 
-            }
-            else
-            {   if (Request["IdProd"] != null && Convert.ToInt32(Request["IdProd"]) != IdEntity)
-                {
-                    int idProd = Convert.ToInt32(Request["Id"]);
-                    newProducto = lProducto.Load(idProd);
-                    // repDetalle
-                }
-                else
-                    if (Request["Id"] != null)
-                    {
-
-                      //  Entity = lProveedor.Load(IdEntity);
-                       // lstLocalidades.SelectedValue = Entity.IdLocalidad.ToString();
-                    }
-                DataBind();
             }
         }
 
