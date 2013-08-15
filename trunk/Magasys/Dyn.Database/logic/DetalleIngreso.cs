@@ -45,7 +45,7 @@ namespace Dyn.Database.logic
             AddCmdParameter("@cantidadUnidades", objusuario.CantidadUnidades, ParameterDirection.Input);
             AddCmdParameter("@fechaDevolucion", objusuario.FechaDevolucion, ParameterDirection.Input);
             AddCmdParameter("@estado", objusuario.Estado, ParameterDirection.Input);
-            AddCmdParameter("@idProducto", objusuario.IdProducto, ParameterDirection.Input);
+            AddCmdParameter("@idProducto", objusuario.Producto.IdProducto, ParameterDirection.Input);
             AddCmdParameter("@idProductoEdicion", objusuario.IdProductoEdicion, ParameterDirection.Input);
         }
 
