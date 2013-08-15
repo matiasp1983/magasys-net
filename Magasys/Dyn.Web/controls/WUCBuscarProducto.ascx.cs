@@ -10,6 +10,8 @@ namespace Dyn.Web.controls
 {
     public partial class WUCBuscarProducto : System.Web.UI.UserControl
     {
+        public event EventHandler SeleccionoProducto;
+        
         private Dyn.Database.logic.Producto lProducto;
         private int numeropaginas;
         public Dyn.Database.entities.Producto Entity;
@@ -43,6 +45,7 @@ namespace Dyn.Web.controls
             {
                 CargarProducto("", "0");
                 LlenarProveedor();
+                
                 
             }
 
@@ -107,6 +110,18 @@ namespace Dyn.Web.controls
                 }
             }
         }
+        protected void hpNombre_Click(object sender, EventArgs e)
+        {
+            System.Web.UI.WebControls.LinkButton link = (System.Web.UI.WebControls.LinkButton)sender;
+            IdEntity = int.Parse(link.Text);
+            
+            if (SeleccionoProducto != null)
+            {
+                SeleccionoProducto(this, new EventArgs());
+            }
+
+        }
+
 
     }
 }

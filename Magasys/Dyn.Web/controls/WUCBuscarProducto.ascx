@@ -2,8 +2,7 @@
 
 <%@ Register Assembly="CollectionPager" Namespace="SiteUtils" TagPrefix="cc1" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="act" %>
-<%@ Register src="../controls/Login.ascx" tagname="Login" tagprefix="uc2" %>
-<%@ Register src="../controls/MenuAdminCategoria.ascx" tagname="MenuAdmin" tagprefix="uc1" %>
+<%@ Register src="Login.ascx" tagname="Login" tagprefix="uc2" %><%@ Register src="MenuAdminCategoria.ascx" tagname="MenuAdmin" tagprefix="uc1" %>
 
 
     <style type="text/css">
@@ -19,9 +18,13 @@
         {
             height: 45px;
         }
+        .style3
+        {
+            width: 319px;
+        }
     </style>
 
-        <table width="100%" cellpadding="0" cellspacing="5">
+        <table width="100%">
                 <tr>
                     <td colspan="3">
                         <cc1:CollectionPager ID="CollectionPager" runat="server" PageSize="100" PagingMode="QueryString"
@@ -70,17 +73,14 @@
                     </td>
                 </tr>
 
+                </table>
+            <table width="100%">
+
                 <tr>
-                    <td colspan="3" width="700" align="left">
-                        &nbsp;</td>
-                </tr>
-                <tr>
-                    <td colspan="3" width="700" align="left">
-&nbsp;<div id="tableHeader">
-                        </div>
-                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <td width="700" align="left">
+                       <table width="100%" border="0">
                             <tr>
-                                <td width="234" class="tittleproducto">
+                                <td class="style3">
                                     Nombre
                                     <br />
                                     <hr />
@@ -102,21 +102,26 @@
                                 </td>
                             </tr>
                         </table>
-                        <div style="overflow: scroll; height: 295px; width: 100%">
-                            <div>
-                                <asp:Repeater ID="repProducto" runat="server">
+                            <asp:Repeater ID="repProducto" runat="server">
                                     <HeaderTemplate>
-                                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                        <table width="100%" border="0">
                                     </HeaderTemplate>
                                     <ItemTemplate>
                                         <tr>
-                                            <td width="234">
-                                                <asp:HyperLink ID="hpNombre" CssClass="tittleprecios03" NavigateUrl='<%# "~/Admin/Ingresos.aspx?IdProd=" + Eval("IdProducto") %>'
-                                                    Text='<%# Eval("Nombre") %>' runat="server"></asp:HyperLink>
+                                            <td width="25">
+                                                <asp:LinkButton ID="lnkID" CssClass="tittleprecios03" runat="server" OnClick="hpNombre_Click"
+                                                    Text='<%# Eval("IdProducto") %>'></asp:LinkButton>
                                             </td>
+
+                                             <td width="233">
+                                                <asp:Label ID="lblNombre" CssClass="tittleprecios03" Text='<%# Eval("Nombre") %>'
+                                                    runat="server"></asp:Label>
+                                            </td>
+
                                             <td width="233">
                                                 <asp:Label ID="lblDescripcion" CssClass="tittleprecios03" Text='<%# Eval("Descripcion") %>'
                                                     runat="server"></asp:Label>
+
                                             </td>
                                             <%--                                            <td width="233">
                                                 <asp:Label ID="lblCantidad" CssClass="tittleprecios03" Text='<%# Eval("Cantidaddisponible") %>'
@@ -132,9 +137,8 @@
                                         </table>
                                     </FooterTemplate>
                                 </asp:Repeater>
-                            </div>
-                        </div>
+                            
                     </td>
                 </tr>
-            </table>
+                </table>
 

@@ -62,6 +62,10 @@
             font-weight: bold;
             width: 190px;
         }
+        .style12
+        {
+            width: 319px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
@@ -104,7 +108,7 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2" class="style3">
+            <td colspan="2" class="style12">
                 <uc3:WUCBuscarProducto ID="WUCBuscarProducto1" runat="server" Visible="False" />
             </td>
         </tr>
@@ -156,10 +160,10 @@
                                     <ItemTemplate>
                                         <tr>
                                             <td>
-                                                <asp:Label ID="lblProducto" CssClass="tittleprecios03" Text='<%# Eval("Nombre") %>' runat="server" Width="100"></asp:Label>
+                                                <asp:Label ID="lblProducto" CssClass="tittleprecios03" Text='<%# Eval("Producto.Nombre") %>' runat="server" Width="100"></asp:Label>
                                             </td>
                                             <td>
-                                                <asp:Label ID="lblDescripcion" CssClass="tittleprecios03" Text='<%# Eval("Descripcion") %>'
+                                                <asp:Label ID="lblDescripcion" CssClass="tittleprecios03" Text='<%# Eval("Producto.Descripcion") %>'
                                                     runat="server" Width="150"></asp:Label>
                                             </td>
                                             <td>
@@ -175,7 +179,7 @@
                                                     
                                             </td>
                                             <td>
-                                               <asp:Button CssClass="adminbutton" ID="btnQuitar" runat="server" Text="Quitar"
+                                               <asp:Button CssClass="adminbutton" ID="btnQuitar" runat="server" Text="Quitar" OnClick="btnQuitar_Click"
                     />&nbsp;
                                             </td>
 
