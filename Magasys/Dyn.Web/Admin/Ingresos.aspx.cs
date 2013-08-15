@@ -29,6 +29,7 @@ namespace Dyn.Web.Admin
                 ViewState["IdEntity"] = value;
             }
         }
+
         public int Pagina
         {
             get
@@ -118,5 +119,35 @@ namespace Dyn.Web.Admin
         //    //return Entity;
         
         //}
+        protected void btnQuitar_Click(object sender, EventArgs e)
+        { 
+        
+        }
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+            foreach (RepeaterItem i in repDetalle.Items)
+            {
+                TextBox txtPrecio = i.FindControl("txtPrecio") as TextBox;
+                if (txtPrecio.Text == "")
+                {
+                    return;
+                }
+                else
+                {
+                    // DataBinder.Eval(i.DataItem, "FileName");
+                }
+                TextBox txtCantidad = i.FindControl("txtCantidad") as TextBox;
+                if (txtCantidad.Text == "")
+                {
+                    return;
+                }
+                else
+                { 
+                
+                }
+
+
+            }
+        }
     }
 }

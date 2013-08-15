@@ -18,23 +18,6 @@
             font-weight: bold;
             height: 45px;
         }
-        .style2
-        {
-            height: 45px;
-        }
-        .style3
-        {
-            height: 565px;
-        }
-        .style8
-        {
-            font-weight: bold;
-            font-style: normal;
-            color: #0e85cd;
-            text-decoration: none;
-            font-weight: bold;
-            width: 92px;
-        }
         .style9
         {
             font-weight: bold;
@@ -44,27 +27,37 @@
             font-weight: bold;
             width: 100px;
         }
-        .style10
-        {
-            font-weight: bold;
-            font-style: normal;
-            color: #0e85cd;
-            text-decoration: none;
-            font-weight: bold;
-            width: 287px;
-        }
-        .style11
-        {
-            font-weight: bold;
-            font-style: normal;
-            color: #0e85cd;
-            text-decoration: none;
-            font-weight: bold;
-            width: 190px;
-        }
         .style12
         {
             width: 319px;
+            height: 21px;
+        }
+        .style13
+        {
+            font-weight: bold;
+            font-style: normal;
+            color: #0e85cd;
+            text-decoration: none;
+            font-weight: bold;
+            width: 129px;
+        }
+        .style14
+        {
+            font-weight: bold;
+            font-style: normal;
+            color: #0e85cd;
+            text-decoration: none;
+            font-weight: bold;
+            width: 37px;
+        }
+        .style15
+        {
+            font-weight: bold;
+            font-style: normal;
+            color: #0e85cd;
+            text-decoration: none;
+            font-weight: bold;
+            width: 82px;
         }
     </style>
 </asp:Content>
@@ -72,20 +65,10 @@
     <table width="100%" cellpadding="0" cellspacing="5" border="0">
         <tr>
             <td class="style1" align="left">
-                Numero de Venta:
+                Numero de Ingreso:
             </td>
             <td align="left" width="150">
                 <asp:TextBox ID="txtNumeroVenta" runat="server" CssClass="tittleprecios03" 
-                    Enabled="False"></asp:TextBox><br />
-            </td>
-        </tr>
-
-                <tr>
-            <td class="style1" align="left">
-                Cliente:
-            </td>
-            <td align="left" width="150">
-                <asp:TextBox ID="txtCliente" runat="server" CssClass="tittleprecios03" 
                     Enabled="False"></asp:TextBox><br />
             </td>
         </tr>
@@ -109,7 +92,10 @@
         </tr>
         <tr>
             <td colspan="2" class="style12">
-                <uc3:WUCBuscarProducto ID="WUCBuscarProducto1" runat="server" Visible="False" />
+                <br />
+                <uc3:WUCBuscarProducto ID="WUCBuscarProducto1" runat="server" />
+                <br />
+                <br />
             </td>
         </tr>
 
@@ -119,12 +105,12 @@
                         </div>
                         <table width="100%" border="0" cellpadding="0" cellspacing="0">
                             <tr>
-                                <td class="style11">
+                                <td class="style15">
                                     Nombre
                                     <br />
                                     <hr />
                                 </td>
-                                <td class="style10">
+                                <td class="style13">
                                     Descripci&oacute;n
                                     <br />
                                     <hr />
@@ -134,7 +120,7 @@
                                     <br />
                                     <hr />
                                 </td>--%>
-                                <td class="style8">
+                                <td class="style14">
                                     Precio
                                     <br />
                                     <hr style="margin-right: 52px" />
@@ -144,11 +130,7 @@
                                     <br />
                                     <hr />
                                 </td>
-                                <td width="233" class="tittleproducto">
-                                    Subtotal
-                                    <br />
-                                    <hr />
-                                </td>
+
                             </tr>
                         </table>
                         <div style="overflow: scroll; height: 295px; width: 100%">
@@ -175,10 +157,6 @@
                                                     
                                             </td>
                                             <td>
-                                                <asp:TextBox ID="txtSubtotal" CssClass="tittleprecios03" runat="server" Enabled="False" Width="50"></asp:TextBox>
-                                                    
-                                            </td>
-                                            <td>
                                                <asp:Button CssClass="adminbutton" ID="btnQuitar" runat="server" Text="Quitar" OnClick="btnQuitar_Click"
                     />&nbsp;
                                             </td>
@@ -198,7 +176,7 @@
         <tr>
             <td colspan="2" style="height: 24px">
                 <br />
-                     <asp:Button CssClass="adminbutton" ID="btnGuardar" runat="server" Text="Guardar"
+                     <asp:Button CssClass="adminbutton" ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click"
                     />&nbsp;
                 <asp:Button CssClass="adminbutton" ID="btnCancelar" runat="server" Text="Cancelar"
                     CausesValidation="False" />&nbsp;
