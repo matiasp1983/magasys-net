@@ -16,11 +16,20 @@
         }
         .style2
         {
-            height: 45px;
+            height: 45 px;
         }
         .style3
         {
             width: 319px;
+        }
+        .style4
+        {
+            width: 232px;
+        }
+        .style5
+        {
+            height: 45 px;
+            width: 232px;
         }
     </style>
 
@@ -41,22 +50,21 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style1" align="left" valign="middle">
+                    <td  align="left" valign="middle">
                         Proveedor:
                     </td>
-            <td>
+            <td class="style4">
                 <asp:DropDownList CssClass="tittleprecios03" ID="lstProveedor" runat="server">
                 </asp:DropDownList><br />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Debe seleccionar un Proveedor"
                     ControlToValidate="lstProveedor" CssClass="tittleprecios03" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
-
-                </tr>
-                <tr>
+            </tr>
+            <tr>
                     <td class="style1" align="left" valign="middle">
                         Nombre Producto:
                     </td>
-                    <td width="234" align="left" valign="middle" class="style2">
+                    <td align="left" valign="middle" class="style5">
                         <asp:TextBox ID="txtNombreProducto" runat="server" CssClass="tittleprecios03" ValidationGroup="busqueda"
                             Width="234"></asp:TextBox><br />
                         <act:AutoCompleteExtender ID="AutoCompleteExtender2" runat="server" MinimumPrefixLength="1"
@@ -72,12 +80,8 @@
                             ValidationGroup="busqueda" onclick="Button2_Click" />
                     </td>
                 </tr>
-
-                </table>
-            <table width="100%">
-
-                <tr>
-                    <td width="700" align="left">
+                                <tr>
+                    <td align="left" colspan="2">
                        <table width="100%" border="0">
                             <tr>
                                 <td class="style3">
