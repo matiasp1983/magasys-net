@@ -46,11 +46,12 @@ namespace Dyn.Database.logic
             AddCmdParameter("@fechaDevolucion", objusuario.FechaDevolucion, ParameterDirection.Input);
             AddCmdParameter("@estado", objusuario.Estado, ParameterDirection.Input);
             AddCmdParameter("@idProducto", objusuario.Producto.IdProducto, ParameterDirection.Input);
-            AddCmdParameter("@idProductoEdicion", objusuario.IdProductoEdicion, ParameterDirection.Input);
+            AddCmdParameter("@idProductoEdicion", objusuario.ProductoEdicion.IdProductoEdicion, ParameterDirection.Input);
         }
 
         public object Insert(Dyn.Database.entities.DetalleIngresoProducto objDetalle)
         {
+            Database.logic.ProductoEdicion lProdEdi = new Database.logic.ProductoEdicion();
             object IdDetalle = null;
             objDetalle.Estado = 1;
             AddParameters(objDetalle);
@@ -60,6 +61,7 @@ namespace Dyn.Database.logic
             {
                 IdDetalle = GetValue(0);
             }
+            lProdEdi.Insert(objDetalle.ProductoEdicion);
             return IdDetalle;
         }
         public void Update(Dyn.Database.entities.DetalleIngresoProducto objDetalle)

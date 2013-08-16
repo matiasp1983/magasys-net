@@ -125,29 +125,42 @@ namespace Dyn.Web.Admin
         }
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
+            Database.logic.Ingreso lIngreso = new Database.logic.Ingreso();
+            listaDetalles = new List<DetalleIngresoProducto>();
+            listaDetalles = Entity.ObtenerDetalles();
             foreach (RepeaterItem i in repDetalle.Items)
-            {
-                TextBox txtPrecio = i.FindControl("txtPrecio") as TextBox;
+            {   
+                Database.entities.ProductoEdicion prod = new ProductoEdicion();
+                TextBox txtPrecio = i.FindControl("txtPrecio") as TextBox;               
                 if (txtPrecio.Text == "")
                 {
                     return;
                 }
                 else
                 {
-                    // DataBinder.Eval(i.DataItem, "FileName");
+                    
+                    prod.Precio = Convert.ToInt32(txtPrecio.Text);
                 }
                 TextBox txtCantidad = i.FindControl("txtCantidad") as TextBox;
+
                 if (txtCantidad.Text == "")
                 {
                     return;
                 }
                 else
-                { 
-                
+                {
+                    prod.CantidadUnidades = Convert.ToInt32(txtCantidad.Text);
+                    listaDetalles[Convert.ToInt32(i)].CantidadUnidades = Convert.ToInt32(txtCantidad.Text);
                 }
-
+                prod.Descripcion = listaDetalles[Convert.ToInt32(i)].Producto.Nombre;
+                prod.IdProducto = listaDetalles[Convert.ToInt32(i)].Producto.IdProducto;
+                listaDetalles[Convert.ToInt32(i)].ProductoEdicion = prod;
+                listaDetalles[Convert.ToInt32(i)].CalcularDevolucion();                
 
             }
+            Entity.DetalleIngreso = listaDetalles;
+            lIngreso.Insert(Entity);
+
         }
     }
 }

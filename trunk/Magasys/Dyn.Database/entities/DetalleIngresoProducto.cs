@@ -12,7 +12,7 @@ namespace Dyn.Database.entities
         public DetalleIngresoProducto() { }
 
         public DetalleIngresoProducto(Int32? idDetalleIngProd, Int32? idIngrProd, Producto prod, Int32? cantidadUnid, DateTime? fechaDevol,
-            Int16? est, Int32? idProdEdi)
+            Int16? est)
         {
             idDetalleIngresoProducto = idDetalleIngProd;
             idIngresoProductos = idIngrProd;
@@ -20,7 +20,6 @@ namespace Dyn.Database.entities
             cantidadUnidades = cantidadUnid;
             fechaDevolucion = fechaDevol;
             estado = est;
-            idProductoEdicion = idProdEdi;
         }
 
         public DetalleIngresoProducto(IDataRecord obj)
@@ -31,7 +30,7 @@ namespace Dyn.Database.entities
             fechaDevolucion = Convert.ToDateTime(obj["fechaDevolucion"]);
             estado = Convert.ToInt16(obj["estado"]);
             producto.IdProducto = Convert.ToInt32(obj["idProducto"]);
-            idProductoEdicion = Convert.ToInt32(obj["idProductoEdicion"]);
+            this.productoEdicion.IdProductoEdicion  = Convert.ToInt32(obj["idProductoEdicion"]);
 
 		}
 
@@ -60,11 +59,11 @@ namespace Dyn.Database.entities
             set { producto = value; }
         }
 
-        private Int32? idProductoEdicion;
-        public Int32? IdProductoEdicion
+        private ProductoEdicion productoEdicion = new Database.entities.ProductoEdicion();
+        public ProductoEdicion ProductoEdicion
         {
-            get { return idProductoEdicion; }
-            set { idProductoEdicion = value; }
+            get { return productoEdicion; }
+            set { productoEdicion = value; }
         }
 
         private Int32? cantidadUnidades;
@@ -87,6 +86,22 @@ namespace Dyn.Database.entities
             get { return estado; }
             set { estado = value; }
         }
+
+        #endregion
+
+
+        #region Operaciones
+
+        public void CalcularDevolucion()
+        {
+            // HAy que obtener el dato periodicidad para calcular correctamente, por ahora 
+            // solo se le asigna un valor al azar
+
+            fechaDevolucion = DateTime.Now;
+            Random r = new Random();
+            fechaDevolucion.Value.AddDays(r.Next(1,7)); // Agrego un valor al azar!
+        }
+
 
         #endregion
 

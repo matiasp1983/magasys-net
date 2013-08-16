@@ -38,7 +38,7 @@ namespace Dyn.Database.entities
         #region Propiedades
 
         private Int32? idProductoEdicion;
-        public Int32? IdDetalleIngresoProducto
+        public Int32? IdProductoEdicion
         {
             get { return idProductoEdicion; }
             set { idProductoEdicion = value; }
