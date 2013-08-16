@@ -48,6 +48,7 @@ namespace Dyn.Database.logic
 
         public object Insert(Dyn.Database.entities.IngresoProducto objIngreso)
         {
+            Database.logic.DetalleIngreso lDetalle = new Database.logic.DetalleIngreso();
             object IdIngreso = null;
             objIngreso.Estado = 1;
             AddParameters(objIngreso);
@@ -57,6 +58,16 @@ namespace Dyn.Database.logic
             {
                 IdIngreso = GetValue(0);
             }
+            List<Database.entities.DetalleIngresoProducto> listaDetalles = new List<Database.entities.DetalleIngresoProducto>();
+            listaDetalles = objIngreso.ObtenerDetalles();
+            for (int i = 0; i < listaDetalles.Count; i++)
+            {
+                listaDetalles[i].IdIngresoProductos = Convert.ToInt32(IdIngreso);
+                lDetalle.Insert(listaDetalles[i]);
+
+            }
+
+
             return IdIngreso;
         }
         public void Update(Dyn.Database.entities.IngresoProducto objIngreso)

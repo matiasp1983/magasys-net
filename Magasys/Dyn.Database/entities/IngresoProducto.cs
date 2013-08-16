@@ -65,6 +65,11 @@ namespace Dyn.Database.entities
         }
 
         private List<DetalleIngresoProducto> detalleIngreso = new List<DetalleIngresoProducto>();
+        public List<DetalleIngresoProducto>  DetalleIngreso
+        {
+            get { return detalleIngreso; }
+            set { detalleIngreso = value; }
+        }
 
         #endregion
 

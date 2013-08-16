@@ -80,6 +80,7 @@
     <Compile Include="logic\Periodicidad.cs" />
     <Compile Include="logic\Producto.cs" />
     <Compile Include="logic\ProductoEdicion.cs" />
+    <Compile Include="logic\ProductoEdicion2.cs" />
     <Compile Include="logic\Proveedor.cs" />
     <Compile Include="logic\Provincia.cs" />
     <Compile Include="logic\Revista.cs" />

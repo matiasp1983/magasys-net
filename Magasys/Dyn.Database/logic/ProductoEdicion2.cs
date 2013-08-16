@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Data;
+using System.Text;
 
 namespace Dyn.Database.logic
 {
-    class ProductoEdicion : FactoryBase
+    class ProductoEdicion2 : FactoryBase
     {
-        public ProductoEdicion() { }
+                public ProductoEdicion() { }
 
         public Dyn.Database.entities.IngresoProducto Load(int idIngreso)
         {
@@ -72,5 +72,6 @@ namespace Dyn.Database.logic
             ExecuteNonQuery();
         }
 
+    }
     }
 }
