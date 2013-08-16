@@ -5,72 +5,39 @@ using System.Data;
 
 namespace Dyn.Database.logic
 {
-    class ProductoEdicion : FactoryBase
+    public class ProductoEdicion : FactoryBase
     {
         public ProductoEdicion() { }
 
-        public Dyn.Database.entities.IngresoProducto Load(int idIngreso)
+        public Dyn.Database.entities.ProductoEdicion Load(int idproducto)
         {
-            Dyn.Database.entities.IngresoProducto objIngreso = new Dyn.Database.entities.IngresoProducto();
+            Dyn.Database.entities.ProductoEdicion objprodEdic = new Dyn.Database.entities.ProductoEdicion();
             CreateCommand("usp_ProductoEdicion", true);
-            AddCmdParameter("@idProductoEdicion", idIngreso, ParameterDirection.Input);
+            AddCmdParameter("@idproducto", idproducto, ParameterDirection.Input);
             AddCmdParameter("@Action", 0, ParameterDirection.Input);
             ExecuteReader();
             while (Read())
             {
-                objIngreso = new Dyn.Database.entities.IngresoProducto(GetDataReader());
+                objprodEdic = new Dyn.Database.entities.ProductoEdicion(GetDataReader());
             }
-            return objIngreso;
+            return objprodEdic;
         }
 
-        private void AddParameters(Dyn.Database.entities.ProductoEdicion objusuario)
-        {
+        public void Update(Dyn.Database.entities.ProductoEdicion objprodventa)
+        {   
+            //AddParameters(objprodventa);
             CreateCommand("usp_ProductoEdicion", true);
-            AddCmdParameter("@idProductoEdicion", objusuario.IdProductoEdicion, ParameterDirection.Input);
-            AddCmdParameter("@idProducto", objusuario.IdProducto, ParameterDirection.Input);
-            AddCmdParameter("@estado", objusuario.Estado, ParameterDirection.Input);
-            AddCmdParameter("@cantidadDisponible", objusuario.CantidadUnidades, ParameterDirection.Input);
-            AddCmdParameter("@precio", objusuario.Precio, ParameterDirection.Input);
-            AddCmdParameter("@descripcion", objusuario.Descripcion, ParameterDirection.Input);
-        }
-
-        public object Insert(Dyn.Database.entities.ProductoEdicion objProdEdi)
-        {
-            object IdProdEdi = null;
-            objProdEdi.Estado = 1;
-            AddParameters(objProdEdi);
-            AddCmdParameter("@Action", 2, ParameterDirection.Input);
-            ExecuteReader();
-            while (Read())
-            {
-                IdProdEdi = GetValue(0);
-            }
-            return IdProdEdi;
-        }
-        public void Update(Dyn.Database.entities.ProductoEdicion objProdEdi)
-        {
-            objProdEdi.Estado = 1;
-            AddParameters(objProdEdi);
+            AddCmdParameter("@idProducto", objprodventa.IdProducto, ParameterDirection.Input);
+            AddCmdParameter("@cantidadDisponible", objprodventa.CantidadUnidades, ParameterDirection.Input);
             AddCmdParameter("@Action", 1, ParameterDirection.Input);
             ExecuteNonQuery();
         }
 
-        public void Delete(int idProdEdi)
-        {
-            CreateCommand("usp_ProductoEdicion", true);
-            AddCmdParameter("@idProductoEdicion", idProdEdi, ParameterDirection.Input);
-            AddCmdParameter("@estado", 0, ParameterDirection.Input);
-            AddCmdParameter("@Action", 3, ParameterDirection.Input);
-            ExecuteNonQuery();
-        }
-        public void Devolver(int idProdEdi)
-        {
-            CreateCommand("usp_ProductoEdicion", true);
-            AddCmdParameter("@idProductoEdicion", idProdEdi, ParameterDirection.Input);
-            AddCmdParameter("@estado", 2, ParameterDirection.Input);
-            AddCmdParameter("@Action", 3, ParameterDirection.Input);
-            ExecuteNonQuery();
-        }
-
+        //private void AddParameters(Dyn.Database.entities.ProductoEdicion objprodventa)
+        //{
+        //    CreateCommand("usp_ProductoEdicion", true);
+        //    AddCmdParameter("@idProducto", objprodventa.IdProducto, ParameterDirection.Input);
+        //    AddCmdParameter("@cantidadDisponible", objprodventa.CantidadUnidades, ParameterDirection.Input);
+        //}
     }
 }
