@@ -7,7 +7,7 @@ namespace Dyn.Database.logic
 {
     class ProductoEdicion2 : FactoryBase
     {
-                public ProductoEdicion() { }
+        public ProductoEdicion2() { }
 
         public Dyn.Database.entities.IngresoProducto Load(int idIngreso)
         {
@@ -72,6 +72,6 @@ namespace Dyn.Database.logic
             ExecuteNonQuery();
         }
 
-    }
+    
     }
 }

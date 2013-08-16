@@ -127,7 +127,7 @@ namespace Dyn.Web.Admin
         {
             Database.logic.Ingreso lIngreso = new Database.logic.Ingreso();
             listaDetalles = new List<DetalleIngresoProducto>();
-            listaDetalles = Entity.ObtenerDetalles();
+            listaDetalles = Entity.DetalleIngreso;
             foreach (RepeaterItem i in repDetalle.Items)
             {   
                 Database.entities.ProductoEdicion prod = new ProductoEdicion();
@@ -150,15 +150,18 @@ namespace Dyn.Web.Admin
                 else
                 {
                     prod.CantidadUnidades = Convert.ToInt32(txtCantidad.Text);
-                    listaDetalles[Convert.ToInt32(i)].CantidadUnidades = Convert.ToInt32(txtCantidad.Text);
+                    listaDetalles[i.ItemIndex].CantidadUnidades = Convert.ToInt32(txtCantidad.Text.Trim());
                 }
-                prod.Descripcion = listaDetalles[Convert.ToInt32(i)].Producto.Nombre;
-                prod.IdProducto = listaDetalles[Convert.ToInt32(i)].Producto.IdProducto;
-                listaDetalles[Convert.ToInt32(i)].ProductoEdicion = prod;
-                listaDetalles[Convert.ToInt32(i)].CalcularDevolucion();                
+                prod.Descripcion = listaDetalles[i.ItemIndex].Producto.Nombre;
+                prod.IdProducto = listaDetalles[i.ItemIndex].Producto.IdProducto;
+                listaDetalles[i.ItemIndex].ProductoEdicion = prod;
+                listaDetalles[i.ItemIndex].CalcularDevolucion();                
 
             }
+            Entity.Fecha = DateTime.Now;
             Entity.DetalleIngreso = listaDetalles;
+            Entity.IdProveedor = listaDetalles[0].Producto.IdProveedor;
+            
             lIngreso.Insert(Entity);
 
         }
