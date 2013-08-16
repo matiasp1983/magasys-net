@@ -35,7 +35,11 @@ namespace Dyn.Web.Admin
         public void CargarRevistas(string criterio)
         {
             lRevista = new Dyn.Database.logic.Revista();
-            DataSet ds = lRevista.SeleccionarRevistasPorNombrePaginadoAdmin(criterio, Pagina, ref numeropaginas);
+           
+            
+            /// MARGA, te puse un ID cero porque me daba error de compilacion aca
+           
+            DataSet ds = lRevista.SeleccionarRevistasPorNombrePaginadoAdmin(criterio, Pagina, ref numeropaginas, 0);
             int[] array;
             array = new int[numeropaginas];
             CollectionPager.DataSource = array;

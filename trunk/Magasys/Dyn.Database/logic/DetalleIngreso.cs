@@ -39,19 +39,21 @@ namespace Dyn.Database.logic
 
         private void AddParameters(Dyn.Database.entities.DetalleIngresoProducto objusuario)
         {
+            Database.logic.ProductoEdicion2 lProdEdi = new Database.logic.ProductoEdicion2();
+            int idProdEdi = Convert.ToInt32(lProdEdi.Insert(objusuario.ProductoEdicion));
             CreateCommand("usp_DetalleIngreso", true);
             AddCmdParameter("@idDetalleIngresoProductos", objusuario.IdDetalleIngresoProducto, ParameterDirection.Input);
-            AddCmdParameter("@idIngresoProducto", objusuario.IdIngresoProductos, ParameterDirection.Input);
+            AddCmdParameter("@idIngresoProductos", objusuario.IdIngresoProductos, ParameterDirection.Input);
             AddCmdParameter("@cantidadUnidades", objusuario.CantidadUnidades, ParameterDirection.Input);
             AddCmdParameter("@fechaDevolucion", objusuario.FechaDevolucion, ParameterDirection.Input);
             AddCmdParameter("@estado", objusuario.Estado, ParameterDirection.Input);
             AddCmdParameter("@idProducto", objusuario.Producto.IdProducto, ParameterDirection.Input);
-            AddCmdParameter("@idProductoEdicion", objusuario.ProductoEdicion.IdProductoEdicion, ParameterDirection.Input);
+            AddCmdParameter("@idProductoEdicion", idProdEdi, ParameterDirection.Input);
         }
 
         public object Insert(Dyn.Database.entities.DetalleIngresoProducto objDetalle)
         {
-            Database.logic.ProductoEdicion lProdEdi = new Database.logic.ProductoEdicion();
+            
             object IdDetalle = null;
             objDetalle.Estado = 1;
             AddParameters(objDetalle);
@@ -60,8 +62,7 @@ namespace Dyn.Database.logic
             while (Read())
             {
                 IdDetalle = GetValue(0);
-            }
-            lProdEdi.Insert(objDetalle.ProductoEdicion);
+            }           
             return IdDetalle;
         }
         public void Update(Dyn.Database.entities.DetalleIngresoProducto objDetalle)
