@@ -69,6 +69,7 @@
     <Compile Include="logic\Coleccion.cs" />
     <Compile Include="logic\DetalleIngreso.cs" />
     <Compile Include="logic\DetalleVenta.cs" />
+    <Compile Include="logic\Devolucion.cs" />
     <Compile Include="logic\Diario.cs" />
     <Compile Include="logic\DiarioPorDia.cs" />
     <Compile Include="logic\FactoryBase.cs" />

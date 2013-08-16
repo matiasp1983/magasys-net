@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Data;
 using System.Text;
 
 namespace Dyn.Database.entities
@@ -19,6 +19,15 @@ namespace Dyn.Database.entities
             idProveedor = idProv;
             descripcion = descripc;
         }
+        public Devolucion(IDataRecord obj)
+		{
+            idDevolucion = Convert.ToInt32(obj["idDevolucion"]);
+            fecha = Convert.ToDateTime(obj["fecha"]);
+            estado = Convert.ToInt16(obj["estado"]);
+            idProveedor = Convert.ToInt32(obj["idProveedor"]);
+            descripcion = obj["descripcion"].ToString();
+
+		}
 
         #endregion
 
@@ -63,7 +72,24 @@ namespace Dyn.Database.entities
 		    get { return descripcion;}
 		    set { descripcion = value;}
 	    }
+
+        private List<DetalleDevolucion> listaDetalles = new List<DetalleDevolucion>();
+        public List<DetalleDevolucion> ListaDetalles
+	    {
+            get { return listaDetalles; }
+            set { listaDetalles = value; }
+	    }
+
 	
+        #endregion
+
+        #region Operaciones
+
+        public void AgregarDetalle(Dyn.Database.entities.DetalleDevolucion objDetalle)
+        {
+            listaDetalles.Add(objDetalle);
+        }
+
         #endregion
     }
 }

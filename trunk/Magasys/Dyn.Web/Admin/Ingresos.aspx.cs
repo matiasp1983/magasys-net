@@ -11,10 +11,10 @@ namespace Dyn.Web.Admin
 {
     public partial class Ingresos : System.Web.UI.Page
     {
-        private int numeropaginas;
+        // private int numeropaginas;
         private Dyn.Database.logic.Producto lProducto;
         public Dyn.Database.entities.Producto newProducto;
-        private Dyn.Database.logic.Ingreso lIngreso;
+        // private Dyn.Database.logic.Ingreso lIngreso;
         public static Dyn.Database.entities.IngresoProducto Entity;
         public List<Dyn.Database.entities.DetalleIngresoProducto> listaDetalles;
 
@@ -163,7 +163,8 @@ namespace Dyn.Web.Admin
             Entity.IdProveedor = listaDetalles[0].Producto.IdProveedor;
             
             lIngreso.Insert(Entity);
-
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
+            Response.Redirect("/Home.aspx");
         }
     }
 }
