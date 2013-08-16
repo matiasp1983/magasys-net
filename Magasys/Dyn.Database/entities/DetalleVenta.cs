@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace Dyn.Database.entities
 {
-    class DetalleVenta
+    public class DetalleVenta
     {
         #region Constructores
 
         public DetalleVenta() { }
 
-        public DetalleVenta(Int32? idDetalleVen, Int32? idVent, Int32? idProd, Double precioUnid, Int32? cantid, Double subTot)
+        public DetalleVenta(Int32? idDetalleVen, Int32? idVent, Int32? idProd, Double? precioUnid, Int32? cantid,
+               Double? subTot, Int32? idProdEdic, string nom)
         {
             idDetalleVenta = idDetalleVen;
             idVenta = idVent;
@@ -19,6 +20,20 @@ namespace Dyn.Database.entities
             precioUnidad = precioUnid;
             cantidad = cantid;
             subTotal = subTot;
+            idProductoEdicion = idProdEdic;
+            nombre = nom;
+        }
+
+        public DetalleVenta(IDataRecord obj) 
+        { 
+            idDetalleVenta = Convert.ToInt32(obj["idDetalle"]);
+            idVenta = Convert.ToInt32(obj["idVenta"]);
+            idProducto = Convert.ToInt32(obj["idProducto"]);
+            nombre = Convert.ToString(obj["nombre"]);
+            precioUnidad = Convert.ToDouble(obj["precioUnidad"]);
+            cantidad = Convert.ToInt32(obj["cantidad"]);
+            subTotal = Convert.ToDouble(obj["subTotal"]);
+            idProductoEdicion = Convert.ToInt32(obj["idProductoEdicion"]);
         }
 
         #endregion
@@ -48,10 +63,18 @@ namespace Dyn.Database.entities
             get { return idProducto; }
             set { idProducto = value; }
         }
-        
-        private Double precioUnidad;
 
-	    public Double PrecioUnidad
+        private string nombre;
+
+        public string Nombre
+        {
+            get { return nombre; }
+            set { nombre = value; }
+        }
+        
+        private Double? precioUnidad;
+
+	    public Double? PrecioUnidad
 	    {
 		    get { return precioUnidad;}
 		    set { precioUnidad = value;}
@@ -65,14 +88,22 @@ namespace Dyn.Database.entities
 		    set { cantidad = value;}
 	    }
 
-        private Double subTotal;
+        private Double? subTotal;
 
-	    public Double SubTotal
+	    public Double? SubTotal
 	    {
 		    get { return subTotal;}
 		    set { subTotal = value;}
 	    }
-	
+
+        private Int32? idProductoEdicion;
+
+        public Int32? IdProductoEdicion
+        {
+            get { return idProductoEdicion; }
+            set { idProductoEdicion = value; }
+        }
+        
         #endregion
     }
 }

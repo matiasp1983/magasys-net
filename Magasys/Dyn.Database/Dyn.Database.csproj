@@ -68,6 +68,7 @@
     <Compile Include="entities\Venta.cs" />
     <Compile Include="logic\Coleccion.cs" />
     <Compile Include="logic\DetalleIngreso.cs" />
+    <Compile Include="logic\DetalleVenta.cs" />
     <Compile Include="logic\Diario.cs" />
     <Compile Include="logic\DiarioPorDia.cs" />
     <Compile Include="logic\FactoryBase.cs" />
@@ -78,10 +79,12 @@
     <Compile Include="logic\MenuCategoria.cs" />
     <Compile Include="logic\Periodicidad.cs" />
     <Compile Include="logic\Producto.cs" />
+    <Compile Include="logic\ProductoEdicion.cs" />
     <Compile Include="logic\Proveedor.cs" />
     <Compile Include="logic\Provincia.cs" />
     <Compile Include="logic\Revista.cs" />
     <Compile Include="logic\Suplemento.cs" />
+    <Compile Include="logic\Venta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
