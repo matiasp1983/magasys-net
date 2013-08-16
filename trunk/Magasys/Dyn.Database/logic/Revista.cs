@@ -23,10 +23,14 @@ namespace Dyn.Database.logic
             return objrevista;
         }
 
-        public DataSet SeleccionarRevistasPorNombrePaginadoAdmin(string nombre, int paginaactual, ref int numeropaginas)
+        public DataSet SeleccionarRevistasPorNombrePaginadoAdmin(string nombre, int paginaactual, ref int numeropaginas, int idProveedor)
         {            
             CreateCommand("usp_SeleccionarRevistasPorNombrePaginado", true);
             AddCmdParameter("@nombre", nombre, ParameterDirection.Input);
+            if (idProveedor != 0)
+            {
+                AddCmdParameter("@idProveedor", idProveedor, ParameterDirection.Input);
+            }
             AddCmdParameter("@CurrentPage", paginaactual, ParameterDirection.Input);
             AddCmdParameter("@PageSize", 100, ParameterDirection.Input);
             AddCmdParameter("@TotalRecords", ParameterDirection.Output);
