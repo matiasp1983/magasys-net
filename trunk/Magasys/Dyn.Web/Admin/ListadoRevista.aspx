@@ -29,7 +29,19 @@
                 </tr>
                 <tr>
                     <td width="233" class="tittleprecios03" align="left" valign="middle">
-                        Nombre de proveedor:
+                        Proveedor:
+                    </td>
+                    <td width="234" align="left" valign="middle">
+                        <asp:DropDownList CssClass="tittleprecios03" ID="lstProveedor" runat="server">
+                        </asp:DropDownList>
+                        <br />
+                        <asp:RequiredFieldValidator ID="rfvProveedor" runat="server" ErrorMessage="Debe seleccionar un Proveedor"
+                            ControlToValidate="lstProveedor" CssClass="tittleprecios03" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="233" class="tittleprecios03" align="left" valign="middle">
+                        Nombre Revista:
                     </td>
                     <td width="234" align="left" valign="middle">
                         <asp:TextBox ID="txtNombreRevista" runat="server" CssClass="tittleprecios03" ValidationGroup="busqueda"

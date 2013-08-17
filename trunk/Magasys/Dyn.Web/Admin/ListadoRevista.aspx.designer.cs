@@ -31,6 +31,24 @@ namespace Dyn.Web.Admin {
         protected global::SiteUtils.CollectionPager CollectionPager;
         
         /// <summary>
+        /// lstProveedor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList lstProveedor;
+        
+        /// <summary>
+        /// rfvProveedor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvProveedor;
+        
+        /// <summary>
         /// txtNombreRevista control.
         /// </summary>
         /// <remarks>
