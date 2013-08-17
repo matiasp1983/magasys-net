@@ -23,7 +23,7 @@ namespace Dyn.Database.logic
             return objrevista;
         }
 
-        public DataSet SeleccionarRevistasPorNombrePaginadoAdmin(string nombre, int paginaactual, ref int numeropaginas, int idProveedor)
+        public DataSet SeleccionarRevistasPorNombrePaginadoAdmin(string nombre, int idProveedor, int paginaactual, ref int numeropaginas)
         {            
             CreateCommand("usp_SeleccionarRevistasPorNombrePaginado", true);
             AddCmdParameter("@nombre", nombre, ParameterDirection.Input);
