@@ -67,6 +67,7 @@
     <Compile Include="entities\TipoProducto.cs" />
     <Compile Include="entities\Venta.cs" />
     <Compile Include="logic\Coleccion.cs" />
+    <Compile Include="logic\DetalleDevolucion.cs" />
     <Compile Include="logic\DetalleIngreso.cs" />
     <Compile Include="logic\DetalleVenta.cs" />
     <Compile Include="logic\Devolucion.cs" />

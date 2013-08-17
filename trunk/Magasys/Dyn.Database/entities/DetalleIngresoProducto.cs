@@ -24,7 +24,7 @@ namespace Dyn.Database.entities
 
         public DetalleIngresoProducto(IDataRecord obj)
 		{
-            idDetalleIngresoProducto = Convert.ToInt32(obj["idDetalleIngresoProducto"]);
+            idDetalleIngresoProducto = Convert.ToInt32(obj["idDetalleIngresoProductos"]);
             idIngresoProductos = Convert.ToInt32(obj["idIngresoProductos"]);
             cantidadUnidades = Convert.ToInt32(obj["cantidadUnidades"]);
             fechaDevolucion = Convert.ToDateTime(obj["fechaDevolucion"]);

@@ -129,8 +129,8 @@ namespace Dyn.Web.Admin
             listaDetalles = new List<DetalleIngresoProducto>();
             listaDetalles = Entity.DetalleIngreso;
             foreach (RepeaterItem i in repDetalle.Items)
-            {   
-                Database.entities.ProductoEdicion prod = new ProductoEdicion();
+            {
+                Database.entities.ProductoEdicion prod = new Database.entities.ProductoEdicion();
                 TextBox txtPrecio = i.FindControl("txtPrecio") as TextBox;               
                 if (txtPrecio.Text == "")
                 {

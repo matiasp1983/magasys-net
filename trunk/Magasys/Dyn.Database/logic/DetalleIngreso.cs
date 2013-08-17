@@ -81,5 +81,18 @@ namespace Dyn.Database.logic
             AddCmdParameter("@Action", 3, ParameterDirection.Input);
             ExecuteNonQuery();
         }
+        public Database.entities.DetalleIngresoProducto ObtenerDetallePorEdicion(int idProductoEdicion)
+        {
+            Dyn.Database.entities.DetalleIngresoProducto objDetalle = new Dyn.Database.entities.DetalleIngresoProducto();
+            CreateCommand("usp_DetalleIngreso", true);
+            AddCmdParameter("@idProducto", idProductoEdicion, ParameterDirection.Input);
+            AddCmdParameter("@Action", 5, ParameterDirection.Input);
+            ExecuteReader();
+            while (Read())
+            {
+                objDetalle = new Dyn.Database.entities.DetalleIngresoProducto(GetDataReader());
+            }
+            return objDetalle;
+        }
     }
 }

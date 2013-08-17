@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Dyn.Database.logic
 {
-    class ProductoEdicion2 : FactoryBase
+    public class ProductoEdicion2 : FactoryBase
     {
         public ProductoEdicion2() { }
 
@@ -70,6 +70,19 @@ namespace Dyn.Database.logic
             AddCmdParameter("@estado", 2, ParameterDirection.Input);
             AddCmdParameter("@Action", 3, ParameterDirection.Input);
             ExecuteNonQuery();
+        }
+        public List<Database.entities.ProductoEdicion> SeleccionarProductoPorProveedor(int idProveedor)
+        {
+            List<Dyn.Database.entities.ProductoEdicion> Collection = new List<Dyn.Database.entities.ProductoEdicion>();
+            CreateCommand("usp_ProductoEdicion", true);
+            AddCmdParameter("@idProveedor", idProveedor, ParameterDirection.Input);
+            AddCmdParameter("@Action", 4, ParameterDirection.Input);
+            ExecuteReader();
+            while (Read())
+            {
+                Collection.Add(new Dyn.Database.entities.ProductoEdicion(GetDataReader()));
+            }
+            return Collection;
         }
 
     

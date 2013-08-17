@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Coleccion.aspx" />
+    <Content Include="Admin\Devoluciones.aspx" />
     <Content Include="Admin\Diario.aspx" />
     <Content Include="Admin\Genero.aspx" />
     <Content Include="Admin\Ingresos.aspx" />
@@ -114,6 +115,13 @@
     </Compile>
     <Compile Include="Admin\Coleccion.aspx.designer.cs">
       <DependentUpon>Coleccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Devoluciones.aspx.cs">
+      <DependentUpon>Devoluciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Devoluciones.aspx.designer.cs">
+      <DependentUpon>Devoluciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Diario.aspx.cs">
       <DependentUpon>Diario.aspx</DependentUpon>
