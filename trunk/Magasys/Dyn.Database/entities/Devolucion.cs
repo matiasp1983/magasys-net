@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Dyn.Database.entities
 {
-    class Devolucion
+    public class Devolucion
     {
         #region Constructores
 

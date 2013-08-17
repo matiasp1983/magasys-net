@@ -25,16 +25,12 @@ namespace Dyn.Database.logic
 
         private void AddParameters(Dyn.Database.entities.Devolucion objusuario)
         {
-            Database.logic.ProductoEdicion2 lProdEdi = new Database.logic.ProductoEdicion2();
-            int idProdEdi = Convert.ToInt32(lProdEdi.Insert(objusuario.ProductoEdicion));
-            CreateCommand("usp_DetalleIngreso", true);
-            AddCmdParameter("@idDetalleIngresoProductos", objusuario.IdDetalleIngresoProducto, ParameterDirection.Input);
-            AddCmdParameter("@idIngresoProductos", objusuario.IdIngresoProductos, ParameterDirection.Input);
-            AddCmdParameter("@cantidadUnidades", objusuario.CantidadUnidades, ParameterDirection.Input);
-            AddCmdParameter("@fechaDevolucion", objusuario.FechaDevolucion, ParameterDirection.Input);
+            CreateCommand("usp_Devolucion", true);
+            AddCmdParameter("@idDevolucion", objusuario.IdDevolucion, ParameterDirection.Input);
+            AddCmdParameter("@fecha", objusuario.Fecha, ParameterDirection.Input);
             AddCmdParameter("@estado", objusuario.Estado, ParameterDirection.Input);
-            AddCmdParameter("@idProducto", objusuario.Producto.IdProducto, ParameterDirection.Input);
-            AddCmdParameter("@idProductoEdicion", idProdEdi, ParameterDirection.Input);
+            AddCmdParameter("@idProveedor", objusuario.IdProveedor, ParameterDirection.Input);
+            AddCmdParameter("@descripcion", objusuario.Descripcion, ParameterDirection.Input);
         }
 
         public object Insert(Dyn.Database.entities.Devolucion objDetalle)
@@ -59,10 +55,10 @@ namespace Dyn.Database.logic
             ExecuteNonQuery();
         }
 
-        public void Delete(int idDetalle)
+        public void Delete(int idDevolucion)
         {
-            CreateCommand("usp_DetalleIngreso", true);
-            AddCmdParameter("@idDetalle", idDetalle, ParameterDirection.Input);
+            CreateCommand("usp_Devolucion", true);
+            AddCmdParameter("@idDevolucion", idDevolucion, ParameterDirection.Input);
             AddCmdParameter("@estado", 0, ParameterDirection.Input);
             AddCmdParameter("@Action", 3, ParameterDirection.Input);
             ExecuteNonQuery();
