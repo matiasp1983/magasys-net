@@ -29,7 +29,7 @@ namespace Dyn.Database.entities
             estado = Convert.ToInt16(obj["estado"]);
             precio = Convert.ToDouble(obj["precio"]);
             cantidadDisponible = Convert.ToInt32(obj["cantidadDisponible"]);
-            descripcion = obj["fechaDevolucion"].ToString();
+            descripcion = obj["descripcion"].ToString();
             
  		}
 
