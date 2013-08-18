@@ -10,7 +10,7 @@
 namespace Dyn.Web.Admin {
     
     
-    public partial class Libro {
+    public partial class Pelicula {
         
         /// <summary>
         /// txtNombre control.
@@ -58,22 +58,13 @@ namespace Dyn.Web.Admin {
         protected global::System.Web.UI.WebControls.DropDownList ddlProveedor;
         
         /// <summary>
-        /// txtAutor control.
+        /// ddlGenero control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAutor;
-        
-        /// <summary>
-        /// rfvAutor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAutor;
+        protected global::System.Web.UI.WebControls.DropDownList ddlGenero;
         
         /// <summary>
         /// ddlAnio control.
@@ -83,15 +74,6 @@ namespace Dyn.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlAnio;
-        
-        /// <summary>
-        /// ddlGenero control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlGenero;
         
         /// <summary>
         /// txtPrecio control.
