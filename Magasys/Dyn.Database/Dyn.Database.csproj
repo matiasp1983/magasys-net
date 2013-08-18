@@ -79,6 +79,7 @@
     <Compile Include="logic\Libro.cs" />
     <Compile Include="logic\Localidad.cs" />
     <Compile Include="logic\MenuCategoria.cs" />
+    <Compile Include="logic\Pelicula.cs" />
     <Compile Include="logic\Periodicidad.cs" />
     <Compile Include="logic\Producto.cs" />
     <Compile Include="logic\ProductoEdicion.cs" />

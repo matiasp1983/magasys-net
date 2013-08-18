@@ -1,30 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace Dyn.Database.entities
 {
-    public class Pelicula
+    public class Pelicula : Producto
     {
         #region Constructores
 
-        public Pelicula() { }
+        public Pelicula() : base() { }
 
-        public Pelicula(Int32? idPel, DateTime? fechcreac, string nomb, string descrip, Int16? est,
-            Int32? cantidad, Int32? idTiposProd, Int32? idGen, Int32? idProv, Double? prec, Int16? ani)
+        public Pelicula(Int32? idProd, DateTime? fechcreac, string nomb, string descrip, Int16? est, Int32? idProv, Int32? idGen,
+            Double? prec, Int16? ani)
+            : base(idProd, fechcreac, nomb, descrip, est, idProv)
         {
-            idPelicula = idPel;
-            fechacreacion = fechcreac;
-            nombre = nomb;
-            descripcion = descrip;
-            estado = est;
-            cantidaddisponible = cantidad;
-            idTiposProducto = idTiposProd;
+            idPelicula = base.IdProducto;
             idGenero = idGen;
-            idProveedor = idProv;
             precio = prec;
             anio = ani;
+        }
+
+        public Pelicula(IDataRecord objp, IDataRecord objr)
+            : base(objp)
+        {
+            idGenero = Convert.ToInt32(objr["idGenero"]);
+            precio = Convert.ToDouble(objr["precio"]);
+            anio = Convert.ToInt16(objr["anio"]);
         }
 
         #endregion
@@ -39,80 +41,12 @@ namespace Dyn.Database.entities
             set { idPelicula = value; }
         }
 
-        private DateTime? fechacreacion;
-
-        public DateTime? Fechacreacion
-        {
-            get { return fechacreacion; }
-            set { fechacreacion = value; }
-        }
-
-        private string nombre;
-
-        public string Nombre
-        {
-            get { return nombre; }
-            set { nombre = value; }
-        }
-
-        private string descripcion;
-
-        public string Descripcion
-        {
-            get { return descripcion; }
-            set { descripcion = value; }
-        }
-
-        private Int16? estado = null;
-
-        public enum GeneroEstado
-        {
-            Activo = 1,
-            Inactivo = 0
-        }
-
-        public GeneroEstado Estado
-        {
-            get
-            {
-                return (GeneroEstado)estado;
-            }
-            set
-            {
-                estado = (Int16)value;
-            }
-        }
-
-        private Int32? cantidaddisponible;
-
-        public Int32? Cantidaddisponible
-        {
-            get { return cantidaddisponible; }
-            set { cantidaddisponible = value; }
-        }
-
-        private Int32? idTiposProducto;
-
-        public Int32? IdTiposProducto
-        {
-            get { return idTiposProducto; }
-            set { idTiposProducto = value; }
-        }
-
         private Int32? idGenero;
 
         public Int32? IdGenero
         {
             get { return idGenero; }
             set { idGenero = value; }
-        }
-
-        private Int32? idProveedor;
-
-        public Int32? IdProveedor
-        {
-            get { return idProveedor; }
-            set { idProveedor = value; }
         }
 
         private Double? precio;

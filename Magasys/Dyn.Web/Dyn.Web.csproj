@@ -64,15 +64,22 @@
     <Content Include="Admin\Diario.aspx" />
     <Content Include="Admin\Genero.aspx" />
     <Content Include="Admin\Ingresos.aspx" />
+    <Content Include="Admin\Libro.aspx" />
     <Content Include="Admin\ListadoColeccion.aspx" />
     <Content Include="Admin\ListadoDiario.aspx" />
     <Content Include="Admin\ListadoGenero.aspx" />
+    <Content Include="Admin\ListadoLibro.aspx" />
+    <Content Include="Admin\ListadoPelicula.aspx" />
     <Content Include="Admin\ListadoProveedor.aspx" />
     <Content Include="Admin\ListadoRevista.aspx" />
     <Content Include="Admin\ListadoSuplemento.aspx" />
+    <Content Include="Admin\Pelicula.aspx" />
+    <Content Include="Admin\Producto.aspx" />
     <Content Include="Admin\Proveedor.aspx" />
     <Content Include="Admin\Revista.aspx" />
     <Content Include="Admin\Suplementos.aspx" />
+    <Content Include="Admin\Venta.aspx" />
+    <Content Include="controls\Date.ascx" />
     <Content Include="controls\Login.ascx" />
     <Content Include="controls\MenuAdmin.ascx" />
     <Content Include="controls\MenuAdminCategoria.ascx" />
@@ -85,6 +92,7 @@
     <Content Include="images\BarraTituloMenuCategorias_03.jpg" />
     <Content Include="images\BarraTituloSeccion_02.jpg" />
     <Content Include="images\BGFechaYHora.jpg" />
+    <Content Include="images\calendar.gif" />
     <Content Include="images\Flecha.gif" />
     <Content Include="images\Header.jpg" />
     <Content Include="images\PixelContentDer.jpg" />
@@ -144,6 +152,13 @@
     <Compile Include="Admin\Ingresos.aspx.designer.cs">
       <DependentUpon>Ingresos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Libro.aspx.cs">
+      <DependentUpon>Libro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Libro.aspx.designer.cs">
+      <DependentUpon>Libro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\ListadoColeccion.aspx.cs">
       <DependentUpon>ListadoColeccion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -164,6 +179,20 @@
     </Compile>
     <Compile Include="Admin\ListadoGenero.aspx.designer.cs">
       <DependentUpon>ListadoGenero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ListadoLibro.aspx.cs">
+      <DependentUpon>ListadoLibro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ListadoLibro.aspx.designer.cs">
+      <DependentUpon>ListadoLibro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ListadoPelicula.aspx.cs">
+      <DependentUpon>ListadoPelicula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ListadoPelicula.aspx.designer.cs">
+      <DependentUpon>ListadoPelicula.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ListadoProveedor.aspx.cs">
       <DependentUpon>ListadoProveedor.aspx</DependentUpon>
@@ -186,6 +215,20 @@
     <Compile Include="Admin\ListadoSuplemento.aspx.designer.cs">
       <DependentUpon>ListadoSuplemento.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Pelicula.aspx.cs">
+      <DependentUpon>Pelicula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Pelicula.aspx.designer.cs">
+      <DependentUpon>Pelicula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Producto.aspx.cs">
+      <DependentUpon>Producto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Producto.aspx.designer.cs">
+      <DependentUpon>Producto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Proveedor.aspx.cs">
       <DependentUpon>Proveedor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -206,6 +249,20 @@
     </Compile>
     <Compile Include="Admin\Suplementos.aspx.designer.cs">
       <DependentUpon>Suplementos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Venta.aspx.cs">
+      <DependentUpon>Venta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Venta.aspx.designer.cs">
+      <DependentUpon>Venta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\Date.ascx.cs">
+      <DependentUpon>Date.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\Date.ascx.designer.cs">
+      <DependentUpon>Date.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\Login.ascx.cs">
       <DependentUpon>Login.ascx</DependentUpon>

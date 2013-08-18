@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Admin.Master" AutoEventWireup="true"
-    CodeBehind="Libro.aspx.cs" Inherits="Dyn.Web.Admin.Libro" %>
+    CodeBehind="Pelicula.aspx.cs" Inherits="Dyn.Web.Admin.Pelicula" %>
 
 <%@ MasterType VirtualPath="~/Masters/Admin.Master" %>
 <%@ Register Src="../controls/Login.ascx" TagName="Login" TagPrefix="uc2" %>
@@ -41,29 +41,23 @@
         </tr>
         <tr>
             <td class="tittleprecios03" align="left" width="100">
-                Autor(*)
-            </td>
-            <td align="left" width="150">
-                <asp:TextBox ID="txtAutor" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Autor %>"></asp:TextBox><br />
-                <asp:RequiredFieldValidator ID="rfvAutor" runat="server" ErrorMessage="Debe ingresar el autor"
-                    ControlToValidate="txtAutor" CssClass="tittleprecios03" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
-            </td>
-            <td class="tittleprecios03" align="left" width="100">
-                A&ntilde;o
-            </td>
-            <td align="left" width="150">
-                <asp:DropDownList CssClass="tittleprecios03" ID="ddlAnio" runat="server">
-                </asp:DropDownList>
-            </td>
-        </tr>
-        <tr>
-            <td class="tittleprecios03" align="left" width="100">
                 G&eacute;nero
             </td>
             <td align="left" width="150">
                 <asp:DropDownList CssClass="tittleprecios03" ID="ddlGenero" runat="server">
                 </asp:DropDownList>
             </td>
+        </tr>
+        <tr>
+            <td class="tittleprecios03" align="left" width="100">
+                A&ntilde;o
+            </td>
+            <td class="tittleprecios03" align="left">
+                <asp:DropDownList CssClass="tittleprecios03" ID="ddlAnio" runat="server">
+                </asp:DropDownList>
+            </td>
+        </tr>
+        <tr>
             <td class="tittleprecios03" align="left">
                 Precio(*)
             </td>
@@ -84,7 +78,7 @@
                 <asp:Button CssClass="adminbutton" ID="btnCancelar" runat="server" Text="Cancelar"
                     OnClick="btnCancelar_Click" CausesValidation="False" />&nbsp;
                 <asp:Button CssClass="adminbutton" ID="btnEliminar" runat="server" Text="Eliminar"
-                    OnClick="btnEliminar_Click" CausesValidation="False" OnClientClick="javascript:return confirm('Desea eliminar el libro?');" />
+                    OnClick="btnEliminar_Click" CausesValidation="False" OnClientClick="javascript:return confirm('Desea eliminar la pel&iacute;cula?');" />
             </td>
         </tr>
     </table>

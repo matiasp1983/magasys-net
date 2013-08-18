@@ -9,10 +9,10 @@ using Dyn.Database.entities;
 
 namespace Dyn.Web.Admin
 {
-    public partial class Libro : System.Web.UI.Page
+    public partial class Pelicula : System.Web.UI.Page
     {
-        private Dyn.Database.logic.Libro lLibro;
-        public Dyn.Database.entities.Libro Entity;
+        private Dyn.Database.logic.Pelicula lPelicula;
+        public Dyn.Database.entities.Pelicula Entity;
 
         public int IdEntity
         {
@@ -30,21 +30,21 @@ namespace Dyn.Web.Admin
         {
             if (!IsPostBack)
             {
-                this.Master.TituloPagina = "Edici&oacute;n Revista";
-                lLibro = new Dyn.Database.logic.Libro();
+                this.Master.TituloPagina = "Edici&oacute;n Pel&iacute;cula";
+                lPelicula = new Dyn.Database.logic.Pelicula();
                 LlenarProveedor();
                 LlenarGeneros();
                 LLenarAnio();
                 if (Request["Id"] == null)
                 {
                     IdEntity = 0;
-                    Entity = new Dyn.Database.entities.Libro();
+                    Entity = new Dyn.Database.entities.Pelicula();
                 }
                 else
                     if (Request["Id"] != null)
                     {
                         IdEntity = Convert.ToInt32(Request["Id"]);
-                        Entity = lLibro.BuscarProducto(IdEntity);
+                        Entity = lPelicula.BuscarProducto(IdEntity);
                         ddlProveedor.SelectedValue = Entity.IdProveedor.ToString();
                         ddlGenero.SelectedValue = Entity.IdGenero.ToString();
                         ddlAnio.SelectedValue = Entity.Anio.ToString();
@@ -84,7 +84,7 @@ namespace Dyn.Web.Admin
             ListItem li;
             li = new ListItem();
             li = new ListItem("Seleccione...", "0");
-            for (int i = 1970; i < DateTime.Now.Year + 1; i++)
+            for (int i = 1970; i < DateTime.Now.Year +1; i++)
             {
                 ddlAnio.Items.Add(i.ToString());
             }
@@ -96,49 +96,48 @@ namespace Dyn.Web.Admin
             Dyn.Database.logic.Producto pro = new Dyn.Database.logic.Producto();
             if (IdEntity != 0 && IdEntity != int.MinValue)
             {
-                lLibro = new Dyn.Database.logic.Libro();
+                lPelicula = new Dyn.Database.logic.Pelicula();
                 if (pro.VerificaRelacionProducto(IdEntity) == 0)
                 {
-                    lLibro.Delete(IdEntity);
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el libro correctamente');document.location.href='/Admin/ListadoLibro.aspx?IdMenuCategoria=3';", true);
+                    lPelicula.Delete(IdEntity);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró la película correctamente');document.location.href='/Admin/ListadoRevista.aspx?IdMenuCategoria=3';", true);
                 }
                 else
                 {
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('No se puede eliminar el libro, porque está asociado a una transacción');", true);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('No se puede eliminar la película, porque está asociado a una transacción');", true);
                 }
             }
         }
 
         public void Update()
         {
-            lLibro = new Dyn.Database.logic.Libro();
-            Entity = new Dyn.Database.entities.Libro();
+            lPelicula = new Dyn.Database.logic.Pelicula();
+            Entity = new Dyn.Database.entities.Pelicula();
             if (IdEntity == 0)
             {
-                Entity = CargarDatosLibro();
-                lLibro.Insert(Entity);
+                Entity = CargarDatosPelicula();
+                lPelicula.Insert(Entity);
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
             }
             else
                 if (IdEntity > 0)
                 {
-                    Entity = CargarDatosLibro();
-                    Entity.IdLibro = IdEntity;
-                    lLibro.Update(Entity);
+                    Entity = CargarDatosPelicula();
+                    Entity.IdPelicula = IdEntity;
+                    lPelicula.Update(Entity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se actualizaron los datos correctamente');", true);
                 }
         }
 
-        public Dyn.Database.entities.Libro CargarDatosLibro()
+        public Dyn.Database.entities.Pelicula CargarDatosPelicula()
         {
-            Entity = new Dyn.Database.entities.Libro();
+            Entity = new Dyn.Database.entities.Pelicula();
             Entity.Fechacreacion = DateTime.Now;
             Entity.Nombre = txtNombre.Text.Trim();
             Entity.Descripcion = txtDescripcion.Text.Trim();
             Entity.IdProveedor = int.Parse(ddlProveedor.SelectedValue);
             Entity.IdGenero = int.Parse(ddlGenero.SelectedValue);
             Entity.Precio = Convert.ToDouble(txtPrecio.Text.Trim());
-            Entity.Autor = Convert.ToString(txtAutor.Text.Trim());
             Entity.Anio = Convert.ToInt16(ddlAnio.SelectedValue);
             return Entity;
         }
@@ -150,7 +149,7 @@ namespace Dyn.Web.Admin
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ListadoLibro.aspx?IdMenuCategoria=10");
+            Response.Redirect("ListadoPelicula.aspx?IdMenuCategoria=3");
         }
     }
 }
