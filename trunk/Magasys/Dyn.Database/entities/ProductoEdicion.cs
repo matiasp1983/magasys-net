@@ -11,7 +11,7 @@ namespace Dyn.Database.entities
 
         public ProductoEdicion() { }
 
-        public ProductoEdicion(Int32? idProdEdi, Int32? idProd, Int32? est, Double? prec, Int16? cantDisp, string desc)
+        public ProductoEdicion(Int32? idProdEdi, Int32? idProd, Int32? est, Double? prec, Int16? cantDisp, string desc, string nomProd)
         {
             idProductoEdicion = idProdEdi;
             idProducto = idProd;
@@ -19,19 +19,19 @@ namespace Dyn.Database.entities
             precio = prec;
             cantidadDisponible = cantDisp;
             descripcion = desc;
-
+            nombreProducto = nomProd;
         }
 
         public ProductoEdicion(IDataRecord obj)
-		{
+        {
             idProductoEdicion = Convert.ToInt32(obj["idProductoEdicion"]);
             idProducto = Convert.ToInt32(obj["idProducto"]);
             estado = Convert.ToInt16(obj["estado"]);
-            precio = Convert.ToDouble(obj["precio"]);
             cantidadDisponible = Convert.ToInt32(obj["cantidadDisponible"]);
+            precio = Convert.ToDouble(obj["precio"]);
             descripcion = obj["descripcion"].ToString();
-            
- 		}
+            nombreProducto = obj["nombre"].ToString();
+        }
 
         #endregion
 
@@ -57,7 +57,7 @@ namespace Dyn.Database.entities
             get { return estado; }
             set { estado = value; }
         }
-        
+
         private Int32? cantidadDisponible;
         public Int32? CantidadUnidades
         {
@@ -77,6 +77,14 @@ namespace Dyn.Database.entities
         {
             get { return descripcion; }
             set { descripcion = value; }
+        }
+
+        private string nombreProducto;
+
+        public string NombreProducto
+        {
+            get { return nombreProducto; }
+            set { nombreProducto = value; }
         }
 
         #endregion

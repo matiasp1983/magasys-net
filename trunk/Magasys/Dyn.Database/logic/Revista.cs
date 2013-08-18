@@ -39,19 +39,6 @@ namespace Dyn.Database.logic
             return ds;
         }
 
-        public int ExisteRelacionRevista(int idRevista)
-        {
-            CreateCommand("usp_ExisteRelacionRevista", true);
-            AddCmdParameter("@idProducto", idRevista, ParameterDirection.Input);
-            ExecuteReader();
-            int i = 0;
-            if (Read())
-            {
-                i++;
-            }
-            return i;
-        }
-
         private void AddParameters(Dyn.Database.entities.Revista objRevista)
         {
             CreateCommand("usp_Revista", true);

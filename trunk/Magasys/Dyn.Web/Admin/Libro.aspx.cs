@@ -9,11 +9,11 @@ using Dyn.Database.entities;
 
 namespace Dyn.Web.Admin
 {
-    public partial class Revista : System.Web.UI.Page
+    public partial class Libro : System.Web.UI.Page
     {
-        private Dyn.Database.logic.Revista lRevista;
+        private Dyn.Database.logic.Libro lLibro;
         private Dyn.Database.logic.Producto lProducto;
-        public Dyn.Database.entities.Revista Entity;
+        public Dyn.Database.entities.Libro Entity;
 
         public int IdEntity
         {
@@ -32,24 +32,21 @@ namespace Dyn.Web.Admin
             if (!IsPostBack)
             {
                 this.Master.TituloPagina = "Edici&oacute;n Revista";
-                lRevista = new Dyn.Database.logic.Revista();
+                lLibro = new Dyn.Database.logic.Libro();
                 LlenarProveedor();
-                LlenarPeriodicidad();
                 LlenarGeneros();
                 if (Request["Id"] == null)
                 {
                     IdEntity = 0;
-                    Entity = new Dyn.Database.entities.Revista();
+                    Entity = new Dyn.Database.entities.Libro();
                 }
                 else
                     if (Request["Id"] != null)
                     {
                         IdEntity = Convert.ToInt32(Request["Id"]);
-                        Entity = lRevista.BuscarProducto(IdEntity);
-                        lstProveedor.SelectedValue = Entity.IdProveedor.ToString();
-                        lstPeriodicidad.SelectedValue = Entity.IdPeriodicidad.ToString();
-                        lstGenero.SelectedValue = Entity.IdGenero.ToString();
-                        lstDiaSemana.SelectedValue = Entity.DiaSemana.ToString().Trim();
+                        Entity = lLibro.BuscarProducto(IdEntity);
+                        ddlProveedor.SelectedValue = Entity.IdProveedor.ToString();
+                        ddlGenero.SelectedValue = Entity.IdGenero.ToString();
                     }
                 DataBind();
             }
@@ -64,7 +61,7 @@ namespace Dyn.Web.Admin
             {
                 li = new ListItem();
                 li = new ListItem(listageneros[i].Nombre, listageneros[i].IdGenero.ToString());
-                lstGenero.Items.Add(li);
+                ddlGenero.Items.Add(li);
             }
         }
 
@@ -77,20 +74,7 @@ namespace Dyn.Web.Admin
             {
                 li = new ListItem();
                 li = new ListItem(listaproveedor[i].Nombre, listaproveedor[i].IdProveedor.ToString());
-                lstProveedor.Items.Add(li);
-            }
-        }
-
-        public void LlenarPeriodicidad()
-        {
-            Dyn.Database.logic.Periodicidad lPeriodicidad = new Dyn.Database.logic.Periodicidad();
-            List<Dyn.Database.entities.Periodicidad> listaperiodicidad = lPeriodicidad.SeleccionarTodasLasPeriodicidades();
-            ListItem li;
-            for (int i = 0; i < listaperiodicidad.Count; i++)
-            {
-                li = new ListItem();
-                li = new ListItem(listaperiodicidad[i].Nombre, listaperiodicidad[i].IdPeriodicidad.ToString());
-                lstPeriodicidad.Items.Add(li);
+                ddlProveedor.Items.Add(li);
             }
         }
 
@@ -99,50 +83,50 @@ namespace Dyn.Web.Admin
             Dyn.Database.logic.Producto pro = new Dyn.Database.logic.Producto();
             if (IdEntity != 0 && IdEntity != int.MinValue)
             {
-                lRevista = new Dyn.Database.logic.Revista();
+                lLibro = new Dyn.Database.logic.Libro();
                 if (pro.VerificaRelacionProducto(IdEntity) == 0)
                 {
-                    lRevista.Delete(IdEntity);
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró la revista correctamente');document.location.href='/Admin/ListadoRevista.aspx?IdMenuCategoria=3';", true);
+                    lLibro.Delete(IdEntity);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el libro correctamente');document.location.href='/Admin/ListadoLibro.aspx?IdMenuCategoria=3';", true);
                 }
                 else
                 {
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('No se puede eliminar la revista, porque está asociado a una transacción');", true);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('No se puede eliminar el libro, porque está asociado a una transacción');", true);
                 }
             }
         }
 
         public void Update()
         {
-            lRevista = new Dyn.Database.logic.Revista();
-            Entity = new Dyn.Database.entities.Revista();
+            lLibro = new Dyn.Database.logic.Libro();
+            Entity = new Dyn.Database.entities.Libro();
             if (IdEntity == 0)
             {
-                Entity = CargarDatosRevista();
-                lRevista.Insert(Entity);
+                Entity = CargarDatosLibro();
+                lLibro.Insert(Entity);
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
             }
             else
                 if (IdEntity > 0)
                 {
-                    Entity = CargarDatosRevista();
-                    Entity.IdRevista = IdEntity;
-                    lRevista.Update(Entity);
+                    Entity = CargarDatosLibro();
+                    Entity.IdLibro = IdEntity;
+                    lLibro.Update(Entity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se actualizaron los datos correctamente');", true);
                 }
         }
 
-        public Dyn.Database.entities.Revista CargarDatosRevista()
+        public Dyn.Database.entities.Libro CargarDatosLibro()
         {
-            Entity = new Dyn.Database.entities.Revista();
+            Entity = new Dyn.Database.entities.Libro();
             Entity.Fechacreacion = DateTime.Now;
             Entity.Nombre = txtNombre.Text.Trim();
             Entity.Descripcion = txtDescripcion.Text.Trim();
-            Entity.IdProveedor = int.Parse(lstProveedor.SelectedValue);
-            Entity.IdGenero = int.Parse(lstGenero.SelectedValue);
-            Entity.IdPeriodicidad = int.Parse(lstPeriodicidad.SelectedValue);
+            Entity.IdProveedor = int.Parse(ddlProveedor.SelectedValue);
+            Entity.IdGenero = int.Parse(ddlGenero.SelectedValue);
             Entity.Precio = Convert.ToDouble(txtPrecio.Text.Trim());
-            Entity.DiaSemana = lstDiaSemana.SelectedValue.ToString();
+            Entity.Autor = Convert.ToString(txtAutor.Text.Trim());
+            Entity.Anio = Convert.ToInt16(txtAnio.Text.Trim());
             return Entity;
         }
 
@@ -153,7 +137,7 @@ namespace Dyn.Web.Admin
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ListadoRevista.aspx?IdMenuCategoria=3");
+            Response.Redirect("ListadoLibro.aspx?IdMenuCategoria=10");
         }
     }
 }
