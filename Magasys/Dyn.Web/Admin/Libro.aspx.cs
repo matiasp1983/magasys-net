@@ -30,7 +30,7 @@ namespace Dyn.Web.Admin
         {
             if (!IsPostBack)
             {
-                this.Master.TituloPagina = "Edici&oacute;n Revista";
+                this.Master.TituloPagina = "Edici&oacute;n Libro";
                 lLibro = new Dyn.Database.logic.Libro();
                 LlenarProveedor();
                 LlenarGeneros();
