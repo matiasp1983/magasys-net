@@ -28,7 +28,7 @@ namespace Dyn.Web.Admin
             if (!IsPostBack)
             {
                 LlenarProveedor();
-                this.Master.TituloPagina = "Pelicula";
+                this.Master.TituloPagina = "Pel&iacute;cula";
                 CargarPeliculas("", 0);
             }
         }

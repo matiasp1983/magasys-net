@@ -40,7 +40,7 @@ namespace Dyn.Web.Admin
         {
             if (!IsPostBack)
             {
-                this.Master.TituloPagina = "Coleccion";
+                this.Master.TituloPagina = "Colecci&oacute;n";
                 CargarColeccion("","0");
                 LlenarProveedor();
             }
