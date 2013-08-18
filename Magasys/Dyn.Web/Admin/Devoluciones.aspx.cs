@@ -13,6 +13,8 @@ namespace Dyn.Web.Admin
     {
         public static Dyn.Database.entities.Devolucion Entity;
         private int numeropaginas;
+        public static int editDetalle;
+
         public int IdEntity
         {
             get
@@ -40,7 +42,8 @@ namespace Dyn.Web.Admin
             if (!IsPostBack)
             {
                 calFecha.SelectedDate = DateTime.Today;
-
+                txtCantidad.Enabled= false;
+                btnCambiarCantidad.Enabled = false;
                 if (Request["Id"] == null)
                 {
                     IdEntity = 0;
@@ -48,6 +51,8 @@ namespace Dyn.Web.Admin
                 }
 
             }
+            gvDetalles.Visible = true;
+
         }
         public void LlenarProveedor()
         {
@@ -66,6 +71,7 @@ namespace Dyn.Web.Admin
         protected void btnSeleccionarProveedor_Click(object sender, EventArgs e)
         {
             lstProveedor.Enabled = false;
+            btnSeleccionarProveedor.Enabled = false;
             int idProveedor = Convert.ToInt32(lstProveedor.SelectedValue);
             CargarDetalles(idProveedor);
         }
@@ -74,6 +80,16 @@ namespace Dyn.Web.Admin
         {
 
         }
+        protected void btnCambiarCantidad_Click(object sender, EventArgs e)
+        {
+            List<Database.entities.DetalleDevolucion> det = Entity.ListaDetalles;
+            det[editDetalle].Cantidad = Convert.ToInt32(txtCantidad.Text);
+            Entity.ListaDetalles = det;
+            gvDetalles.DataSource = Entity.ListaDetalles;
+            gvDetalles.DataKeyNames = new String[] { "IdDetalleDevolucion" };
+            gvDetalles.DataBind();
+        }
+
         protected void CargarDetalles(int idProveedor)
         {
             Database.logic.ProductoEdicion2 lProductoEdicion = new Database.logic.ProductoEdicion2();
@@ -93,14 +109,75 @@ namespace Dyn.Web.Admin
                 Entity.AgregarDetalle(det);
             }
             gvDetalles.DataSource = Entity.ListaDetalles;
+            gvDetalles.DataKeyNames = new String[] { "IdDetalleDevolucion" };
             gvDetalles.DataBind();
 
             
             
 
         }
+        protected void gvDetalles_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int key = Convert.ToInt32(gvDetalles.DataKeys[e.RowIndex].Value);
+            List<Database.entities.DetalleDevolucion> det = Entity.ListaDetalles;
+            for (int i = 0; i < det.Count; i++)
+            {
+                if (i == key)
+                {
+                    det.Remove(det[i]);
+                    // return;
+                }
+            }
+            Entity.ListaDetalles = det;
+            gvDetalles.DataSource = Entity.ListaDetalles;
+            gvDetalles.DataKeyNames = new String[] { "IdDetalleDevolucion" };
+            gvDetalles.DataBind();
+           
+        }
 
+        protected void gvDetalles_RowEditing(object sender, GridViewEditEventArgs e)
+        {
 
+            gvDetalles.EditIndex = e.NewEditIndex;
 
+            // fetch and rebind the data.
+            gvDetalles.DataSource = Entity.ListaDetalles;
+            gvDetalles.DataKeyNames = new String[] { "IdDetalleDevolucion" };
+            gvDetalles.DataBind();
+            //editDetalle = Convert.ToInt32(gvDetalles.DataKeys[e.NewEditIndex].Value);
+            //List<Database.entities.DetalleDevolucion> det = Entity.ListaDetalles;
+            //for (int i = 0; i < det.Count; i++)
+            //{
+            //    if (i == editDetalle)
+            //    {
+            //        txtCantidad.Text = det[i].Cantidad.ToString();
+            //        txtCantidad.Enabled = true;
+            //        btnCambiarCantidad.Enabled = true;
+            //        return;
+            //    }
+            //}
+        }
+        protected void gvDetalles_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            gvDetalles.EditIndex = -1;
+
+            // fetch and rebind the data.
+            gvDetalles.DataSource = Entity.ListaDetalles;
+            gvDetalles.DataKeyNames = new String[] { "IdDetalleDevolucion" };
+            gvDetalles.DataBind();
+        }
+        protected void gvDetalles_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            List<Database.entities.DetalleDevolucion> det = Entity.ListaDetalles;
+            int key = e.RowIndex;
+
+            det[key].Cantidad = Convert.ToInt32(e.NewValues["Cantidad"]);
+            Entity.ListaDetalles = det;
+            gvDetalles.DataSource = Entity.ListaDetalles;
+            gvDetalles.DataKeyNames = new String[] { "IdDetalleDevolucion" };
+            gvDetalles.EditIndex = -1;
+            gvDetalles.DataBind();
+            
+        }
     }
 }

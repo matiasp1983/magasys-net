@@ -73,12 +73,39 @@
          <tr>
             <td class="style16" colspan="3">
             
-                <asp:GridView ID="gvDetalles" runat="server">
+                <asp:GridView ID="gvDetalles" runat="server" AutoGenerateColumns="False" 
+                    onrowcancelingedit="gvDetalles_RowCancelingEdit" 
+                    onrowdeleting="gvDetalles_RowDeleting" onrowediting="gvDetalles_RowEditing" 
+                    onrowupdating="gvDetalles_RowUpdating">
+                    <Columns>
+                        <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto" 
+                            ReadOnly="True" />
+                        <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" />
+                        <asp:CommandField ShowEditButton="True" />
+                        <asp:CommandField ShowDeleteButton="True" />
+                    </Columns>
                 </asp:GridView>
             
             </td>
 
 
+         </tr>
+
+         <tr>
+
+            <td class="style1" align="left">
+                Cantidad a Devolver:
+            </td>
+            <td align="left" width="150">
+                <asp:TextBox ID="txtCantidad" runat="server" CssClass="tittleprecios03" 
+                    Enabled="False"></asp:TextBox><br />
+            </td>
+         <td>
+         <asp:Button CssClass="adminbutton" ID="btnCambiarCantidad" runat="server" 
+                    Text="CambiarCantidad" onclick="btnCambiarCantidad_Click"
+                    />&nbsp;
+         
+         </td>
          </tr>
 
          <tr>
