@@ -52,7 +52,7 @@ namespace Dyn.Database.entities
             set { idIngresoProductos = value; }
         }
 
-        private Producto producto;
+        private Producto producto = new Database.entities.Producto();
         public Producto Producto
         {
             get { return producto; }
