@@ -11,12 +11,13 @@ namespace Dyn.Database.entities
 
         public Venta() { }
 
-        public Venta(Int32? idVen, DateTime? fech, Int16? est, Double? montot)
+        public Venta(Int32? idVen, DateTime? fech, Int16? est, Double? montot, string nomCli)
         {
             idVenta = idVen;
             fecha = fech;
             estado = est;
             montotal = montot;
+            nombreCliente = nomCli;
         }
 
         public Venta(IDataRecord obj)
@@ -25,6 +26,7 @@ namespace Dyn.Database.entities
             fecha = Convert.ToDateTime(obj["fecha"]);
             estado = Convert.ToInt16(obj["estado"]);
             montotal = Convert.ToDouble(obj["total"]);
+            nombreCliente = Convert.ToString(obj["nombreCliente"]);
 		}
 
         #endregion
@@ -74,6 +76,14 @@ namespace Dyn.Database.entities
         {
             get { return montotal; }
             set { montotal = value; }
+        }
+
+        private string nombreCliente;
+
+        public string NombreCliente
+        {
+            get { return nombreCliente; }
+            set { nombreCliente = value; }
         }
 
         #endregion

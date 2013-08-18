@@ -10,7 +10,7 @@
 namespace Dyn.Web.Admin {
     
     
-    public partial class Revista {
+    public partial class Libro {
         
         /// <summary>
         /// txtNombre control.
@@ -49,40 +49,58 @@ namespace Dyn.Web.Admin {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDescripcion;
         
         /// <summary>
-        /// lstProveedor control.
+        /// ddlProveedor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lstProveedor;
+        protected global::System.Web.UI.WebControls.DropDownList ddlProveedor;
         
         /// <summary>
-        /// lstDiaSemana control.
+        /// txtAutor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lstDiaSemana;
+        protected global::System.Web.UI.WebControls.TextBox txtAutor;
         
         /// <summary>
-        /// lstPeriodicidad control.
+        /// rfvAutor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lstPeriodicidad;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAutor;
         
         /// <summary>
-        /// lstGenero control.
+        /// txtAnio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lstGenero;
+        protected global::System.Web.UI.WebControls.TextBox txtAnio;
+        
+        /// <summary>
+        /// cvAnio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvAnio;
+        
+        /// <summary>
+        /// ddlGenero control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlGenero;
         
         /// <summary>
         /// txtPrecio control.

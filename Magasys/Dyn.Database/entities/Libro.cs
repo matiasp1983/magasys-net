@@ -1,31 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace Dyn.Database.entities
 {
-    public class Libro
+    public class Libro : Producto
     {
         #region Constructores
 
-        public Libro() { }
+        public Libro() : base() { }
 
-        public Libro(Int32? idLib, DateTime? fechcreac, string nomb, string descrip, Int16? est,
-            Int32? cantidad, Int32? idTiposProd, Int32? idGen, Int32? idProv, Double? prec, string aut, Int16? ani)
+        public Libro(Int32? idProd, DateTime? fechcreac, string nomb, string descrip, Int16? est, Int32? idProv, Double? prec,
+            string aut, Int16? ani, Int32? idGen)
+            : base(idProd, fechcreac, nomb, descrip, est, idProv)
         {
-            idLibro = idLib;
-            fechacreacion = fechcreac;
-            nombre = nomb;
-            descripcion = descrip;
-            estado = est;
-            cantidaddisponible = cantidad;
-            idTiposProducto = idTiposProd;
-            idGenero = idGen;
-            idProveedor = idProv;
+            idLibro = base.IdProducto;
             precio = prec;
             autor = aut;
             anio = ani;
+            idGenero = idGen;
+        }
+
+        public Libro(IDataRecord objp, IDataRecord objr)
+            : base(objp)
+        {
+            idLibro = Convert.ToInt32(objr["idLibro"]);
+            precio = Convert.ToDouble(objr["precio"]);
+            autor = Convert.ToString(objr["autor"]);
+            anio = Convert.ToInt16(objr["anio"]);
+            idGenero = Convert.ToInt32(objr["idGenero"]);
         }
 
         #endregion
@@ -40,64 +44,12 @@ namespace Dyn.Database.entities
             set { idLibro = value; }
         }
 
-        private DateTime? fechacreacion;
+        private Double? precio;
 
-        public DateTime? Fechacreacion
+        public Double? Precio
         {
-            get { return fechacreacion; }
-            set { fechacreacion = value; }
-        }
-
-        private string nombre;
-
-        public string Nombre
-        {
-            get { return nombre; }
-            set { nombre = value; }
-        }
-
-        private string descripcion;
-
-        public string Descripcion
-        {
-            get { return descripcion; }
-            set { descripcion = value; }
-        }
-
-        private Int16? estado = null;
-
-        public enum GeneroEstado
-        {
-            Activo = 1,
-            Inactivo = 0
-        }
-
-        public GeneroEstado Estado
-        {
-            get
-            {
-                return (GeneroEstado)estado;
-            }
-            set
-            {
-                estado = (Int16)value;
-            }
-        }
-
-        private Int32? cantidaddisponible;
-
-        public Int32? Cantidaddisponible
-        {
-            get { return cantidaddisponible; }
-            set { cantidaddisponible = value; }
-        }
-
-        private Int32? idTiposProducto;
-
-        public Int32? IdTiposProducto
-        {
-            get { return idTiposProducto; }
-            set { idTiposProducto = value; }
+            get { return precio; }
+            set { precio = value; }
         }
 
         private Int32? idGenero;
@@ -106,22 +58,6 @@ namespace Dyn.Database.entities
         {
             get { return idGenero; }
             set { idGenero = value; }
-        }
-
-        private Int32? idProveedor;
-
-        public Int32? IdProveedor
-        {
-            get { return idProveedor; }
-            set { idProveedor = value; }
-        }
-
-        private Double? precio;
-
-        public Double? Precio
-        {
-            get { return precio; }
-            set { precio = value; }
         }
 
         private string autor;

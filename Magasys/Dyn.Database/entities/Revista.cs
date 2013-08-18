@@ -11,7 +11,7 @@ namespace Dyn.Database.entities
 
         public Revista() : base() { }
 
-        public Revista(Int32? idProd, DateTime? fechcreac, string nomb, string descrip, Int16? est, Int32? idProv, Int32? idRev,
+        public Revista(Int32? idProd, DateTime? fechcreac, string nomb, string descrip, Int16? est, Int32? idProv,
             Int32? idGen, Int32? idPeriod, Double? prec, string dia)
             : base(idProd, fechcreac, nomb, descrip, est, idProv)
         {

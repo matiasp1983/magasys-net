@@ -143,7 +143,6 @@ namespace Dyn.Database.logic
             CreateCommand("usp_ExisteRelacionProducto", true);
             AddCmdParameter("@idProducto", idProducto, ParameterDirection.Input);
             AddCmdParameter("@idProductoOut", ParameterDirection.Output);
-            //ExecuteReader();
             DataSet ds = GetDataSet();
             int i = 0;
             i = (int)GetValueCmdParameter("@idProductoOut");
