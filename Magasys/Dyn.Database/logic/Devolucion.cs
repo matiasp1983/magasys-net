@@ -35,17 +35,27 @@ namespace Dyn.Database.logic
 
         public object Insert(Dyn.Database.entities.Devolucion objDetalle)
         {
-
-            object IdDetalle = null;
+            Database.logic.DetalleDevolucion lDetalle = new Database.logic.DetalleDevolucion();
+            object IdDevolucion = null;
             objDetalle.Estado = 1;
             AddParameters(objDetalle);
             AddCmdParameter("@Action", 2, ParameterDirection.Input);
             ExecuteReader();
             while (Read())
             {
-                IdDetalle = GetValue(0);
+                IdDevolucion = GetValue(0);
             }
-            return IdDetalle;
+            List<Database.entities.DetalleDevolucion> listaDetalles = new List<Database.entities.DetalleDevolucion>();
+            listaDetalles = objDetalle.ListaDetalles;
+            for (int i = 0; i < listaDetalles.Count; i++)
+            {
+                listaDetalles[i].IdDevolucion = Convert.ToInt32(IdDevolucion);
+                lDetalle.Insert(listaDetalles[i]);
+
+            }
+
+
+            return IdDevolucion;
         }
         public void Update(Dyn.Database.entities.Devolucion objDetalle)
         {

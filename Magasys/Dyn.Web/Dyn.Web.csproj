@@ -78,8 +78,6 @@
     <Content Include="Admin\Proveedor.aspx" />
     <Content Include="Admin\Revista.aspx" />
     <Content Include="Admin\Suplementos.aspx" />
-    <Content Include="Admin\Venta.aspx" />
-    <Content Include="controls\Date.ascx" />
     <Content Include="controls\Login.ascx" />
     <Content Include="controls\MenuAdmin.ascx" />
     <Content Include="controls\MenuAdminCategoria.ascx" />
@@ -249,20 +247,6 @@
     </Compile>
     <Compile Include="Admin\Suplementos.aspx.designer.cs">
       <DependentUpon>Suplementos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Venta.aspx.cs">
-      <DependentUpon>Venta.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Venta.aspx.designer.cs">
-      <DependentUpon>Venta.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="controls\Date.ascx.cs">
-      <DependentUpon>Date.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\Date.ascx.designer.cs">
-      <DependentUpon>Date.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\Login.ascx.cs">
       <DependentUpon>Login.ascx</DependentUpon>

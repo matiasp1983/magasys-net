@@ -39,7 +39,7 @@ namespace Dyn.Database.logic
 
         private void AddParameters(Dyn.Database.entities.DetalleDevolucion objusuario)
         {
-            CreateCommand("usp_DetalleIngreso", true);
+            CreateCommand("usp_DetalleDevolucion", true);
             AddCmdParameter("@idDetalleDevolucion", objusuario.IdDetalleDevolucion, ParameterDirection.Input);
             AddCmdParameter("@idDevolucion", objusuario.IdDevolucion, ParameterDirection.Input);
             AddCmdParameter("@idDetalleIngresoProductos", objusuario.IdDetalleIngresoProductos, ParameterDirection.Input);

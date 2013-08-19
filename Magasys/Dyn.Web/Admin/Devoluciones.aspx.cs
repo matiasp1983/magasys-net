@@ -78,6 +78,21 @@ namespace Dyn.Web.Admin
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
+            Database.logic.Devolucion lDevolucion = new Database.logic.Devolucion();
+            List<Database.entities.DetalleDevolucion> detalle = Entity.ListaDetalles;
+            for(int i = 0; i < detalle.Count; i++)
+            {
+                detalle[i].Devolver();
+                detalle[i].IdDetalleIngresoProductos = detalle[i].ProductoEdicion.ObtenerIdDetalleIngreso();
+            }
+            Entity.Fecha = DateTime.Now;
+            Entity.IdProveedor = Convert.ToInt32(lstProveedor.SelectedValue);
+            Entity.Descripcion = "";
+
+
+            lDevolucion.Insert(Entity);
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
+            Response.Redirect("/Home.aspx");
 
         }
         protected void btnCambiarCantidad_Click(object sender, EventArgs e)
@@ -101,6 +116,7 @@ namespace Dyn.Web.Admin
                 Database.entities.Producto prod = new Database.entities.Producto();
                 Database.logic.Producto lProducto = new Database.logic.Producto();
                 prod = lProducto.Load(Convert.ToInt32(listaProductos[i].IdProducto));
+                prod.IdProducto = Convert.ToInt32(listaProductos[i].IdProducto);
                 det.Producto = prod;
                 det.Cantidad = listaProductos[i].CantidadUnidades;
                 Database.logic.DetalleIngreso lDetalleIngreso = new Database.logic.DetalleIngreso();
