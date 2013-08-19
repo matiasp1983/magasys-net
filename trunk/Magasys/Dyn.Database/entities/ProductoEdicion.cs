@@ -79,5 +79,17 @@ namespace Dyn.Database.entities
 
 
         #endregion
+
+        #region Propiedades
+
+        public int ObtenerIdDetalleIngreso()
+        {
+            Database.logic.DetalleIngreso lDetIng = new Database.logic.DetalleIngreso();
+            Database.entities.DetalleIngresoProducto det = lDetIng.ObtenerDetallePorEdicion(Convert.ToInt32(idProductoEdicion));
+            return Convert.ToInt32(det.IdDetalleIngresoProducto);
+
+        }
+
+        #endregion
     }
 }

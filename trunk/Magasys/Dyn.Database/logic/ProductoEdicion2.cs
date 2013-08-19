@@ -63,11 +63,12 @@ namespace Dyn.Database.logic
             AddCmdParameter("@Action", 3, ParameterDirection.Input);
             ExecuteNonQuery();
         }
-        public void Devolver(int idProdEdi)
+        public void Devolver(Dyn.Database.entities.ProductoEdicion objusuario)
         {
             CreateCommand("usp_ProductoEdicion", true);
-            AddCmdParameter("@idProductoEdicion", idProdEdi, ParameterDirection.Input);
+            AddCmdParameter("@idProductoEdicion", objusuario.IdProductoEdicion, ParameterDirection.Input);
             AddCmdParameter("@estado", 2, ParameterDirection.Input);
+            AddCmdParameter("@cantidadDisponible", objusuario.CantidadUnidades, ParameterDirection.Input);
             AddCmdParameter("@Action", 3, ParameterDirection.Input);
             ExecuteNonQuery();
         }

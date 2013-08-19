@@ -87,6 +87,15 @@ namespace Dyn.Database.entities
             set { productoEdicion = value; }
         }
 
+        #endregion
+
+        #region Opercaciones
+
+        public void Devolver()
+        {
+            Database.logic.ProductoEdicion2 lDetDevol = new logic.ProductoEdicion2();
+            lDetDevol.Devolver(productoEdicion);
+        }
 
 
         #endregion
