@@ -84,6 +84,7 @@ namespace Dyn.Web.Admin
             Dyn.Database.entities.DetalleIngresoProducto detalle = new DetalleIngresoProducto();
             lProducto = new Database.logic.Producto();
             newProducto = lProducto.Load(idProducto);
+            newProducto.IdProducto = idProducto;
             detalle.Producto = newProducto;
                     
             
