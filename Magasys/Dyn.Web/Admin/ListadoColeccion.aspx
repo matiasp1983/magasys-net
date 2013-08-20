@@ -43,7 +43,7 @@
                 <tr>
                     <td colspan="3" class="tittleproducto" width="700" align="left">
                         <h2>
-                            Listado de Colecciones</h2>
+                            Listado de colecciones</h2>
                     </td>
                 </tr>
                 <tr>
@@ -60,16 +60,16 @@
                 </tr>
                 <tr>
                     <td width="233" class="style1" align="left" valign="middle">
-                        Nombre Coleccion:
+                        Nombre Colecci&oacute;n:
                     </td>
                     <td width="234" align="left" valign="middle" class="style2">
                         <asp:TextBox ID="txtNombreColeccion" runat="server" CssClass="tittleprecios03" ValidationGroup="busqueda"
                             Width="234"></asp:TextBox><br />
-                        <act:AutoCompleteExtender ID="AutoCompleteExtender2" runat="server" MinimumPrefixLength="1"
+                       <%-- <act:AutoCompleteExtender ID="AutoCompleteExtender2" runat="server" MinimumPrefixLength="1"
                             TargetControlID="txtNombreColeccion" ServicePath="~/WebService/AutoComplete.asmx"
                             ServiceMethod="InformacionAutocompletarRevistasPorProveedor" CompletionInterval="1000"
                             CompletionSetCount="12" UseContextKey="True">
-                        </act:AutoCompleteExtender>
+                        </act:AutoCompleteExtender>--%>
                     </td>
                     <td width="233" align="left" class="style2">
                         <asp:Button ID="Button1" CssClass="adminbutton" runat="server" Text="Buscar" OnClick="btnBuscar_Click"
@@ -78,7 +78,7 @@
 
                 <tr>
                     <td colspan="3" width="700" align="left">
-                        <asp:Button ID="btnAdicionarRevista" CssClass="adminbutton" runat="server" Text="Adicionar Coleccion"
+                        <asp:Button ID="btnAdicionarRevista" CssClass="adminbutton" runat="server" Text="Adicionar Colección"
                             CausesValidation="False" OnClick="btnAdicionarRevista_Click" />
                     </td>
                 </tr>

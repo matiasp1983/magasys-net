@@ -58,15 +58,6 @@ namespace Dyn.Web.Admin {
         protected global::System.Web.UI.WebControls.TextBox txtNombreRevista;
         
         /// <summary>
-        /// AutoCompleteExtender1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.AutoCompleteExtender AutoCompleteExtender1;
-        
-        /// <summary>
         /// btnBuscar control.
         /// </summary>
         /// <remarks>

@@ -7,55 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Dyn.Web.Admin {
+namespace Dyn.Web.controls {
     
     
-    public partial class ListadoSuplemento {
+    public partial class Ventas {
         
         /// <summary>
-        /// UpdatePanel1 control.
+        /// ddlProveedor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlProveedor;
         
         /// <summary>
-        /// CollectionPager control.
+        /// txtProducto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SiteUtils.CollectionPager CollectionPager;
-        
-        /// <summary>
-        /// lstProveedor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lstProveedor;
-        
-        /// <summary>
-        /// RequiredFieldValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-        
-        /// <summary>
-        /// txtNombreSuplemento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreSuplemento;
+        protected global::System.Web.UI.WebControls.TextBox txtProducto;
         
         /// <summary>
         /// btnBuscar control.
@@ -67,51 +40,111 @@ namespace Dyn.Web.Admin {
         protected global::System.Web.UI.WebControls.Button btnBuscar;
         
         /// <summary>
-        /// btnAdicionarRevista control.
+        /// upItems control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdicionarRevista;
+        protected global::System.Web.UI.UpdatePanel upItems;
         
         /// <summary>
-        /// repSuplemento control.
+        /// rptItems control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repSuplemento;
+        protected global::System.Web.UI.WebControls.Repeater rptItems;
         
         /// <summary>
-        /// Login1 control.
+        /// uplblTotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Dyn.Web.controls.Login Login1;
+        protected global::System.Web.UI.UpdatePanel uplblTotal;
         
         /// <summary>
-        /// MenuAdmin1 control.
+        /// lblTotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Dyn.Web.controls.MenuAdminCategoria MenuAdmin1;
+        protected global::System.Web.UI.WebControls.Label lblTotal;
         
         /// <summary>
-        /// Master property.
+        /// hfProductos control.
         /// </summary>
         /// <remarks>
-        /// Auto-generated property.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        public new Dyn.Web.Masters.Admin Master {
-            get {
-                return ((Dyn.Web.Masters.Admin)(base.Master));
-            }
-        }
+        protected global::System.Web.UI.WebControls.HiddenField hfProductos;
+        
+        /// <summary>
+        /// mpeProductos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ModalPopupExtender mpeProductos;
+        
+        /// <summary>
+        /// panelProductos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panelProductos;
+        
+        /// <summary>
+        /// upProductos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upProductos;
+        
+        /// <summary>
+        /// lblMensajeError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensajeError;
+        
+        /// <summary>
+        /// rptProductos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptProductos;
+        
+        /// <summary>
+        /// btnAgregar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAgregar;
+        
+        /// <summary>
+        /// btnCerrar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCerrar;
     }
 }

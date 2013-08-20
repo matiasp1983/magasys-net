@@ -37,7 +37,7 @@ namespace Dyn.Web.Admin
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.Master.TituloPagina = "Realizar Devolucion";
+            this.Master.TituloPagina = "Devoluciones";
             LlenarProveedor();
             if (!IsPostBack)
             {

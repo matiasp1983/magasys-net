@@ -25,20 +25,20 @@
                 <tr>
                     <td colspan="3" class="tittleproducto" width="700" align="left">
                         <h2>
-                        Listado de Proveedores</h2>
+                        Listado de proveedores</h2>
                     </td>
                 </tr>
                 <tr>
                     <td width="233" class="tittleprecios03" align="left" valign="middle">
-                        Nombre de Proveedor:
+                        Nombre de proveedor:
                     </td>
                     <td width="234" align="left" valign="middle">
                         <asp:TextBox ID="txtNombreProveedor" runat="server" CssClass="tittleprecios03" ValidationGroup="busqueda" Width="234"></asp:TextBox><br />
-                        <act:AutoCompleteExtender ID="AutoCompleteExtender1" runat="server" MinimumPrefixLength="1"
+                       <%-- <act:AutoCompleteExtender ID="AutoCompleteExtender1" runat="server" MinimumPrefixLength="1"
                             TargetControlID="txtNombreProveedor" ServicePath="~/WebService/AutoComplete.asmx"
-                            ServiceMethod="InformacionAutocompletarGeneros" CompletionInterval="1000" CompletionSetCount="12"
+                            ServiceMethod="" CompletionInterval="1000" CompletionSetCount="12"
                             UseContextKey="True">
-                        </act:AutoCompleteExtender>
+                        </act:AutoCompleteExtender>--%>
                     </td>
                     <td width="233" align="left">
                         <asp:Button ID="btnBuscar" CssClass="adminbutton" runat="server" Text="Buscar" OnClick="btnBuscar_Click"

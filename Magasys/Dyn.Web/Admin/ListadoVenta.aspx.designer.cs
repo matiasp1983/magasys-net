@@ -10,7 +10,7 @@
 namespace Dyn.Web.Admin {
     
     
-    public partial class ListadoSuplemento {
+    public partial class ListadoVenta {
         
         /// <summary>
         /// UpdatePanel1 control.
@@ -31,31 +31,22 @@ namespace Dyn.Web.Admin {
         protected global::SiteUtils.CollectionPager CollectionPager;
         
         /// <summary>
-        /// lstProveedor control.
+        /// calFechaInicial control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lstProveedor;
+        protected global::Calendar_Date calFechaInicial;
         
         /// <summary>
-        /// RequiredFieldValidator1 control.
+        /// calFechaFinal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-        
-        /// <summary>
-        /// txtNombreSuplemento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreSuplemento;
+        protected global::Calendar_Date calFechaFinal;
         
         /// <summary>
         /// btnBuscar control.
@@ -67,40 +58,13 @@ namespace Dyn.Web.Admin {
         protected global::System.Web.UI.WebControls.Button btnBuscar;
         
         /// <summary>
-        /// btnAdicionarRevista control.
+        /// rptVenta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdicionarRevista;
-        
-        /// <summary>
-        /// repSuplemento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repSuplemento;
-        
-        /// <summary>
-        /// Login1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Dyn.Web.controls.Login Login1;
-        
-        /// <summary>
-        /// MenuAdmin1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Dyn.Web.controls.MenuAdminCategoria MenuAdmin1;
+        protected global::System.Web.UI.WebControls.Repeater rptVenta;
         
         /// <summary>
         /// Master property.

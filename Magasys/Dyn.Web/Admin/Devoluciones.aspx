@@ -35,7 +35,7 @@
     <table width="100%" cellpadding="0" cellspacing="5" border="0">
         <tr>
             <td class="style1" align="left">
-                Numero de Devolucion:
+                Numero de Devoluci&oacute;n:
             </td>
             <td align="left" width="150">
                 <asp:TextBox ID="txtNumeroDevolucion" runat="server" CssClass="tittleprecios03" 
