@@ -30,7 +30,6 @@ namespace Dyn.Database.logic
             AddCmdParameter("@fecha", objVenta.Fecha, ParameterDirection.Input);
             AddCmdParameter("@estado", objVenta.Estado, ParameterDirection.Input);
             AddCmdParameter("@total", objVenta.MonTotal, ParameterDirection.Input);
-            AddCmdParameter("@nombreCliente", objVenta.NombreCliente, ParameterDirection.Input);
         }
 
         public void Update(Dyn.Database.entities.Venta objVenta)
@@ -68,10 +67,21 @@ namespace Dyn.Database.logic
         {
             CreateCommand("usp_Venta", true);
             AddCmdParameter("@Action", 4, ParameterDirection.Input);
+            int maxIdVenta;
+            return maxIdVenta = (int)ExecuteScalar();
+        }
+
+        public DataSet SeleccionarVentasPorNombrePaginadoAdmin(DateTime fechainicial, DateTime fechafinal, int paginaactual, ref int numeropaginas)
+        {
+            CreateCommand("usp_SeleccionarVentasPorNombrePaginado", true);
+            AddCmdParameter("@fechaIni", fechainicial, ParameterDirection.Input);
+            AddCmdParameter("@fechaFin", fechafinal, ParameterDirection.Input);
+            AddCmdParameter("@CurrentPage", paginaactual, ParameterDirection.Input);
+            AddCmdParameter("@PageSize", 100, ParameterDirection.Input);
+            AddCmdParameter("@TotalRecords", ParameterDirection.Output);
             DataSet ds = GetDataSet();
-            int i = 0;
-            i = (int)GetValueCmdParameter("@maxIdVenta");
-            return i;
+            numeropaginas = (int)GetValueCmdParameter("@TotalRecords");
+            return ds;
         }
     }
 }

@@ -41,7 +41,7 @@ namespace Dyn.Web.Admin
         {
             if (!IsPostBack)
             {
-                this.Master.TituloPagina = "Diarios";
+                this.Master.TituloPagina = "Diario";
                 CargarDiario("", "0");
                 LlenarProveedor();
             }

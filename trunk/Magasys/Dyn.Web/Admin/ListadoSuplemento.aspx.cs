@@ -41,7 +41,7 @@ namespace Dyn.Web.Admin
         {
             if (!IsPostBack)
             {
-                this.Master.TituloPagina = "Coleccion";
+                this.Master.TituloPagina = "Suplemento";
                 CargarSuplemento("", "0");
                 LlenarProveedor();
             }

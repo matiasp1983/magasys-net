@@ -46,7 +46,91 @@ public class AutoComplete : System.Web.Services.WebService
         }
         return Collection.ToArray();
     }
-    
+    //[WebMethod]
+    //public String[] InformacionAutocompletarRevistasPorProveedor(string prefixText, int count)
+    //{
+    //    List<String> Collection = new List<String>();
+    //    CreateCommand("SELECT distinct p.nombre FROM Proveedores p INNER JOIN Revistas r ON p.idProveedor = r.idProveedor WHERE r.estado = 1 AND p.nombre LIKE '%'+ @nombre +'%'", false);
+    //    AddCmdParameter("@nombre", prefixText, ParameterDirection.Input);
+    //    OpenConnection();
+    //    dr = cmd.ExecuteReader();
+    //    while (dr.Read())
+    //    {
+    //        Collection.Add(dr["nombre"].ToString());
+    //    }
+    //    return Collection.ToArray();
+    //}
+    //[WebMethod]
+    //public String[] InformacionAutocompletarColeccionesPorProveedor(string prefixText, int count)
+    //{
+    //    List<String> Collection = new List<String>();
+    //    CreateCommand("SELECT distinct p.nombre FROM Proveedores p INNER JOIN Colecciones c ON p.idProveedor = c.idProveedor WHERE c.estado = 1 AND p.nombre LIKE '%'+ @nombre +'%'", false);
+    //    AddCmdParameter("@nombre", prefixText, ParameterDirection.Input);
+    //    OpenConnection();
+    //    dr = cmd.ExecuteReader();
+    //    while (dr.Read())
+    //    {
+    //        Collection.Add(dr["nombre"].ToString());
+    //    }
+    //    return Collection.ToArray();
+    //}
+    //[WebMethod]
+    //public String[] InformacionAutocompletarPeliculasPorProveedor(string prefixText, int count)
+    //{
+    //    List<String> Collection = new List<String>();
+    //    CreateCommand("SELECT distinct p.nombre FROM Proveedores p INNER JOIN Pelicula pe ON p.idProveedor = pe.idProveedor WHERE pe.estado = 1 AND p.nombre LIKE '%'+ @nombre +'%'", false);
+    //    AddCmdParameter("@nombre", prefixText, ParameterDirection.Input);
+    //    OpenConnection();
+    //    dr = cmd.ExecuteReader();
+    //    while (dr.Read())
+    //    {
+    //        Collection.Add(dr["nombre"].ToString());
+    //    }
+    //    return Collection.ToArray();
+    //}
+    //[WebMethod]
+    //public String[] InformacionAutocompletarLibrosPorProveedor(string prefixText, int count)
+    //{
+    //    List<String> Collection = new List<String>();
+    //    CreateCommand("SELECT distinct p.nombre FROM Proveedores p INNER JOIN Libros l ON p.idProveedor = l.idProveedor WHERE l.estado = 1 AND p.nombre LIKE '%'+ @nombre +'%'", false);
+    //    AddCmdParameter("@nombre", prefixText, ParameterDirection.Input);
+    //    OpenConnection();
+    //    dr = cmd.ExecuteReader();
+    //    while (dr.Read())
+    //    {
+    //        Collection.Add(dr["nombre"].ToString());
+    //    }
+    //    return Collection.ToArray();
+    //}
+    //[WebMethod]
+    //public String[] InformacionAutocompletarDiariosPorProveedor(string prefixText, int count)
+    //{
+    //    List<String> Collection = new List<String>();
+    //    CreateCommand("SELECT distinct p.nombre FROM Proveedores p INNER JOIN Diarios d ON p.idProveedor = d.idProveedor WHERE d.estado = 1 AND p.nombre LIKE '%'+ @nombre +'%'", false);
+    //    AddCmdParameter("@nombre", prefixText, ParameterDirection.Input);
+    //    OpenConnection();
+    //    dr = cmd.ExecuteReader();
+    //    while (dr.Read())
+    //    {
+    //        Collection.Add(dr["nombre"].ToString());
+    //    }
+    //    return Collection.ToArray();
+    //}
+    //[WebMethod]
+    //public String[] InformacionAutocompletarSuplementosPorProveedor(string prefixText, int count)
+    //{
+    //    List<String> Collection = new List<String>();
+    //    CreateCommand("SELECT distinct p.nombre FROM Proveedores p INNER JOIN Suplementos s ON p.idProveedor = s.idProveedor WHERE s.estado = 1 AND p.nombre LIKE '%'+ @nombre +'%'", false);
+    //    AddCmdParameter("@nombre", prefixText, ParameterDirection.Input);
+    //    OpenConnection();
+    //    dr = cmd.ExecuteReader();
+    //    while (dr.Read())
+    //    {
+    //        Collection.Add(dr["nombre"].ToString());
+    //    }
+    //    return Collection.ToArray();
+    //}
+
     #endregion
 
     #region [FactoryBase]

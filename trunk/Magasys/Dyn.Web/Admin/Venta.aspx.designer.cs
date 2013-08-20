@@ -10,61 +10,52 @@
 namespace Dyn.Web.Admin {
     
     
-    public partial class ListadoProveedor {
+    public partial class Venta {
         
         /// <summary>
-        /// UpdatePanel1 control.
+        /// lblIdVenta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.WebControls.Label lblIdVenta;
         
         /// <summary>
-        /// CollectionPager control.
+        /// calFechaVenta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SiteUtils.CollectionPager CollectionPager;
+        protected global::Calendar_Date calFechaVenta;
         
         /// <summary>
-        /// txtNombreProveedor control.
+        /// ucVentas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreProveedor;
+        protected global::Dyn.Web.controls.Ventas ucVentas;
         
         /// <summary>
-        /// btnBuscar control.
+        /// btnGuardarVenta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscar;
+        protected global::System.Web.UI.WebControls.Button btnGuardarVenta;
         
         /// <summary>
-        /// btnAdicionarGenero control.
+        /// btnCancelar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdicionarGenero;
-        
-        /// <summary>
-        /// repProveedor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repProveedor;
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
         
         /// <summary>
         /// Master property.

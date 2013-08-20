@@ -12,7 +12,7 @@ namespace Dyn.Database.entities
         public DetalleVenta() { }
 
         public DetalleVenta(Int32? idDetalleVen, Int32? idVent, Int32? idProd, Double? precioUnid, Int32? cantid,
-               Double? subTot, Int32? idProdEdic, string nom)
+               Double? subTot, string nom)
         {
             idDetalleVenta = idDetalleVen;
             idVenta = idVent;
@@ -20,7 +20,7 @@ namespace Dyn.Database.entities
             precioUnidad = precioUnid;
             cantidad = cantid;
             subTotal = subTot;
-            idProductoEdicion = idProdEdic;
+            //idProductoEdicion = idProdEdic;
             nombre = nom;
         }
 
@@ -33,7 +33,7 @@ namespace Dyn.Database.entities
             precioUnidad = Convert.ToDouble(obj["precioUnidad"]);
             cantidad = Convert.ToInt32(obj["cantidad"]);
             subTotal = Convert.ToDouble(obj["subTotal"]);
-            idProductoEdicion = Convert.ToInt32(obj["idProductoEdicion"]);
+            //idProductoEdicion = Convert.ToInt32(obj["idProductoEdicion"]);
         }
 
         #endregion
@@ -96,13 +96,13 @@ namespace Dyn.Database.entities
 		    set { subTotal = value;}
 	    }
 
-        private Int32? idProductoEdicion;
+        //private Int32? idProductoEdicion;
 
-        public Int32? IdProductoEdicion
-        {
-            get { return idProductoEdicion; }
-            set { idProductoEdicion = value; }
-        }
+        //public Int32? IdProductoEdicion
+        //{
+        //    get { return idProductoEdicion; }
+        //    set { idProductoEdicion = value; }
+        //}
         
         #endregion
     }

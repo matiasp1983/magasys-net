@@ -73,14 +73,31 @@
     <Content Include="Admin\ListadoProveedor.aspx" />
     <Content Include="Admin\ListadoRevista.aspx" />
     <Content Include="Admin\ListadoSuplemento.aspx" />
+    <Content Include="Admin\ListadoVenta.aspx" />
+    <Content Include="Admin\MostrarVenta.aspx" />
     <Content Include="Admin\Pelicula.aspx" />
     <Content Include="Admin\Producto.aspx" />
     <Content Include="Admin\Proveedor.aspx" />
     <Content Include="Admin\Revista.aspx" />
     <Content Include="Admin\Suplementos.aspx" />
+    <Content Include="Admin\Venta.aspx" />
+    <Content Include="cal\calendar.gif" />
+    <Content Include="cal\close.gif" />
+    <Content Include="cal\divider.gif" />
+    <Content Include="cal\drop1.gif" />
+    <Content Include="cal\drop2.gif" />
+    <Content Include="cal\left1.gif" />
+    <Content Include="cal\left2.gif" />
+    <Content Include="cal\popcalendar.css" />
+    <Content Include="cal\popcalendar.js" />
+    <Content Include="cal\right1.gif" />
+    <Content Include="cal\right2.gif" />
+    <Content Include="cal\up2.gif" />
+    <Content Include="controls\Date.ascx" />
     <Content Include="controls\Login.ascx" />
     <Content Include="controls\MenuAdmin.ascx" />
     <Content Include="controls\MenuAdminCategoria.ascx" />
+    <Content Include="controls\Ventas.ascx" />
     <Content Include="controls\WUCBuscarProducto.ascx" />
     <Content Include="Home.aspx" />
     <Content Include="images\BarraMenuCategorias_01.jpg" />
@@ -90,7 +107,7 @@
     <Content Include="images\BarraTituloMenuCategorias_03.jpg" />
     <Content Include="images\BarraTituloSeccion_02.jpg" />
     <Content Include="images\BGFechaYHora.jpg" />
-    <Content Include="images\calendar.gif" />
+    <Content Include="images\eliminar.jpg" />
     <Content Include="images\Flecha.gif" />
     <Content Include="images\Header.jpg" />
     <Content Include="images\PixelContentDer.jpg" />
@@ -213,6 +230,20 @@
     <Compile Include="Admin\ListadoSuplemento.aspx.designer.cs">
       <DependentUpon>ListadoSuplemento.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ListadoVenta.aspx.cs">
+      <DependentUpon>ListadoVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ListadoVenta.aspx.designer.cs">
+      <DependentUpon>ListadoVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MostrarVenta.aspx.cs">
+      <DependentUpon>MostrarVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MostrarVenta.aspx.designer.cs">
+      <DependentUpon>MostrarVenta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Pelicula.aspx.cs">
       <DependentUpon>Pelicula.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -248,6 +279,20 @@
     <Compile Include="Admin\Suplementos.aspx.designer.cs">
       <DependentUpon>Suplementos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Venta.aspx.cs">
+      <DependentUpon>Venta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Venta.aspx.designer.cs">
+      <DependentUpon>Venta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\Date.ascx.cs">
+      <DependentUpon>Date.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\Date.ascx.designer.cs">
+      <DependentUpon>Date.ascx</DependentUpon>
+    </Compile>
     <Compile Include="controls\Login.ascx.cs">
       <DependentUpon>Login.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -268,6 +313,13 @@
     </Compile>
     <Compile Include="controls\MenuAdminCategoria.ascx.designer.cs">
       <DependentUpon>MenuAdminCategoria.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\Ventas.ascx.cs">
+      <DependentUpon>Ventas.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\Ventas.ascx.designer.cs">
+      <DependentUpon>Ventas.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\WUCBuscarProducto.ascx.cs">
       <DependentUpon>WUCBuscarProducto.ascx</DependentUpon>
@@ -296,7 +348,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <None Include="cal\vssver.scc" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Masters\Admin.Master" />

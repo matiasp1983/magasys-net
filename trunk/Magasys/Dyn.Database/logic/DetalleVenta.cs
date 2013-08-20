@@ -21,5 +21,45 @@ namespace Dyn.Database.logic
             }
             return Collection;
         }
+
+        private void AddParameters(Dyn.Database.entities.DetalleVenta objDetalleVenta)
+        {
+            CreateCommand("usp_DetalleVenta", true);
+            AddCmdParameter("@idVenta", objDetalleVenta.IdVenta, ParameterDirection.Input);
+            AddCmdParameter("@idProducto", objDetalleVenta.IdProducto, ParameterDirection.Input);
+            AddCmdParameter("@precioUnidad", objDetalleVenta.PrecioUnidad, ParameterDirection.Input);
+            AddCmdParameter("@cantidad", objDetalleVenta.Cantidad, ParameterDirection.Input);
+            AddCmdParameter("@subTotal", objDetalleVenta.SubTotal, ParameterDirection.Input);
+        }
+
+        public void Update(Dyn.Database.entities.DetalleVenta objDetalleVenta)
+        {
+            AddParameters(objDetalleVenta);
+            AddCmdParameter("@idDetalle", objDetalleVenta.IdDetalleVenta, ParameterDirection.Input);
+            AddCmdParameter("@Action", 1, ParameterDirection.Input);
+            ExecuteNonQuery();
+        }
+
+        public object Insert(Dyn.Database.entities.DetalleVenta objDetalleVenta)
+        {
+            object IdDetVenta = null;
+            AddParameters(objDetalleVenta);
+            AddCmdParameter("@Action", 2, ParameterDirection.Input);
+            ExecuteReader();
+            while (Read())
+            {
+                IdDetVenta = GetValue(0);
+            }
+            return IdDetVenta;
+        }
+
+        public void Delete(int idDetalleVenta, int idVenta)
+        {
+            CreateCommand("usp_DetalleVenta", true);
+            AddCmdParameter("@idDetalle", idDetalleVenta, ParameterDirection.Input);
+            AddCmdParameter("@idVenta", idVenta, ParameterDirection.Input);
+            AddCmdParameter("@Action", 3, ParameterDirection.Input);
+            ExecuteNonQuery();
+        }
     }
 }

@@ -44,6 +44,7 @@ namespace Dyn.Web.Admin
         {
             if (!IsPostBack)
             {
+                this.Master.TituloPagina = "Ingreso de productos";
                 WUCBuscarProducto1.Visible = false;
                 calFecha.SelectedDate = DateTime.Today;
                 

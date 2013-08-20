@@ -29,7 +29,7 @@ namespace Dyn.Web.Admin
         {
             if (!IsPostBack)
             {
-                this.Master.TituloPagina = "Proveedor";
+                this.Master.TituloPagina = "Proveedores";
             }
         }
 

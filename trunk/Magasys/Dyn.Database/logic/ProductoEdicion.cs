@@ -48,8 +48,11 @@ namespace Dyn.Database.logic
         public DataSet BuscarProductoEdicion(int idProveedor, string nombreProd)
         {
             Dyn.Database.entities.ProductoEdicion objprodEdic = new Dyn.Database.entities.ProductoEdicion();
-            CreateCommand("usp_BuscarProductoEdicion", true);
-            AddCmdParameter("@idProveedor", idProveedor, ParameterDirection.Input);
+            CreateCommand("usp_BuscarProductoEdicionVenta", true);
+            if (idProveedor != 0)
+            {
+                AddCmdParameter("@idProveedor", idProveedor, ParameterDirection.Input);
+            }
             AddCmdParameter("@nombre", nombreProd, ParameterDirection.Input);
             DataSet ds = GetDataSet();
             return ds;
