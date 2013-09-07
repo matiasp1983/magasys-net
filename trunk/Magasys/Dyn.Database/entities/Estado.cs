@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace Dyn.Database.entities
 {
@@ -9,17 +9,19 @@ namespace Dyn.Database.entities
     {
             #region Constructores
 
-            public TipoDocumento() { }
+            public Estado() { }
 
-            public TipoDocumento(Int32? id, string nom, string desc)
+            public Estado(Int32? id, string amb, string nom, string desc)
             {
-                idTipoDocumento = id;
+                idEstado = id;
+                ambito = amb;
                 nombre = nom;
                 descripcion = desc;
             }
-            public TipoDocumento(IDataRecord obj)
+            public Estado(IDataRecord obj)
             {
-                idTipoDocumento = Convert.ToInt32(obj["idTipoDocumento"]);
+                idEstado = Convert.ToInt32(obj["idTipoDocumento"]);
+                ambito = Convert.ToString(obj["ambito"]);
                 nombre = Convert.ToString(obj["nombre"]);
                 descripcion = nombre = Convert.ToString(obj["descripcion"]);
             }
@@ -28,11 +30,18 @@ namespace Dyn.Database.entities
 
             #region Propiedades
 
-            private Int32? idTipoDocumento;
-            public Int32? IdTipoDocumento
+            private Int32? idEstado;
+            public Int32? IdEstado
             {
-                get { return idTipoDocumento; }
-                set { idTipoDocumento = value; }
+                get { return idEstado; }
+                set { idEstado = value; }
+            }
+
+            private string ambito;
+            public string Ambito
+            {
+                get { return  ambito; }
+                set {  ambito = value; }
             }
 
             private string nombre;
@@ -51,6 +60,6 @@ namespace Dyn.Database.entities
 
             #endregion
 
-        }
+        
     }
 }

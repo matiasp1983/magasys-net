@@ -21,7 +21,7 @@
                 Numero Cliente
             </td>
             <td align="left" class="style1">
-                <asp:TextBox ID="txtNumero" runat="server" CssClass="tittleprecios03" 
+                <asp:TextBox ID="txtNroCliente" runat="server" CssClass="tittleprecios03" 
                     Text="<%# Entity.Numero %>" Enabled="False"></asp:TextBox><br />
             </td>
         </tr>

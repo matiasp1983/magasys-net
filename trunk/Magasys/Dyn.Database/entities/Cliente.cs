@@ -11,34 +11,59 @@ namespace Dyn.Database.entities
 
         public Cliente() { }
 
-        public Cliente(Int32? idProv, string cui, string nom, string det, string domCalle, Int32? domNro, string domDpto, string domPiso, Int32? idLocal,
-            string emai, Int16? est, string razonSoc, string responApellido, string responNombre, string responEmail, string tel)
+        public Cliente(Int32? idCli, TipoDocumento tipoDoc, Int32? nroDoc, string nom, string ape, string ali, string tel, string cel, string emai,
+            string barrio, string domCalle, Int32? domNro, string domDpto, string domPiso, string codPostal, Int32? idLocal,
+            Estado est, DateTime fecha)
         {
-            idCliente = idProv;
-            cuit = cui;
+            idCliente = idCli;
+
+            tipoDocumento = tipoDoc;
+            nroDocumento = nroDoc;
+
+            apellido = ape;
             nombre = nom;
-            alias = det;
+            alias = ali;
+
+            telefono = tel;
+            celular = cel;
+            email = emai;
+
+            domicilioBarrio = barrio;
             domicilioCalle = domCalle;
             domicilioNro = domNro;
             domicilioDpto = domDpto;
             domicilioPiso = domPiso;
+            domicilioCodPostal = codPostal;
             idLocalidad = idLocal;
-            email = emai;
+            
             estado = est;
-            razonSocial = razonSoc;
-            responsableApellido = responApellido;
-            responsableNombre = responNombre;
-            responsableEmail = responEmail;
-            telefono = tel;
+            fechaAlta = fecha;            
         }
 
         public Cliente(IDataRecord obj)
 		{            
-            idCliente = Convert.ToInt32(obj["idProveedor"]);
+            idCliente = Convert.ToInt32(obj["idCliente"]);
+
+            tipoDocumento.IdTipoDocumento = Convert.ToInt32(obj["idTipoDocumento"]);
+            nroDocumento = Convert.ToInt32(obj["nroDocumento"]);
+
             nombre = Convert.ToString(obj["nombre"]);
-            estado = Convert.ToInt16(obj["estado"]);
-            cuit = Convert.ToString(obj["cuit"]);
-            alias = Convert.ToString(obj["detalle"]);
+            apellido = Convert.ToString(obj["apellido"]);
+            alias = Convert.ToString(obj["alias"]);
+
+            telefono = Convert.ToString(obj["telefono"]); 
+            celular = Convert.ToString(obj["celular"]); 
+            email = Convert.ToString(obj["email"]);
+
+
+            if (obj["domBarrio"]!= DBNull.Value)
+            {
+                domicilioBarrio = Convert.ToString(obj["domBarrio"]);
+            }
+            else
+            {
+                domicilioBarrio = null;
+            }
             domicilioCalle = Convert.ToString(obj["domicilioCalle"]);
             if (obj["domicilioNro"]!= DBNull.Value)
             {
@@ -48,9 +73,7 @@ namespace Dyn.Database.entities
             {
                 domicilioNro = null;
             }          
-            //domicilioNro = Convert.ToInt32(obj["domicilioNro"]);
             domicilioDpto = Convert.ToString(obj["domicilioDpto"]);
-            // domicilioPiso = Convert.ToString(obj["domicilioPiso"]);
             if (obj["domicilioPiso"] != DBNull.Value)
             {
                 domicilioPiso = Convert.ToString(obj["domicilioPiso"]);
@@ -58,6 +81,15 @@ namespace Dyn.Database.entities
             else
             {
                 domicilioPiso = null;
+            }
+
+            if (obj["domCodigoPostal"] != DBNull.Value)
+            {
+                domicilioCodPostal = Convert.ToString(obj["domCodigoPostal"]);
+            }
+            else
+            {
+                domicilioCodPostal = null;
             }
             if (obj["idLocalidad"] != DBNull.Value)
             {
@@ -67,13 +99,17 @@ namespace Dyn.Database.entities
             {
                 idLocalidad = null;
             }
-            // idLocalidad = Convert.ToInt32(obj["idLocalidad"]);
-            email = Convert.ToString(obj["email"]);
-            razonSocial = Convert.ToString(obj["razonSocial"]);
-            responsableApellido = Convert.ToString(obj["reponsableApellido"]);
-            responsableNombre = Convert.ToString(obj["reponsableNombre"]);
-            responsableEmail = Convert.ToString(obj["reponsableEmail"]);
-            telefono = Convert.ToString(obj["telefono"]);   
+
+            fechaAlta = Convert.ToDateTime(obj["fechaAlta"]);
+            estado.IdEstado = Convert.ToInt32(obj["idEstado"]);
+            if (obj["motivoBaja"] != DBNull.Value)
+            {
+                motivoBaja = Convert.ToString(obj["motivoBaja"]);
+            }
+            else
+            {
+                motivoBaja = null;
+            }
 		}
 
         #endregion
@@ -88,7 +124,7 @@ namespace Dyn.Database.entities
         }
 
         private TipoDocumento tipoDocumento;
-        public TipoDocumento NroDocumento
+        public TipoDocumento TipoDocumento
         {
             get { return tipoDocumento; }
             set { tipoDocumento = value; }
@@ -199,8 +235,8 @@ namespace Dyn.Database.entities
             set { fechaAlta = value; }
         }
 
-        private Int16? estado;
-        public Int16? Estado
+        private Estado estado;
+        public Estado Estado
         {
             get { return estado; }
             set { estado = value; }
@@ -212,7 +248,6 @@ namespace Dyn.Database.entities
             get { return motivoBaja; }
             set { motivoBaja = value; }
         }
-
 
         #endregion
     }

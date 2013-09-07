@@ -13,13 +13,13 @@ namespace Dyn.Web.Admin {
     public partial class ABMClientes {
         
         /// <summary>
-        /// txtNumero control.
+        /// txtNroCliente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumero;
+        protected global::System.Web.UI.WebControls.TextBox txtNroCliente;
         
         /// <summary>
         /// txtTelefono control.
