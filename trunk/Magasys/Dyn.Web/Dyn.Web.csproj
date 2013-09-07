@@ -59,6 +59,7 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\ABMClientes.aspx" />
     <Content Include="Admin\Coleccion.aspx" />
     <Content Include="Admin\Devoluciones.aspx" />
     <Content Include="Admin\Diario.aspx" />
@@ -132,6 +133,13 @@
     <Content Include="xml\banner_main.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\ABMClientes.aspx.cs">
+      <DependentUpon>ABMClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ABMClientes.aspx.designer.cs">
+      <DependentUpon>ABMClientes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Coleccion.aspx.cs">
       <DependentUpon>Coleccion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
