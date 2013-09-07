@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="entities\Cliente.cs" />
     <Compile Include="entities\Coleccion.cs" />
     <Compile Include="entities\DetalleDevolucion.cs" />
     <Compile Include="entities\DetalleIngresoProducto.cs" />
@@ -49,6 +50,7 @@
     <Compile Include="entities\Devolucion.cs" />
     <Compile Include="entities\Diario.cs" />
     <Compile Include="entities\DiarioPorDia.cs" />
+    <Compile Include="entities\Estado.cs" />
     <Compile Include="entities\Genero.cs" />
     <Compile Include="entities\IngresoProducto.cs" />
     <Compile Include="entities\Libro.cs" />
@@ -64,6 +66,7 @@
     <Compile Include="entities\Provincia.cs" />
     <Compile Include="entities\Revista.cs" />
     <Compile Include="entities\Suplemento.cs" />
+    <Compile Include="entities\TipoDocumento.cs" />
     <Compile Include="entities\TipoProducto.cs" />
     <Compile Include="entities\Venta.cs" />
     <Compile Include="logic\Coleccion.cs" />
