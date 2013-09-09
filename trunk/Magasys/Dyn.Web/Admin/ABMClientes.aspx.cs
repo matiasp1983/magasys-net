@@ -9,6 +9,9 @@ namespace Dyn.Web.Admin
 {
     public partial class ABMClientes : System.Web.UI.Page
     {
+        // private Dyn.Database.logic.Cliente lCliente;
+        public Dyn.Database.entities.Cliente Entity;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
