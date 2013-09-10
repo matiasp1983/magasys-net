@@ -11,11 +11,11 @@ namespace Dyn.Database.entities
 
         public Cliente() { }
 
-        public Cliente(Int32? idCli, TipoDocumento tipoDoc, Int32? nroDoc, string nom, string ape, string ali, string tel, string cel, string emai,
+        public Cliente(Int32? nroCli, TipoDocumento tipoDoc, Int32? nroDoc, string nom, string ape, string ali, string tel, string cel, string emai,
             string barrio, string domCalle, Int32? domNro, string domDpto, string domPiso, string codPostal, Int32? idLocal,
             Estado est, DateTime fecha)
         {
-            idCliente = idCli;
+            nroCliente = nroCli;
 
             tipoDocumento = tipoDoc;
             nroDocumento = nroDoc;
@@ -42,7 +42,7 @@ namespace Dyn.Database.entities
 
         public Cliente(IDataRecord obj)
 		{            
-            idCliente = Convert.ToInt32(obj["idCliente"]);
+            nroCliente = Convert.ToInt32(obj["idCliente"]);
 
             tipoDocumento.IdTipoDocumento = Convert.ToInt32(obj["idTipoDocumento"]);
             nroDocumento = Convert.ToInt32(obj["nroDocumento"]);
@@ -116,11 +116,11 @@ namespace Dyn.Database.entities
 
         #region Propiedades
 
-        private Int32? idCliente;
-        public Int32? IdCliente
+        private Int32? nroCliente;
+        public Int32? NroCliente
         {
-            get { return idCliente; }
-            set { idCliente = value; }
+            get { return nroCliente; }
+            set { nroCliente = value; }
         }
 
         private TipoDocumento tipoDocumento;
