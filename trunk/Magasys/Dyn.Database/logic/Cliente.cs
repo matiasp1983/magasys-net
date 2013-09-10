@@ -60,20 +60,32 @@ namespace Dyn.Database.logic
 
         private void AddParameters(Dyn.Database.entities.Cliente objusuario)
         {
-            CreateCommand("usp_Proveedor", true);
-            AddCmdParameter("@idProveedor", objusuario.IdProveedor, ParameterDirection.Input);
-            AddCmdParameter("@cuit", objusuario.Cuit, ParameterDirection.Input);
-            AddCmdParameter("@detalle", objusuario.Detalle, ParameterDirection.Input);
-            AddCmdParameter("@domicilioCalle", objusuario.DomicilioCalle, ParameterDirection.Input);
-            AddCmdParameter("@domicilioNro", objusuario.DomicilioNro, ParameterDirection.Input);
-            AddCmdParameter("@domicilioDpto", objusuario.DomicilioDpto, ParameterDirection.Input);
-            AddCmdParameter("@domicilioPiso", objusuario.DomicilioPiso, ParameterDirection.Input);
-            AddCmdParameter("@idLocalidad", objusuario.IdLocalidad, ParameterDirection.Input);
-            AddCmdParameter("@email", objusuario.Email, ParameterDirection.Input);
-            AddCmdParameter("@estado", objusuario.Estado, ParameterDirection.Input);
+            CreateCommand("usp_Clientes", true);
+            AddCmdParameter("@nroCliente", objusuario.NroCliente, ParameterDirection.Input);
+            
+            AddCmdParameter("@tipoDocumento", objusuario.TipoDocumento.IdTipoDocumento, ParameterDirection.Input);
+            AddCmdParameter("@nroDocumento", objusuario.NroDocumento, ParameterDirection.Input);
+
+            AddCmdParameter("@nombre", objusuario.Nombre, ParameterDirection.Input);
+            AddCmdParameter("@apellido", objusuario.Apellido, ParameterDirection.Input);
+            AddCmdParameter("@alias", objusuario.Alias, ParameterDirection.Input);
 
             AddCmdParameter("@telefono", objusuario.Telefono, ParameterDirection.Input);
-            AddCmdParameter("@nombre", objusuario.Nombre, ParameterDirection.Input);
+            AddCmdParameter("@celular", objusuario.Celular, ParameterDirection.Input);
+            AddCmdParameter("@eMail", objusuario.Email, ParameterDirection.Input);
+
+            AddCmdParameter("@domBarrio", objusuario.DomicilioBarrio, ParameterDirection.Input);
+            AddCmdParameter("@domCalle", objusuario.DomicilioCalle, ParameterDirection.Input);
+            AddCmdParameter("@domNro", objusuario.DomicilioNro, ParameterDirection.Input);
+            AddCmdParameter("@domPiso", objusuario.DomicilioPiso, ParameterDirection.Input);
+            AddCmdParameter("@domDpto", objusuario.DomicilioDpto, ParameterDirection.Input);
+            AddCmdParameter("@domPiso", objusuario.DomicilioPiso, ParameterDirection.Input);
+            AddCmdParameter("@domIdLocalidad", objusuario.IdLocalidad, ParameterDirection.Input);
+            
+            AddCmdParameter("@estado", objusuario.Estado, ParameterDirection.Input);
+
+            
+            
         }
 
         public object Insert(Dyn.Database.entities.Cliente objCliente)
@@ -101,7 +113,7 @@ namespace Dyn.Database.logic
 
         public void Delete(int idCliente)
         {
-            CreateCommand("usp_Cliente", true);
+            CreateCommand("usp_Clientes", true);
             AddCmdParameter("@idCliente", idCliente, ParameterDirection.Input);
             AddCmdParameter("@estado", 0, ParameterDirection.Input);
             AddCmdParameter("@Action", 3, ParameterDirection.Input);
