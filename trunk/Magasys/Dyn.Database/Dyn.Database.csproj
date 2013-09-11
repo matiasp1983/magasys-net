@@ -77,6 +77,7 @@
     <Compile Include="logic\Devolucion.cs" />
     <Compile Include="logic\Diario.cs" />
     <Compile Include="logic\DiarioPorDia.cs" />
+    <Compile Include="logic\Estado.cs" />
     <Compile Include="logic\FactoryBase.cs" />
     <Compile Include="logic\Genero.cs" />
     <Compile Include="logic\Ingreso.cs" />

@@ -79,19 +79,19 @@ namespace Dyn.Database.logic
             AddCmdParameter("@domNro", objusuario.DomicilioNro, ParameterDirection.Input);
             AddCmdParameter("@domPiso", objusuario.DomicilioPiso, ParameterDirection.Input);
             AddCmdParameter("@domDpto", objusuario.DomicilioDpto, ParameterDirection.Input);
-            AddCmdParameter("@domPiso", objusuario.DomicilioPiso, ParameterDirection.Input);
+            AddCmdParameter("@domCodigoPostal", objusuario.DomicilioCodPostal, ParameterDirection.Input);
             AddCmdParameter("@domIdLocalidad", objusuario.IdLocalidad, ParameterDirection.Input);
-            
-            AddCmdParameter("@estado", objusuario.Estado, ParameterDirection.Input);
 
-            
+            AddCmdParameter("@fechaAlta", objusuario.FechaAlta, ParameterDirection.Input);
+            AddCmdParameter("@idEstado", objusuario.Estado.IdEstado, ParameterDirection.Input);
+            AddCmdParameter("@motivoBaja", objusuario.MotivoBaja, ParameterDirection.Input);      
             
         }
 
         public object Insert(Dyn.Database.entities.Cliente objCliente)
         {
             object IdProveedor = null;
-            objCliente.Estado = 1;
+            objCliente.Estado.IdEstado = 1;
             AddParameters(objCliente);
 
 
@@ -105,7 +105,7 @@ namespace Dyn.Database.logic
         }
         public void Update(Dyn.Database.entities.Cliente objCliente)
         {
-            objCliente.Estado = 1;
+            objCliente.Estado.IdEstado = 1;
             AddParameters(objCliente);
             AddCmdParameter("@Action", 1, ParameterDirection.Input);
             ExecuteNonQuery();
