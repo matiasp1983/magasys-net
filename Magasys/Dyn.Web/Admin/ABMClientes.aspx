@@ -36,38 +36,52 @@
             <td align="left" class="style3">
                 <asp:DropDownList CssClass="tittleprecios03" ID="lstTipoDoc" runat="server" 
                     onselectedindexchanged="lstProvincias_SelectedIndexChanged" 
-                    Enabled="False" DataSourceID="DSTipoDocumento" DataTextField="nombre" 
+                    DataSourceID="DSTipoDocumento" DataTextField="nombre" 
                     DataValueField="idTipoDocumento">
                 </asp:DropDownList>
                 <asp:SqlDataSource ID="DSTipoDocumento" runat="server" 
                     ConnectionString="<%$ ConnectionStrings:MagasysConnectionString %>" 
                     SelectCommand="SELECT * FROM [TipoDocumento]"></asp:SqlDataSource>
+                
             </td>
             <td class="tittleprecios03" align="left" width="100">
                 Numero Documento (*)
             </td>
             <td align="left" class="style1">
+                <asp:CompareValidator ID="cvDocumento" runat="server" ErrorMessage="Debe ingresar un numero"
+                    Display="Dynamic" Operator="DataTypeCheck" ControlToValidate="txtNroDocumento" CssClass="tittleprecios03"
+                    Type="Integer" ForeColor="Red"></asp:CompareValidator>
                 <asp:TextBox ID="txtNroDocumento" runat="server" CssClass="tittleprecios03" 
-                    Text="<%# Entity.NroDocumento %>" Enabled="False"></asp:TextBox><br />
+                    Text="<%# Entity.NroDocumento %>" MaxLength="10"></asp:TextBox><br />
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Debe ingresar un Numero de Documento"
+                    ControlToValidate="lstProvincias" CssClass="tittleprecios03" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="tittleprecios03" align="left" width="100">
                 Nombre (*)</td>
             <td align="left" class="style3">
-                <asp:TextBox ID="txtNombre" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Nombre %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtNombre" runat="server" CssClass="tittleprecios03" 
+                    Text="<%# Entity.Nombre %>" MaxLength="50"></asp:TextBox><br />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Debe ingresar un Nombre"
+                    ControlToValidate="txtNombre" CssClass="tittleprecios03" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
             </td>
             <td class="tittleprecios03" align="left" width="100">
                 Apellido (*)</td>
             <td align="left" class="style1">
-                <asp:TextBox ID="txtApellido" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Apellido %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtApellido" runat="server" CssClass="tittleprecios03" 
+                    Text="<%# Entity.Apellido %>" MaxLength="50"></asp:TextBox><br />
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Debe ingresar el Apellido"
+                    ControlToValidate="txtApellido" CssClass="tittleprecios03" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="tittleprecios03" align="left" width="100">
                 Alias</td>
             <td align="left" class="style3">
-                <asp:TextBox ID="txtAlias" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Alias %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtAlias" runat="server" CssClass="tittleprecios03" 
+                    Text="<%# Entity.Alias %>" MaxLength="100"></asp:TextBox><br />
+            
             </td>
         </tr>
         <tr>
@@ -79,20 +93,26 @@
             <td class="tittleprecios03" align="left" width="100">
                 Telefono</td>
             <td align="left" class="style3">
-                <asp:TextBox ID="txtTelefono" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Telefono %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtTelefono" runat="server" CssClass="tittleprecios03" 
+                    Text="<%# Entity.Telefono %>" MaxLength="10"></asp:TextBox><br />
             </td>
             <td class="tittleprecios03" align="left" width="100">
                 Celular</td>
             <td align="left" class="style1">
-                <asp:TextBox ID="txtCelular" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Celular %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtCelular" runat="server" CssClass="tittleprecios03" 
+                    Text="<%# Entity.Celular %>" MaxLength="12"></asp:TextBox><br />
             </td>
         </tr>
         <tr>
             <td class="tittleprecios03" align="left" width="100">
                 Correo Electronico</td>
             <td align="left" class="style3">
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                    ControlToValidate="txtEMail" Display="Dynamic" 
+                    ErrorMessage="El mail no es correcto" Font-Bold="True" ForeColor="Red" 
+                    ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                 <asp:TextBox ID="txtEMail" runat="server" CssClass="tittleprecios03" 
-                    Text="<%# Entity.Email %>" Width="200px"></asp:TextBox><br />
+                    Text="<%# Entity.Email %>" Width="200px" MaxLength="50"></asp:TextBox><br />
             </td>
         </tr>
         <tr>
@@ -110,7 +130,10 @@
                 Barrio (*)
             </td>
             <td align="left" class="style3">
-                <asp:TextBox ID="txtBarrio" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioBarrio %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtBarrio" runat="server" CssClass="tittleprecios03" 
+                    Text="<%# Entity.DomicilioBarrio %>" MaxLength="100"></asp:TextBox><br />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Debe ingresar un Barrio"
+                    ControlToValidate="txtBarrio" CssClass="tittleprecios03" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -118,14 +141,23 @@
                 Calle (*)
             </td>
             <td align="left" class="style3">
-                <asp:TextBox ID="txtCalle" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioCalle %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtCalle" runat="server" CssClass="tittleprecios03" 
+                    Text="<%# Entity.DomicilioCalle %>" MaxLength="50"></asp:TextBox><br />
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Debe ingresar una Calle"
+                    ControlToValidate="txtCalle" CssClass="tittleprecios03" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
             </td>
 
             <td class="tittleprecios03" align="left">
                 Numero (*)
             </td>
             <td align="left" class="style3">
-                <asp:TextBox ID="txtNumero" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioNro %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtNumero" runat="server" CssClass="tittleprecios03" 
+                    Text="<%# Entity.DomicilioNro %>" MaxLength="6"></asp:TextBox><br />
+                <asp:CompareValidator ID="cvDomNumero" runat="server" ErrorMessage="Debe ingresar un numero"
+                    Display="Dynamic" Operator="DataTypeCheck" ControlToValidate="txtNumero" CssClass="tittleprecios03"
+                    Type="Integer" ForeColor="Red"></asp:CompareValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Debe ingresar la Numeracion"
+                    ControlToValidate="txtNumero" CssClass="tittleprecios03" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -134,14 +166,19 @@
                 Piso
             </td>
             <td align="left" class="style3">
-                <asp:TextBox ID="txtPiso" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioPiso %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtPiso" runat="server" CssClass="tittleprecios03" 
+                    Text="<%# Entity.DomicilioPiso %>" MaxLength="5"></asp:TextBox><br />
+                <asp:CompareValidator ID="cvDomPiso" runat="server" ErrorMessage="Debe ingresar un numero"
+                    Display="Dynamic" Operator="DataTypeCheck" ControlToValidate="txtPiso" CssClass="tittleprecios03"
+                    Type="Integer" ForeColor="Red"></asp:CompareValidator>
             </td>
 
             <td class="tittleprecios03" align="left">
                 Departamento
             </td>
             <td align="left" class="style3">
-                <asp:TextBox ID="txtDpto" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioDpto %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtDpto" runat="server" CssClass="tittleprecios03" 
+                    Text="<%# Entity.DomicilioDpto %>" MaxLength="5"></asp:TextBox><br />
             </td>
         </tr>
 
@@ -154,8 +191,12 @@
             <td align="left" class="style3">
                 <asp:DropDownList CssClass="tittleprecios03" ID="lstProvincias" runat="server" 
                     onselectedindexchanged="lstProvincias_SelectedIndexChanged" 
-                    Enabled="False">
+                    AutoPostBack="True" DataSourceID="DSProvincias" DataTextField="nombre" 
+                    DataValueField="idProvincia">
                 </asp:DropDownList>
+                    <asp:SqlDataSource ID="DSProvincias" runat="server" 
+                    ConnectionString="<%$ ConnectionStrings:MagasysConnectionString %>" 
+                    SelectCommand="SELECT * FROM [Provincias]"></asp:SqlDataSource>
                     </td>
 
             <td class="tittleprecios03" align="left">
