@@ -66,6 +66,7 @@
     <Content Include="Admin\Genero.aspx" />
     <Content Include="Admin\Ingresos.aspx" />
     <Content Include="Admin\Libro.aspx" />
+    <Content Include="Admin\ListadoClientes.aspx" />
     <Content Include="Admin\ListadoColeccion.aspx" />
     <Content Include="Admin\ListadoDiario.aspx" />
     <Content Include="Admin\ListadoGenero.aspx" />
@@ -181,6 +182,13 @@
     </Compile>
     <Compile Include="Admin\Libro.aspx.designer.cs">
       <DependentUpon>Libro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ListadoClientes.aspx.cs">
+      <DependentUpon>ListadoClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ListadoClientes.aspx.designer.cs">
+      <DependentUpon>ListadoClientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ListadoColeccion.aspx.cs">
       <DependentUpon>ListadoColeccion.aspx</DependentUpon>

@@ -64,7 +64,7 @@ namespace Dyn.Database.logic
             AddCmdParameter("@Action", 3, ParameterDirection.Input);
             ExecuteNonQuery();
         }
-        public int BuscarGenero(String ambito, String nombre)
+        public int BuscarEstado(String ambito, String nombre)
         {
             object IdEstado = null;
             CreateCommand("usp_Estado", true);

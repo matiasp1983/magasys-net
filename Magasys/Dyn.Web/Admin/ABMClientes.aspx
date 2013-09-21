@@ -207,6 +207,15 @@
                 </asp:DropDownList>
             </td>
         </tr>
+        <tr>
+            <td class="tittleprecios03" align="left">
+                Codigo Postal
+            </td>
+            <td align="left" class="style3">
+                <asp:TextBox ID="txtCodPostal" runat="server" CssClass="tittleprecios03" 
+                    Text="<%# Entity.DomicilioCodPostal %>" MaxLength="5"></asp:TextBox><br />
+            </td>
+        </tr>
 
         
         <tr>
