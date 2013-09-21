@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
+using Dyn.Database.logic;
 
 namespace Dyn.Database.entities
 {
@@ -42,9 +43,9 @@ namespace Dyn.Database.entities
 
         public Cliente(IDataRecord obj)
 		{            
-            nroCliente = Convert.ToInt32(obj["idCliente"]);
+            nroCliente = Convert.ToInt32(obj["nroCliente"]);
 
-            tipoDocumento.IdTipoDocumento = Convert.ToInt32(obj["idTipoDocumento"]);
+            tipoDocumento.IdTipoDocumento = Convert.ToInt32(obj["tipoDocumento"]);
             nroDocumento = Convert.ToInt32(obj["nroDocumento"]);
 
             nombre = Convert.ToString(obj["nombre"]);
@@ -64,19 +65,19 @@ namespace Dyn.Database.entities
             {
                 domicilioBarrio = null;
             }
-            domicilioCalle = Convert.ToString(obj["domicilioCalle"]);
-            if (obj["domicilioNro"]!= DBNull.Value)
+            domicilioCalle = Convert.ToString(obj["domCalle"]);
+            if (obj["domNro"]!= DBNull.Value)
             {
-                domicilioNro = Convert.ToInt32(obj["domicilioNro"]);
+                domicilioNro = Convert.ToInt32(obj["domNro"]);
             }
             else
             {
                 domicilioNro = null;
             }          
-            domicilioDpto = Convert.ToString(obj["domicilioDpto"]);
-            if (obj["domicilioPiso"] != DBNull.Value)
+            domicilioDpto = Convert.ToString(obj["domDpto"]);
+            if (obj["domPiso"] != DBNull.Value)
             {
-                domicilioPiso = Convert.ToString(obj["domicilioPiso"]);
+                domicilioPiso = Convert.ToString(obj["domPiso"]);
             }
             else
             {
@@ -91,9 +92,9 @@ namespace Dyn.Database.entities
             {
                 domicilioCodPostal = null;
             }
-            if (obj["idLocalidad"] != DBNull.Value)
+            if (obj["domIdLocalidad"] != DBNull.Value)
             {
-                idLocalidad = Convert.ToInt32(obj["idLocalidad"]);
+                idLocalidad = Convert.ToInt32(obj["domIdLocalidad"]);
             }
             else
             {
@@ -123,7 +124,7 @@ namespace Dyn.Database.entities
             set { nroCliente = value; }
         }
 
-        private TipoDocumento tipoDocumento;
+        private TipoDocumento tipoDocumento = new TipoDocumento();
         public TipoDocumento TipoDocumento
         {
             get { return tipoDocumento; }
@@ -235,7 +236,7 @@ namespace Dyn.Database.entities
             set { fechaAlta = value; }
         }
 
-        private Estado estado;
+        private Estado estado = new Estado();
         public Estado Estado
         {
             get { return estado; }
@@ -247,6 +248,22 @@ namespace Dyn.Database.entities
         {
             get { return motivoBaja; }
             set { motivoBaja = value; }
+        }
+
+        #endregion
+
+        #region Operaciones
+
+        public bool validarBaja()
+
+        {
+            //Dyn.Database.logic.Venta lVenta = Dyn.Database.logic.Venta();
+            //Dyn.Database.logic.Reserva lReserva = Dyn.Database.logic.Reserva();
+
+            // Crear una funcion en Ventas y Reservas y validar si el cliente posee alguna de ellas
+
+            return true;
+        
         }
 
         #endregion

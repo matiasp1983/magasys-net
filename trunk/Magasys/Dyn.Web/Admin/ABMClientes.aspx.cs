@@ -29,7 +29,7 @@ namespace Dyn.Web.Admin
             {
                 //this.Master.TituloPagina = "Edici&oacute;n Proveedor";
                 lCliente = new Dyn.Database.logic.Cliente();
-                lstProvincias.SelectedIndex = 0;
+                lstProvincias.SelectedIndex = 1;
                 LlenarLocalidades();
                 if (Request["Id"] == null)
                 {
@@ -50,24 +50,39 @@ namespace Dyn.Web.Admin
         public Dyn.Database.entities.Cliente CargarDatosCliente()
         {
             Entity = new Dyn.Database.entities.Cliente();
-            //Entity.Cuit = txtCuit.Text.Trim();
-            //Entity.RazonSocial = txtRazonSocial.Text.Trim();
-            //Entity.Email =  txtEMail.Text.Trim();
-            //Entity.Detalle = txtDetalle.Text.Trim();
-            //Entity.Telefono = txtTelefono.Text.Trim();
-            //Entity.DomicilioCalle = txtCalle.Text.Trim();
-            //if (txtNumero.Text == "")
-            //{   Entity.DomicilioNro = null;}
-            //else
-            //{   Entity.DomicilioNro = Convert.ToInt16(txtNumero.Text);}
-            
-            //Entity.DomicilioPiso = txtPiso.Text.Trim();
-            //Entity.DomicilioDpto = txtDpto.Text.Trim();
-            //Entity.IdLocalidad = Convert.ToInt16(lstLocalidades.SelectedValue.ToString());
-            //Entity.ResponsableApellido = txtResponsableApellido.Text.Trim();
-            //Entity.ResponsableNombre = txtResponsableNombre.Text.Trim();
-            //Entity.ResponsableEmail = txtResponsableEmail.Text.Trim();
-            //Entity.Nombre = txtRazonSocial.Text.Trim();
+           
+            // Entity.NroCliente = Convert.ToInt32(txtNroCliente.Text.Trim());
+
+            Entity.TipoDocumento.IdTipoDocumento = Convert.ToInt32(lstTipoDoc.SelectedValue.ToString());
+            Entity.NroDocumento = Convert.ToInt32(txtNroDocumento.Text.Trim());
+
+            Entity.Nombre = txtNombre.Text.Trim();
+            Entity.Apellido = txtApellido.Text.Trim();
+            Entity.Alias = txtAlias.Text.Trim();
+
+            if (txtTelefono.Text == "")
+            { Entity.Telefono = null; }
+            else
+            { Entity.Telefono = txtTelefono.Text.Trim(); }
+
+            if (txtCelular.Text == "")
+            { Entity.Celular = null; }
+            else
+            { Entity.Celular = txtCelular.Text.Trim(); }
+    
+            Entity.Email = txtEMail.Text.Trim();
+
+            Entity.DomicilioBarrio = txtBarrio.Text.Trim();
+            Entity.DomicilioCalle = txtCalle.Text.Trim();
+            if (txtNumero.Text == "")
+                {   Entity.DomicilioNro = null;}
+            else
+                {   Entity.DomicilioNro = Convert.ToInt16(txtNumero.Text);}
+            Entity.DomicilioPiso = txtPiso.Text.Trim();
+            Entity.DomicilioDpto = txtDpto.Text.Trim();
+            Entity.IdLocalidad = Convert.ToInt16(lstLocalidades.SelectedValue.ToString());
+            Entity.DomicilioCodPostal = txtCodPostal.Text.Trim();
+
             return Entity;
         }
         public void Update()
@@ -75,25 +90,25 @@ namespace Dyn.Web.Admin
             lCliente = new Dyn.Database.logic.Cliente();
             Entity = new Dyn.Database.entities.Cliente();
 
-
-
             if (IdEntity == 0)
             {
-
-                // String idProveedor = txtCuit.Text;
                 Entity = CargarDatosCliente();
-
-                //if (lProveedor.existeCuit(idCliente))
-                //{
-                //    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Ya existe un proveedor con ese CUIT');location.href('/Admin/ListadoUsuario.aspx');", true);
-                //}
-                //else
-                //{
-                //    lProveedor.Insert(Entity);
-                //    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
-                //}
+                Dyn.Database.logic.Estado lEstado = new Dyn.Database.logic.Estado();
+                int estado = lEstado.BuscarEstado("Clientes","Alta");
+                Entity.Estado.IdEstado = estado;
+                Entity.FechaAlta = DateTime.Now;
+                lCliente.Insert(Entity);
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
 
             }
+            else
+                if (IdEntity > 0)
+                {
+                    Entity = CargarDatosCliente();
+                    Entity.NroCliente = IdEntity;
+                    lCliente.Update(Entity);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se actualizaron los datos correctamente');", true);
+                }
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
@@ -102,19 +117,19 @@ namespace Dyn.Web.Admin
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            Dyn.Database.logic.Genero gen = new Dyn.Database.logic.Genero();
-            if (IdEntity != 0 && IdEntity != int.MinValue)
+              if (IdEntity != 0 && IdEntity != int.MinValue)
             {
-                lCliente = new Dyn.Database.logic.Cliente();
-                if (gen.VerificaRelacionGenero(IdEntity) == 0)
+                if (Entity.validarBaja())
                 {
+                    lCliente = new Dyn.Database.logic.Cliente();
                     lCliente.Delete(IdEntity);
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el género correctamente');document.location.href='/Admin/ListadoProveedor.aspx';", true);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el género correctamente');document.location.href='/Admin/ListadoCliente.aspx';", true);
                 }
                 else
-                {
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('No se puede eliminar el género, porque está asociado a un producto');", true);
+                { 
+                    // no se puede borrar, existen ventas o reservas para el cliente
                 }
+                
             }
         }
         protected void btnCancelar_Click(object sender, EventArgs e)

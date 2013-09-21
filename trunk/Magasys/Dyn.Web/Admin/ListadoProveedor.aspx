@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Admin.Master" AutoEventWireup="true" CodeBehind="ListadoProveedor.aspx.cs" Inherits="Dyn.Web.Admin.ListadoProveedor" %>
 <%@ MasterType VirtualPath="~/Masters/Admin.Master" %>
+
 <%@ Register Assembly="CollectionPager" Namespace="SiteUtils" TagPrefix="cc1" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="act" %>
 <%@ Register src="../controls/Login.ascx" tagname="Login" tagprefix="uc2" %>
@@ -8,6 +9,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
 <asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
 
      <asp:UpdatePanel ID="UpdatePanel1" runat="server">

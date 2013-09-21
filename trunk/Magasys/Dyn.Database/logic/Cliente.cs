@@ -35,17 +35,28 @@ namespace Dyn.Database.logic
         //    }
         //    return Collection;
         //}
-        //public DataSet SeleccionarProveedorPorNombrePaginadoAdmin(string razonSocial, int paginaactual, ref int numeropaginas)
-        //{
-        //    CreateCommand("usp_SeleccionarProveedoresPorNombrePaginado", true);
-        //    AddCmdParameter("@razonSocial", razonSocial, ParameterDirection.Input);
-        //    AddCmdParameter("@CurrentPage", paginaactual, ParameterDirection.Input);
-        //    AddCmdParameter("@PageSize", 100, ParameterDirection.Input);
-        //    AddCmdParameter("@TotalRecords", ParameterDirection.Output);
-        //    DataSet ds = GetDataSet();
-        //    numeropaginas = (int)GetValueCmdParameter("@TotalRecords");
-        //    return ds;
-        //}
+        public List<Dyn.Database.entities.Cliente> SeleccionarClientePorNombrePaginadoAdmin(string nombre, string apellido, string alias, int? nroDoc, int? tipoDoc, int paginaactual, ref int numeropaginas)
+        {
+            List<Dyn.Database.entities.Cliente> Collection = new List<Dyn.Database.entities.Cliente>();
+            Dyn.Database.logic.Estado lEstado = new Dyn.Database.logic.Estado();
+            CreateCommand("usp_Clientes", true);
+            AddCmdParameter("@nombre", nombre, ParameterDirection.Input);
+            AddCmdParameter("@apellido", apellido, ParameterDirection.Input);
+            AddCmdParameter("@alias", alias, ParameterDirection.Input);
+            AddCmdParameter("@nroDocumento", nroDoc, ParameterDirection.Input);
+            AddCmdParameter("@tipoDocumento", tipoDoc, ParameterDirection.Input);
+            AddCmdParameter("@Action", 4, ParameterDirection.Input);
+            AddCmdParameter("@idEstado", lEstado.BuscarEstado("Clientes","Alta"), ParameterDirection.Input);
+
+            ExecuteReader();
+            while (Read())
+            {
+                Collection.Add(new Dyn.Database.entities.Cliente(GetDataReader()));
+            }
+            DataSet ds = GetDataSet();
+            //numeropaginas = (int)GetValueCmdParameter("@TotalRecords");
+            return Collection;
+        }
         //public List<Dyn.Database.entities.Genero> SeleccionarTodosLosGeneros()
         //{
         //    List<Dyn.Database.entities.Genero> Collection = new List<Dyn.Database.entities.Genero>();
@@ -91,7 +102,7 @@ namespace Dyn.Database.logic
         public object Insert(Dyn.Database.entities.Cliente objCliente)
         {
             object IdProveedor = null;
-            objCliente.Estado.IdEstado = 1;
+            //objCliente.Estado.IdEstado = 1;
             AddParameters(objCliente);
 
 
