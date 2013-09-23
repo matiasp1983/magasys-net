@@ -11,21 +11,25 @@ namespace Dyn.Database.entities
 
         public Venta() { }
 
-        public Venta(Int32? idVen, DateTime? fech, Int16? est, Double? montot)
+        public Venta(Int32? idVen, DateTime? fech, string forPag, Int32? est, Double? montot, Int32? nroCli)
         {
             idVenta = idVen;
             fecha = fech;
-            estado = est;
+            idEstado = est;
             montotal = montot;
+            formaPago = forPag;
+            nroCliente = nroCli;
         }
 
         public Venta(IDataRecord obj)
-		{
+        {
             idVenta = Convert.ToInt32(obj["idVenta"]);
             fecha = Convert.ToDateTime(obj["fecha"]);
-            estado = Convert.ToInt16(obj["estado"]);
+            idEstado = Convert.ToInt32(obj["idEstado"]);
             montotal = Convert.ToDouble(obj["total"]);
-		}
+            formaPago = Convert.ToString(obj["formaDePago"]);
+            nroCliente = Convert.ToInt32(obj["nroCliente"]);
+        }
 
         #endregion
 
@@ -47,25 +51,12 @@ namespace Dyn.Database.entities
             set { fecha = value; }
         }
 
-        private Int16? estado = null;
+        private Int32? idEstado;
 
-        public enum VentaEstado
+        public Int32? IdEstado
         {
-            Confirmado = 1,
-            Elimado = 0,
-            Cancelado = 2
-        }
-
-        public VentaEstado Estado
-        {
-            get
-            {
-                return (VentaEstado)estado;
-            }
-            set
-            {
-                estado = (Int16)value;
-            }
+            get { return idEstado; }
+            set { idEstado = value; }
         }
 
         private Double? montotal;
@@ -74,6 +65,22 @@ namespace Dyn.Database.entities
         {
             get { return montotal; }
             set { montotal = value; }
+        }
+
+        private string formaPago;
+
+        public string FormaPago
+        {
+            get { return formaPago; }
+            set { formaPago = value; }
+        }
+
+        private Int32? nroCliente;
+
+        public Int32? NroCliente
+        {
+            get { return nroCliente; }
+            set { nroCliente = value; }
         }
 
         #endregion

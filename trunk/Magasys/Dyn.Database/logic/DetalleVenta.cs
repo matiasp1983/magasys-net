@@ -27,6 +27,7 @@ namespace Dyn.Database.logic
             CreateCommand("usp_DetalleVenta", true);
             AddCmdParameter("@idVenta", objDetalleVenta.IdVenta, ParameterDirection.Input);
             AddCmdParameter("@idProducto", objDetalleVenta.IdProducto, ParameterDirection.Input);
+            AddCmdParameter("@idProductoEdicion", objDetalleVenta.IdEdicion, ParameterDirection.Input);
             AddCmdParameter("@precioUnidad", objDetalleVenta.PrecioUnidad, ParameterDirection.Input);
             AddCmdParameter("@cantidad", objDetalleVenta.Cantidad, ParameterDirection.Input);
             AddCmdParameter("@subTotal", objDetalleVenta.SubTotal, ParameterDirection.Input);

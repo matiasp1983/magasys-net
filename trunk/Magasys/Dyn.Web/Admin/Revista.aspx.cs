@@ -12,7 +12,7 @@ namespace Dyn.Web.Admin
     public partial class Revista : System.Web.UI.Page
     {
         private Dyn.Database.logic.Revista lRevista;
-        private Dyn.Database.logic.Producto lProducto;
+        //private Dyn.Database.logic.Producto lProducto;
         public Dyn.Database.entities.Revista Entity;
 
         public int IdEntity

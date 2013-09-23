@@ -21,7 +21,7 @@ namespace Dyn.Database.entities
         {
             idTipoDocumento = Convert.ToInt32(obj["idTipoDocumento"]);
             nombre = Convert.ToString(obj["nombre"]);
-            descripcion = nombre = Convert.ToString(obj["descripcion"]);
+            descripcion = Convert.ToString(obj["descripcion"]);
         }
 
         #endregion
