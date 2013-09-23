@@ -118,6 +118,9 @@
                                 Nombre
                             </td>
                             <td class="tittleproducto" style="width: 160px">
+                                Edici&oacute;n
+                            </td>
+                            <td class="tittleproducto" style="width: 160px">
                                 Precio unitario
                             </td>
                             <td class="tittleproducto" style="width: 160px">
@@ -152,6 +155,9 @@
                                                 </tr>
                                             </table>
                                         </td>
+                                        <td style="width: 120px">
+                                            <asp:Label CssClass="tittleprecios03" ID="lblEdicion" runat="server" Text='<%# Eval("idProductoEdicion") %>'></asp:Label>
+                                        </td>
                                         <td style="width: 100px">
                                             <asp:Label ID="lblPesosValorUnitario" runat="server" Text="Label" CssClass="tittleprecios03">$ </asp:Label><asp:Label
                                                 CssClass="tittleprecios03" ID="lblValorUnitario" runat="server" Text='<%#String.Format("{0:0.00}", Eval("precioUnidad")) %>'></asp:Label>
@@ -167,7 +173,8 @@
                                         <td>
                                             <asp:ImageButton ID="btnImbEliminar" CommandName="Detete" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "idProducto")%>'
                                                 Height="30px" Width="30px" runat="server" ImageUrl="~/images/eliminar.jpg" ToolTip="Eliminar"
-                                                OnClientClick="javascript:return confirm('¿Desea confirmar la eliminación del registro?');" BorderStyle="None" />
+                                                OnClientClick="javascript:return confirm('¿Desea confirmar la eliminación del registro?');"
+                                                BorderStyle="None" />
                                         </td>
                                     </tr>
                                 </ItemTemplate>
@@ -185,7 +192,8 @@
             <br />
             <asp:UpdatePanel ID="uplblTotal" runat="server">
                 <ContentTemplate>
-                    Total:&nbsp;$&nbsp;<asp:Label CssClass="tittleprecios03" ID="lblTotal" runat="server" Text="0"></asp:Label>
+                    Total:&nbsp;$&nbsp;<asp:Label CssClass="tittleprecios03" ID="lblTotal" runat="server"
+                        Text="0"></asp:Label>
                 </ContentTemplate>
             </asp:UpdatePanel>
         </td>
@@ -231,6 +239,9 @@
                                                 </table>
                                             </td>
                                             <td class="tittleproducto" style="background-color: #006CCC; color: White">
+                                                Edici&oacute;n
+                                            </td>
+                                            <td class="tittleproducto" style="background-color: #006CCC; color: White">
                                                 Precio<br />
                                                 unitario
                                             </td>
@@ -256,6 +267,9 @@
                                                         </td>
                                                         <td>
                                                             <asp:Label CssClass="tittleprecios03" ID="lblNombre" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "nombre")%>'></asp:Label>
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label CssClass="tittleprecios03" ID="lblEdicion" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "idProductoEdicion")%>'></asp:Label>
                                                         </td>
                                                         <td>
                                                             <asp:Label ID="lblPesosPrecioUnitario" runat="server" Text="Label" CssClass="tittleprecios03">$ </asp:Label><asp:Label

@@ -15,6 +15,7 @@ namespace Dyn.Web.controls
         private CheckBox CheckBoxInRepeater;
         private Label LabelidProducto;
         private Label LabelNombre;
+        private Label LabelEdicion;
         private Label LabelPrecioUnitario;
         private Label LabelStock;
         private TextBox TextBoxCantidad;
@@ -212,10 +213,11 @@ namespace Dyn.Web.controls
                 foreach (RepeaterItem rptitemProductos in rptproductos)
                 {
                     CheckBoxInRepeater = rptitemProductos.FindControl("chkProductoSeleccionado") as CheckBox;
-                    TextBoxCantidad = rptitemProductos.FindControl("txtCantidad") as TextBox;
                     LabelNombre = rptitemProductos.FindControl("lblNombre") as Label;
+                    LabelEdicion = rptitemProductos.FindControl("lblEdicion") as Label;
                     LabelPrecioUnitario = rptitemProductos.FindControl("lblPrecioUnitario") as Label;
                     LabelStock = rptitemProductos.FindControl("lblStock") as Label;
+                    TextBoxCantidad = rptitemProductos.FindControl("txtCantidad") as TextBox;
 
                     if (int.Parse(LabelidProducto.Text) == int.Parse(CheckBoxInRepeater.Text))
                     {
@@ -225,6 +227,7 @@ namespace Dyn.Web.controls
                         TextBoxCantidad.Enabled = false;
                         CheckBoxInRepeater.BackColor = System.Drawing.Color.LightGray;
                         LabelNombre.BackColor = System.Drawing.Color.LightGray;
+                        LabelEdicion.BackColor = System.Drawing.Color.LightGray;
                         LabelPrecioUnitario.BackColor = System.Drawing.Color.LightGray;
                         LabelStock.BackColor = System.Drawing.Color.LightGray;
                         /*Carga cantidad*/
@@ -242,11 +245,13 @@ namespace Dyn.Web.controls
             DataTable dt = new DataTable();
             DataColumn dcProductoID = new DataColumn("idProducto", typeof(string));
             DataColumn dcProducto = new DataColumn("nombre", typeof(string));
+            DataColumn dcEdicion = new DataColumn("idProductoEdicion", typeof(string));
             DataColumn dcUnitPrice = new DataColumn("precioUnidad", typeof(double));
             DataColumn dcCantidad = new DataColumn("cantidad", typeof(int));
             DataColumn dcSubtotal = new DataColumn("subTotal", typeof(double));
             dt.Columns.Add(dcProductoID);
             dt.Columns.Add(dcProducto);
+            dt.Columns.Add(dcEdicion);
             dt.Columns.Add(dcUnitPrice);
             dt.Columns.Add(dcCantidad);
             dt.Columns.Add(dcSubtotal);
@@ -259,6 +264,7 @@ namespace Dyn.Web.controls
             {
                 CheckBoxInRepeater = rptitem.FindControl("chkProductoSeleccionado") as CheckBox;
                 LabelNombre = rptitem.FindControl("lblNombre") as Label;
+                LabelEdicion = rptitem.FindControl("lblEdicion") as Label;
                 LabelPrecioUnitario = rptitem.FindControl("lblPrecioUnitario") as Label;
                 TextBoxCantidad = rptitem.FindControl("txtCantidad") as TextBox;
 
@@ -267,6 +273,7 @@ namespace Dyn.Web.controls
                     DataRow dr = dt.NewRow();
                     dr["idProducto"] = CheckBoxInRepeater.Text;
                     dr["nombre"] = LabelNombre.Text;
+                    dr["idProductoEdicion"] = LabelEdicion.Text;
                     dr["precioUnidad"] = LabelPrecioUnitario.Text;
                     dr["cantidad"] = TextBoxCantidad.Text;
                     dr["subTotal"] = Convert.ToString(Convert.ToInt32(TextBoxCantidad.Text) * double.Parse(LabelPrecioUnitario.Text));
@@ -281,11 +288,13 @@ namespace Dyn.Web.controls
         {
             CheckBoxInRepeater = rptitem.FindControl("chkProductoSeleccionado") as CheckBox;
             LabelNombre = rptitem.FindControl("lblNombre") as Label;
+            LabelEdicion = rptitem.FindControl("lblEdicion") as Label;
             LabelPrecioUnitario = rptitem.FindControl("lblPrecioUnitario") as Label;
             TextBoxCantidad = rptitem.FindControl("txtCantidad") as TextBox;
             DataRow dr = dt.NewRow();
             dr["idProducto"] = CheckBoxInRepeater.Text;
             dr["nombre"] = LabelNombre.Text;
+            dr["idProductoEdicion"] = LabelEdicion.Text;
             dr["precioUnidad"] = LabelPrecioUnitario.Text;
             dr["cantidad"] = TextBoxCantidad.Text;
             dr["subTotal"] = Convert.ToString(Convert.ToInt32(TextBoxCantidad.Text) * double.Parse(LabelPrecioUnitario.Text));
@@ -305,7 +314,7 @@ namespace Dyn.Web.controls
                     break;
                 }
             }
-            return ((DataTable)Session["SessionProductos"]).Rows[contador].ItemArray[3].ToString();
+            return ((DataTable)Session["SessionProductos"]).Rows[contador].ItemArray[4].ToString();
         }
 
         private void LimpiarCheckBox()

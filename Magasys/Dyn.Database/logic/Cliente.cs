@@ -46,7 +46,7 @@ namespace Dyn.Database.logic
             AddCmdParameter("@nroDocumento", nroDoc, ParameterDirection.Input);
             AddCmdParameter("@tipoDocumento", tipoDoc, ParameterDirection.Input);
             AddCmdParameter("@Action", 4, ParameterDirection.Input);
-            AddCmdParameter("@idEstado", lEstado.BuscarEstado("Clientes","Alta"), ParameterDirection.Input);
+            AddCmdParameter("@idEstado", lEstado.BuscarEstado("Clientes", "Alta"), ParameterDirection.Input);
 
             ExecuteReader();
             while (Read())
@@ -73,7 +73,7 @@ namespace Dyn.Database.logic
         {
             CreateCommand("usp_Clientes", true);
             AddCmdParameter("@nroCliente", objusuario.NroCliente, ParameterDirection.Input);
-            
+
             AddCmdParameter("@tipoDocumento", objusuario.TipoDocumento.IdTipoDocumento, ParameterDirection.Input);
             AddCmdParameter("@nroDocumento", objusuario.NroDocumento, ParameterDirection.Input);
 
@@ -95,8 +95,8 @@ namespace Dyn.Database.logic
 
             AddCmdParameter("@fechaAlta", objusuario.FechaAlta, ParameterDirection.Input);
             AddCmdParameter("@idEstado", objusuario.Estado.IdEstado, ParameterDirection.Input);
-            AddCmdParameter("@motivoBaja", objusuario.MotivoBaja, ParameterDirection.Input);      
-            
+            AddCmdParameter("@motivoBaja", objusuario.MotivoBaja, ParameterDirection.Input);
+
         }
 
         public object Insert(Dyn.Database.entities.Cliente objCliente)
@@ -129,6 +129,22 @@ namespace Dyn.Database.logic
             AddCmdParameter("@estado", 0, ParameterDirection.Input);
             AddCmdParameter("@Action", 3, ParameterDirection.Input);
             ExecuteNonQuery();
+        }
+
+        public DataSet BuscarClientes(string alias, string nombre, string apellido, int tipoDoc, int nroDoc)
+        {
+            CreateCommand("usp_Clientes", true);
+            AddCmdParameter("@alias", alias, ParameterDirection.Input);
+            AddCmdParameter("@nombre", nombre, ParameterDirection.Input);
+            AddCmdParameter("@apellido", apellido, ParameterDirection.Input);
+            AddCmdParameter("@tipoDocumento", tipoDoc, ParameterDirection.Input);
+            if (nroDoc != 0)
+            {
+                AddCmdParameter("@nroDocumento", nroDoc, ParameterDirection.Input);
+            }
+            AddCmdParameter("@Action", 4, ParameterDirection.Input);
+            DataSet ds = GetDataSet();
+            return ds;
         }
     }
 }

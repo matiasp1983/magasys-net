@@ -80,6 +80,7 @@
     <Content Include="Admin\Pelicula.aspx" />
     <Content Include="Admin\Producto.aspx" />
     <Content Include="Admin\Proveedor.aspx" />
+    <Content Include="Admin\Reserva.aspx" />
     <Content Include="Admin\Revista.aspx" />
     <Content Include="Admin\Suplementos.aspx" />
     <Content Include="Admin\Venta.aspx" />
@@ -95,6 +96,7 @@
     <Content Include="cal\right1.gif" />
     <Content Include="cal\right2.gif" />
     <Content Include="cal\up2.gif" />
+    <Content Include="controls\BuscarClientes.ascx" />
     <Content Include="controls\Date.ascx" />
     <Content Include="controls\Login.ascx" />
     <Content Include="controls\MenuAdmin.ascx" />
@@ -281,6 +283,13 @@
     <Compile Include="Admin\Proveedor.aspx.designer.cs">
       <DependentUpon>Proveedor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Reserva.aspx.cs">
+      <DependentUpon>Reserva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Reserva.aspx.designer.cs">
+      <DependentUpon>Reserva.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Revista.aspx.cs">
       <DependentUpon>Revista.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -301,6 +310,13 @@
     </Compile>
     <Compile Include="Admin\Venta.aspx.designer.cs">
       <DependentUpon>Venta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\BuscarClientes.ascx.cs">
+      <DependentUpon>BuscarClientes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\BuscarClientes.ascx.designer.cs">
+      <DependentUpon>BuscarClientes.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\Date.ascx.cs">
       <DependentUpon>Date.ascx</DependentUpon>

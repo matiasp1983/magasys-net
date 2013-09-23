@@ -93,6 +93,7 @@
     <Compile Include="logic\Provincia.cs" />
     <Compile Include="logic\Revista.cs" />
     <Compile Include="logic\Suplemento.cs" />
+    <Compile Include="logic\TipoDocumento.cs" />
     <Compile Include="logic\Venta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -9,11 +9,12 @@ namespace Dyn.Database.logic
     {
         public ProductoEdicion() { }
 
-        public Dyn.Database.entities.ProductoEdicion Load(int idproducto)
+        public Dyn.Database.entities.ProductoEdicion Load(int idproducto, int idEdicion)
         {
             Dyn.Database.entities.ProductoEdicion objprodEdic = new Dyn.Database.entities.ProductoEdicion();
             CreateCommand("usp_ProductoEdicionVenta", true);
-            AddCmdParameter("@idproducto", idproducto, ParameterDirection.Input);
+            AddCmdParameter("@idProducto", idproducto, ParameterDirection.Input);
+            AddCmdParameter("@idProductoEdicion", idEdicion, ParameterDirection.Input);
             AddCmdParameter("@Action", 0, ParameterDirection.Input);
             ExecuteReader();
             while (Read())
@@ -27,6 +28,7 @@ namespace Dyn.Database.logic
         {   
             CreateCommand("usp_ProductoEdicionVenta", true);
             AddCmdParameter("@idProducto", objprodventa.IdProducto, ParameterDirection.Input);
+            AddCmdParameter("@idProductoEdicion", objprodventa.IdProductoEdicion, ParameterDirection.Input);
             AddCmdParameter("@cantidadDisponible", objprodventa.CantidadUnidades, ParameterDirection.Input);
             AddCmdParameter("@Action", 1, ParameterDirection.Input);
             ExecuteNonQuery();
