@@ -9,180 +9,196 @@
 <%@ Register Src="../controls/MenuAdminCategoria.ascx" TagName="MenuAdmin" TagPrefix="uc1" %>
 <%@ Register Src="../controls/WUCBuscarProducto.ascx" TagName="WUCBuscarProducto"
     TagPrefix="uc3" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
-        .style1
+        .style17
         {
             font-style: normal;
-            color: #7f7f7f; /*font-size: 11px;*/
+            color: #7f7f7f;
             font-weight: bold;
             height: 45px;
+            width: 98px;
         }
-        .style9
+        .style18
         {
-            font-weight: bold;
+            width: 98px;
+        }
+        .style19
+        {
             font-style: normal;
-            color: #0e85cd;
-            text-decoration: none;
+            color: #7f7f7f;
             font-weight: bold;
-            width: 100px;
+            height: 45px;
+            width: 35px;
         }
-        .style12
+        .style20
         {
-            width: 319px;
-            height: 21px;
+            width: 35px;
         }
-        .style13
+        .style21
         {
-            font-weight: bold;
-            font-style: normal;
-            color: #0e85cd;
-            text-decoration: none;
-            font-weight: bold;
-            width: 129px;
-        }
-        .style14
-        {
-            font-weight: bold;
-            font-style: normal;
-            color: #0e85cd;
-            text-decoration: none;
-            font-weight: bold;
-            width: 37px;
-        }
-        .style15
-        {
-            font-weight: bold;
-            font-style: normal;
-            color: #0e85cd;
-            text-decoration: none;
-            font-weight: bold;
-            width: 82px;
+            width: 50px;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
     <table width="100%" cellpadding="0" cellspacing="5" border="0">
         <tr>
-            <td class="style1" align="left">
+            <td class="style19" align="left">
                 Numero de Ingreso:
             </td>
-            <td align="left" width="150">
+            <td align="left" class="style18">
                 <asp:TextBox ID="txtNumeroVenta" runat="server" CssClass="tittleprecios03" 
                     Enabled="False"></asp:TextBox><br />
             </td>
         </tr>
 
         <tr>
-            <td class="style1" align="left">
+            <td class="style19" align="left">
                 Fecha (*)
             </td>
+            <td class="style18">
+                <asp:Calendar ID="calFecha" runat="server" BackColor="White" 
+                    BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" 
+                    ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="350px">
+                    <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
+                    <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" 
+                        VerticalAlign="Bottom" />
+                    <OtherMonthDayStyle ForeColor="#999999" />
+                    <SelectedDayStyle BackColor="#333399" ForeColor="White" />
+                    <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" 
+                        Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
+                    <TodayDayStyle BackColor="#CCCCCC" />
+                </asp:Calendar>
+            </td>
+        </tr>
+        <tr>
+            <td class="style19">
+            
+                Proveedor</td>
+            <td class="style17">
+            
+                <asp:DropDownList ID="lstProveedores" runat="server" 
+                    DataSourceID="DSProveedores" DataTextField="razonSocial" 
+                    DataValueField="idProveedor" CssClass="style19" Height="45px" 
+                    Width="200px" AutoPostBack="True" 
+                    onselectedindexchanged="lstProveedores_SelectedIndexChanged">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="DSProveedores" runat="server" 
+                    ConnectionString="<%$ ConnectionStrings:MagasysConnectionString %>" 
+                    SelectCommand="SELECT [razonSocial], [idProveedor], [estado] FROM [Proveedores] WHERE ([estado] = @estado)">
+                    <SelectParameters>
+                        <asp:Parameter DefaultValue="1" Name="estado" Type="Int16" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
+            
+            </td>
+        </tr>
+        <tr>
+            <td class="style19">         
+                &nbsp;<asp:Label ID="lbNombre" runat="server" Text="Nombre Producto" Visible="False"></asp:Label>
+            </td>
+            <td class="style17">
+            
+                <asp:TextBox ID="txtNombreProd" runat="server" MaxLength="50" Width="192px" 
+                    Visible="False" CssClass="style19" Height="35px"></asp:TextBox>
+            
+            </td>
+            <td class="style21">
+                <asp:Button ID="btnBuscar" runat="server" Text="Buscar" 
+                    onclick="btnBuscar_Click" Visible="False" />
+            </td>
+        </tr>
+        <tr>
+            <td class="style20">
+            
+            </td>
+            <td class="style17">
+            
+                <asp:GridView ID="gvProductos" runat="server" Visible="False" CellPadding="4" 
+                    ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" 
+                    onselectedindexchanging="gvProductos_SelectedIndexChanging">
+                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                    <Columns>
+                        <asp:BoundField DataField="IdProducto" HeaderText="ID Producto" />
+                        <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
+                        <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
+                        <asp:CommandField ShowSelectButton="True" />
+                    </Columns>
+                    <EditRowStyle BackColor="#999999" />
+                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                </asp:GridView>
+            
+            </td>
+        </tr>
+
+        <tr>
+            <td class="style19">
+                Detalle Ingresos
+            </td>
+            <td class="style17">
+            
+            </td>
+        
+        </tr>
+
+        <tr>
             <td>
-                <asp:Calendar ID="calFecha" runat="server"></asp:Calendar>
+            
+            </td>
+            <td class="style17">
+            
+                <asp:GridView ID="gvDetalle" runat="server" CellPadding="4" ForeColor="#333333" 
+                    GridLines="None" AutoGenerateColumns="False" 
+                    onrowcancelingedit="gvDetalle_RowCancelingEdit" 
+                    onrowdeleting="gvDetalle_RowDeleting" onrowediting="gvDetalle_RowEditing" 
+                    onrowupdating="gvDetalle_RowUpdating">
+                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                    <Columns>
+                        <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto" />
+                        <asp:BoundField HeaderText="Descripcion" />
+                        <asp:BoundField HeaderText="Cantidad" />
+                        <asp:BoundField HeaderText="Precio" />
+                        <asp:CommandField ShowEditButton="True" />
+                        <asp:CommandField ShowDeleteButton="True" />
+                    </Columns>
+                    <EditRowStyle BackColor="#999999" />
+                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                </asp:GridView>
+            
             </td>
         </tr>
-        <tr>
-            <td colspan="2">
-               <%-- <asp:Button CssClass="adminbutton" ID="btnMostrarProductos" runat="server" Text="MostrarProductos"
-                    OnClick="btnGuardar_Click" />&nbsp;--%>
-                     <asp:Button CssClass="adminbutton" ID="btnMostrarProductos" runat="server" 
-                    Text="MostrarProductos" onclick="btnMostrarProductos_Click"
-                   />&nbsp;
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" class="style12">
-                <br />
-                <uc3:WUCBuscarProducto ID="WUCBuscarProducto1" runat="server" />
-                <br />
-                <br />
-            </td>
-        </tr>
 
-        <tr>
-                    <td colspan="3" width="700" align="left">
-&nbsp;<div id="tableHeader">
-                        </div>
-                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                            <tr>
-                                <td class="style15">
-                                    Nombre
-                                    <br />
-                                    <hr />
-                                </td>
-                                <td class="style13">
-                                    Descripci&oacute;n
-                                    <br />
-                                    <hr />
-                                </td>
-                                <%-- <td width="233" class="tittleproducto">
-                                    Cantidad
-                                    <br />
-                                    <hr />
-                                </td>--%>
-                                <td class="style14">
-                                    Precio
-                                    <br />
-                                    <hr style="margin-right: 52px" />
-                                </td>
-                                <td class="style9">
-                                    Cantidad
-                                    <br />
-                                    <hr />
-                                </td>
-
-                            </tr>
-                        </table>
-                        <div style="overflow: scroll; height: 295px; width: 100%">
-                            <div>
-                                <asp:Repeater ID="repDetalle" runat="server">
-                                    <HeaderTemplate>
-                                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                                    </HeaderTemplate>
-                                    <ItemTemplate>
-                                        <tr>
-                                            <td>
-                                                <asp:Label ID="lblProducto" CssClass="tittleprecios03" Text='<%# Eval("Producto.Nombre") %>' runat="server" Width="100"></asp:Label>
-                                            </td>
-                                            <td>
-                                                <asp:Label ID="lblDescripcion" CssClass="tittleprecios03" Text='<%# Eval("Producto.Descripcion") %>'
-                                                    runat="server" Width="150"></asp:Label>
-                                            </td>
-                                            <td>
-                                                <asp:TextBox ID="txtPrecio" CssClass="tittleprecios03" runat="server" Width="50"></asp:TextBox>
-                                                    
-                                            </td>
-                                            <td>
-                                                <asp:TextBox ID="txtCantidad" CssClass="tittleprecios03" runat="server" Width="50"></asp:TextBox>
-                                                    
-                                            </td>
-                                            <td>
-                                               <asp:Button CssClass="adminbutton" ID="btnQuitar" runat="server" Text="Quitar" OnClick="btnQuitar_Click"
-                    />&nbsp;
-                                            </td>
-
-
-                                        </tr>
-                                    </ItemTemplate>
-                                    <FooterTemplate>
-                                        </table>
-                                    </FooterTemplate>
-                                </asp:Repeater>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
+        
         <%--  Control de Botones --%>
         <tr>
             <td colspan="2" style="height: 24px">
                 <br />
-                     <asp:Button CssClass="adminbutton" ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click"
+                     <asp:Button CssClass="adminbutton" ID="btnGuardar" runat="server" 
+                    Text="Guardar" OnClick="btnGuardar_Click" Enabled="False"
                     />&nbsp;
                 <asp:Button CssClass="adminbutton" ID="btnCancelar" runat="server" Text="Cancelar"
                     CausesValidation="False" />&nbsp;
                 <asp:Button CssClass="adminbutton" ID="btnEliminar" runat="server" Text="Anular"
                     CausesValidation="False" OnClientClick="javascript:return confirm('Desea eliminar la Coleccion?');"
-                    Visible="False" />
+                    Visible="False" Enabled="False" />
             </td>
         </tr>
     </table>

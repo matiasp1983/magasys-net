@@ -22,24 +22,6 @@ namespace Dyn.Web.controls {
         protected global::SiteUtils.CollectionPager CollectionPager;
         
         /// <summary>
-        /// lstProveedor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lstProveedor;
-        
-        /// <summary>
-        /// RequiredFieldValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-        
-        /// <summary>
         /// txtNombreProducto control.
         /// </summary>
         /// <remarks>
@@ -67,12 +49,12 @@ namespace Dyn.Web.controls {
         protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// repProducto control.
+        /// gvProductos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repProducto;
+        protected global::System.Web.UI.WebControls.GridView gvProductos;
     }
 }

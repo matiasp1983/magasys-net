@@ -12,7 +12,7 @@
             color: #7f7f7f;
             font-weight: bold;
             height: 45px;
-            width: 193px;
+            width: 194px;
         }
         .style2
         {
@@ -20,11 +20,7 @@
         }
         .style3
         {
-            width: 319px;
-        }
-        .style4
-        {
-            width: 232px;
+            width: 37px;
         }
         .style5
         {
@@ -49,17 +45,6 @@
                             Listado de Productos</h2>
                     </td>
                 </tr>
-                <tr>
-                    <td  align="left" valign="middle">
-                        Proveedor:
-                    </td>
-            <td class="style4">
-                <asp:DropDownList CssClass="tittleprecios03" ID="lstProveedor" runat="server">
-                </asp:DropDownList><br />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Debe seleccionar un Proveedor"
-                    ControlToValidate="lstProveedor" CssClass="tittleprecios03" ForeColor="Red"></asp:RequiredFieldValidator>
-            </td>
-            </tr>
             <tr>
                     <td class="style1" align="left" valign="middle">
                         Nombre Producto:
@@ -74,7 +59,7 @@
                         </act:AutoCompleteExtender>
                     </td>
                     <td width="233" align="left" class="style2">
-                       <%-- <asp:Button ID="Button1" CssClass="adminbutton" runat="server" Text="Buscar" OnClick="btnBuscar_Click"
+                        <%-- <asp:Button ID="Button1" CssClass="adminbutton" runat="server" Text="Buscar" OnClick="btnBuscar_Click"
                             ValidationGroup="busqueda" />--%>
                             <asp:Button ID="Button2" CssClass="adminbutton" runat="server" Text="Buscar" 
                             ValidationGroup="busqueda" onclick="Button2_Click" />
@@ -85,62 +70,24 @@
                        <table width="100%" border="0">
                             <tr>
                                 <td class="style3">
-                                    Nombre
-                                    <br />
-                                    <hr />
-                                </td>
-                                <td width="233" class="tittleproducto">
-                                    Descripci&oacute;n
-                                    <br />
-                                    <hr />
+                                    &nbsp;</td>
+                                <td width="233" class="tittleproducto" style="width: 466px">
+                                    <asp:GridView ID="gvProductos" runat="server" AutoGenerateColumns="False" 
+                                        Width="450px">
+                                        <Columns>
+                                            <asp:BoundField HeaderText="Nombre" />
+                                            <asp:BoundField HeaderText="Descripcion" />
+                                            <asp:CommandField ShowSelectButton="True" />
+                                        </Columns>
+                                    </asp:GridView>
                                 </td>
                                 <%-- <td width="233" class="tittleproducto">
                                     Cantidad
                                     <br />
                                     <hr />
                                 </td>--%>
-                                <td width="233" class="tittleproducto">
-                                    Proveedor
-                                    <br />
-                                    <hr />
-                                </td>
                             </tr>
                         </table>
-                            <asp:Repeater ID="repProducto" runat="server">
-                                    <HeaderTemplate>
-                                        <table width="100%" border="0">
-                                    </HeaderTemplate>
-                                    <ItemTemplate>
-                                        <tr>
-                                            <td width="25">
-                                                <asp:LinkButton ID="lnkID" CssClass="tittleprecios03" runat="server" OnClick="hpNombre_Click"
-                                                    Text='<%# Eval("IdProducto") %>'></asp:LinkButton>
-                                            </td>
-
-                                             <td width="233">
-                                                <asp:Label ID="lblNombre" CssClass="tittleprecios03" Text='<%# Eval("Nombre") %>'
-                                                    runat="server"></asp:Label>
-                                            </td>
-
-                                            <td width="233">
-                                                <asp:Label ID="lblDescripcion" CssClass="tittleprecios03" Text='<%# Eval("Descripcion") %>'
-                                                    runat="server"></asp:Label>
-
-                                            </td>
-                                            <%--                                            <td width="233">
-                                                <asp:Label ID="lblCantidad" CssClass="tittleprecios03" Text='<%# Eval("Cantidaddisponible") %>'
-                                                    runat="server"></asp:Label>
-                                            </td>--%>
-                                            <td width="233">
-                                                <asp:Label ID="lblProveedor" CssClass="tittleprecios03" Text='<%# Eval("nomProveedor") %>'
-                                                    runat="server"></asp:Label>
-                                            </td>
-                                        </tr>
-                                    </ItemTemplate>
-                                    <FooterTemplate>
-                                        </table>
-                                    </FooterTemplate>
-                                </asp:Repeater>
                             
                     </td>
                 </tr>
