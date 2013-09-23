@@ -125,6 +125,22 @@ namespace Dyn.Database.logic
             numeropaginas = (int)GetValueCmdParameter("@TotalRecords");
             return ds;
         }
+        public List<Dyn.Database.entities.Producto> SeleccionarProductoPorIdProveedor(string nombre, int idProveedor)
+        {
+            List<Dyn.Database.entities.Producto> listaProductos = new List<entities.Producto>();
+            CreateCommand("usp_Producto", true);
+            AddCmdParameter("@nombre", nombre, ParameterDirection.Input);
+            AddCmdParameter("@idProveedor", idProveedor, ParameterDirection.Input);
+            AddCmdParameter("@Action", 5, ParameterDirection.Input);
+            ExecuteReader();
+            while (Read())
+            {   
+                listaProductos.Add(new entities.Producto(GetDataReader()));
+            }
+
+            return listaProductos;
+        }
+
         public List<Dyn.Database.entities.Producto> SeleccionarTodosLosProductos(int accion)
         {
             List<Dyn.Database.entities.Producto> Collection = new List<Dyn.Database.entities.Producto>();
