@@ -36,6 +36,7 @@ namespace Dyn.Web.controls
                 if (rdbClienteSeccionado.Checked)
                 {
                     lblNroClienteText.Text = rdbClienteSeccionado.Text;
+                    NroCliente = Convert.ToInt32(rdbClienteSeccionado.Text);
                     lblNombreApellidoText.Text = LabelNombre.Text + " " + LabelApellido.Text;
                     encontrado = true;
                     break;
@@ -118,6 +119,18 @@ namespace Dyn.Web.controls
                 li = new ListItem();
                 li = new ListItem(listaTipoDoc[i].Nombre, listaTipoDoc[i].IdTipoDocumento.ToString());
                 ddlTipoDoc.Items.Add(li);
+            }
+        }
+
+        public Int32 NroCliente
+        {
+            get
+            {
+                return Convert.ToInt32(ViewState["NroCliente"]);
+            }
+            set
+            {
+                ViewState["NroCliente"] = value;
             }
         }
     }
