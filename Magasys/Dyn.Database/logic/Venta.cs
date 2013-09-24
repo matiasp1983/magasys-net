@@ -66,5 +66,23 @@ namespace Dyn.Database.logic
             numeropaginas = (int)GetValueCmdParameter("@TotalRecords");
             return ds;
         }
+
+        public List<Dyn.Database.entities.Venta> BuscarVentasPorClienteCobro(int nroCliente, DateTime fechaInicio, DateTime fechaFin)
+        {
+            List<Dyn.Database.entities.Venta> Collection = new List<Dyn.Database.entities.Venta>();
+            CreateCommand("usp_Venta", true);
+            AddCmdParameter("@nroCliente", nroCliente, ParameterDirection.Input);
+            AddCmdParameter("@fechaIni", fechaInicio, ParameterDirection.Input);
+            AddCmdParameter("@fechaFin", fechaFin, ParameterDirection.Input);
+            AddCmdParameter("@Action", 3, ParameterDirection.Input);
+
+            ExecuteReader();
+            while (Read())
+            {
+                Collection.Add(new Dyn.Database.entities.Venta(GetDataReader()));
+            }
+            DataSet ds = GetDataSet();
+            return Collection;
+        }
     }
 }

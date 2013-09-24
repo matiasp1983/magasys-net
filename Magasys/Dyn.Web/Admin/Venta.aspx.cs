@@ -113,8 +113,7 @@ namespace Dyn.Web.Admin
             Entity.MonTotal = ucVentas.ValorTotal;
             Entity.IdEstado = lEstado.BuscarEstado("Venta", nombreEstado);
             Entity.FormaPago = ddlTipoVenta.SelectedValue.ToString();
-            //Agregar el campo del User Control con el numero del cliente
-            //Entity.NroCliente = Int32.Parse(lblNroClienteText.Text.Trim());
+            Entity.NroCliente = ucBuscarClientes.NroCliente;
 
             idVenta = Convert.ToInt32(lVenta.Insert(Entity).ToString());
 
