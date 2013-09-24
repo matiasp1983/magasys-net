@@ -104,7 +104,7 @@ namespace Dyn.Web.Admin
                 Entity.Estado.IdEstado = estado;
                 Entity.FechaAlta = DateTime.Now;
                 lCliente.Insert(Entity);
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('ListadoClientes.aspx?IdMenuCategoria=14');", true);
 
             }
             else
@@ -141,7 +141,8 @@ namespace Dyn.Web.Admin
                     Entity.Estado.IdEstado = estado;
                     Entity.FechaAlta = DateTime.Now;
                     lCliente.Delete(Entity);
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el género correctamente');document.location.href='/Admin/ListadoCliente.aspx';", true);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el Cliente correctamente');", true);
+                    Response.Redirect("ListadoClientes.aspx?IdMenuCategoria=14");
                 }
                 else
                 { 
@@ -152,7 +153,7 @@ namespace Dyn.Web.Admin
         }
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ListadoCliente.aspx");
+            Response.Redirect("ListadoClientes.aspx?IdMenuCategoria=14");
         }
 
         public void LlenarProvincias()
