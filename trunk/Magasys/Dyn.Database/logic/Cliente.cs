@@ -13,7 +13,7 @@ namespace Dyn.Database.logic
         public Dyn.Database.entities.Cliente Load(int nroCliente)
         {
             Dyn.Database.entities.Cliente objCliente = new Dyn.Database.entities.Cliente();
-            CreateCommand("usp_Cliente", true);
+            CreateCommand("usp_Clientes", true);
             AddCmdParameter("@nroCliente", nroCliente, ParameterDirection.Input);
             AddCmdParameter("@Action", 0, ParameterDirection.Input);
             ExecuteReader();
@@ -102,7 +102,6 @@ namespace Dyn.Database.logic
         public object Insert(Dyn.Database.entities.Cliente objCliente)
         {
             object IdProveedor = null;
-            //objCliente.Estado.IdEstado = 1;
             AddParameters(objCliente);
 
 
@@ -116,17 +115,15 @@ namespace Dyn.Database.logic
         }
         public void Update(Dyn.Database.entities.Cliente objCliente)
         {
-            objCliente.Estado.IdEstado = 1;
             AddParameters(objCliente);
             AddCmdParameter("@Action", 1, ParameterDirection.Input);
             ExecuteNonQuery();
         }
 
-        public void Delete(int idCliente)
+        public void Delete(Dyn.Database.entities.Cliente objCliente)
         {
             CreateCommand("usp_Clientes", true);
-            AddCmdParameter("@idCliente", idCliente, ParameterDirection.Input);
-            AddCmdParameter("@estado", 0, ParameterDirection.Input);
+            AddParameters(objCliente);
             AddCmdParameter("@Action", 3, ParameterDirection.Input);
             ExecuteNonQuery();
         }

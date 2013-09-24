@@ -5,10 +5,6 @@
         {
             width: 25px;
         }
-        .style2
-        {
-            width: 100px;
-        }
         .style3
         {
             width: 5px;
@@ -35,13 +31,8 @@
             </td>
             <td align="left" class="style3">
                 <asp:DropDownList CssClass="tittleprecios03" ID="lstTipoDoc" runat="server" 
-                    onselectedindexchanged="lstProvincias_SelectedIndexChanged" 
-                    DataSourceID="DSTipoDocumento" DataTextField="nombre" 
-                    DataValueField="idTipoDocumento">
+                    onselectedindexchanged="lstProvincias_SelectedIndexChanged">
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="DSTipoDocumento" runat="server" 
-                    ConnectionString="<%$ ConnectionStrings:MagasysConnectionString %>" 
-                    SelectCommand="SELECT * FROM [TipoDocumento]"></asp:SqlDataSource>
                 
             </td>
             <td class="tittleprecios03" align="left" width="100">
@@ -191,12 +182,8 @@
             <td align="left" class="style3">
                 <asp:DropDownList CssClass="tittleprecios03" ID="lstProvincias" runat="server" 
                     onselectedindexchanged="lstProvincias_SelectedIndexChanged" 
-                    AutoPostBack="True" DataSourceID="DSProvincias" DataTextField="nombre" 
-                    DataValueField="idProvincia">
+                    AutoPostBack="True">
                 </asp:DropDownList>
-                    <asp:SqlDataSource ID="DSProvincias" runat="server" 
-                    ConnectionString="<%$ ConnectionStrings:MagasysConnectionString %>" 
-                    SelectCommand="SELECT * FROM [Provincias]"></asp:SqlDataSource>
                     </td>
 
             <td class="tittleprecios03" align="left">

@@ -80,7 +80,6 @@
     <Content Include="Admin\Pelicula.aspx" />
     <Content Include="Admin\Producto.aspx" />
     <Content Include="Admin\Proveedor.aspx" />
-    <Content Include="Admin\Reserva.aspx" />
     <Content Include="Admin\Revista.aspx" />
     <Content Include="Admin\Suplementos.aspx" />
     <Content Include="Admin\Venta.aspx" />
@@ -282,13 +281,6 @@
     </Compile>
     <Compile Include="Admin\Proveedor.aspx.designer.cs">
       <DependentUpon>Proveedor.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Reserva.aspx.cs">
-      <DependentUpon>Reserva.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Reserva.aspx.designer.cs">
-      <DependentUpon>Reserva.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Revista.aspx.cs">
       <DependentUpon>Revista.aspx</DependentUpon>
