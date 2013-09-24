@@ -119,7 +119,7 @@ namespace Dyn.Web.Admin
                     Entity.IdColeccion = Convert.ToInt16(lProducto.Insert(Entity));
                     lColeccion.Insert(Entity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
-                    Response.Redirect("ListadoColeccion.aspx?IdMenuCategoria=3");
+                    Response.Redirect("ListadoColeccion.aspx");
                 }
 
             }
