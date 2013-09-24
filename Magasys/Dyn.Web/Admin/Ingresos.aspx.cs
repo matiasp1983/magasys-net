@@ -246,9 +246,10 @@ namespace Dyn.Web.Admin
             List<Database.entities.DetalleIngresoProducto> det = Entity.DetalleIngreso;
             int key = e.RowIndex;
 
-            det[key].CantidadUnidades = Convert.ToInt32(e.NewValues["Cantidad"]);
-            det[key].ProductoEdicion.Precio = Convert.ToInt32(e.NewValues["Precio"]);
-            det[key].ProductoEdicion.Descripcion = Convert.ToString(e.NewValues["Descripcion"]);
+            det[key].CantidadUnidades = Convert.ToInt32(e.NewValues["CantidadUnidades"]);
+            det[key].ProductoEdicion.CantidadUnidades = det[key].CantidadUnidades;
+            det[key].ProductoEdicion.Precio = Convert.ToInt32(e.NewValues["ProductoEdicion.Precio"]);
+            det[key].ProductoEdicion.Descripcion = Convert.ToString(e.NewValues["ProductoEdicion.Descripcion"]);
             Entity.DetalleIngreso = det;
             gvDetalle.DataSource = Entity.DetalleIngreso;
             gvDetalle.DataKeyNames = new String[] { "IdDetalleIngresoProducto" };

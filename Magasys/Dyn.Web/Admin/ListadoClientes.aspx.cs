@@ -99,6 +99,11 @@ namespace Dyn.Web.Admin
 
         }
 
+        protected void gvClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Admin/ABMClientes.aspx?Id=" + gvClientes.SelectedDataKey.Value);
+        }
+
 
     }
 }

@@ -13,7 +13,7 @@ namespace Dyn.Database.logic
             Dyn.Database.entities.Localidad objLocalidad = new Dyn.Database.entities.Localidad();
             CreateCommand("usp_Localidad", true);
             AddCmdParameter("@idLocalidad", idLocalidad, ParameterDirection.Input);
-            AddCmdParameter("@Action", 0, ParameterDirection.Input);
+            AddCmdParameter("@Action", 1, ParameterDirection.Input);
             ExecuteReader();
             while (Read())
             {

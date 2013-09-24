@@ -29,6 +29,8 @@ namespace Dyn.Web.Admin
             {
                 //this.Master.TituloPagina = "Edici&oacute;n Proveedor";
                 lCliente = new Dyn.Database.logic.Cliente();
+                LlenarTipoDocumento();
+                LlenarProvincias();
                 lstProvincias.SelectedIndex = 1;
                 LlenarLocalidades();
                 if (Request["Id"] == null)
@@ -41,6 +43,10 @@ namespace Dyn.Web.Admin
                     {
                         IdEntity = Convert.ToInt32(Request["Id"]);
                         Entity = lCliente.Load(IdEntity);
+                        Dyn.Database.logic.Localidad lLocalidad = new Database.logic.Localidad();
+                        Dyn.Database.entities.Localidad localidad = lLocalidad.Load(Convert.ToInt32(Entity.IdLocalidad));
+                        lstProvincias.SelectedValue = localidad.IdProvincia.ToString();
+                        LlenarLocalidades();
                         lstLocalidades.SelectedValue = Entity.IdLocalidad.ToString();
                     }
                 DataBind();
@@ -89,12 +95,12 @@ namespace Dyn.Web.Admin
         {
             lCliente = new Dyn.Database.logic.Cliente();
             Entity = new Dyn.Database.entities.Cliente();
-
+            
             if (IdEntity == 0)
             {
                 Entity = CargarDatosCliente();
                 Dyn.Database.logic.Estado lEstado = new Dyn.Database.logic.Estado();
-                int estado = lEstado.BuscarEstado("Clientes","Alta");
+                int estado = lEstado.BuscarEstado("Clientes", "Alta");
                 Entity.Estado.IdEstado = estado;
                 Entity.FechaAlta = DateTime.Now;
                 lCliente.Insert(Entity);
@@ -106,6 +112,11 @@ namespace Dyn.Web.Admin
                 {
                     Entity = CargarDatosCliente();
                     Entity.NroCliente = IdEntity;
+                    Dyn.Database.logic.Estado lEstado = new Dyn.Database.logic.Estado();
+                    int estado = lEstado.BuscarEstado("Clientes", "Alta");
+                    Entity.Estado.IdEstado = estado;
+                    Entity.FechaAlta = DateTime.Now;
+                    
                     lCliente.Update(Entity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se actualizaron los datos correctamente');", true);
                 }
@@ -119,10 +130,17 @@ namespace Dyn.Web.Admin
         {
               if (IdEntity != 0 && IdEntity != int.MinValue)
             {
+                Entity = CargarDatosCliente();
                 if (Entity.validarBaja())
                 {
+                    Entity = CargarDatosCliente();
+                    Entity.NroCliente = IdEntity;
                     lCliente = new Dyn.Database.logic.Cliente();
-                    lCliente.Delete(IdEntity);
+                    Dyn.Database.logic.Estado lEstado = new Dyn.Database.logic.Estado();
+                    int estado = lEstado.BuscarEstado("Clientes", "Baja");
+                    Entity.Estado.IdEstado = estado;
+                    Entity.FechaAlta = DateTime.Now;
+                    lCliente.Delete(Entity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el género correctamente');document.location.href='/Admin/ListadoCliente.aspx';", true);
                 }
                 else
@@ -137,7 +155,18 @@ namespace Dyn.Web.Admin
             Response.Redirect("ListadoCliente.aspx");
         }
 
-
+        public void LlenarProvincias()
+        {
+            Dyn.Database.logic.Provincia lProvincia = new Dyn.Database.logic.Provincia();
+            List<Dyn.Database.entities.Provincia> listaProvincias = lProvincia.SeleccionarTodasLasProvicias();
+            ListItem li;
+            for (int i = 0; i < listaProvincias.Count; i++)
+            {
+                li = new ListItem();
+                li = new ListItem(listaProvincias[i].Nombre, listaProvincias[i].IdProvincia.ToString());
+                lstProvincias.Items.Add(li);
+            }
+        }
         public void LlenarLocalidades()
         {
             if (lstProvincias.SelectedIndex == -1)
@@ -158,6 +187,23 @@ namespace Dyn.Web.Admin
                 }
 
             }
+
+        }
+        public void LlenarTipoDocumento()
+        {
+                Dyn.Database.logic.TipoDocumento lTipoDoc = new Dyn.Database.logic.TipoDocumento();
+                List<Dyn.Database.entities.TipoDocumento> listaTipoDoc = lTipoDoc.SeleccionarTodosLosTiposDocumento();
+                ListItem li;
+                lstLocalidades.Items.Clear();
+
+                for (int i = 0; i < listaTipoDoc.Count; i++)
+                {
+                    li = new ListItem();
+                    li = new ListItem(listaTipoDoc[i].Nombre, listaTipoDoc[i].IdTipoDocumento.ToString());
+                    lstTipoDoc.Items.Add(li);
+                }
+
+            
 
         }
         protected void lstProvincias_SelectedIndexChanged(object sender, EventArgs e)

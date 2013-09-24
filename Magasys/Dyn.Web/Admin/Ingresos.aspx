@@ -18,11 +18,11 @@
             color: #7f7f7f;
             font-weight: bold;
             height: 45px;
-            width: 98px;
+            width: 59px;
         }
         .style18
         {
-            width: 98px;
+            width: 59px;
         }
         .style19
         {
@@ -61,7 +61,7 @@
             <td class="style18">
                 <asp:Calendar ID="calFecha" runat="server" BackColor="White" 
                     BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" 
-                    ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" Width="350px">
+                    ForeColor="Black" Height="16px" NextPrevFormat="FullMonth" Width="220px">
                     <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
                     <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" 
                         VerticalAlign="Bottom" />
@@ -152,22 +152,28 @@
         </tr>
 
         <tr>
-            <td>
-            
-            </td>
-            <td class="style17">
+            <td colspan="2">
             
                 <asp:GridView ID="gvDetalle" runat="server" CellPadding="4" ForeColor="#333333" 
                     GridLines="None" AutoGenerateColumns="False" 
                     onrowcancelingedit="gvDetalle_RowCancelingEdit" 
                     onrowdeleting="gvDetalle_RowDeleting" onrowediting="gvDetalle_RowEditing" 
-                    onrowupdating="gvDetalle_RowUpdating">
+                    onrowupdating="gvDetalle_RowUpdating" Width="400px">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
-                        <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto" />
-                        <asp:BoundField HeaderText="Descripcion" />
-                        <asp:BoundField HeaderText="Cantidad" />
-                        <asp:BoundField HeaderText="Precio" />
+                        <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto" >
+                        <ItemStyle Width="100px" />
+                        </asp:BoundField>
+                        <asp:BoundField HeaderText="Descripcion" 
+                            DataField="ProductoEdicion.Descripcion" >
+                        <ItemStyle Width="100px" />
+                        </asp:BoundField>
+                        <asp:BoundField HeaderText="Cantidad" DataField="CantidadUnidades" >
+                        <ItemStyle Width="50px" />
+                        </asp:BoundField>
+                        <asp:BoundField HeaderText="Precio" DataField="ProductoEdicion.Precio" >
+                        <HeaderStyle Width="50px" />
+                        </asp:BoundField>
                         <asp:CommandField ShowEditButton="True" />
                         <asp:CommandField ShowDeleteButton="True" />
                     </Columns>
