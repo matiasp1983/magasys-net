@@ -34,26 +34,17 @@ namespace Dyn.Database.logic
             ExecuteNonQuery();
         }
 
-        //public Dyn.Database.entities.ProductoEdicion BuscarProductoEdicion(int idProveedor, string nombreProd)
-        //{
-        //    Dyn.Database.entities.ProductoEdicion objprodEdic = new Dyn.Database.entities.ProductoEdicion();
-        //    CreateCommand("usp_BuscarProductoEdicion", true);
-        //    AddCmdParameter("@idProveedor", idProveedor, ParameterDirection.Input);
-        //    AddCmdParameter("@nombre", nombreProd, ParameterDirection.Input);
-        //    while (Read())
-        //    {
-        //        objprodEdic = new Dyn.Database.entities.ProductoEdicion(GetDataReader());
-        //    }
-        //    return objprodEdic;
-        //}
-
-        public DataSet BuscarProductoEdicion(int idProveedor, string nombreProd)
+        public DataSet BuscarProductoEdicion(int idProveedor, string nombreProd, int idEdicion)
         {
             Dyn.Database.entities.ProductoEdicion objprodEdic = new Dyn.Database.entities.ProductoEdicion();
             CreateCommand("usp_BuscarProductoEdicionVenta", true);
             if (idProveedor != 0)
             {
                 AddCmdParameter("@idProveedor", idProveedor, ParameterDirection.Input);
+            }
+            if (idEdicion != 0)
+            {
+                AddCmdParameter("@idEdicion", idProveedor, ParameterDirection.Input);
             }
             AddCmdParameter("@nombre", nombreProd, ParameterDirection.Input);
             DataSet ds = GetDataSet();
