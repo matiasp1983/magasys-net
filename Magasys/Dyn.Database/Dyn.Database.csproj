@@ -64,6 +64,7 @@
     <Compile Include="entities\ProductoFoto.cs" />
     <Compile Include="entities\Proveedor.cs" />
     <Compile Include="entities\Provincia.cs" />
+    <Compile Include="entities\Reserva.cs" />
     <Compile Include="entities\Revista.cs" />
     <Compile Include="entities\Suplemento.cs" />
     <Compile Include="entities\TipoDocumento.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="logic\ProductoEdicion2.cs" />
     <Compile Include="logic\Proveedor.cs" />
     <Compile Include="logic\Provincia.cs" />
+    <Compile Include="logic\Reserva.cs" />
     <Compile Include="logic\Revista.cs" />
     <Compile Include="logic\Suplemento.cs" />
     <Compile Include="logic\TipoDocumento.cs" />
