@@ -13,12 +13,10 @@ namespace Dyn.Database.logic
         {
             CreateCommand("usp_Reserva", true);
             AddCmdParameter("@nroCliente", objReserva.NroCliente, ParameterDirection.Input);
-            AddCmdParameter("@fechaReserva", objReserva.FechaReserva, ParameterDirection.Input);
             AddCmdParameter("@fechaInicio", objReserva.FechaInicio, ParameterDirection.Input);
             AddCmdParameter("@fechaFin", objReserva.FechaFin, ParameterDirection.Input);
             AddCmdParameter("@tipoReserva", objReserva.TipoReserva, ParameterDirection.Input);
             AddCmdParameter("@idProducto", objReserva.IdProducto, ParameterDirection.Input);
-            AddCmdParameter("@idProductoEdicion", objReserva.IdProductoEdicion, ParameterDirection.Input);
             AddCmdParameter("@cantidad", objReserva.Cantidad, ParameterDirection.Input);
             AddCmdParameter("@idEstado", objReserva.IdEstado, ParameterDirection.Input);
         }
@@ -27,6 +25,7 @@ namespace Dyn.Database.logic
         {
             object idReserva = null;
             AddParameters(objReserva);
+            AddCmdParameter("@fechaReserva", objReserva.FechaReserva, ParameterDirection.Input);
             AddCmdParameter("@Action", 2, ParameterDirection.Input);
             ExecuteReader();
             while (Read())
@@ -42,5 +41,6 @@ namespace Dyn.Database.logic
             AddCmdParameter("@Action", 1, ParameterDirection.Input);
             ExecuteNonQuery();
         }
+
     }
 }

@@ -80,6 +80,7 @@
     <Content Include="Admin\Pelicula.aspx" />
     <Content Include="Admin\Producto.aspx" />
     <Content Include="Admin\Proveedor.aspx" />
+    <Content Include="Admin\Reserva.aspx" />
     <Content Include="Admin\Revista.aspx" />
     <Content Include="Admin\Suplementos.aspx" />
     <Content Include="Admin\Venta.aspx" />
@@ -96,10 +97,12 @@
     <Content Include="cal\right2.gif" />
     <Content Include="cal\up2.gif" />
     <Content Include="controls\BuscarClientes.ascx" />
+    <Content Include="controls\BuscarProducto.ascx" />
     <Content Include="controls\Date.ascx" />
     <Content Include="controls\Login.ascx" />
     <Content Include="controls\MenuAdmin.ascx" />
     <Content Include="controls\MenuAdminCategoria.ascx" />
+    <Content Include="controls\BuscarProductoEdicion.ascx" />
     <Content Include="controls\Ventas.ascx" />
     <Content Include="controls\WUCBuscarProducto.ascx" />
     <Content Include="Home.aspx" />
@@ -282,6 +285,13 @@
     <Compile Include="Admin\Proveedor.aspx.designer.cs">
       <DependentUpon>Proveedor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Reserva.aspx.cs">
+      <DependentUpon>Reserva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Reserva.aspx.designer.cs">
+      <DependentUpon>Reserva.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Revista.aspx.cs">
       <DependentUpon>Revista.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -310,6 +320,13 @@
     <Compile Include="controls\BuscarClientes.ascx.designer.cs">
       <DependentUpon>BuscarClientes.ascx</DependentUpon>
     </Compile>
+    <Compile Include="controls\BuscarProducto.ascx.cs">
+      <DependentUpon>BuscarProducto.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\BuscarProducto.ascx.designer.cs">
+      <DependentUpon>BuscarProducto.ascx</DependentUpon>
+    </Compile>
     <Compile Include="controls\Date.ascx.cs">
       <DependentUpon>Date.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -337,6 +354,13 @@
     </Compile>
     <Compile Include="controls\MenuAdminCategoria.ascx.designer.cs">
       <DependentUpon>MenuAdminCategoria.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\BuscarProductoEdicion.ascx.cs">
+      <DependentUpon>BuscarProductoEdicion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\BuscarProductoEdicion.ascx.designer.cs">
+      <DependentUpon>BuscarProductoEdicion.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\Ventas.ascx.cs">
       <DependentUpon>Ventas.ascx</DependentUpon>
