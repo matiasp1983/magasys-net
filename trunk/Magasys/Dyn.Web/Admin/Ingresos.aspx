@@ -14,24 +14,23 @@
     <style type="text/css">
         .style17
         {
-            font-style: normal;
-            color: #7f7f7f;
-            font-weight: bold;
-            height: 45px;
-            width: 59px;
-        }
+        font-style: normal;
+        color: #7f7f7f;
+        font-weight: bold;
+        height: 45px;
+        width: 59px;
+    }
         .style18
         {
-            width: 59px;
-        }
+        width: 59px;
+    }
         .style19
         {
             font-style: normal;
             color: #7f7f7f;
             font-weight: bold;
             height: 45px;
-            width: 35px;
-        }
+            }
         .style20
         {
             width: 35px;
@@ -40,12 +39,36 @@
         {
             width: 50px;
         }
+        .style22
+        {
+            height: 21px;
+        }
+        .style24
+        {
+            font-style: normal;
+            color: #7f7f7f;
+            font-weight: bold;
+            height: 45px;
+        }
+        .style25
+        {
+            font-style: normal;
+            color: #7f7f7f;
+            font-weight: bold;
+            height: 45px;
+            width: 26px;
+        }
+        .style26
+        {
+            width: 59px;
+            height: 45px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
     <table width="100%" cellpadding="0" cellspacing="5" border="0">
         <tr>
-            <td class="style19" align="left">
+            <td class="style25" align="left">
                 Numero de Ingreso:
             </td>
             <td align="left" class="style18">
@@ -55,10 +78,10 @@
         </tr>
 
         <tr>
-            <td class="style19" align="left">
+            <td class="style25" align="left">
                 Fecha (*)
             </td>
-            <td class="style18">
+            <td class="style26">
                 <asp:Calendar ID="calFecha" runat="server" BackColor="White" 
                     BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" 
                     ForeColor="Black" Height="16px" NextPrevFormat="FullMonth" Width="220px">
@@ -74,24 +97,20 @@
             </td>
         </tr>
         <tr>
+            <td class="style19" colspan="2">
+            
+                <asp:Panel ID="panBusquedaProductos" runat="server">
+                <table>
+                <tr>
             <td class="style19">
             
                 Proveedor</td>
             <td class="style17">
             
-                <asp:DropDownList ID="lstProveedores" runat="server" 
-                    DataSourceID="DSProveedores" DataTextField="razonSocial" 
-                    DataValueField="idProveedor" CssClass="style19" Height="45px" 
+                <asp:DropDownList ID="lstProveedor" runat="server" CssClass="style19" Height="45px" 
                     Width="200px" AutoPostBack="True" 
                     onselectedindexchanged="lstProveedores_SelectedIndexChanged">
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="DSProveedores" runat="server" 
-                    ConnectionString="<%$ ConnectionStrings:MagasysConnectionString %>" 
-                    SelectCommand="SELECT [razonSocial], [idProveedor], [estado] FROM [Proveedores] WHERE ([estado] = @estado)">
-                    <SelectParameters>
-                        <asp:Parameter DefaultValue="1" Name="estado" Type="Int16" />
-                    </SelectParameters>
-                </asp:SqlDataSource>
             
             </td>
         </tr>
@@ -140,9 +159,19 @@
             
             </td>
         </tr>
+                </table>
+
+                </asp:Panel>
+            </td>
+        </tr>
+        
 
         <tr>
-            <td class="style19">
+            <td class="style24" colspan="2">
+                <asp:Panel ID="panDetalleIngreso" runat="server">
+                <table>
+                <tr>
+            <td class="style24">
                 Detalle Ingresos
             </td>
             <td class="style17">
@@ -191,9 +220,139 @@
             
             </td>
         </tr>
+                </table>
+                </asp:Panel>
+            </td>
+        
+        </tr>
+
+
+        
 
         
         <%--  Control de Botones --%>
+
+        <tr>
+            <td colspan="2" class="style22">
+            
+            </td>
+        </tr>
+
+        
+        <tr>
+            <td colspan="2" class="tittlemenu">
+            
+                <asp:Panel ID="panReservas" runat="server">
+                    <table style="width:100%;">
+                        <tr>
+                            <td>
+                                &nbsp;</td>
+                            <td class="style24">
+                                <asp:Label ID="lblMensaje" runat="server" Font-Size="Medium" ForeColor="Red" 
+                                    Text="* Existe Reservas para los Producto que se estan ingresando"></asp:Label>
+                            </td>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;</td>
+                            <td>
+                                &nbsp;</td>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;</td>
+                            <td class="style24">
+                                <asp:GridView ID="gvReservas" runat="server" CellPadding="4" 
+                                    ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" 
+                                    onselectedindexchanging="gvReservas_SelectedIndexChanging">
+                                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                                    <Columns>
+                                        <asp:BoundField DataField="CodReserva" HeaderText="Codigo" />
+                                        <asp:BoundField DataField="Cliente.Nombre" HeaderText="Nombre" />
+                                        <asp:BoundField DataField="Cliente.Apellido" HeaderText="Apellido" />
+                                        <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto" />
+                                        <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" />
+                                        <asp:CommandField SelectText="Confirmar" ShowSelectButton="True" />
+                                    </Columns>
+                                    <EditRowStyle BackColor="#999999" />
+                                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                                </asp:GridView>
+                            </td>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;</td>
+                            <td class="style24">
+                                Se crearan las siguientes reservas:</td>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;</td>
+                            <td class="style24">
+                            <asp:GridView ID="gvReservasOk" runat="server" CellPadding="4" 
+                                    ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" 
+                                    Visible="False">
+                                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                                    <Columns>
+                                        <asp:BoundField DataField="CodReserva" HeaderText="Codigo" />
+                                        <asp:BoundField DataField="Cliente.Nombre" HeaderText="Nombre" />
+                                        <asp:BoundField DataField="Cliente.Apellido" HeaderText="Apellido" />
+                                        <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto" />
+                                        <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" />
+                                    </Columns>
+                                    <EditRowStyle BackColor="#999999" />
+                                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                                </asp:GridView>
+
+                                &nbsp;</td>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+                    </table>
+                </asp:Panel>
+            
+            </td>
+        </tr>
+
+        
+        <tr>
+            <td colspan="2">
+            
+                &nbsp;</td>
+        </tr>
+
+        
+        <tr>
+            <td colspan="2">
+            
+                &nbsp;</td>
+        </tr>
+
+        
         <tr>
             <td colspan="2" style="height: 24px">
                 <br />

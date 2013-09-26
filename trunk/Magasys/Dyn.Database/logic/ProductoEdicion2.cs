@@ -22,6 +22,19 @@ namespace Dyn.Database.logic
             }
             return objIngreso;
         }
+        public Dyn.Database.entities.ProductoEdicion CargarProductoEdicion(int idIngreso)
+        {
+            Dyn.Database.entities.ProductoEdicion objIngreso = new Dyn.Database.entities.ProductoEdicion();
+            CreateCommand("usp_ProductoEdicion", true);
+            AddCmdParameter("@idProductoEdicion", idIngreso, ParameterDirection.Input);
+            AddCmdParameter("@Action", 0, ParameterDirection.Input);
+            ExecuteReader();
+            while (Read())
+            {
+                objIngreso = new Dyn.Database.entities.ProductoEdicion(GetDataReader());
+            }
+            return objIngreso;
+        }
 
         private void AddParameters(Dyn.Database.entities.ProductoEdicion objusuario)
         {

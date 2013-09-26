@@ -143,5 +143,22 @@ namespace Dyn.Database.entities
         
 
         #endregion
+
+        #region Operaciones
+
+        public void CargarPropiedades()
+        {
+            Dyn.Database.logic.Cliente lCliente = new Dyn.Database.logic.Cliente();
+            Dyn.Database.logic.Producto lProducto = new Dyn.Database.logic.Producto();
+            Dyn.Database.logic.Estado lEstado = new Dyn.Database.logic.Estado();
+            Cliente = lCliente.Load(Convert.ToInt16(nroCliente));
+            Producto = lProducto.Load(Convert.ToInt32(IdProducto));
+            Estado = lEstado.Load(Convert.ToInt32(IdEstado));
+
+        }
+
+
+
+        #endregion
     }
 }

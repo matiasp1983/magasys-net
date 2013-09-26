@@ -18,7 +18,8 @@ namespace Dyn.Web.Admin
         public static Dyn.Database.entities.IngresoProducto Entity;
         public List<Dyn.Database.entities.DetalleIngresoProducto> listaDetalles;
         public static List<Dyn.Database.entities.Producto> listaProductos = new List<Database.entities.Producto>();
-
+        public static List<Dyn.Database.entities.Reserva> listaReservas = new List<Database.entities.Reserva>();
+        public static List<Dyn.Database.entities.Reserva> listaReservasOK = new List<Database.entities.Reserva>();
         public int IdEntity
         {
             get
@@ -48,7 +49,8 @@ namespace Dyn.Web.Admin
                 this.Master.TituloPagina = "Ingreso de productos";
                 //WUCBuscarProducto1.Visible = false;
                 calFecha.SelectedDate = DateTime.Today;
-                
+                panReservas.Visible = false;
+                LlenarProveedor();
                 
                 //repDetalle.DataSource = listaDetalles;
                 lProducto = new Database.logic.Producto();
@@ -87,40 +89,15 @@ namespace Dyn.Web.Admin
             newProducto.IdProducto = idProducto;
             detalle.Producto = newProducto;
             detalle.ProductoEdicion = new Database.entities.ProductoEdicion();
-                    
+            detalle.ProductoEdicion.IdProducto = newProducto.IdProducto;
+            detalle.CalcularDevolucion();
             
             Entity.AgregarDetalle(detalle);
 
             listaDetalles = Entity.ObtenerDetalles();
-            //listaDetalles.Add(detalle);
-            //repDetalle.DataSource = listaDetalles;
-            //repDetalle.DataBind();
-
-
+            
         }
         
-        //protected Database.entities.IngresoProducto CargarIngreso()
-        //{
-        //    //Entity = new Database.entities.IngresoProducto();
-        //    //listaDetalles = new List<DetalleIngresoProducto>();
-
-        //    //if (repDetalle.Items.Count == 0)
-        //    //{
-        //    //    listaDetalles = new List<DetalleIngresoProducto>();
-        //    //    Entity = new Database.entities.IngresoProducto();
-        //    //}
-        //    //else
-        //    //{
-        //    //    // listaDetalles = (List<Dyn.Database.entities.DetalleIngresoProducto>)repDetalle.DataSource;
-        //    //    DataSet ds = (DataSet)repDetalle.DataSource;
-        //    //    for (int i = 0; i < listaDetalles.Count; i++)
-        //    //    {
-        //    //        Entity.AgregarDetalle(listaDetalles[i]);
-        //    //    }
-        //    //}
-        //    //return Entity;
-        
-        //}
         protected void btnQuitar_Click(object sender, EventArgs e)
         { 
         
@@ -130,43 +107,35 @@ namespace Dyn.Web.Admin
             Database.logic.Ingreso lIngreso = new Database.logic.Ingreso();
             listaDetalles = new List<DetalleIngresoProducto>();
             listaDetalles = Entity.DetalleIngreso;
-            //foreach (RepeaterItem i in repDetalle.Items)
-            //{
-            //    Database.entities.ProductoEdicion prod = new Database.entities.ProductoEdicion();
-            //    TextBox txtPrecio = i.FindControl("txtPrecio") as TextBox;               
-            //    if (txtPrecio.Text == "")
-            //    {
-            //        return;
-            //    }
-            //    else
-            //    {
-                    
-            //        prod.Precio = Convert.ToInt32(txtPrecio.Text);
-            //    }
-            //    TextBox txtCantidad = i.FindControl("txtCantidad") as TextBox;
 
-            //    if (txtCantidad.Text == "")
-            //    {
-            //        return;
-            //    }
-            //    else
-            //    {
-            //        prod.CantidadUnidades = Convert.ToInt32(txtCantidad.Text);
-            //        listaDetalles[i.ItemIndex].CantidadUnidades = Convert.ToInt32(txtCantidad.Text.Trim());
-            //    }
-            //    prod.Descripcion = listaDetalles[i.ItemIndex].Producto.Nombre;
-            //    prod.IdProducto = listaDetalles[i.ItemIndex].Producto.IdProducto;
-            //    listaDetalles[i.ItemIndex].ProductoEdicion = prod;
-            //    listaDetalles[i.ItemIndex].CalcularDevolucion();                
-
-            //}
             Entity.Fecha = DateTime.Now;
             Entity.DetalleIngreso = listaDetalles;
-            Entity.IdProveedor = listaDetalles[0].Producto.IdProveedor;
+            Entity.IdProveedor = Convert.ToInt32(lstProveedor.SelectedValue);
+
+            if (panBusquedaProductos.Visible == true)
+            {
+                ValidarReservas();
+                panBusquedaProductos.Visible = false;
+                panDetalleIngreso.Visible = false;
+            }
+            else
+            {
+
+
+                //lIngreso.Insert(Entity);
+
+                List<Dyn.Database.entities.ReservaEdicion> nuevasReservas = new List<Database.entities.ReservaEdicion>();
+                for (int i = 0; i < listaReservasOK.Count; i++)
+                {
+                    Dyn.Database.entities.ReservaEdicion nueva = new Dyn.Database.entities.ReservaEdicion();
+                    //Buscar Datos del Producto y la Fecha Devolucion
+                    //nueva.CargarDatosDeReserva(,)
+                }
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
+                Response.Redirect("/Home.aspx");
+            }
+
             
-            lIngreso.Insert(Entity);
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
-            Response.Redirect("/Home.aspx");
         }
 
         protected void lstProveedores_SelectedIndexChanged(object sender, EventArgs e)
@@ -180,8 +149,8 @@ namespace Dyn.Web.Admin
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
             Dyn.Database.logic.Producto lProducto = new Database.logic.Producto();
-            listaProductos = lProducto.SeleccionarProductoPorIdProveedor(txtNombreProd.Text, Convert.ToInt32(lstProveedores.SelectedValue));
-            lstProveedores.Enabled = false;
+            listaProductos = lProducto.SeleccionarProductoPorIdProveedor(txtNombreProd.Text, Convert.ToInt32(lstProveedor.SelectedValue));
+            lstProveedor.Enabled = false;
             gvProductos.DataSource = listaProductos;
             gvProductos.DataKeyNames = new String[] { "idProducto" };
             gvProductos.Visible = true;
@@ -220,6 +189,7 @@ namespace Dyn.Web.Admin
             gvDetalle.DataSource = Entity.DetalleIngreso;
             gvDetalle.DataKeyNames = new String[] { "IdDetalleIngresoProducto" };
             gvDetalle.DataBind();
+            
         }
 
         protected void gvDetalle_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -255,6 +225,51 @@ namespace Dyn.Web.Admin
             gvDetalle.DataKeyNames = new String[] { "IdDetalleIngresoProducto" };
             gvDetalle.EditIndex = -1;
             gvDetalle.DataBind();
+            btnGuardar.Enabled = true;
+        }
+        public void ValidarReservas()
+        {
+            Dyn.Database.logic.Reserva lReserva = new Dyn.Database.logic.Reserva();
+            List<Dyn.Database.entities.Producto> listaProductos = new List<Dyn.Database.entities.Producto>();
+            for (int i = 0; i < Entity.DetalleIngreso.Count; i++)
+            { 
+                Dyn.Database.entities.DetalleIngresoProducto detalle = Entity.DetalleIngreso[i];
+                listaProductos.Add(detalle.Producto);
+            }
+            listaReservas = lReserva.BuscarReservasPorProductos(listaProductos);
+            gvReservas.DataSource = listaReservas;
+            gvReservas.DataBind();
+            panReservas.Visible = true;
+        }
+        public void LlenarProveedor()
+        {
+            Dyn.Database.logic.Proveedor lProveedor = new Dyn.Database.logic.Proveedor();
+            List<Dyn.Database.entities.Proveedor> listaproveedor = lProveedor.SeleccionarTodosLosProveedores();
+            ListItem li;
+            for (int i = 0; i < listaproveedor.Count; i++)
+            {
+                li = new ListItem();
+                li = new ListItem(listaproveedor[i].RazonSocial, listaproveedor[i].IdProveedor.ToString());
+                lstProveedor.Items.Add(li);
+            }
+        }
+
+        protected void gvReservas_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+            listaReservasOK.Add(listaReservas[e.NewSelectedIndex]);
+            listaReservas.Remove(listaReservas[e.NewSelectedIndex]);
+            gvReservasOk.DataSource = listaReservasOK;
+            gvReservasOk.Visible = true;
+            gvReservasOk.DataBind();
+            gvReservas.DataSource = listaReservas;
+            gvReservas.Visible = true;
+            gvReservas.DataBind();
+            if (listaReservas.Count == 0)
+            {
+                lblMensaje.Text = "No hay Reservas sin Confirmar";
+                lblMensaje.ForeColor = System.Drawing.Color.Black;
+            }
+
         }
 
 

@@ -20,7 +20,7 @@ namespace Dyn.Database.entities
             }
             public Estado(IDataRecord obj)
             {
-                idEstado = Convert.ToInt32(obj["idTipoDocumento"]);
+                idEstado = Convert.ToInt32(obj["idEstado"]);
                 ambito = Convert.ToString(obj["ambito"]);
                 nombre = Convert.ToString(obj["nombre"]);
                 descripcion = nombre = Convert.ToString(obj["descripcion"]);

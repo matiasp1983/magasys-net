@@ -18,7 +18,7 @@
             color: #7f7f7f; /*font-size: 11px;*/;
             font-weight: bold;
             height: 45px;
-            width: 328px;
+            width: 201px;
         }
         .style16
         {
@@ -26,6 +26,14 @@
         .style17
         {
             height: 45px;
+        }
+        .style18
+        {
+            width: 201px;
+        }
+        .style19
+        {
+            width: 326px;
         }
     </style>
 
@@ -48,7 +56,18 @@
                 Fecha (*)
             </td>
             <td>
-                <asp:Calendar ID="calFecha" runat="server"></asp:Calendar>
+                <asp:Calendar ID="calFecha" runat="server" BackColor="White" 
+                    BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" 
+                    ForeColor="Black" Height="114px" NextPrevFormat="FullMonth" Width="228px">
+                    <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
+                    <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" 
+                        VerticalAlign="Bottom" />
+                    <OtherMonthDayStyle ForeColor="#999999" />
+                    <SelectedDayStyle BackColor="#333399" ForeColor="White" />
+                    <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" 
+                        Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
+                    <TodayDayStyle BackColor="#CCCCCC" />
+                </asp:Calendar>
             </td>
         </tr>
 
@@ -63,7 +82,7 @@
                     ControlToValidate="lstProveedor" CssClass="tittleprecios03" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
 
-            <td>
+            <td class="style19">
                 <asp:Button CssClass="adminbutton" ID="btnSeleccionarProveedor" runat="server" 
                     Text="Seleccionar Proveedor" onclick="btnSeleccionarProveedor_Click"
                     />&nbsp;
@@ -71,41 +90,40 @@
          </tr>
 
          <tr>
+            <td class="style18">
+            
+            </td>
             <td class="style16" colspan="3">
             
                 <asp:GridView ID="gvDetalles" runat="server" AutoGenerateColumns="False" 
                     onrowcancelingedit="gvDetalles_RowCancelingEdit" 
                     onrowdeleting="gvDetalles_RowDeleting" onrowediting="gvDetalles_RowEditing" 
-                    onrowupdating="gvDetalles_RowUpdating">
+                    onrowupdating="gvDetalles_RowUpdating" CellPadding="4" ForeColor="#333333" 
+                    GridLines="None">
+                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
                         <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto" 
                             ReadOnly="True" />
                         <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" />
                         <asp:CommandField ShowEditButton="True" />
-                        <asp:CommandField ShowDeleteButton="True" />
+                        <asp:CheckBoxField HeaderText="Devolver" />
                     </Columns>
+                    <EditRowStyle BackColor="#999999" />
+                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                 </asp:GridView>
             
             </td>
 
 
-         </tr>
 
-         <tr>
-
-            <td class="style1" align="left">
-                Cantidad a Devolver:
-            </td>
-            <td align="left" width="150">
-                <asp:TextBox ID="txtCantidad" runat="server" CssClass="tittleprecios03" 
-                    Enabled="False"></asp:TextBox><br />
-            </td>
-         <td>
-         <asp:Button CssClass="adminbutton" ID="btnCambiarCantidad" runat="server" 
-                    Text="CambiarCantidad" onclick="btnCambiarCantidad_Click"
-                    />&nbsp;
-         
-         </td>
          </tr>
 
          <tr>
