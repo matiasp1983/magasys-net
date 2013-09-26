@@ -33,7 +33,14 @@ namespace Dyn.Web.controls
         {
             Entity = new Dyn.Database.entities.ProductoEdicion();
             lProductoEdicion = new Database.logic.ProductoEdicion();
-            DataSet ds = lProductoEdicion.BuscarProductoEdicion(int.Parse(ddlProveedor.SelectedValue), txtNombreProd.Text, int.Parse(txtEdicion.Text));
+            int edicion = 0;
+
+            if (txtEdicion.Text != string.Empty)
+            {
+                edicion = int.Parse(txtEdicion.Text);
+            }
+
+            DataSet ds = lProductoEdicion.BuscarProductoEdicion(int.Parse(ddlProveedor.SelectedValue), txtNombreProd.Text, edicion);
             if (ds.Tables[0].Rows.Count > 0)
             {
                 rptProductos.DataSource = ds;

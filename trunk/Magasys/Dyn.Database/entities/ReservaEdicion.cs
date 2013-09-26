@@ -5,35 +5,37 @@ using System.Data;
 
 namespace Dyn.Database.entities
 {
-    public class Reserva
+    public class ReservaEdicion
     {
         #region Constructores
 
-        public Reserva() { }
+        public ReservaEdicion() { }
 
-        public Reserva(Int32? codRes,Int32? nroCli, DateTime fechReserv, DateTime fechIni, DateTime fechFin, string tipoRes, Int32? idProd,
-            Int16? cant, Int32? idEst)
+        public ReservaEdicion(Int32? codResEdi, Int32? codRes, Int32? nroCli, DateTime fechReservEdi, DateTime fechIni, DateTime fechFin, string tipoRes,
+            Int32? idProdEdi, Int16? cant, Int32? idEst)
         {
+            codReservaEdicion = codResEdi;
             codReserva = codRes;
+            idProductoEdicion = idProdEdi;
             nroCliente = nroCli;
-            fechaReserva = fechReserv;
+            fechaReservaEdicion = fechReservEdi;
             fechaInicio = fechIni;
             fechaFin = fechFin;
             tipoReserva = tipoRes;
-            idProducto = idProd;
             cantidad = cant;
             idEstado = idEst;
         }
 
-        public Reserva(IDataRecord obj)
+        public ReservaEdicion(IDataRecord obj)
         {
+            codReservaEdicion = Convert.ToInt32(obj["codReservaEdicion"]);
             codReserva = Convert.ToInt32(obj["codReserva"]);
+            idProductoEdicion = Convert.ToInt32(obj["idProductoEdicion"]);
             nroCliente = Convert.ToInt32(obj["nroCliente"]);
-            fechaReserva = Convert.ToDateTime(obj["fechaReserva"]);
+            fechaReservaEdicion = Convert.ToDateTime(obj["fechaReservaEdicion"]);
             fechaInicio = Convert.ToDateTime(obj["fechaReserva"]);
             fechaFin = Convert.ToDateTime(obj["fechaReserva"]);
             tipoReserva = Convert.ToString(obj["tipoReserva"]);
-            idProducto = Convert.ToInt32(obj["idProducto"]);
             cantidad = Convert.ToInt16(obj["cantidad"]);
             idEstado = Convert.ToInt32(obj["idEstado"]);
         }
@@ -42,28 +44,44 @@ namespace Dyn.Database.entities
 
         #region Propiedades
 
+        private Int32? codReservaEdicion;
+
+        public Int32? CodReservaEdicion
+        {
+            get { return codReservaEdicion; }
+            set { codReservaEdicion = value; }
+        }
+
         private Int32? codReserva;
 
-	    public Int32? CodReserva
-	    {
+        public Int32? CodReserva
+        {
             get { return codReserva; }
             set { codReserva = value; }
-	    }
+        }
+
+        private Int32? idProductoEdicion;
+
+        public Int32? IdProductoEdicion
+        {
+            get { return idProductoEdicion; }
+            set { idProductoEdicion = value; }
+        }
 
         private Int32? nroCliente;
 
-	    public Int32? NroCliente
-	{
-		get { return nroCliente;}
-		set { nroCliente = value;}
-	}
-
-        private DateTime fechaReserva;
-
-        public DateTime FechaReserva
+        public Int32? NroCliente
         {
-            get { return fechaReserva; }
-            set { fechaReserva = value; }
+            get { return nroCliente; }
+            set { nroCliente = value; }
+        }
+
+        private DateTime fechaReservaEdicion;
+
+        public DateTime FechaReservaEdicion
+        {
+            get { return fechaReservaEdicion; }
+            set { fechaReservaEdicion = value; }
         }
 
         private DateTime fechaInicio;
@@ -90,14 +108,6 @@ namespace Dyn.Database.entities
             set { tipoReserva = value; }
         }
 
-        private Int32? idProducto;
-
-        public Int32? IdProducto
-        {
-            get { return idProducto; }
-            set { idProducto = value; }
-        }
-
         private Int16? cantidad;
 
         public Int16? Cantidad
@@ -113,7 +123,7 @@ namespace Dyn.Database.entities
             get { return idEstado; }
             set { idEstado = value; }
         }
-        
+
         #endregion
     }
 }
