@@ -16,13 +16,16 @@ namespace Dyn.Database.entities
         {
             codReserva = codRes;
             nroCliente = nroCli;
+            Cliente.NroCliente = nroCli;
             fechaReserva = fechReserv;
             fechaInicio = fechIni;
             fechaFin = fechFin;
             tipoReserva = tipoRes;
             idProducto = idProd;
+            Producto.IdProducto = idProd;
             cantidad = cant;
             idEstado = idEst;
+            Estado.IdEstado = idEst;
         }
 
         public Reserva(IDataRecord obj)
@@ -53,10 +56,18 @@ namespace Dyn.Database.entities
         private Int32? nroCliente;
 
 	    public Int32? NroCliente
-	{
+	    {
 		get { return nroCliente;}
 		set { nroCliente = value;}
-	}
+	    }
+
+        private Cliente cliente = new Cliente();
+
+        public Cliente Cliente
+        {
+            get { return cliente; }
+            set { cliente = value; }
+        }
 
         private DateTime fechaReserva;
 
@@ -90,12 +101,20 @@ namespace Dyn.Database.entities
             set { tipoReserva = value; }
         }
 
+
         private Int32? idProducto;
 
         public Int32? IdProducto
         {
             get { return idProducto; }
             set { idProducto = value; }
+        }
+        private Producto producto = new Producto();
+
+        public Producto Producto
+        {
+            get { return producto; }
+            set { producto = value; }
         }
 
         private Int16? cantidad;
@@ -113,7 +132,16 @@ namespace Dyn.Database.entities
             get { return idEstado; }
             set { idEstado = value; }
         }
+
+        private Estado estado = new Estado();
+
+        public Estado Estado
+        {
+            get { return estado; }
+            set { estado = value; }
+        }
         
+
         #endregion
     }
 }
