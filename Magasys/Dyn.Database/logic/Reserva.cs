@@ -20,7 +20,22 @@ namespace Dyn.Database.logic
             AddCmdParameter("@cantidad", objReserva.Cantidad, ParameterDirection.Input);
             AddCmdParameter("@idEstado", objReserva.IdEstado, ParameterDirection.Input);
         }
-
+        public Dyn.Database.entities.Reserva Load(int codReserva)
+        {
+            Dyn.Database.entities.Reserva objIngreso = new Dyn.Database.entities.Reserva();
+            CreateCommand("usp_SeleccionarReservasPorProducto", true);
+            AddCmdParameter("@codReserva", codReserva, ParameterDirection.Input);
+            AddCmdParameter("@Action", 1, ParameterDirection.Input);
+            // Cdo este listo el estado se deberia poner el estado que va...
+            AddCmdParameter("@idEstado", 3, ParameterDirection.Input);
+            //AddCmdParameter("@idEstado", objReserva.IdEstado, ParameterDirection.Input);
+            ExecuteReader();
+            while (Read())
+            {
+                objIngreso = new Dyn.Database.entities.Reserva(GetDataReader());
+            }
+            return objIngreso;
+        }
         public object Insert(Dyn.Database.entities.Reserva objReserva)
         {
             object idReserva = null;
@@ -41,6 +56,32 @@ namespace Dyn.Database.logic
             AddCmdParameter("@Action", 1, ParameterDirection.Input);
             ExecuteNonQuery();
         }
+        public List<Dyn.Database.entities.Reserva> BuscarReservasPorProductos(List<Dyn.Database.entities.Producto> listaProductos)
+        {
+            List<Dyn.Database.entities.Reserva> listaReservas = new List<entities.Reserva>();
+            Dyn.Database.logic.Producto lProducto = new Dyn.Database.logic.Producto();
+            for (int i = 0; i < listaProductos.Count; i++)
+            {
+                CreateCommand("usp_SeleccionarReservasPorProducto", true);
+                AddCmdParameter("@idProducto", listaProductos[i].IdProducto, ParameterDirection.Input);
+                AddCmdParameter("@Action", 0, ParameterDirection.Input);
+                // Cdo este listo el estado se deberia poner el estado que va...
+                AddCmdParameter("@idEstado", 3, ParameterDirection.Input);
+                //AddCmdParameter("@idEstado", objReserva.IdEstado, ParameterDirection.Input);
+                ExecuteReader();
+                while(Read())
+                {
+                    listaReservas.Add(new entities.Reserva(GetDataReader()));
 
+                }
+
+            }
+            for (int i = 0; i < listaReservas.Count; i++)
+            {
+                listaReservas[i].CargarPropiedades();
+            }
+            
+            return listaReservas;
+        }
     }
 }

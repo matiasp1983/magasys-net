@@ -42,8 +42,7 @@ namespace Dyn.Web.Admin
             if (!IsPostBack)
             {
                 calFecha.SelectedDate = DateTime.Today;
-                txtCantidad.Enabled= false;
-                btnCambiarCantidad.Enabled = false;
+                
                 if (Request["Id"] == null)
                 {
                     IdEntity = 0;
@@ -95,15 +94,15 @@ namespace Dyn.Web.Admin
             Response.Redirect("/Home.aspx");
 
         }
-        protected void btnCambiarCantidad_Click(object sender, EventArgs e)
-        {
-            List<Database.entities.DetalleDevolucion> det = Entity.ListaDetalles;
-            det[editDetalle].Cantidad = Convert.ToInt32(txtCantidad.Text);
-            Entity.ListaDetalles = det;
-            gvDetalles.DataSource = Entity.ListaDetalles;
-            gvDetalles.DataKeyNames = new String[] { "IdDetalleDevolucion" };
-            gvDetalles.DataBind();
-        }
+        //protected void btnCambiarCantidad_Click(object sender, EventArgs e)
+        //{
+        //    List<Database.entities.DetalleDevolucion> det = Entity.ListaDetalles;
+        //    det[editDetalle].Cantidad = Convert.ToInt32(txtCantidad.Text);
+        //    Entity.ListaDetalles = det;
+        //    gvDetalles.DataSource = Entity.ListaDetalles;
+        //    gvDetalles.DataKeyNames = new String[] { "IdDetalleDevolucion" };
+        //    gvDetalles.DataBind();
+        //}
 
         protected void CargarDetalles(int idProveedor)
         {

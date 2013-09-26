@@ -31,22 +31,22 @@ namespace Dyn.Web.Admin {
         protected global::System.Web.UI.WebControls.Calendar calFecha;
         
         /// <summary>
-        /// lstProveedores control.
+        /// panBusquedaProductos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lstProveedores;
+        protected global::System.Web.UI.WebControls.Panel panBusquedaProductos;
         
         /// <summary>
-        /// DSProveedores control.
+        /// lstProveedor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource DSProveedores;
+        protected global::System.Web.UI.WebControls.DropDownList lstProveedor;
         
         /// <summary>
         /// lbNombre control.
@@ -85,6 +85,15 @@ namespace Dyn.Web.Admin {
         protected global::System.Web.UI.WebControls.GridView gvProductos;
         
         /// <summary>
+        /// panDetalleIngreso control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panDetalleIngreso;
+        
+        /// <summary>
         /// gvDetalle control.
         /// </summary>
         /// <remarks>
@@ -92,6 +101,42 @@ namespace Dyn.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvDetalle;
+        
+        /// <summary>
+        /// panReservas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panReservas;
+        
+        /// <summary>
+        /// lblMensaje control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
+        
+        /// <summary>
+        /// gvReservas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvReservas;
+        
+        /// <summary>
+        /// gvReservasOk control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvReservasOk;
         
         /// <summary>
         /// btnGuardar control.

@@ -10,16 +10,7 @@
 namespace Dyn.Web.Admin {
     
     
-    public partial class Devoluciones {
-        
-        /// <summary>
-        /// txtNumeroDevolucion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumeroDevolucion;
+    public partial class Repartos {
         
         /// <summary>
         /// calFecha control.
@@ -31,96 +22,102 @@ namespace Dyn.Web.Admin {
         protected global::System.Web.UI.WebControls.Calendar calFecha;
         
         /// <summary>
-        /// lstProveedor control.
+        /// panSeleccion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lstProveedor;
+        protected global::System.Web.UI.WebControls.Panel panSeleccion;
         
         /// <summary>
-        /// RequiredFieldValidator1 control.
+        /// lstProveedores control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.DropDownList lstProveedores;
         
         /// <summary>
-        /// btnSeleccionarProveedor control.
+        /// DSProveedores control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSeleccionarProveedor;
+        protected global::System.Web.UI.WebControls.SqlDataSource DSProveedores;
         
         /// <summary>
-        /// gvDetalles control.
+        /// lbNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvDetalles;
+        protected global::System.Web.UI.WebControls.Label lbNombre;
         
         /// <summary>
-        /// btnGuardar control.
+        /// txtNombreProd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardar;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreProd;
         
         /// <summary>
-        /// btnCancelar control.
+        /// btnBuscar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancelar;
+        protected global::System.Web.UI.WebControls.Button btnBuscar;
         
         /// <summary>
-        /// btnEliminar control.
+        /// gvProductos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEliminar;
+        protected global::System.Web.UI.WebControls.GridView gvProductos;
         
         /// <summary>
-        /// Login1 control.
+        /// lbNombre0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Dyn.Web.controls.Login Login1;
+        protected global::System.Web.UI.WebControls.Label lbNombre0;
         
         /// <summary>
-        /// MenuAdmin1 control.
+        /// gvBusqueda control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Dyn.Web.controls.MenuAdminCategoria MenuAdmin1;
+        protected global::System.Web.UI.WebControls.GridView gvBusqueda;
         
         /// <summary>
-        /// Master property.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
-        /// Auto-generated property.
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        public new Dyn.Web.Masters.Admin Master {
-            get {
-                return ((Dyn.Web.Masters.Admin)(base.Master));
-            }
-        }
+        protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
+        /// GridView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }

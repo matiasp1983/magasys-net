@@ -45,7 +45,6 @@ namespace Dyn.Database.entities
         #region Propiedades
 
         private Int32? codReservaEdicion;
-
         public Int32? CodReservaEdicion
         {
             get { return codReservaEdicion; }
@@ -53,31 +52,48 @@ namespace Dyn.Database.entities
         }
 
         private Int32? codReserva;
-
         public Int32? CodReserva
         {
             get { return codReserva; }
             set { codReserva = value; }
         }
+        
+        private Reserva reserva;
+        public Reserva Reserva
+        {
+            get { return reserva; }
+            set { reserva = value; }
+        }
 
         private Int32? idProductoEdicion;
-
         public Int32? IdProductoEdicion
         {
             get { return idProductoEdicion; }
             set { idProductoEdicion = value; }
         }
 
-        private Int32? nroCliente;
+        private ProductoEdicion productoEdicion;
+        public ProductoEdicion ProductoEdicion
+        {
+            get { return productoEdicion; }
+            set { productoEdicion = value; }
+        }
 
+        private Int32? nroCliente;
         public Int32? NroCliente
         {
             get { return nroCliente; }
             set { nroCliente = value; }
         }
 
-        private DateTime fechaReservaEdicion;
+        private Cliente cliente = new Cliente();
+        public Cliente Cliente
+        {
+            get { return cliente; }
+            set { cliente = value; }
+        }
 
+        private DateTime fechaReservaEdicion;
         public DateTime FechaReservaEdicion
         {
             get { return fechaReservaEdicion; }
@@ -85,7 +101,6 @@ namespace Dyn.Database.entities
         }
 
         private DateTime fechaInicio;
-
         public DateTime FechaInicio
         {
             get { return fechaInicio; }
@@ -93,7 +108,6 @@ namespace Dyn.Database.entities
         }
 
         private DateTime fechaFin;
-
         public DateTime FechaFin
         {
             get { return fechaFin; }
@@ -101,7 +115,6 @@ namespace Dyn.Database.entities
         }
 
         private string tipoReserva;
-
         public string TipoReserva
         {
             get { return tipoReserva; }
@@ -109,7 +122,6 @@ namespace Dyn.Database.entities
         }
 
         private Int16? cantidad;
-
         public Int16? Cantidad
         {
             get { return cantidad; }
@@ -117,12 +129,48 @@ namespace Dyn.Database.entities
         }
 
         private Int32? idEstado;
-
         public Int32? IdEstado
         {
             get { return idEstado; }
             set { idEstado = value; }
         }
+        
+        private Estado estado = new Estado();
+        public Estado Estado
+        {
+            get { return estado; }
+            set { estado = value; }
+        }
+
+        #endregion
+
+        #region Operaciones
+
+        public void CargarPropiedades()
+        {
+            Dyn.Database.logic.Cliente lCliente = new Dyn.Database.logic.Cliente();
+            Dyn.Database.logic.ProductoEdicion2 lProducto = new Dyn.Database.logic.ProductoEdicion2();
+            Dyn.Database.logic.Estado lEstado = new Dyn.Database.logic.Estado();
+            Dyn.Database.logic.Reserva lReserva = new Dyn.Database.logic.Reserva();
+            Cliente = lCliente.Load(Convert.ToInt16(nroCliente));
+            ProductoEdicion = lProducto.CargarProductoEdicion(Convert.ToInt32(IdProductoEdicion));
+            Estado = lEstado.Load(Convert.ToInt32(IdEstado));
+            Reserva = lReserva.Load(Convert.ToInt32(IdEstado));
+
+        }
+        public void CargarDatosDeReserva(ProductoEdicion prodEdicion, DateTime fechaDevolucion)
+        { 
+            CodReserva = Reserva.CodReserva;
+            Cantidad = Reserva.Cantidad;
+            Cliente = Reserva.Cliente;
+            TipoReserva = "Unica";
+            ProductoEdicion = prodEdicion;
+            FechaInicio = DateTime.Now;
+            FechaFin = fechaDevolucion;
+            FechaReservaEdicion = DateTime.Now;
+        }
+
+
 
         #endregion
     }
