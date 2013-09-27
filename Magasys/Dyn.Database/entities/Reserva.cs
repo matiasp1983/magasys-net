@@ -34,7 +34,13 @@ namespace Dyn.Database.entities
             nroCliente = Convert.ToInt32(obj["nroCliente"]);
             fechaReserva = Convert.ToDateTime(obj["fechaReserva"]);
             fechaInicio = Convert.ToDateTime(obj["fechaInicio"]);
-            fechaFin = Convert.ToDateTime(obj["fechaFin"]);
+            if (obj["fechaFin"].ToString() == "")
+            {
+                fechaFin = DateTime.Now;
+            }
+            else
+            { fechaFin = Convert.ToDateTime(obj["fechaFin"]); }
+            
             tipoReserva = Convert.ToString(obj["tipoReserva"]);
             idProducto = Convert.ToInt32(obj["idProducto"]);
             cantidad = Convert.ToInt16(obj["cantidad"]);
