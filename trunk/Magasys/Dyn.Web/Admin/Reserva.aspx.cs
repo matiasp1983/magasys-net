@@ -37,15 +37,15 @@ namespace Dyn.Web.Admin
 
         protected void btnGuardarReserva_Click(object sender, EventArgs e)
         {
-            Calendar_Date laux = new Calendar_Date();
+            object reservaCreada;
 
-            if (ddlTipoReserva.SelectedValue == "Única" && calFechaFin.CalendarDate == laux.CalendarDate)
+            if (ddlTipoReserva.SelectedValue == "Única" && calFechaFin.CalendarDateString == string.Empty)
             {
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Seleccione la fecha de Fin de reserva');", true);
                 return;
             }
 
-            if (calFechaInicio.CalendarDate == laux.CalendarDate)
+            if (calFechaInicio.CalendarDateString == string.Empty)
             {
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Seleccione la fecha de Inicio de reserva');", true);
                 return;
@@ -57,17 +57,17 @@ namespace Dyn.Web.Admin
                 return;
             }
 
-            if (ucBuscarProducto.CodigoProducto == 0)
+            if (ucBuscarProducto.CodigoProducto == 0 && ucBuscarProductoEdicion.CodigoProducto == 0)
             {
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Seleccione el producto');", true);
                 return;
             }
 
-            if (ucBuscarProductoEdicion.CodigoProducto == 0)
-            {
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Seleccione el producto');", true);
-                return;
-            }
+            //if (ucBuscarProductoEdicion.CodigoProducto == 0)
+            //{
+            //    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Seleccione el producto');", true);
+            //    return;
+            //}
 
             if (int.Parse(txtCantidad.Text) <= 0)
             {
@@ -75,11 +75,21 @@ namespace Dyn.Web.Admin
                 return;
             }
 
-            InsertarReserva();
-            LimpiarControles();
+            reservaCreada = InsertarReserva();
+            if (reservaCreada.ToString() != "0")
+            {
+                LimpiarControles();
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');", true);
+            }
+            else
+            {
+                LimpiarControles();
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se actualizaron los datos correctamente');", true);
+            }
+            
         }
 
-        private void InsertarReserva()
+        private object InsertarReserva()
         {
             Dyn.Database.entities.ProductoEdicion productoEdicion = new Database.entities.ProductoEdicion();
             Dyn.Database.logic.ProductoEdicion lProdEdic = new Dyn.Database.logic.ProductoEdicion();
@@ -89,6 +99,7 @@ namespace Dyn.Web.Admin
             lReserva = new Database.logic.Reserva();
             lReservaEdicion = new Database.logic.ReservaEdicion();
             String nombreEstado = String.Empty;
+            object idReserva = null;
 
             if (rdbProducto.Checked) // Insert de Reserva
             {
@@ -101,7 +112,7 @@ namespace Dyn.Web.Admin
                 EntityRes.Cantidad = Convert.ToInt16(txtCantidad.Text);
                 EntityRes.IdEstado = lEstado.BuscarEstado("Reserva", "Confirmado");
 
-                lReserva.Insert(EntityRes);
+                idReserva = lReserva.Insert(EntityRes);
             }
             else  // Insert Reserva Edicion
             {
@@ -114,13 +125,27 @@ namespace Dyn.Web.Admin
                 EntityResEdic.Cantidad = Convert.ToInt16(txtCantidad.Text);
                 EntityResEdic.IdEstado = lEstado.BuscarEstado("ReservaEdicion", "Confirmado");
 
-                lReservaEdicion.Insert(EntityResEdic);
+                idReserva = lReservaEdicion.Insert(EntityResEdic);
+
+                if (idReserva.ToString() != "0")
+	            {
+	                // Solo en Reserva Edición se disminuye el sotck
+                    productoEdicion = lProdEdic.Load((int)ucBuscarProductoEdicion.CodigoProducto, (int)ucBuscarProductoEdicion.IdEdicion);
+                productoEdicion.CantidadUnidades -= EntityResEdic.Cantidad;  // Actualizar stock
+                lProdEdic.Update(productoEdicion); // Se actualiza la tabla ProductoEdicion	 
+	            }
             }
 
+            return idReserva;
         }
 
         private void LimpiarControles()
         {
+            //calFechaReserva.CalendarDate = DateTime.MaxValue.Date;
+            //ddlTipoReserva.SelectedValue = "Única";
+            //calFechaInicio.CalendarDate = DateTime.MaxValue.Date;
+            //calFechaFin.CalendarDate = DateTime.MaxValue.Date;
+            //ucBuscarClientes. = string.Empty;
 
         }
 

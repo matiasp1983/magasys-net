@@ -33,8 +33,8 @@ namespace Dyn.Database.entities
             idProductoEdicion = Convert.ToInt32(obj["idProductoEdicion"]);
             nroCliente = Convert.ToInt32(obj["nroCliente"]);
             fechaReservaEdicion = Convert.ToDateTime(obj["fechaReservaEdicion"]);
-            fechaInicio = Convert.ToDateTime(obj["fechaReserva"]);
-            fechaFin = Convert.ToDateTime(obj["fechaReserva"]);
+            fechaInicio = Convert.ToDateTime(obj["fechaInicio"]);
+            fechaFin = Convert.ToDateTime(obj["fechaFin"]);
             tipoReserva = Convert.ToString(obj["tipoReserva"]);
             cantidad = Convert.ToInt16(obj["cantidad"]);
             idEstado = Convert.ToInt32(obj["idEstado"]);
@@ -163,14 +163,12 @@ namespace Dyn.Database.entities
             CodReserva = Reserva.CodReserva;
             Cantidad = Reserva.Cantidad;
             Cliente = Reserva.Cliente;
-            TipoReserva = "Unica";
+            TipoReserva = "Única";
             ProductoEdicion = prodEdicion;
             FechaInicio = DateTime.Now;
             FechaFin = fechaDevolucion;
             FechaReservaEdicion = DateTime.Now;
         }
-
-
 
         #endregion
     }
