@@ -122,14 +122,27 @@ namespace Dyn.Web.Admin
             {
 
 
-                //lIngreso.Insert(Entity);
+                int idIngreso = Convert.ToInt32(lIngreso.Insert(Entity));
+                Dyn.Database.entities.IngresoProducto ingreso = lIngreso.Load(idIngreso);
+                Dyn.Database.logic.ReservaEdicion lReservaEdicion = new Dyn.Database.logic.ReservaEdicion();
 
                 List<Dyn.Database.entities.ReservaEdicion> nuevasReservas = new List<Database.entities.ReservaEdicion>();
                 for (int i = 0; i < listaReservasOK.Count; i++)
                 {
                     Dyn.Database.entities.ReservaEdicion nueva = new Dyn.Database.entities.ReservaEdicion();
-                    //Buscar Datos del Producto y la Fecha Devolucion
-                    //nueva.CargarDatosDeReserva(,)
+                    for (int j = 0; j < ingreso.DetalleIngreso.Count; j++)
+                    { 
+                        if (ingreso.DetalleIngreso[j].Producto.IdProducto == listaReservasOK[i].IdProducto)
+                        {
+                           nueva.ProductoEdicion = ingreso.DetalleIngreso[j].ProductoEdicion;
+                           nueva.FechaFin = Convert.ToDateTime(ingreso.DetalleIngreso[j].FechaDevolucion);
+                        }
+                    }
+                    nueva.Reserva = listaReservasOK[i];
+                    //Cambiar despues que se cargue la lista de estados
+                    nueva.IdEstado = 3;
+                    nueva.CargarDatosDeReserva();
+                    lReservaEdicion.Insert(nueva);
                 }
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
                 Response.Redirect("/Home.aspx");
