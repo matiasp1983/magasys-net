@@ -111,7 +111,7 @@ namespace Dyn.Web.Admin
             // Insert de Venta
             Entity.Fecha = Convert.ToDateTime(calFechaVenta.CalendarDate);
             Entity.MonTotal = ucVentas.ValorTotal;
-            Entity.IdEstado = lEstado.BuscarEstado("Venta", nombreEstado);
+            Entity.IdEstado = lEstado.BuscarEstado("Ventas", nombreEstado);
             Entity.FormaPago = ddlTipoVenta.SelectedValue.ToString();
             Entity.NroCliente = ucBuscarClientes.NroCliente;
 
