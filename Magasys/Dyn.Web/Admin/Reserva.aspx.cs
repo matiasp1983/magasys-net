@@ -110,7 +110,7 @@ namespace Dyn.Web.Admin
                 EntityRes.TipoReserva = ddlTipoReserva.SelectedValue.ToString();
                 EntityRes.IdProducto = ucBuscarProducto.CodigoProducto;
                 EntityRes.Cantidad = Convert.ToInt16(txtCantidad.Text);
-                EntityRes.IdEstado = lEstado.BuscarEstado("Reserva", "Confirmado");
+                EntityRes.IdEstado = lEstado.BuscarEstado("Reservas", "Confirmado");
 
                 idReserva = lReserva.Insert(EntityRes);
             }
@@ -123,7 +123,7 @@ namespace Dyn.Web.Admin
                 EntityResEdic.FechaFin = Convert.ToDateTime(calFechaFin.CalendarDate);
                 EntityResEdic.TipoReserva = ddlTipoReserva.SelectedValue.ToString();
                 EntityResEdic.Cantidad = Convert.ToInt16(txtCantidad.Text);
-                EntityResEdic.IdEstado = lEstado.BuscarEstado("ReservaEdicion", "Confirmado");
+                EntityResEdic.IdEstado = lEstado.BuscarEstado("ReservasEdicion", "Confirmado");
 
                 idReserva = lReservaEdicion.Insert(EntityResEdic);
 
