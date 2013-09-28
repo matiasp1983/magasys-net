@@ -20,6 +20,7 @@ namespace Dyn.Database.logic
             {
                 objIngreso = new Dyn.Database.entities.IngresoProducto(GetDataReader());
             }
+            objIngreso.CargarDetalles();
             return objIngreso;
         }
 

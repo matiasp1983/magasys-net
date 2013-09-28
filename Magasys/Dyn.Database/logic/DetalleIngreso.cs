@@ -28,7 +28,7 @@ namespace Dyn.Database.logic
             List<Dyn.Database.entities.DetalleIngresoProducto> Collection = new List<Dyn.Database.entities.DetalleIngresoProducto>();
             CreateCommand("usp_DetalleIngreso", true);
             AddCmdParameter("@Action", 4, ParameterDirection.Input);
-            AddCmdParameter("@idIngresoProducto", idIngreso, ParameterDirection.Input);
+            AddCmdParameter("@idIngresoProductos", idIngreso, ParameterDirection.Input);
             ExecuteReader();
             while (Read())
             {

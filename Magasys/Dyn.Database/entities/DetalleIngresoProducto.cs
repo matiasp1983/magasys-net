@@ -101,8 +101,14 @@ namespace Dyn.Database.entities
             Random r = new Random();
             fechaDevolucion.Value.AddDays(r.Next(1,7)); // Agrego un valor al azar!
         }
+        public bool esProductoEdicion (Int32? idProd)
+        {
+            if (productoEdicion.IdProducto == idProd)
+            { return true; }
+            else
+            { return false; }
 
-
+        }
         #endregion
 
     }

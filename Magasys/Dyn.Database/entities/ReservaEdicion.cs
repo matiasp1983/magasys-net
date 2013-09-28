@@ -58,7 +58,7 @@ namespace Dyn.Database.entities
             set { codReserva = value; }
         }
         
-        private Reserva reserva;
+        private Reserva reserva = new Dyn.Database.entities.Reserva();
         public Reserva Reserva
         {
             get { return reserva; }
@@ -72,7 +72,7 @@ namespace Dyn.Database.entities
             set { idProductoEdicion = value; }
         }
 
-        private ProductoEdicion productoEdicion;
+        private ProductoEdicion productoEdicion = new Dyn.Database.entities.ProductoEdicion();
         public ProductoEdicion ProductoEdicion
         {
             get { return productoEdicion; }
@@ -158,16 +158,17 @@ namespace Dyn.Database.entities
             Reserva = lReserva.Load(Convert.ToInt32(IdEstado));
 
         }
-        public void CargarDatosDeReserva(ProductoEdicion prodEdicion, DateTime fechaDevolucion)
+        public void CargarDatosDeReserva()
         { 
             CodReserva = Reserva.CodReserva;
             Cantidad = Reserva.Cantidad;
             Cliente = Reserva.Cliente;
             TipoReserva = "Única";
-            ProductoEdicion = prodEdicion;
             FechaInicio = DateTime.Now;
-            FechaFin = fechaDevolucion;
             FechaReservaEdicion = DateTime.Now;
+            idProductoEdicion = ProductoEdicion.IdProductoEdicion;
+            CodReserva = Reserva.CodReserva;
+            NroCliente = Reserva.NroCliente;
         }
 
         #endregion
