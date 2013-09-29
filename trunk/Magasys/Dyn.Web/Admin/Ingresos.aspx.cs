@@ -51,6 +51,12 @@ namespace Dyn.Web.Admin
                 calFecha.SelectedDate = DateTime.Today;
                 panReservas.Visible = false;
                 LlenarProveedor();
+
+                gvDetalle.DataSource = null;
+                gvProductos.DataSource = null;
+                gvReservas.DataSource = null;
+                gvReservasOk.DataSource = null;
+                
                 
                 //repDetalle.DataSource = listaDetalles;
                 lProducto = new Database.logic.Producto();
@@ -117,11 +123,12 @@ namespace Dyn.Web.Admin
                 ValidarReservas();
                 panBusquedaProductos.Visible = false;
                 panDetalleIngreso.Visible = false;
+                gvReservasOk.DataSource = null;
             }
             else
             {
-
-
+                Dyn.Database.logic.Estado lEstado = new Database.logic.Estado();
+                
                 int idIngreso = Convert.ToInt32(lIngreso.Insert(Entity));
                 Dyn.Database.entities.IngresoProducto ingreso = lIngreso.Load(idIngreso);
                 Dyn.Database.logic.ReservaEdicion lReservaEdicion = new Dyn.Database.logic.ReservaEdicion();
@@ -140,8 +147,10 @@ namespace Dyn.Web.Admin
                     }
                     nueva.Reserva = listaReservasOK[i];
                     //Cambiar despues que se cargue la lista de estados
-                    nueva.IdEstado = 3;
+                    nueva.IdEstado = lEstado.BuscarEstado("ReservasEdicion", "Confirmado");
                     nueva.CargarDatosDeReserva();
+
+                    //nueva.Estado.IdEstado = lEstado.("Ingresos","Registrado");
                     lReservaEdicion.Insert(nueva);
                 }
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);

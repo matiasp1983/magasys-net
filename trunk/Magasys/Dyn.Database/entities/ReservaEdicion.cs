@@ -29,7 +29,13 @@ namespace Dyn.Database.entities
         public ReservaEdicion(IDataRecord obj)
         {
             codReservaEdicion = Convert.ToInt32(obj["codReservaEdicion"]);
-            codReserva = Convert.ToInt32(obj["codReserva"]);
+            if (obj["codReserva"].ToString() == "")
+            {
+                codReserva = null; 
+            }
+            else
+            { codReserva = Convert.ToInt32(obj["codReserva"]); }
+            
             idProductoEdicion = Convert.ToInt32(obj["idProductoEdicion"]);
             nroCliente = Convert.ToInt32(obj["nroCliente"]);
             fechaReservaEdicion = Convert.ToDateTime(obj["fechaReservaEdicion"]);

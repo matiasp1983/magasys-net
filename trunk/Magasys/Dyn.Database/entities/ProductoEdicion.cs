@@ -29,6 +29,7 @@ namespace Dyn.Database.entities
             cantidadDisponible = Convert.ToInt32(obj["cantidadDisponible"]);
             precio = Convert.ToDouble(obj["precio"]);
             descripcion = obj["descripcion"].ToString();
+            CargarProducto();
         }
 
         #endregion
@@ -47,6 +48,12 @@ namespace Dyn.Database.entities
         {
             get { return idProducto; }
             set { idProducto = value; }
+        }
+        private Producto producto;
+        public Producto Producto
+        {
+            get { return producto; }
+            set { producto = value; }
         }
 
         private Int32? estado;
@@ -88,6 +95,11 @@ namespace Dyn.Database.entities
             Database.entities.DetalleIngresoProducto det = lDetIng.ObtenerDetallePorEdicion(Convert.ToInt32(idProductoEdicion));
             return Convert.ToInt32(det.IdDetalleIngresoProducto);
 
+        }
+        public void CargarProducto()
+        {
+            Dyn.Database.logic.Producto lProducto = new Dyn.Database.logic.Producto();
+            Producto = lProducto.Load(Convert.ToInt32(IdProducto));
         }
 
         #endregion

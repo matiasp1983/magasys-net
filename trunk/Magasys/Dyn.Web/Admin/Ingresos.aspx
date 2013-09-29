@@ -143,7 +143,8 @@
                         <asp:BoundField DataField="IdProducto" HeaderText="ID Producto" />
                         <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
                         <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
-                        <asp:CommandField ShowSelectButton="True" />
+                        <asp:CommandField ShowSelectButton="True" ButtonType="Image" 
+                            SelectImageUrl="~/images/Iconos/next.png" SelectText="" />
                     </Columns>
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -203,8 +204,15 @@
                         <asp:BoundField HeaderText="Precio" DataField="ProductoEdicion.Precio" >
                         <HeaderStyle Width="50px" />
                         </asp:BoundField>
-                        <asp:CommandField ShowEditButton="True" />
-                        <asp:CommandField ShowDeleteButton="True" />
+                        <asp:CommandField ShowEditButton="True" ButtonType="Image" 
+                            CancelImageUrl="~/images/Iconos/button_cancel.png" CancelText="" 
+                            EditImageUrl="~/images/Iconos/edit.png" EditText="" 
+                            UpdateImageUrl="~/images/Iconos/button_ok.png" UpdateText="" />
+                        <asp:CommandField ShowDeleteButton="True" ButtonType="Image" 
+                            CancelImageUrl="~/images/Iconos/button_cancel.png" CancelText="" 
+                            DeleteImageUrl="~/images/Iconos/edit_remove.png" DeleteText="" 
+                            EditImageUrl="~/images/Iconos/edit.png" EditText="" 
+                            UpdateImageUrl="~/images/Iconos/button_ok.png" UpdateText="" />
                     </Columns>
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -276,7 +284,8 @@
                                         <asp:BoundField DataField="Cliente.Apellido" HeaderText="Apellido" />
                                         <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto" />
                                         <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" />
-                                        <asp:CommandField SelectText="Confirmar" ShowSelectButton="True" />
+                                        <asp:CommandField SelectText="" ShowSelectButton="True" ButtonType="Image" 
+                                            SelectImageUrl="~/images/Iconos/button_ok.png" />
                                     </Columns>
                                     <EditRowStyle BackColor="#999999" />
                                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
