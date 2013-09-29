@@ -27,8 +27,9 @@ namespace Dyn.Database.logic
             AddCmdParameter("@codReserva", codReserva, ParameterDirection.Input);
             AddCmdParameter("@Action", 1, ParameterDirection.Input);
             // Cdo este listo el estado se deberia poner el estado que va...
-            AddCmdParameter("@idEstado", 3, ParameterDirection.Input);
-            //AddCmdParameter("@idEstado", objReserva.IdEstado, ParameterDirection.Input);
+            //AddCmdParameter("@idEstado", 3, ParameterDirection.Input);
+            Dyn.Database.logic.Estado lEstado = new Dyn.Database.logic.Estado();
+            AddCmdParameter("@idEstado", lEstado.BuscarEstado("Reservas","Confirmado"), ParameterDirection.Input);
             ExecuteReader();
             while (Read())
             {
@@ -66,8 +67,8 @@ namespace Dyn.Database.logic
                 AddCmdParameter("@idProducto", listaProductos[i].IdProducto, ParameterDirection.Input);
                 AddCmdParameter("@Action", 0, ParameterDirection.Input);
                 // Cdo este listo el estado se deberia poner el estado que va...
-                AddCmdParameter("@idEstado", 3, ParameterDirection.Input);
-                //AddCmdParameter("@idEstado", objReserva.IdEstado, ParameterDirection.Input);
+                Dyn.Database.logic.Estado lEstado = new Dyn.Database.logic.Estado();
+                AddCmdParameter("@idEstado", lEstado.BuscarEstado("Reservas", "Confirmado"), ParameterDirection.Input);
                 ExecuteReader();
                 while(Read())
                 {

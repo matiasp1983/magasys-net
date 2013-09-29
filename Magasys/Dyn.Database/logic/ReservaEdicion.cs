@@ -14,6 +14,7 @@ namespace Dyn.Database.logic
             CreateCommand("usp_ReservaEdicion", true);
             AddCmdParameter("@idProductoEdicion", objReservaEdic.IdProductoEdicion, ParameterDirection.Input);
             AddCmdParameter("@nroCliente", objReservaEdic.NroCliente, ParameterDirection.Input);
+            AddCmdParameter("@codReserva", objReservaEdic.CodReserva, ParameterDirection.Input);
             AddCmdParameter("@fechaInicio", objReservaEdic.FechaInicio, ParameterDirection.Input);
             AddCmdParameter("@fechaFin", objReservaEdic.FechaFin, ParameterDirection.Input);
             AddCmdParameter("@tipoReserva", objReservaEdic.TipoReserva, ParameterDirection.Input);
@@ -40,6 +41,30 @@ namespace Dyn.Database.logic
             AddParameters(objReservaEdic);
             AddCmdParameter("@Action", 1, ParameterDirection.Input);
             ExecuteNonQuery();
+        }
+        public List<Dyn.Database.entities.ReservaEdicion> BuscarReservasPorCliente(Int32 nroCliente)
+        {
+            List<Dyn.Database.entities.ReservaEdicion> listaReservas = new List<entities.ReservaEdicion>();
+            Dyn.Database.logic.Producto lProducto = new Dyn.Database.logic.Producto();
+            CreateCommand("usp_SeleccionarReservasEdicionPorCliente", true);
+            AddCmdParameter("@nroCliente", nroCliente, ParameterDirection.Input);
+            AddCmdParameter("@Action", 0, ParameterDirection.Input);
+            // Cdo este listo el estado se deberia poner el estado que va...
+            Dyn.Database.logic.Estado lEstado = new Dyn.Database.logic.Estado();
+            AddCmdParameter("@idEstado", lEstado.BuscarEstado("ReservasEdicion", "Confirmado"), ParameterDirection.Input);
+            ExecuteReader();
+            while (Read())
+            {
+                listaReservas.Add(new entities.ReservaEdicion(GetDataReader()));
+
+            }
+
+            for (int i = 0; i < listaReservas.Count; i++)
+            {
+                listaReservas[i].CargarPropiedades();
+            }
+
+            return listaReservas;
         }
     }
 }
