@@ -50,6 +50,7 @@
     <Compile Include="entities\Devolucion.cs" />
     <Compile Include="entities\Diario.cs" />
     <Compile Include="entities\DiarioPorDia.cs" />
+    <Compile Include="entities\Entrega.cs" />
     <Compile Include="entities\Estado.cs" />
     <Compile Include="entities\Genero.cs" />
     <Compile Include="entities\IngresoProducto.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="logic\Devolucion.cs" />
     <Compile Include="logic\Diario.cs" />
     <Compile Include="logic\DiarioPorDia.cs" />
+    <Compile Include="logic\Entrega.cs" />
     <Compile Include="logic\Estado.cs" />
     <Compile Include="logic\FactoryBase.cs" />
     <Compile Include="logic\Genero.cs" />

@@ -67,6 +67,15 @@ namespace Dyn.Web.Admin {
         protected global::System.Web.UI.WebControls.GridView gvDetalles;
         
         /// <summary>
+        /// gvDevoluciones control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvDevoluciones;
+        
+        /// <summary>
         /// btnGuardar control.
         /// </summary>
         /// <remarks>

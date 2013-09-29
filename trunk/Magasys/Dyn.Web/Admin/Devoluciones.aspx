@@ -93,20 +93,22 @@
             <td class="style18">
             
             </td>
-            <td class="style16" colspan="3">
+            <td class="style16" colspan="2">
             
                 <asp:GridView ID="gvDetalles" runat="server" AutoGenerateColumns="False" 
-                    onrowcancelingedit="gvDetalles_RowCancelingEdit" 
-                    onrowdeleting="gvDetalles_RowDeleting" onrowediting="gvDetalles_RowEditing" 
+                    onrowcancelingedit="gvDetalles_RowCancelingEdit" onrowediting="gvDetalles_RowEditing" 
                     onrowupdating="gvDetalles_RowUpdating" CellPadding="4" ForeColor="#333333" 
-                    GridLines="None">
+                    GridLines="None" 
+                    onselectedindexchanging="gvDetalles_SelectedIndexChanging">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
                         <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto" 
                             ReadOnly="True" />
                         <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" />
-                        <asp:CommandField ShowEditButton="True" />
-                        <asp:CheckBoxField HeaderText="Devolver" />
+                        <asp:CommandField ShowEditButton="True" ButtonType="Image" 
+                            EditImageUrl="~/images/Iconos/edit.png" EditText="" />
+                        <asp:CommandField ButtonType="Image" SelectImageUrl="~/images/Iconos/next.png" 
+                            SelectText="" ShowSelectButton="True" />
                     </Columns>
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -127,12 +129,96 @@
          </tr>
 
          <tr>
+            <td class="style18">
+            
+                &nbsp;</td>
+            <td class="style16" colspan="2">
+            
+                &nbsp;</td>
+
+
+
+         </tr>
+
+         <tr>
+            <td class="style18">
+            
+                &nbsp;</td>
+            <td class="tittlemenu" colspan="2">
+            
+                Producto a Devolver</td>
+
+
+
+         </tr>
+
+         <tr>
+            <td class="style18">
+            
+                &nbsp;</td>
+            <td class="style16" colspan="2">
+            
+                &nbsp;</td>
+
+
+
+         </tr>
+
+         <tr>
+            <td class="style18">
+            
+                &nbsp;</td>
+            <td class="style16" colspan="2">
+            
+                <asp:GridView ID="gvDevoluciones" runat="server" AutoGenerateColumns="False" 
+                    onrowdeleting="gvDevoluciones_RowDeleting" CellPadding="4" ForeColor="#333333" 
+                    GridLines="None" Visible="False">
+                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                    <Columns>
+                        <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto" 
+                            ReadOnly="True" />
+                        <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" />
+                        <asp:CommandField ButtonType="Image" 
+                            DeleteImageUrl="~/images/Iconos/edit_remove.png" ShowDeleteButton="True" />
+                    </Columns>
+                    <EditRowStyle BackColor="#999999" />
+                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                </asp:GridView>
+            
+            </td>
+
+
+
+         </tr>
+
+         <tr>
+            <td class="style18">
+            
+                &nbsp;</td>
+            <td class="style16" colspan="2">
+            
+                &nbsp;</td>
+
+
+
+         </tr>
+
+         <tr>
             <td class="style16" colspan="3">
             
-                <asp:Button CssClass="adminbutton" ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click"
+                <asp:Button CssClass="adminbutton" ID="btnGuardar" runat="server" 
+                    Text="Guardar" OnClick="btnGuardar_Click" Enabled="False"
                     />&nbsp;
                 <asp:Button CssClass="adminbutton" ID="btnCancelar" runat="server" Text="Cancelar"
-                    CausesValidation="False" />&nbsp;
+                    CausesValidation="False" onclick="btnCancelar_Click" />&nbsp;
                 <asp:Button CssClass="adminbutton" ID="btnEliminar" runat="server" Text="Anular"
                     CausesValidation="False" OnClientClick="javascript:return confirm('Desea eliminar la Coleccion?');"
                     Visible="False" />
