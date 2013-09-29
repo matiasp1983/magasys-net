@@ -114,7 +114,8 @@
                                 &nbsp;</td>
                             <td>
                                 <asp:GridView ID="gvReservas" runat="server" CellPadding="4" 
-                                    ForeColor="#333333" GridLines="None" AutoGenerateColumns="False">
+                                    ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" 
+                                    onselectedindexchanging="gvReservas_SelectedIndexChanging">
                                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                     <Columns>
                                         <asp:BoundField DataField="CodReservaEdicion" HeaderText="Cod. Reserva" />
@@ -181,8 +182,21 @@
                                 &nbsp;</td>
                             <td>
                                 <asp:GridView ID="gvEntregas" runat="server" CellPadding="4" 
-                                    ForeColor="#333333" GridLines="None">
+                                    ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" 
+                                    onrowdeleting="gvEntregas_RowDeleting">
                                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                                    <Columns>
+                                        <asp:BoundField DataField="ReservaEdicion.CodReservaEdicion" 
+                                            HeaderText="Reserva" />
+                                        <asp:BoundField DataField="ReservaEdicion.ProductoEdicion.Producto.Nombre" 
+                                            HeaderText="Producto" />
+                                        <asp:BoundField DataField="ReservaEdicion.ProductoEdicion.Descripcion" 
+                                            HeaderText="Descripcion" />
+                                        <asp:BoundField DataField="ReservaEdicion.Cantidad" HeaderText="Cantidad" />
+                                        <asp:CommandField ButtonType="Image" 
+                                            DeleteImageUrl="~/images/Iconos/edit_remove.png" DeleteText="" 
+                                            ShowDeleteButton="True" />
+                                    </Columns>
                                     <EditRowStyle BackColor="#999999" />
                                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                                     <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -217,7 +231,7 @@
                     Text="Guardar" OnClick="btnGuardar_Click" Enabled="False"
                     />&nbsp;
                 <asp:Button CssClass="adminbutton" ID="btnCancelar" runat="server" Text="Cancelar"
-                    CausesValidation="False" />&nbsp;
+                    CausesValidation="False" onclick="btnCancelar_Click" />&nbsp;
                 <asp:Button CssClass="adminbutton" ID="btnEliminar" runat="server" Text="Anular"
                     CausesValidation="False" OnClientClick="javascript:return confirm('Desea eliminar la Coleccion?');"
                     Visible="False" Enabled="False" />

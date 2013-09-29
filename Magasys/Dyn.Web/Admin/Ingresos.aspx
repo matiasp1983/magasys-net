@@ -369,7 +369,7 @@
                     Text="Guardar" OnClick="btnGuardar_Click" Enabled="False"
                     />&nbsp;
                 <asp:Button CssClass="adminbutton" ID="btnCancelar" runat="server" Text="Cancelar"
-                    CausesValidation="False" />&nbsp;
+                    CausesValidation="False" onclick="btnCancelar_Click" />&nbsp;
                 <asp:Button CssClass="adminbutton" ID="btnEliminar" runat="server" Text="Anular"
                     CausesValidation="False" OnClientClick="javascript:return confirm('Desea eliminar la Coleccion?');"
                     Visible="False" Enabled="False" />

@@ -63,6 +63,7 @@
     <Content Include="Admin\Coleccion.aspx" />
     <Content Include="Admin\Devoluciones.aspx" />
     <Content Include="Admin\Diario.aspx" />
+    <Content Include="Admin\Entregas.aspx" />
     <Content Include="Admin\Genero.aspx" />
     <Content Include="Admin\Ingresos.aspx" />
     <Content Include="Admin\Libro.aspx" />
@@ -80,6 +81,7 @@
     <Content Include="Admin\Pelicula.aspx" />
     <Content Include="Admin\Producto.aspx" />
     <Content Include="Admin\Proveedor.aspx" />
+    <Content Include="Admin\Repartos.aspx" />
     <Content Include="Admin\Reserva.aspx" />
     <Content Include="Admin\Revista.aspx" />
     <Content Include="Admin\Suplementos.aspx" />
@@ -98,13 +100,14 @@
     <Content Include="cal\up2.gif" />
     <Content Include="controls\BuscarClientes.ascx" />
     <Content Include="controls\BuscarProducto.ascx" />
+    <Content Include="controls\BuscarProductoEdicion.ascx" />
     <Content Include="controls\Date.ascx" />
     <Content Include="controls\Login.ascx" />
     <Content Include="controls\MenuAdmin.ascx" />
     <Content Include="controls\MenuAdminCategoria.ascx" />
-    <Content Include="controls\BuscarProductoEdicion.ascx" />
     <Content Include="controls\Ventas.ascx" />
     <Content Include="controls\WUCBuscarProducto.ascx" />
+    <Content Include="controls\WUCBuscarReservas.ascx" />
     <Content Include="Home.aspx" />
     <Content Include="images\BarraMenuCategorias_01.jpg" />
     <Content Include="images\BarraMenuCategorias_02.jpg" />
@@ -116,6 +119,244 @@
     <Content Include="images\eliminar.jpg" />
     <Content Include="images\Flecha.gif" />
     <Content Include="images\Header.jpg" />
+    <Content Include="images\Iconos\1day.png" />
+    <Content Include="images\Iconos\1downarrow.png" />
+    <Content Include="images\Iconos\1leftarrow.png" />
+    <Content Include="images\Iconos\1rightarrow.png" />
+    <Content Include="images\Iconos\1uparrow.png" />
+    <Content Include="images\Iconos\2dowarrow.png" />
+    <Content Include="images\Iconos\2downarrow.png" />
+    <Content Include="images\Iconos\2leftarrow.png" />
+    <Content Include="images\Iconos\2rightarrow.png" />
+    <Content Include="images\Iconos\2uparrow.png" />
+    <Content Include="images\Iconos\5days.png" />
+    <Content Include="images\Iconos\7days.png" />
+    <Content Include="images\Iconos\about_kde.png" />
+    <Content Include="images\Iconos\add_group.png" />
+    <Content Include="images\Iconos\add_user.png" />
+    <Content Include="images\Iconos\agt_action_fail.png" />
+    <Content Include="images\Iconos\agt_action_success.png" />
+    <Content Include="images\Iconos\agt_add-to-autorun.png" />
+    <Content Include="images\Iconos\agt_add-to-desktop.png" />
+    <Content Include="images\Iconos\agt_aisles.png" />
+    <Content Include="images\Iconos\agt_announcements.png" />
+    <Content Include="images\Iconos\agt_back.png" />
+    <Content Include="images\Iconos\agt_business.png" />
+    <Content Include="images\Iconos\agt_desktop_enhancements.png" />
+    <Content Include="images\Iconos\agt_family-off.png" />
+    <Content Include="images\Iconos\agt_family.png" />
+    <Content Include="images\Iconos\agt_forum.png" />
+    <Content Include="images\Iconos\agt_forward.png" />
+    <Content Include="images\Iconos\agt_games.png" />
+    <Content Include="images\Iconos\agt_home.png" />
+    <Content Include="images\Iconos\agt_internet.png" />
+    <Content Include="images\Iconos\agt_login.png" />
+    <Content Include="images\Iconos\agt_mp3.png" />
+    <Content Include="images\Iconos\agt_Multimedia.png" />
+    <Content Include="images\Iconos\agt_pause-queue.png" />
+    <Content Include="images\Iconos\agt_print.png" />
+    <Content Include="images\Iconos\agt_reload.png" />
+    <Content Include="images\Iconos\agt_resume.png" />
+    <Content Include="images\Iconos\agt_runit.png" />
+    <Content Include="images\Iconos\agt_softwareD.png" />
+    <Content Include="images\Iconos\agt_start_here.png" />
+    <Content Include="images\Iconos\agt_stop.png" />
+    <Content Include="images\Iconos\agt_support.png" />
+    <Content Include="images\Iconos\agt_uninstall-product.png" />
+    <Content Include="images\Iconos\agt_update-product.png" />
+    <Content Include="images\Iconos\agt_update_critical.png" />
+    <Content Include="images\Iconos\agt_update_drivers.png" />
+    <Content Include="images\Iconos\agt_update_misc.png" />
+    <Content Include="images\Iconos\agt_update_recommended.png" />
+    <Content Include="images\Iconos\agt_Utilities.png" />
+    <Content Include="images\Iconos\agt_virus-off.png" />
+    <Content Include="images\Iconos\agt_virus.png" />
+    <Content Include="images\Iconos\agt_virussafe.png" />
+    <Content Include="images\Iconos\agt_web.png" />
+    <Content Include="images\Iconos\appearance.png" />
+    <Content Include="images\Iconos\apply.png" />
+    <Content Include="images\Iconos\appointment.png" />
+    <Content Include="images\Iconos\attach.png" />
+    <Content Include="images\Iconos\autostart.png" />
+    <Content Include="images\Iconos\back.png" />
+    <Content Include="images\Iconos\bookmark.png" />
+    <Content Include="images\Iconos\bookmarks_list_add.png" />
+    <Content Include="images\Iconos\bookmark_add.png" />
+    <Content Include="images\Iconos\bookmark_folder.png" />
+    <Content Include="images\Iconos\build.png" />
+    <Content Include="images\Iconos\button_cancel.png" />
+    <Content Include="images\Iconos\button_ok.png" />
+    <Content Include="images\Iconos\cdcopy.png" />
+    <Content Include="images\Iconos\cdinfo.png" />
+    <Content Include="images\Iconos\cdrwblank.png" />
+    <Content Include="images\Iconos\clear_left.png" />
+    <Content Include="images\Iconos\cnr-pending.png" />
+    <Content Include="images\Iconos\cnr-update.png" />
+    <Content Include="images\Iconos\cnrdelete-all.png" />
+    <Content Include="images\Iconos\cnruninstall.png" />
+    <Content Include="images\Iconos\colorize.png" />
+    <Content Include="images\Iconos\compfile.png" />
+    <Content Include="images\Iconos\configure.png" />
+    <Content Include="images\Iconos\connect_creating.png" />
+    <Content Include="images\Iconos\connect_established.png" />
+    <Content Include="images\Iconos\connect_no.png" />
+    <Content Include="images\Iconos\contents.png" />
+    <Content Include="images\Iconos\contexthelp.png" />
+    <Content Include="images\Iconos\db_add.png" />
+    <Content Include="images\Iconos\db_comit.png" />
+    <Content Include="images\Iconos\db_remove.png" />
+    <Content Include="images\Iconos\db_status.png" />
+    <Content Include="images\Iconos\db_update.png" />
+    <Content Include="images\Iconos\decrypted.png" />
+    <Content Include="images\Iconos\delete_group.png" />
+    <Content Include="images\Iconos\delete_table_col.png" />
+    <Content Include="images\Iconos\delete_table_row.png" />
+    <Content Include="images\Iconos\delete_user.png" />
+    <Content Include="images\Iconos\demo.png" />
+    <Content Include="images\Iconos\down.png" />
+    <Content Include="images\Iconos\easymoblog.png" />
+    <Content Include="images\Iconos\edit.png" />
+    <Content Include="images\Iconos\editclear.png" />
+    <Content Include="images\Iconos\editcopy.png" />
+    <Content Include="images\Iconos\editcut.png" />
+    <Content Include="images\Iconos\editdelete.png" />
+    <Content Include="images\Iconos\editpaste.png" />
+    <Content Include="images\Iconos\edittrash.png" />
+    <Content Include="images\Iconos\edit_add.png" />
+    <Content Include="images\Iconos\edit_group.png" />
+    <Content Include="images\Iconos\edit_remove.png" />
+    <Content Include="images\Iconos\edit_user.png" />
+    <Content Include="images\Iconos\encrypted.png" />
+    <Content Include="images\Iconos\endturn.png" />
+    <Content Include="images\Iconos\exec.png" />
+    <Content Include="images\Iconos\exit.png" />
+    <Content Include="images\Iconos\fileclose.png" />
+    <Content Include="images\Iconos\filefind.png" />
+    <Content Include="images\Iconos\fileimport.png" />
+    <Content Include="images\Iconos\filenew.png" />
+    <Content Include="images\Iconos\fileopen.png" />
+    <Content Include="images\Iconos\fileprint.png" />
+    <Content Include="images\Iconos\filequickprint.png" />
+    <Content Include="images\Iconos\filesave.png" />
+    <Content Include="images\Iconos\filesaveas.png" />
+    <Content Include="images\Iconos\find.png" />
+    <Content Include="images\Iconos\flag.png" />
+    <Content Include="images\Iconos\folder_new.png" />
+    <Content Include="images\Iconos\fonts.png" />
+    <Content Include="images\Iconos\forward.png" />
+    <Content Include="images\Iconos\frameprint.png" />
+    <Content Include="images\Iconos\funct.png" />
+    <Content Include="images\Iconos\gear.png" />
+    <Content Include="images\Iconos\gohome.png" />
+    <Content Include="images\Iconos\goto.png" />
+    <Content Include="images\Iconos\grid.png" />
+    <Content Include="images\Iconos\halfencrypted.png" />
+    <Content Include="images\Iconos\help.png" />
+    <Content Include="images\Iconos\history.png" />
+    <Content Include="images\Iconos\identity.png" />
+    <Content Include="images\Iconos\inbox.png" />
+    <Content Include="images\Iconos\info.png" />
+    <Content Include="images\Iconos\insert_table_col.png" />
+    <Content Include="images\Iconos\insert_table_row.png" />
+    <Content Include="images\Iconos\kde.png" />
+    <Content Include="images\Iconos\kdevelop_down.png" />
+    <Content Include="images\Iconos\klipper_doc.png" />
+    <Content Include="images\Iconos\knewstuff.png" />
+    <Content Include="images\Iconos\kopeteavailable.png" />
+    <Content Include="images\Iconos\kopeteaway.png" />
+    <Content Include="images\Iconos\ksysguard.png" />
+    <Content Include="images\Iconos\laptop_charge.png" />
+    <Content Include="images\Iconos\laptop_nobattery.png" />
+    <Content Include="images\Iconos\laptop_nocharge.png" />
+    <Content Include="images\Iconos\laptop_power.png" />
+    <Content Include="images\Iconos\launch.png" />
+    <Content Include="images\Iconos\lin_agt_wrench.png" />
+    <Content Include="images\Iconos\list.png" />
+    <Content Include="images\Iconos\locationbar_erase.png" />
+    <Content Include="images\Iconos\lock.png" />
+    <Content Include="images\Iconos\loopnone.png" />
+    <Content Include="images\Iconos\mail_delete.png" />
+    <Content Include="images\Iconos\mail_find.png" />
+    <Content Include="images\Iconos\mail_forward.png" />
+    <Content Include="images\Iconos\mail_foward.png" />
+    <Content Include="images\Iconos\mail_generic.png" />
+    <Content Include="images\Iconos\mail_get.png" />
+    <Content Include="images\Iconos\mail_new.png" />
+    <Content Include="images\Iconos\mail_post_to.png" />
+    <Content Include="images\Iconos\mail_replay.png" />
+    <Content Include="images\Iconos\mail_replayall.png" />
+    <Content Include="images\Iconos\mail_reply.png" />
+    <Content Include="images\Iconos\mail_replyall.png" />
+    <Content Include="images\Iconos\mail_send.png" />
+    <Content Include="images\Iconos\messagebox_critical.png" />
+    <Content Include="images\Iconos\messagebox_info.png" />
+    <Content Include="images\Iconos\messagebox_warning.png" />
+    <Content Include="images\Iconos\misc.png" />
+    <Content Include="images\Iconos\month.png" />
+    <Content Include="images\Iconos\mouse.png" />
+    <Content Include="images\Iconos\network.png" />
+    <Content Include="images\Iconos\newfont.png" />
+    <Content Include="images\Iconos\news_subscribe.png" />
+    <Content Include="images\Iconos\next.png" />
+    <Content Include="images\Iconos\openterm.png" />
+    <Content Include="images\Iconos\outbox.png" />
+    <Content Include="images\Iconos\player-end.png" />
+    <Content Include="images\Iconos\player_eject.png" />
+    <Content Include="images\Iconos\player_end.png" />
+    <Content Include="images\Iconos\player_fwd.png" />
+    <Content Include="images\Iconos\player_pause.png" />
+    <Content Include="images\Iconos\player_play.png" />
+    <Content Include="images\Iconos\player_rew.png" />
+    <Content Include="images\Iconos\player_start.png" />
+    <Content Include="images\Iconos\playlist.png" />
+    <Content Include="images\Iconos\power.png" />
+    <Content Include="images\Iconos\project_open.png" />
+    <Content Include="images\Iconos\queue.png" />
+    <Content Include="images\Iconos\rebuild.png" />
+    <Content Include="images\Iconos\redo.png" />
+    <Content Include="images\Iconos\reload.png" />
+    <Content Include="images\Iconos\reload_page.png" />
+    <Content Include="images\Iconos\revert.png" />
+    <Content Include="images\Iconos\run.png" />
+    <Content Include="images\Iconos\save_all.png" />
+    <Content Include="images\Iconos\search.png" />
+    <Content Include="images\Iconos\server.png" />
+    <Content Include="images\Iconos\seyon.png" />
+    <Content Include="images\Iconos\share.png" />
+    <Content Include="images\Iconos\sort_az.png" />
+    <Content Include="images\Iconos\spellcheck.png" />
+    <Content Include="images\Iconos\start.png" />
+    <Content Include="images\Iconos\stop.png" />
+    <Content Include="images\Iconos\tab.png" />
+    <Content Include="images\Iconos\tab_new.png" />
+    <Content Include="images\Iconos\tab_remove.png" />
+    <Content Include="images\Iconos\todo.png" />
+    <Content Include="images\Iconos\toggle_log.png" />
+    <Content Include="images\Iconos\top.png" />
+    <Content Include="images\Iconos\undo.png" />
+    <Content Include="images\Iconos\unlock.png" />
+    <Content Include="images\Iconos\up.png" />
+    <Content Include="images\Iconos\viewmag+.png" />
+    <Content Include="images\Iconos\viewmag-.png" />
+    <Content Include="images\Iconos\viewmag.png" />
+    <Content Include="images\Iconos\viewmag1.png" />
+    <Content Include="images\Iconos\viewmagfit.png" />
+    <Content Include="images\Iconos\view_bottom.png" />
+    <Content Include="images\Iconos\view_choose.png" />
+    <Content Include="images\Iconos\view_detailed.png" />
+    <Content Include="images\Iconos\view_icon.png" />
+    <Content Include="images\Iconos\view_left_right.png" />
+    <Content Include="images\Iconos\view_multicolumn.png" />
+    <Content Include="images\Iconos\view_remove 2.png" />
+    <Content Include="images\Iconos\view_remove.png" />
+    <Content Include="images\Iconos\view_right.png" />
+    <Content Include="images\Iconos\view_sidetree.png" />
+    <Content Include="images\Iconos\view_text.png" />
+    <Content Include="images\Iconos\view_top_bottom.png" />
+    <Content Include="images\Iconos\view_tree.png" />
+    <Content Include="images\Iconos\window_fullscreen.png" />
+    <Content Include="images\Iconos\window_new.png" />
+    <Content Include="images\Iconos\window_nofullscreen.png" />
     <Content Include="images\PixelContentDer.jpg" />
     <Content Include="images\PixelContentIzq.jpg" />
     <Content Include="images\PixelRepeticionDer_admin.jpg" />
@@ -165,6 +406,13 @@
     </Compile>
     <Compile Include="Admin\Diario.aspx.designer.cs">
       <DependentUpon>Diario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Entregas.aspx.cs">
+      <DependentUpon>Entregas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Entregas.aspx.designer.cs">
+      <DependentUpon>Entregas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Genero.aspx.cs">
       <DependentUpon>Genero.aspx</DependentUpon>
@@ -285,6 +533,13 @@
     <Compile Include="Admin\Proveedor.aspx.designer.cs">
       <DependentUpon>Proveedor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Repartos.aspx.cs">
+      <DependentUpon>Repartos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Repartos.aspx.designer.cs">
+      <DependentUpon>Repartos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Reserva.aspx.cs">
       <DependentUpon>Reserva.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -327,6 +582,13 @@
     <Compile Include="controls\BuscarProducto.ascx.designer.cs">
       <DependentUpon>BuscarProducto.ascx</DependentUpon>
     </Compile>
+    <Compile Include="controls\BuscarProductoEdicion.ascx.cs">
+      <DependentUpon>BuscarProductoEdicion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\BuscarProductoEdicion.ascx.designer.cs">
+      <DependentUpon>BuscarProductoEdicion.ascx</DependentUpon>
+    </Compile>
     <Compile Include="controls\Date.ascx.cs">
       <DependentUpon>Date.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -355,13 +617,6 @@
     <Compile Include="controls\MenuAdminCategoria.ascx.designer.cs">
       <DependentUpon>MenuAdminCategoria.ascx</DependentUpon>
     </Compile>
-    <Compile Include="controls\BuscarProductoEdicion.ascx.cs">
-      <DependentUpon>BuscarProductoEdicion.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\BuscarProductoEdicion.ascx.designer.cs">
-      <DependentUpon>BuscarProductoEdicion.ascx</DependentUpon>
-    </Compile>
     <Compile Include="controls\Ventas.ascx.cs">
       <DependentUpon>Ventas.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -375,6 +630,13 @@
     </Compile>
     <Compile Include="controls\WUCBuscarProducto.ascx.designer.cs">
       <DependentUpon>WUCBuscarProducto.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\WUCBuscarReservas.ascx.cs">
+      <DependentUpon>WUCBuscarReservas.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\WUCBuscarReservas.ascx.designer.cs">
+      <DependentUpon>WUCBuscarReservas.ascx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

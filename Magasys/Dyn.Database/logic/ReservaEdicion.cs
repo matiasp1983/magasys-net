@@ -9,9 +9,23 @@ namespace Dyn.Database.logic
     {
         public ReservaEdicion() { }
 
+        public Dyn.Database.entities.ReservaEdicion Load(int codReservaEdicion)
+        {
+            Dyn.Database.entities.ReservaEdicion objReservaEdicion = new Dyn.Database.entities.ReservaEdicion();
+            CreateCommand("usp_ReservaEdicion", true);
+            AddCmdParameter("@codReservaEdicion", codReservaEdicion, ParameterDirection.Input);
+            AddCmdParameter("@Action", 0, ParameterDirection.Input);
+            ExecuteReader();
+            while (Read())
+            {
+                objReservaEdicion = new Dyn.Database.entities.ReservaEdicion(GetDataReader());
+            }
+            return objReservaEdicion;
+        }
         private void AddParameters(Dyn.Database.entities.ReservaEdicion objReservaEdic)
         {
             CreateCommand("usp_ReservaEdicion", true);
+            AddCmdParameter("@codReservaEdicion", objReservaEdic.CodReservaEdicion, ParameterDirection.Input);
             AddCmdParameter("@idProductoEdicion", objReservaEdic.IdProductoEdicion, ParameterDirection.Input);
             AddCmdParameter("@nroCliente", objReservaEdic.NroCliente, ParameterDirection.Input);
             AddCmdParameter("@codReserva", objReservaEdic.CodReserva, ParameterDirection.Input);
@@ -61,10 +75,17 @@ namespace Dyn.Database.logic
 
             for (int i = 0; i < listaReservas.Count; i++)
             {
+                CreateCommand("usp_SeleccionarReservasEdicionPorCliente", true);
                 listaReservas[i].CargarPropiedades();
             }
 
             return listaReservas;
+        }
+        public void Entregar(Int32 codReservaEdicion)
+        {
+            CreateCommand("usp_ReservaEdicion", true);
+            Dyn.Database.logic.Estado lEstado = new Dyn.Database.logic.Estado();
+            AddCmdParameter("@idEstado", lEstado.BuscarEstado("ReservasEdicion", "Confirmado"), ParameterDirection.Input);
         }
     }
 }
