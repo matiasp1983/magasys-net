@@ -41,37 +41,43 @@ namespace Dyn.Web.Admin
 
             if (ddlTipoReserva.SelectedValue == "Única" && calFechaFin.CalendarDateString == string.Empty)
             {
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Seleccione la fecha de Fin de reserva');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Seleccione la fecha de Fin de reserva');", true);
                 return;
             }
 
             if (calFechaInicio.CalendarDateString == string.Empty)
             {
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Seleccione la fecha de Inicio de reserva');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Seleccione la fecha de Inicio de reserva');", true);
+                return;
+            }
+
+            if (calFechaInicio.CalendarDate > calFechaFin.CalendarDate)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('La fecha de Inicio debe ser menor que la fecha Fin');", true);
                 return;
             }
 
             if (ucBuscarClientes.NroCliente == 0)
             {
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Seleccione el cliente');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Seleccione el cliente');", true);
                 return;
             }
 
-            if (ucBuscarProducto.CodigoProducto == 0 && ucBuscarProductoEdicion.CodigoProducto == 0)
+            if (rdbProducto.Checked == true && ucBuscarProducto.CodigoProducto == 0)
             {
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Seleccione el producto');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Seleccione el producto');", true);
                 return;
             }
 
-            //if (ucBuscarProductoEdicion.CodigoProducto == 0)
-            //{
-            //    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Seleccione el producto');", true);
-            //    return;
-            //}
+            if (rdbEdicion.Checked == true && ucBuscarProductoEdicion.CodigoProducto == 0)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Seleccione el producto');", true);
+                return;
+            }
 
             if (int.Parse(txtCantidad.Text) <= 0)
             {
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Ingrese la cantidad de productos');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Ingrese la cantidad de productos');", true);
                 return;
             }
 
@@ -79,14 +85,13 @@ namespace Dyn.Web.Admin
             if (reservaCreada.ToString() != "0")
             {
                 LimpiarControles();
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Se guardaron los datos correctamente');", true);
             }
             else
             {
                 LimpiarControles();
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se actualizaron los datos correctamente');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('No se guardaron los datos correctamente');", true);
             }
-            
         }
 
         private object InsertarReserva()
@@ -128,12 +133,12 @@ namespace Dyn.Web.Admin
                 idReserva = lReservaEdicion.Insert(EntityResEdic);
 
                 if (idReserva.ToString() != "0")
-	            {
-	                // Solo en Reserva Edición se disminuye el sotck
+                {
+                    // Solo en Reserva Edición se disminuye el sotck
                     productoEdicion = lProdEdic.Load((int)ucBuscarProductoEdicion.CodigoProducto, (int)ucBuscarProductoEdicion.IdEdicion);
-                productoEdicion.CantidadUnidades -= EntityResEdic.Cantidad;  // Actualizar stock
-                lProdEdic.Update(productoEdicion); // Se actualiza la tabla ProductoEdicion	 
-	            }
+                    productoEdicion.CantidadUnidades -= EntityResEdic.Cantidad;  // Actualizar stock
+                    lProdEdic.Update(productoEdicion); // Se actualiza la tabla ProductoEdicion	 
+                }
             }
 
             return idReserva;
@@ -141,12 +146,17 @@ namespace Dyn.Web.Admin
 
         private void LimpiarControles()
         {
-            //calFechaReserva.CalendarDate = DateTime.MaxValue.Date;
+            //calFechaReserva.CalendarDate = DateTime.Now;
             //ddlTipoReserva.SelectedValue = "Única";
-            //calFechaInicio.CalendarDate = DateTime.MaxValue.Date;
-            //calFechaFin.CalendarDate = DateTime.MaxValue.Date;
-            //ucBuscarClientes. = string.Empty;
-
+            //rdbProducto.Checked = true;
+            //rdbEdicion.Checked = false;
+            //calFechaInicio.CalendarDateString = string.Empty;
+            //calFechaFin.CalendarDateString = string.Empty;
+            ////ucBuscarClientes
+            ////ucBuscarProducto
+            ////ucBuscarProductoEdicion
+            //txtCantidad.Text = string.Empty;
+            Response.Redirect("/Admin/Reserva.aspx");
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)

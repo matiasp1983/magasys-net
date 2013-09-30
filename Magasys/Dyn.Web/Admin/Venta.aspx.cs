@@ -54,11 +54,13 @@ namespace Dyn.Web.Admin
 
         protected void btnGuardarVenta_Click(object sender, EventArgs e)
         {
-            if (rdbNoEntrega.Checked == true && rdbNoPagado.Checked == true)
+            if (ucBuscarClientes.NroCliente <= 0 && rdbNoPagado.Checked == true)
             {
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Seleccione Entregado y/o Pagado');", true);
-                return;
+                // Si no se slecciona un Cliente debe estar marcado Pagado
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Seleccione la opción Pagado');", true);
+                return;                
             }
+
             if (ucVentas.GetrptItems.Items.Count > 0)
             {
                 InsertarVenta();
@@ -95,17 +97,13 @@ namespace Dyn.Web.Admin
             int idVenta;
             String nombreEstado = String.Empty;
 
-            if (rdbSiEntrega.Checked == true && rdbSiPagado.Checked == true)
+            if (rdbSiPagado.Checked == true)
             {
                 nombreEstado = "Entregado-Pagado";
             }
-            else if (rdbSiEntrega.Checked == true && rdbNoPagado.Checked == true)
+            else if (rdbNoPagado.Checked == true)
             {
                 nombreEstado = "Entregado-No Pagado";
-            }
-            else if (rdbNoEntrega.Checked == true && rdbSiPagado.Checked == true)
-            {
-                nombreEstado = "No entregado-Pagado";
             }
 
             // Insert de Venta

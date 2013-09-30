@@ -10,16 +10,7 @@
 namespace Dyn.Web.Admin {
     
     
-    public partial class Venta {
-        
-        /// <summary>
-        /// lblIdVenta control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIdVenta;
+    public partial class ListadoReserva {
         
         /// <summary>
         /// lblFecha control.
@@ -31,94 +22,121 @@ namespace Dyn.Web.Admin {
         protected global::System.Web.UI.WebControls.Label lblFecha;
         
         /// <summary>
-        /// calFechaVenta control.
+        /// calFechaReserva control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Calendar_Date calFechaVenta;
+        protected global::Calendar_Date calFechaReserva;
         
         /// <summary>
-        /// lblTipoVenta control.
+        /// lblTipoReserva control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTipoVenta;
+        protected global::System.Web.UI.WebControls.Label lblTipoReserva;
         
         /// <summary>
-        /// ddlTipoVenta control.
+        /// ddlTipoReserva control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTipoVenta;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoReserva;
         
         /// <summary>
-        /// lblPagado control.
+        /// btnBuscar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPagado;
+        protected global::System.Web.UI.WebControls.Button btnBuscar;
         
         /// <summary>
-        /// rdbSiPagado control.
+        /// lblAlias control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdbSiPagado;
+        protected global::System.Web.UI.WebControls.Label lblAlias;
         
         /// <summary>
-        /// rdbNoPagado control.
+        /// txtAlias control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdbNoPagado;
+        protected global::System.Web.UI.WebControls.TextBox txtAlias;
         
         /// <summary>
-        /// ucBuscarClientes control.
+        /// lblNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Dyn.Web.controls.BuscarClientes ucBuscarClientes;
+        protected global::System.Web.UI.WebControls.Label lblNombre;
         
         /// <summary>
-        /// ucVentas control.
+        /// txtNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Dyn.Web.controls.Ventas ucVentas;
+        protected global::System.Web.UI.WebControls.TextBox txtNombre;
         
         /// <summary>
-        /// btnGuardarVenta control.
+        /// lblApellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardarVenta;
+        protected global::System.Web.UI.WebControls.Label lblApellido;
         
         /// <summary>
-        /// btnCancelar control.
+        /// txtApellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancelar;
+        protected global::System.Web.UI.WebControls.TextBox txtApellido;
+        
+        /// <summary>
+        /// lblEstado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEstado;
+        
+        /// <summary>
+        /// ddlEstado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlEstado;
+        
+        /// <summary>
+        /// gridReservas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gridReservas;
         
         /// <summary>
         /// Master property.

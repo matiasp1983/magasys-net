@@ -24,7 +24,6 @@ namespace Dyn.Database.logic
             return objEstado;
         }
 
-
         private void AddParameters(Dyn.Database.entities.Estado objEstado)
         {
             CreateCommand("usp_Estado", true);
@@ -64,6 +63,7 @@ namespace Dyn.Database.logic
             AddCmdParameter("@Action", 3, ParameterDirection.Input);
             ExecuteNonQuery();
         }
+
         public int BuscarEstado(String ambito, String nombre)
         {
             object IdEstado = null;
@@ -78,6 +78,20 @@ namespace Dyn.Database.logic
             }
             return Convert.ToInt32(IdEstado);
             
+        }
+
+        public List<Dyn.Database.entities.Estado> BuscarEstadoPorAmbito(string ambito)
+        {
+            List<Dyn.Database.entities.Estado> Collection = new List<Dyn.Database.entities.Estado>();
+            CreateCommand("usp_Estado", true);
+            AddCmdParameter("@ambito", ambito, ParameterDirection.Input);
+            AddCmdParameter("@Action", 4, ParameterDirection.Input);
+            ExecuteReader();
+            while (Read())
+            {
+                Collection.Add(new Dyn.Database.entities.Estado(GetDataReader()));
+            }
+            return Collection;
         }
     }
 }

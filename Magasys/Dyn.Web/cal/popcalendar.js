@@ -137,7 +137,7 @@ if (dom)
 var	monthName =	new	Array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre")
 if (startAt==0)
 {
-    dayName = new Array	("Lun","Mar","Mie","Jue","Vie","Sab","Dom")
+    dayName = new Array	("Dom","Lun","Mar","Mie","Jue","Vie","Sab")
 }
 else
 {
