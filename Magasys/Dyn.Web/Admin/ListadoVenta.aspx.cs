@@ -28,7 +28,7 @@ namespace Dyn.Web.Admin
             if (!IsPostBack)
             {
                 this.Master.TituloPagina = "Listado de ventas";
-                CargarVentas(DateTime.Now, DateTime.Now);
+                //CargarVentas(DateTime.Now, DateTime.Now);
                 calFechaInicial.CalendarDate = DateTime.Now.AddDays(-2);
                 calFechaFinal.CalendarDate = DateTime.Now.AddDays(2); 
             }
@@ -37,7 +37,11 @@ namespace Dyn.Web.Admin
         public int CargarVentas(DateTime fechainicial, DateTime fechafinal)
         {
             lVenta = new Dyn.Database.logic.Venta();
-            DataSet ds = lVenta.SeleccionarVentasPorNombrePaginadoAdmin(fechainicial, fechafinal, Pagina, ref numeropaginas);
+            Dyn.Database.logic.Estado lEstado = new Dyn.Database.logic.Estado();
+            int estado = Convert.ToInt16(lEstado.BuscarEstado("Ventas", "Entregado-Pagado"));// definir estado
+            //int nroCliente = ucBuscarClientes.NroCliente;
+            string formaPago = ddlTipoVenta.SelectedValue.ToString();
+            DataSet ds = lVenta.SeleccionarVentasPorNombrePaginadoAdmin(fechainicial, fechafinal, estado, 3, formaPago, Pagina, ref numeropaginas);
             int[] array;
             array = new int[numeropaginas];
             CollectionPager.DataSource = array;
@@ -51,6 +55,12 @@ namespace Dyn.Web.Admin
         {
             DateTime fechainicial = Convert.ToDateTime(calFechaInicial.CalendarDate);
             DateTime fechafinal = Convert.ToDateTime(calFechaFinal.CalendarDate);
+
+            //if (ucBuscarClientes.NroCliente <= 0)
+            //{
+            //    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Seleccione el cliente');", true);
+            //    return;
+            //}
 
             int i = CargarVentas(fechainicial, fechafinal);
 

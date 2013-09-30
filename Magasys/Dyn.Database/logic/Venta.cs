@@ -54,11 +54,15 @@ namespace Dyn.Database.logic
             return maxIdVenta = (int)ExecuteScalar();
         }
 
-        public DataSet SeleccionarVentasPorNombrePaginadoAdmin(DateTime fechainicial, DateTime fechafinal, int paginaactual, ref int numeropaginas)
+        public DataSet SeleccionarVentasPorNombrePaginadoAdmin(DateTime fechainicial, DateTime fechafinal, int estado,
+            int nroCliente, string formaPago, int paginaactual, ref int numeropaginas)
         {
             CreateCommand("usp_SeleccionarVentasPorNombrePaginado", true);
             AddCmdParameter("@fechaIni", fechainicial, ParameterDirection.Input);
             AddCmdParameter("@fechaFin", fechafinal, ParameterDirection.Input);
+            AddCmdParameter("@idEstado", estado, ParameterDirection.Input);
+            AddCmdParameter("@nroCliente", nroCliente, ParameterDirection.Input);
+            AddCmdParameter("@formaDePago", formaPago, ParameterDirection.Input);
             AddCmdParameter("@CurrentPage", paginaactual, ParameterDirection.Input);
             AddCmdParameter("@PageSize", 100, ParameterDirection.Input);
             AddCmdParameter("@TotalRecords", ParameterDirection.Output);
