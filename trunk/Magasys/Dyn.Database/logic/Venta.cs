@@ -84,5 +84,17 @@ namespace Dyn.Database.logic
             DataSet ds = GetDataSet();
             return Collection;
         }
+
+        public void cambiarEstadoEntregadoPagado(int idVenta)
+        {
+            Dyn.Database.logic.Estado lEstado = new Dyn.Database.logic.Estado();
+            int estado = Convert.ToInt16(lEstado.BuscarEstado("Ventas", "Entregado-Pagado"));
+
+            CreateCommand("usp_Venta", true);
+            AddCmdParameter("@idVenta", idVenta, ParameterDirection.Input);
+            AddCmdParameter("@idEstado", estado, ParameterDirection.Input);
+            AddCmdParameter("@Action", 4, ParameterDirection.Input);
+            ExecuteNonQuery();
+        }
     }
 }

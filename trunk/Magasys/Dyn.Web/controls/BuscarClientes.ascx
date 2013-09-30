@@ -94,7 +94,7 @@
            
         </td>
         <td>
-            &nbsp;<asp:Button ID="btnBuscarClientes" runat="server" Text="Buscar" OnClick="btnBuscarClientes_Click" />
+            &nbsp;<asp:Button ID="btnBuscarClientes" runat="server" Text="Buscar Clientes" OnClick="btnBuscarClientes_Click" />
         </td>
     </tr>
     <tr>
