@@ -13,6 +13,9 @@ namespace Dyn.Web.Admin
     {
         public static Dyn.Database.entities.Devolucion Entity;
         public static List<Dyn.Database.entities.DetalleDevolucion> listaDevoluciones = new List<DetalleDevolucion>();
+        public static List<Dyn.Database.entities.DetalleDevolucion> listaDevolucionesOK = new List<DetalleDevolucion>();
+        public static List<Dyn.Database.entities.ReservaEdicion> listaReservas = new List<ReservaEdicion>();
+
         private int numeropaginas;
         public static int editDetalle;
 
@@ -78,21 +81,40 @@ namespace Dyn.Web.Admin
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            Database.logic.Devolucion lDevolucion = new Database.logic.Devolucion();
-            List<Database.entities.DetalleDevolucion> detalle = Entity.ListaDetalles;
-            for(int i = 0; i < detalle.Count; i++)
-            {
-                detalle[i].Devolver();
-                detalle[i].IdDetalleIngresoProductos = detalle[i].ProductoEdicion.ObtenerIdDetalleIngreso();
-            }
-            Entity.Fecha = DateTime.Now;
-            Entity.IdProveedor = Convert.ToInt32(lstProveedor.SelectedValue);
-            Entity.Descripcion = "";
+            //    FALTA REVISAR SI EXISTEN RESERVAS
+            
+            //if (gvReservas.Visible == false)
+            //{
+            
+            //    gvReservas.Visible = true;
+            //    panBusqueda.Visible = false;
+            //    panProductos.Visible = false;
+            //    Dyn.Database.logic.Estado lEstado = Dyn.Database.logic.Estado();
+            //    for (int i = 0; i < listaDevoluciones.Count; i++)
+            //    { 
+            //        if (listaDevoluciones[i].ProductoEdicion.Estado == lEstado.BuscarEstado("ReservaEdicion","
+            //    }
 
 
-            lDevolucion.Insert(Entity);
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
-            Response.Redirect("/Home.aspx");
+            //}
+            //else
+            //{
+                Database.logic.Devolucion lDevolucion = new Database.logic.Devolucion();
+                List<Database.entities.DetalleDevolucion> detalle = Entity.ListaDetalles;
+                for (int i = 0; i < detalle.Count; i++)
+                {
+                    detalle[i].Devolver();
+                    detalle[i].IdDetalleIngresoProductos = detalle[i].ProductoEdicion.ObtenerIdDetalleIngreso();
+                }
+                Entity.Fecha = DateTime.Now;
+                Entity.IdProveedor = Convert.ToInt32(lstProveedor.SelectedValue);
+                Entity.Descripcion = "";
+
+
+                lDevolucion.Insert(Entity);
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
+                Response.Redirect("/Home.aspx");
+            //}
 
         }
         //protected void btnCambiarCantidad_Click(object sender, EventArgs e)
@@ -224,6 +246,21 @@ namespace Dyn.Web.Admin
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("/Home.aspx");
+        }
+
+        protected void gvReservas_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+            //Entity.AgregarDetalle(listaReservas[e.NewSelectedIndex]);
+            //gvDevoluciones.DataSource = Entity.ListaDetalles;
+            //gvDevoluciones.Visible = true;
+            //gvDevoluciones.DataBind();
+
+            //listaReservas.Remove(listaDevoluciones[e.NewSelectedIndex]);
+            //gvReservas.DataSource = listaDevoluciones;
+            //gvReservas.Visible = true;
+            //gvReservas.DataBind();
+
+            //btnGuardar.Enabled = true;
         }
     }
 }
