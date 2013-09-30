@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Admin.Master" AutoEventWireup="true"
-    CodeBehind="ModificarReserva.aspx.cs" Inherits="Dyn.Web.Admin.ModificarReserva" %>
+    CodeBehind="MostrarReserva.aspx.cs" Inherits="Dyn.Web.Admin.ModificarReserva" %>
 
 <%@ MasterType VirtualPath="~/Masters/Admin.Master" %>
 <%@ Register Assembly="CollectionPager" Namespace="SiteUtils" TagPrefix="cc1" %>

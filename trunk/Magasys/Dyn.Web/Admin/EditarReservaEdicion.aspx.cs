@@ -7,10 +7,10 @@ using System.Web.UI.WebControls;
 
 namespace Dyn.Web.Admin
 {
-    public partial class EditarReserva : System.Web.UI.Page
+    public partial class EditarReservaEdicion : System.Web.UI.Page
     {
-        private Dyn.Database.logic.Reserva lReserva;
-        public Dyn.Database.entities.Reserva Entity;
+        private Dyn.Database.logic.ReservaEdicion lReservaEdicion;
+        public Dyn.Database.entities.ReservaEdicion Entity;
 
         public int IdEntity
         {
@@ -28,25 +28,29 @@ namespace Dyn.Web.Admin
         {
             Dyn.Database.logic.Cliente lCliente = new Database.logic.Cliente();
             Dyn.Database.entities.Cliente eCliente = new Database.entities.Cliente();
+            Dyn.Database.logic.ProductoEdicion lProductoEdicion = new Database.logic.ProductoEdicion();
+            Dyn.Database.entities.ProductoEdicion eProductoEdicion = new Database.entities.ProductoEdicion();
             Dyn.Database.logic.Producto lProducto = new Database.logic.Producto();
             Dyn.Database.entities.Producto eProducto = new Database.entities.Producto();
 
             if (!IsPostBack)
             {
-                this.Master.TituloPagina = "Reservas";
-                lReserva = new Dyn.Database.logic.Reserva();
+                this.Master.TituloPagina = "Reservas por Edici&oacute;n";
+                lReservaEdicion = new Dyn.Database.logic.ReservaEdicion();
                 if (Request["Id"] != null)
                 {
                     IdEntity = Convert.ToInt32(Request["Id"]);
-                    Entity = lReserva.Load_Reserva(IdEntity);
-                    ddlTipoReserva.SelectedValue = Entity.TipoReserva;
-                    ucBuscarProducto.CodigoProducto = Convert.ToInt32(Entity.IdProducto);
+                    Entity = lReservaEdicion.Load(IdEntity);
                     eCliente = lCliente.Load((int)(Entity.NroCliente));
                     lblNroClienteText.Text = eCliente.NroCliente.ToString();
                     lblNombApellText.Text = eCliente.Nombre.ToString() + " " + eCliente.Apellido.ToString();
-                    eProducto = lProducto.Load((int)Entity.IdProducto);
+                    eProductoEdicion = lProductoEdicion.Load(0, (int)Entity.IdProductoEdicion);
+                    eProducto = lProducto.Load((int)eProductoEdicion.IdProducto);
                     lblidProductoText.Text = eProducto.IdProducto.ToString();
                     lblNombreProductoText.Text = eProducto.Nombre.ToString();
+                    lblEdicionText.Text = eProductoEdicion.IdProductoEdicion.ToString();
+                    Session["Cantidad"] = null;
+                    Session["Cantidad"] = Entity.Cantidad.ToString();
                 }
                 DataBind();
             }
@@ -78,26 +82,47 @@ namespace Dyn.Web.Admin
 
         private void EditarReservaProducto()
         {
+            Dyn.Database.entities.ProductoEdicion productoEdicion = new Database.entities.ProductoEdicion();
+            Dyn.Database.logic.ProductoEdicion lProdEdic = new Dyn.Database.logic.ProductoEdicion();
             Dyn.Database.logic.Estado lEstado = new Dyn.Database.logic.Estado();
-            Entity = new Database.entities.Reserva();
-            lReserva = new Database.logic.Reserva();
+            Entity = new Database.entities.ReservaEdicion();
+            lReservaEdicion = new Database.logic.ReservaEdicion();
             String nombreEstado = String.Empty;
+            int edicion = 0;
+            int idProducto = 0;
+            int cantidad = 0;
 
-            Entity.CodReserva = IdEntity;
+            Entity.CodReservaEdicion = IdEntity;
             Entity.FechaInicio = Convert.ToDateTime(calFechaInicio.CalendarDate);
             Entity.FechaFin = Convert.ToDateTime(calFechaFin.CalendarDate);
-            Entity.TipoReserva = ddlTipoReserva.SelectedValue.ToString();
-            Entity.IdProducto = ucBuscarProducto.CodigoProducto;
-            Entity.Cantidad = Convert.ToInt16(txtCantidad.Text);
             Entity.IdEstado = lEstado.BuscarEstado("Reservas", "Confirmado");
 
-            lReserva.Update(Entity);
+            if (ucBuscarProductoEdicion.CodigoProducto > 0)
+            {
+                idProducto = ucBuscarProductoEdicion.CodigoProducto;
+                edicion = ucBuscarProductoEdicion.IdEdicion;
+                cantidad = int.Parse(txtCantidad.Text.Trim());
+            }
+            else
+            {
+                idProducto = int.Parse(lblidProductoText.Text.Trim());
+                edicion = int.Parse(lblEdicionText.Text.Trim());
+
+                cantidad = int.Parse(txtCantidad.Text.Trim()) - int.Parse(Session["Cantidad"].ToString());
+            }
+
+            Entity.IdProductoEdicion = edicion;
+            Entity.Cantidad = Convert.ToInt16(txtCantidad.Text);
+            lReservaEdicion.Update(Entity);
+
+            productoEdicion = lProdEdic.Load(idProducto, edicion);
+            productoEdicion.CantidadUnidades -= cantidad;  // Actualizar stock
+            lProdEdic.Update(productoEdicion); // Se actualiza la tabla ProductoEdicion  
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("/Admin/ListadoReserva.aspx");
         }
-
     }
 }
