@@ -13,6 +13,15 @@ namespace Dyn.Web.Admin {
     public partial class Devoluciones {
         
         /// <summary>
+        /// panBusqueda control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panBusqueda;
+        
+        /// <summary>
         /// txtNumeroDevolucion control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace Dyn.Web.Admin {
         protected global::System.Web.UI.WebControls.Button btnSeleccionarProveedor;
         
         /// <summary>
+        /// panProductos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panProductos;
+        
+        /// <summary>
         /// gvDetalles control.
         /// </summary>
         /// <remarks>
@@ -65,6 +83,33 @@ namespace Dyn.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvDetalles;
+        
+        /// <summary>
+        /// panReservas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panReservas;
+        
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
+        /// gvReservas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvReservas;
         
         /// <summary>
         /// gvDevoluciones control.
