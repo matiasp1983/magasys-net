@@ -44,11 +44,11 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="tittleprecios03" align="left">
+      <%--                  <td class="tittleprecios03" align="left">
                             <asp:Label ID="lblEntrega" runat="server" Text="Entrega:" Width="100px"></asp:Label>
                             <asp:RadioButton ID="rdbSiEntrega" runat="server" Text="Si" Checked="True" GroupName="Entrega" />
                             <asp:RadioButton ID="rdbNoEntrega" runat="server" Text="No" GroupName="Entrega" />
-                        </td>
+                        </td>--%>
                         <td class="tittleprecios03" align="left">
                             <asp:Label ID="lblPagado" runat="server" Text="Pagado:"></asp:Label>
                             <asp:RadioButton ID="rdbSiPagado" runat="server" Text="Si" Checked="True" GroupName="Pagado" />

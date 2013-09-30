@@ -90,7 +90,6 @@
             </table>
             <hr />
         </td>
-        </tr>
         <tr>
             <td colspan="2" class="tittleproducto">
                 <br />
@@ -125,7 +124,7 @@
         <tr>
             <td class="tittleprecios03" align="left">
                 <asp:Label ID="lblCantidad" runat="server" Text="Cantidad: "></asp:Label>
-                <asp:TextBox ID="txtCantidad" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtCantidad" runat="server" MaxLength="3" Width="25px"></asp:TextBox>
                 <asp:CompareValidator ID="cvCantidad" runat="server" ErrorMessage="Debe ingresar una catidad correcta"
                     Display="Dynamic" Operator="DataTypeCheck" ControlToValidate="txtCantidad" CssClass="tittleprecios03"
                     Type="Integer" ForeColor="Red"></asp:CompareValidator>
