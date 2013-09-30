@@ -45,7 +45,7 @@ namespace Dyn.Web.Admin
             LlenarProveedor();
             if (!IsPostBack)
             {
-                calFecha.SelectedDate = DateTime.Today;
+                calFecha.CalendarDate = DateTime.Today;
                 
                 if (Request["Id"] == null)
                 {
