@@ -47,7 +47,7 @@ namespace Dyn.Web.Admin
                 panSeleccion.Visible = false;
                 //this.Master.TituloPagina = "Ingreso de productos";
                 //WUCBuscarProducto1.Visible = false;
-                calFecha.SelectedDate = DateTime.Today;
+                calFecha.CalendarDate = DateTime.Today;
 
 
                 //repDetalle.DataSource = listaDetalles;
