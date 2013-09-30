@@ -79,20 +79,6 @@
             <td class="style25" align="left">
                 Fecha (*)
             </td>
-            <%--            <td class="style26">
-                <asp:Calendar ID="calFecha" runat="server" BackColor="White" 
-                    BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" 
-                    ForeColor="Black" Height="16px" NextPrevFormat="FullMonth" Width="220px">
-                    <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
-                    <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" 
-                        VerticalAlign="Bottom" />
-                    <OtherMonthDayStyle ForeColor="#999999" />
-                    <SelectedDayStyle BackColor="#333399" ForeColor="White" />
-                    <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" 
-                        Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
-                    <TodayDayStyle BackColor="#CCCCCC" />
-                </asp:Calendar>
-            </td>--%>
             <td class="tittleprecios03" align="left" style="width: 180px">
                 <uc4:Date ID="calFecha" runat="server" Visible="True" />
             </td>
@@ -133,13 +119,13 @@
                                     GridLines="None" AutoGenerateColumns="False" OnSelectedIndexChanging="gvProductos_SelectedIndexChanging">
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
-                                        <asp:BoundField DataField="IdProducto" HeaderText="ID Producto" >
+                                        <asp:BoundField DataField="IdProducto" HeaderText="N&uacute;mero Producto" >
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
                                         <asp:BoundField DataField="Nombre" HeaderText="Nombre" >
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" >
+                                        <asp:BoundField DataField="Descripcion" HeaderText="Descripci&oacute;n" >
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
                                         <asp:CommandField ShowSelectButton="True" ButtonType="Image" SelectImageUrl="~/images/Iconos/next.png"
@@ -189,7 +175,7 @@
                                         <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto">
                                             <ItemStyle Width="100px" HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:BoundField HeaderText="Descripcion" DataField="ProductoEdicion.Descripcion">
+                                        <asp:BoundField HeaderText="Descripci&oacute;n" DataField="ProductoEdicion.Descripcion">
                                             <ItemStyle Width="100px" HorizontalAlign="Center" />
                                         </asp:BoundField>
                                         <asp:BoundField HeaderText="Cantidad" DataField="CantidadUnidades">
@@ -246,7 +232,7 @@
                                 &nbsp;
                             </td>
                             <td class="style24">
-                                <asp:Label ID="lblMensaje" runat="server" Font-Size="Medium" ForeColor="Red" Text="* Existe Reservas para los Producto que se estan ingresando"></asp:Label>
+                                <asp:Label ID="lblMensaje" runat="server" Font-Size="Medium" ForeColor="Red" Text="* Existe Reservas para los Producto que se est&aacute;n ingresando"></asp:Label>
                             </td>
                             <td>
                                 &nbsp;
@@ -272,7 +258,7 @@
                                     GridLines="None" AutoGenerateColumns="False" OnSelectedIndexChanging="gvReservas_SelectedIndexChanging">
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
-                                        <asp:BoundField DataField="CodReserva" HeaderText="Codigo" >
+                                        <asp:BoundField DataField="CodReserva" HeaderText="C&oacute;digo" >
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
                                         <asp:BoundField DataField="Cliente.Nombre" HeaderText="Nombre" >
