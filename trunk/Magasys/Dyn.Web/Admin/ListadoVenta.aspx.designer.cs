@@ -31,6 +31,15 @@ namespace Dyn.Web.Admin {
         protected global::SiteUtils.CollectionPager CollectionPager;
         
         /// <summary>
+        /// lblInicio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblInicio;
+        
+        /// <summary>
         /// calFechaInicial control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace Dyn.Web.Admin {
         protected global::Calendar_Date calFechaInicial;
         
         /// <summary>
+        /// lblFin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFin;
+        
+        /// <summary>
         /// calFechaFinal control.
         /// </summary>
         /// <remarks>
@@ -47,6 +65,24 @@ namespace Dyn.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Calendar_Date calFechaFinal;
+        
+        /// <summary>
+        /// lblTipoVenta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTipoVenta;
+        
+        /// <summary>
+        /// ddlTipoVenta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoVenta;
         
         /// <summary>
         /// btnBuscar control.

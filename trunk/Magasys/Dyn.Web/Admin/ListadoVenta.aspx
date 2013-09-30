@@ -6,7 +6,8 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="act" %>
 <%@ Register Src="../controls/Login.ascx" TagName="Login" TagPrefix="uc2" %>
 <%@ Register Src="../controls/MenuAdminCategoria.ascx" TagName="MenuAdmin" TagPrefix="uc1" %>
-<%@ Register Src="../controls/Date.ascx" TagName="Date" TagPrefix="ucDate" %>
+<%@ Register Src="../controls/Date.ascx" TagName="Date" TagPrefix="uc3" %>
+<%@ Register Src="../controls/BuscarClientes.ascx" TagName="BuscarClientes" TagPrefix="uc4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
@@ -30,25 +31,43 @@
                     </td>
                 </tr>
                 <tr>
-                    <td width="100" class="tittleprecios03" align="left" valign="middle">
-                        Fecha inicial:
-                    </td>
-                    <td width="150" align="left" valign="middle">
-                        <ucDate:Date ID="calFechaInicial" runat="server" />
-                    </td>
-                    <td width="100" class="tittleprecios03" align="left" valign="middle">
-                        Fecha final:
-                    </td>
-                    <td width="150" align="left" valign="middle">
-                        <ucDate:Date ID="calFechaFinal" runat="server" />
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3">
-                        &nbsp;
-                    </td>
-                    <td align="left">
-                        <asp:Button ID="btnBuscar" CssClass="adminbutton" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
+                    <td class="tittleprecios03" align="left">
+                        <table>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="lblInicio" runat="server" Text="Fecha Inicial:" Width="139px"></asp:Label>
+                                </td>
+                                <td width="200">
+                                    <uc3:Date ID="calFechaInicial" runat="server" Visible="True" />
+                                </td>
+                                <td>
+                                    <asp:Label ID="lblFin" runat="server" Text="Fecha Final:"></asp:Label>
+                                </td>
+                                <td>
+                                    <uc3:Date ID="calFechaFinal" runat="server" Visible="True" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="tittleprecios03" align="left">
+                                    <asp:Label ID="lblTipoVenta" runat="server" Text="Forma de Pago:" Width="139px"></asp:Label>
+                                    <asp:DropDownList ID="ddlTipoVenta" runat="server">
+                                        <asp:ListItem>Cuenta corriente</asp:ListItem>
+                                        <asp:ListItem>Contado</asp:ListItem>
+                                    </asp:DropDownList>
+                                </td>
+                            </tr>
+<%--                            <tr>
+                                <td colspan="4">
+                                    <uc4:BuscarClientes ID="ucBuscarClientes" runat="server" />
+                                </td>
+                            </tr>--%>
+                            <tr>
+                                <td>
+                                    <asp:Button ID="btnBuscar" CssClass="adminbutton" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
+                                </td>
+                            </tr>
+                        </table>
+                        <hr />
                     </td>
                 </tr>
                 <tr>
@@ -62,7 +81,7 @@
                                     <br />
                                     <hr />
                                 </td>
-                               <%-- <td width="233" class="tittleproducto">
+                                <%-- <td width="233" class="tittleproducto">
                                     Cliente
                                     <br />
                                     <hr />

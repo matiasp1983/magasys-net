@@ -13,6 +13,15 @@ namespace Dyn.Web.Admin {
     public partial class Ingresos {
         
         /// <summary>
+        /// lblNroIngreso control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNroIngreso;
+        
+        /// <summary>
         /// txtNumeroVenta control.
         /// </summary>
         /// <remarks>
@@ -28,7 +37,7 @@ namespace Dyn.Web.Admin {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar calFecha;
+        protected global::Calendar_Date calFecha;
         
         /// <summary>
         /// panBusquedaProductos control.
@@ -38,6 +47,15 @@ namespace Dyn.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel panBusquedaProductos;
+        
+        /// <summary>
+        /// lblProveedor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblProveedor;
         
         /// <summary>
         /// lstProveedor control.

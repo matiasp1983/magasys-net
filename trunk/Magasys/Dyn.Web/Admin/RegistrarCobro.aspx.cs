@@ -33,6 +33,7 @@ namespace Dyn.Web.Admin
             if (ucBuscarClientes.NroCliente <= 0)
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Seleccione el cliente');", true);
+                return;
             }
 
             CargarVenta(ucBuscarClientes.NroCliente, Convert.ToDateTime(calFechaInicial.CalendarDate), Convert.ToDateTime(calFechaFinal.CalendarDate));
