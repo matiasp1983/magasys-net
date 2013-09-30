@@ -13,7 +13,10 @@ namespace Dyn.Database.logic
         {
             Dyn.Database.entities.ProductoEdicion objprodEdic = new Dyn.Database.entities.ProductoEdicion();
             CreateCommand("usp_ProductoEdicionVenta", true);
-            AddCmdParameter("@idProducto", idproducto, ParameterDirection.Input);
+            if (idproducto > 0)
+            {
+                AddCmdParameter("@idProducto", idproducto, ParameterDirection.Input);
+            }
             AddCmdParameter("@idProductoEdicion", idEdicion, ParameterDirection.Input);
             AddCmdParameter("@Action", 0, ParameterDirection.Input);
             ExecuteReader();
@@ -44,7 +47,7 @@ namespace Dyn.Database.logic
             }
             if (idEdicion != 0)
             {
-                AddCmdParameter("@idEdicion", idProveedor, ParameterDirection.Input);
+                AddCmdParameter("@idEdicion", idEdicion, ParameterDirection.Input);
             }
             AddCmdParameter("@nombre", nombreProd, ParameterDirection.Input);
             DataSet ds = GetDataSet();
