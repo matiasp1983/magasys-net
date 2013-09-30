@@ -93,7 +93,7 @@
             &nbsp;<asp:Label ID="lblidProductoText" runat="server" CssClass="tittleprecios03"></asp:Label><br />
         </td>
         <td>
-            &nbsp;<asp:Button ID="btnBuscarProductoEdicion" runat="server" Text="Buscar" OnClick="btnBuscarProductoEdicion_Click" />
+            &nbsp;<asp:Button ID="btnBuscarProductoEdicion" runat="server" Text="Buscar Productos" OnClick="btnBuscarProductoEdicion_Click" />
         </td>
     </tr>
     <tr>

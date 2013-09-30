@@ -35,5 +35,40 @@ namespace Dyn.Database.logic
             DataSet ds = GetDataSet();
             return Collection;
         }
+
+        public object InsertCobro(Dyn.Database.entities.Cobro objCobro)
+        {
+            object codCobro = null;
+            Dyn.Database.logic.Estado lEstado = new Dyn.Database.logic.Estado();
+            objCobro.IdEstado = Convert.ToInt16(lEstado.BuscarEstado("Cobros", "Cobrada"));
+            CreateCommand("usp_Cobro", true);
+            AddCmdParameter("@fechaCobro", DateTime.Now, ParameterDirection.Input);
+            AddCmdParameter("@nroCliente", objCobro.NroCliente, ParameterDirection.Input);
+            AddCmdParameter("@montoTotal", objCobro.MontoTotal, ParameterDirection.Input);
+            AddCmdParameter("@idEstado", objCobro.IdEstado, ParameterDirection.Input);
+            AddCmdParameter("@Action", 1, ParameterDirection.Input);
+            ExecuteReader();
+            while (Read())
+            {
+                codCobro = GetValue(0);
+            }
+            return codCobro;
+        }
+
+        public object InsertDetalleCobro(Dyn.Database.entities.Cobro objCobro)
+        {
+            object codDetalleCobro = null;
+            CreateCommand("usp_Cobro", true);
+            AddCmdParameter("@codCobro", objCobro.CodCobro, ParameterDirection.Input);
+            AddCmdParameter("@codVenta", objCobro.CodVenta, ParameterDirection.Input);
+            AddCmdParameter("@subtotal", objCobro.Subtotal, ParameterDirection.Input);
+            AddCmdParameter("@Action", 3, ParameterDirection.Input);
+            ExecuteReader();
+            while (Read())
+            {
+                codDetalleCobro = GetValue(0);
+            }
+            return codDetalleCobro;
+        }
     }
 }
