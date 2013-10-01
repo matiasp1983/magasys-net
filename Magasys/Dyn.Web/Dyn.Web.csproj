@@ -60,27 +60,40 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\ABMClientes.aspx" />
+    <Content Include="Admin\Administracion.aspx" />
     <Content Include="Admin\Coleccion.aspx" />
     <Content Include="Admin\Devoluciones.aspx" />
     <Content Include="Admin\Diario.aspx" />
+    <Content Include="Admin\EditarReserva.aspx" />
+    <Content Include="Admin\EditarReservaEdicion.aspx" />
     <Content Include="Admin\Entregas.aspx" />
     <Content Include="Admin\Genero.aspx" />
+    <Content Include="Admin\GestionClientes.aspx" />
+    <Content Include="Admin\GestionCobros.aspx" />
+    <Content Include="Admin\GestionDeposito.aspx" />
+    <Content Include="Admin\GestionReservas.aspx" />
+    <Content Include="Admin\GestionVentas.aspx" />
     <Content Include="Admin\Ingresos.aspx" />
     <Content Include="Admin\Libro.aspx" />
     <Content Include="Admin\ListadoClientes.aspx" />
+    <Content Include="Admin\ListadoCobro.aspx" />
     <Content Include="Admin\ListadoColeccion.aspx" />
     <Content Include="Admin\ListadoDiario.aspx" />
     <Content Include="Admin\ListadoGenero.aspx" />
     <Content Include="Admin\ListadoLibro.aspx" />
     <Content Include="Admin\ListadoPelicula.aspx" />
     <Content Include="Admin\ListadoProveedor.aspx" />
+    <Content Include="Admin\ListadoReserva.aspx" />
     <Content Include="Admin\ListadoRevista.aspx" />
     <Content Include="Admin\ListadoSuplemento.aspx" />
     <Content Include="Admin\ListadoVenta.aspx" />
+    <Content Include="Admin\MostrarReserva.aspx" />
+    <Content Include="Admin\MostrarReservaEdicion.aspx" />
     <Content Include="Admin\MostrarVenta.aspx" />
     <Content Include="Admin\Pelicula.aspx" />
     <Content Include="Admin\Producto.aspx" />
     <Content Include="Admin\Proveedor.aspx" />
+    <Content Include="Admin\RegistrarCobro.aspx" />
     <Content Include="Admin\Repartos.aspx" />
     <Content Include="Admin\Reserva.aspx" />
     <Content Include="Admin\Revista.aspx" />
@@ -100,14 +113,31 @@
     <Content Include="cal\up2.gif" />
     <Content Include="controls\BuscarClientes.ascx" />
     <Content Include="controls\BuscarProducto.ascx" />
-    <Content Include="controls\BuscarProductoEdicion.ascx" />
     <Content Include="controls\Date.ascx" />
     <Content Include="controls\Login.ascx" />
     <Content Include="controls\MenuAdmin.ascx" />
     <Content Include="controls\MenuAdminCategoria.ascx" />
+    <Content Include="controls\BuscarProductoEdicion.ascx" />
     <Content Include="controls\Ventas.ascx" />
     <Content Include="controls\WUCBuscarProducto.ascx" />
     <Content Include="controls\WUCBuscarReservas.ascx" />
+    <Content Include="GridView\bottom-left.png" />
+    <Content Include="GridView\bottom-mid.png" />
+    <Content Include="GridView\bottom-right.png" />
+    <Content Include="GridView\dialog.css" />
+    <Content Include="GridView\footer.gif" />
+    <Content Include="GridView\grid.css" />
+    <Content Include="GridView\left.png" />
+    <Content Include="GridView\minus.png" />
+    <Content Include="GridView\pager.css" />
+    <Content Include="GridView\pager_bg.gif" />
+    <Content Include="GridView\plus.png" />
+    <Content Include="GridView\right.png" />
+    <Content Include="GridView\sprite.png" />
+    <Content Include="GridView\subgrid.css" />
+    <Content Include="GridView\top-left.png" />
+    <Content Include="GridView\top-mid.png" />
+    <Content Include="GridView\top-right.png" />
     <Content Include="Home.aspx" />
     <Content Include="images\BarraMenuCategorias_01.jpg" />
     <Content Include="images\BarraMenuCategorias_02.jpg" />
@@ -116,6 +146,9 @@
     <Content Include="images\BarraTituloMenuCategorias_03.jpg" />
     <Content Include="images\BarraTituloSeccion_02.jpg" />
     <Content Include="images\BGFechaYHora.jpg" />
+    <Content Include="images\Boton_buscar.png" />
+    <Content Include="images\Boton_cancelar.png" />
+    <Content Include="images\Boton_editar.png" />
     <Content Include="images\eliminar.jpg" />
     <Content Include="images\Flecha.gif" />
     <Content Include="images\Header.jpg" />
@@ -365,6 +398,7 @@
     <Content Include="images\TopSuperiorDer_admin.jpg" />
     <Content Include="mainBanner.swf" />
     <Content Include="scripts\AC_RunActiveContent.js" />
+    <Content Include="scripts\jquery-1.2.3.min.js" />
     <Content Include="Theme\admin.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -385,6 +419,13 @@
     </Compile>
     <Compile Include="Admin\ABMClientes.aspx.designer.cs">
       <DependentUpon>ABMClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Administracion.aspx.cs">
+      <DependentUpon>Administracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Administracion.aspx.designer.cs">
+      <DependentUpon>Administracion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Coleccion.aspx.cs">
       <DependentUpon>Coleccion.aspx</DependentUpon>
@@ -407,6 +448,20 @@
     <Compile Include="Admin\Diario.aspx.designer.cs">
       <DependentUpon>Diario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\EditarReserva.aspx.cs">
+      <DependentUpon>EditarReserva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditarReserva.aspx.designer.cs">
+      <DependentUpon>EditarReserva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditarReservaEdicion.aspx.cs">
+      <DependentUpon>EditarReservaEdicion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditarReservaEdicion.aspx.designer.cs">
+      <DependentUpon>EditarReservaEdicion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Entregas.aspx.cs">
       <DependentUpon>Entregas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -420,6 +475,41 @@
     </Compile>
     <Compile Include="Admin\Genero.aspx.designer.cs">
       <DependentUpon>Genero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GestionClientes.aspx.cs">
+      <DependentUpon>GestionClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GestionClientes.aspx.designer.cs">
+      <DependentUpon>GestionClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GestionCobros.aspx.cs">
+      <DependentUpon>GestionCobros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GestionCobros.aspx.designer.cs">
+      <DependentUpon>GestionCobros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GestionDeposito.aspx.cs">
+      <DependentUpon>GestionDeposito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GestionDeposito.aspx.designer.cs">
+      <DependentUpon>GestionDeposito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GestionReservas.aspx.cs">
+      <DependentUpon>GestionReservas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GestionReservas.aspx.designer.cs">
+      <DependentUpon>GestionReservas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GestionVentas.aspx.cs">
+      <DependentUpon>GestionVentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GestionVentas.aspx.designer.cs">
+      <DependentUpon>GestionVentas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Ingresos.aspx.cs">
       <DependentUpon>Ingresos.aspx</DependentUpon>
@@ -441,6 +531,13 @@
     </Compile>
     <Compile Include="Admin\ListadoClientes.aspx.designer.cs">
       <DependentUpon>ListadoClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ListadoCobro.aspx.cs">
+      <DependentUpon>ListadoCobro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ListadoCobro.aspx.designer.cs">
+      <DependentUpon>ListadoCobro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ListadoColeccion.aspx.cs">
       <DependentUpon>ListadoColeccion.aspx</DependentUpon>
@@ -484,6 +581,13 @@
     <Compile Include="Admin\ListadoProveedor.aspx.designer.cs">
       <DependentUpon>ListadoProveedor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ListadoReserva.aspx.cs">
+      <DependentUpon>ListadoReserva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ListadoReserva.aspx.designer.cs">
+      <DependentUpon>ListadoReserva.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\ListadoRevista.aspx.cs">
       <DependentUpon>ListadoRevista.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -504,6 +608,20 @@
     </Compile>
     <Compile Include="Admin\ListadoVenta.aspx.designer.cs">
       <DependentUpon>ListadoVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MostrarReserva.aspx.cs">
+      <DependentUpon>MostrarReserva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MostrarReserva.aspx.designer.cs">
+      <DependentUpon>MostrarReserva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MostrarReservaEdicion.aspx.cs">
+      <DependentUpon>MostrarReservaEdicion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MostrarReservaEdicion.aspx.designer.cs">
+      <DependentUpon>MostrarReservaEdicion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\MostrarVenta.aspx.cs">
       <DependentUpon>MostrarVenta.aspx</DependentUpon>
@@ -532,6 +650,13 @@
     </Compile>
     <Compile Include="Admin\Proveedor.aspx.designer.cs">
       <DependentUpon>Proveedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RegistrarCobro.aspx.cs">
+      <DependentUpon>RegistrarCobro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RegistrarCobro.aspx.designer.cs">
+      <DependentUpon>RegistrarCobro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Repartos.aspx.cs">
       <DependentUpon>Repartos.aspx</DependentUpon>
@@ -582,13 +707,6 @@
     <Compile Include="controls\BuscarProducto.ascx.designer.cs">
       <DependentUpon>BuscarProducto.ascx</DependentUpon>
     </Compile>
-    <Compile Include="controls\BuscarProductoEdicion.ascx.cs">
-      <DependentUpon>BuscarProductoEdicion.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\BuscarProductoEdicion.ascx.designer.cs">
-      <DependentUpon>BuscarProductoEdicion.ascx</DependentUpon>
-    </Compile>
     <Compile Include="controls\Date.ascx.cs">
       <DependentUpon>Date.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -616,6 +734,13 @@
     </Compile>
     <Compile Include="controls\MenuAdminCategoria.ascx.designer.cs">
       <DependentUpon>MenuAdminCategoria.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\BuscarProductoEdicion.ascx.cs">
+      <DependentUpon>BuscarProductoEdicion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\BuscarProductoEdicion.ascx.designer.cs">
+      <DependentUpon>BuscarProductoEdicion.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\Ventas.ascx.cs">
       <DependentUpon>Ventas.ascx</DependentUpon>
@@ -677,7 +802,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>3130</DevelopmentServerPort>
+          <DevelopmentServerPort>22812</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
