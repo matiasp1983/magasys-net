@@ -17,6 +17,10 @@
     <form id="form1" runat="server">
     <!--El ScriptManager es necesario para utilizar Ajax-->
     <asp:ScriptManager ID="ScriptManager1" runat="server">
+       <Scripts>
+           <asp:ScriptReference Path="~/scripts/jquery-1.2.3.min.js" ScriptMode="Release" />
+       </Scripts>
+   </asp:ScriptManager>
     </asp:ScriptManager>
     <table width="960" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
