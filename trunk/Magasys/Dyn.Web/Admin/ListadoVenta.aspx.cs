@@ -41,7 +41,7 @@ namespace Dyn.Web.Admin
             int estado = Convert.ToInt16(lEstado.BuscarEstado("Ventas", "Entregado-Pagado"));// definir estado
             //int nroCliente = ucBuscarClientes.NroCliente;
             string formaPago = ddlTipoVenta.SelectedValue.ToString();
-            DataSet ds = lVenta.SeleccionarVentasPorNombrePaginadoAdmin(fechainicial, fechafinal, estado, 3, formaPago, Pagina, ref numeropaginas);
+            DataSet ds = lVenta.SeleccionarVentasPorNombrePaginadoAdmin(fechainicial, fechafinal, estado, formaPago, Pagina, ref numeropaginas);
             int[] array;
             array = new int[numeropaginas];
             CollectionPager.DataSource = array;

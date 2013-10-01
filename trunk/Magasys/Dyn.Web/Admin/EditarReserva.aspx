@@ -20,8 +20,7 @@
                             <asp:Label ID="lblFecha" runat="server" Text="Fecha de reserva:"></asp:Label>
                         </td>
                         <td class="tittleprecios03" align="left">
-                            <asp:Label ID="lblFechaText" runat="server" Text="<%# Entity.FechaReserva %>" 
-                                Width="160px"></asp:Label>
+                            <asp:Label ID="lblFechaText" runat="server" Width="160px"></asp:Label>
                         </td>
                         <td class="tittleprecios03" align="left">
                             <asp:Label ID="lblTipoReserva" runat="server" Text="  Tipo de reserva:" Width="120px"></asp:Label>
@@ -111,8 +110,8 @@
         <tr>
             <td class="tittleprecios03" align="left">
                 <asp:Label ID="lblCantidad" runat="server" Text="Cantidad: "></asp:Label>
-                <asp:TextBox ID="txtCantidad" runat="server" Text="<%# Entity.Cantidad %>" 
-                    MaxLength="3" Width="25px"></asp:TextBox>
+                <asp:TextBox ID="txtCantidad" runat="server" Text="<%# Entity.Cantidad %>" MaxLength="3"
+                    Width="25px"></asp:TextBox>
                 <asp:CompareValidator ID="cvCantidad" runat="server" ErrorMessage="Debe ingresar una catidad correcta"
                     Display="Dynamic" Operator="DataTypeCheck" ControlToValidate="txtCantidad" CssClass="tittleprecios03"
                     Type="Integer" ForeColor="Red"></asp:CompareValidator>

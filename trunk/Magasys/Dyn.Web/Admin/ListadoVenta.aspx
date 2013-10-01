@@ -81,11 +81,6 @@
                                     <br />
                                     <hr />
                                 </td>
-                                <%-- <td width="233" class="tittleproducto">
-                                    Cliente
-                                    <br />
-                                    <hr />
-                                </td>--%>
                                 <td width="233" class="tittleproducto">
                                     Fecha venta
                                     <br />
@@ -105,10 +100,6 @@
                                                 <asp:HyperLink ID="hpCodVenta" CssClass="tittleprecios03" NavigateUrl='<%# "~/Admin/MostrarVenta.aspx?Id=" + Eval("IdVenta") %>'
                                                     Text='<%# Eval("IdVenta") %>' runat="server"></asp:HyperLink>
                                             </td>
-                                            <%--<td width="233">
-                                                <asp:Label ID="lblCliente" CssClass="tittleprecios03" Text='<%# Eval("NombreCliente") %>'
-                                                    runat="server"></asp:Label>
-                                            </td>--%>
                                             <td width="233">
                                                 <asp:Label ID="lblFechaVenta" CssClass="tittleprecios03" Text='<%# Eval("Fecha") %>'
                                                     runat="server"></asp:Label>

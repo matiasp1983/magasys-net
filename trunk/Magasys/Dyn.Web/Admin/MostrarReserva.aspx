@@ -20,8 +20,7 @@
                             <asp:Label ID="lblFecha" runat="server" Text="Fecha de reserva:"></asp:Label>
                         </td>
                         <td class="tittleprecios03" align="left">
-                            <asp:Label ID="lblFechaText" runat="server" Text="<%# Entity.FechaReserva %>" 
-                                Width="160px"></asp:Label>
+                            <asp:Label ID="lblFechaText" runat="server" Width="160px" EnableTheming="True"></asp:Label>
                         </td>
                         <td class="tittleprecios03" align="left">
                             <asp:Label ID="lblTipoReserva" runat="server" Text="  Tipo de reserva:" Width="120px"></asp:Label>

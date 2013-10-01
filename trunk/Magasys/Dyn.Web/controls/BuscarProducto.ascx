@@ -137,7 +137,7 @@
                                         </tr>
                                         <tr>
                                             <td class="tittleprecios03" align="left">
-                                                <asp:Label ID="lblProveedor" runat="server" Text="Proveedor: " Width="135px"></asp:Label>
+                                                <asp:Label ID="lblProveedor" runat="server" Text="Proveedor: " Width="145px"></asp:Label>
                                                 <asp:DropDownList CssClass="tittleprecios03" ID="ddlProveedor" runat="server" Width="159px">
                                                 </asp:DropDownList>
                                             </td>
@@ -145,13 +145,13 @@
                                     </table>
                                     <asp:Label ID="lblMensajeError" runat="server" Text="" ForeColor="Red"></asp:Label>
                                     <br />
-                                    <br />
                                     <table style="background-color: #006CCC; width: 412px;">
                                         <tr>
                                             <td class="tittleproducto">
                                                 &nbsp; &nbsp;
                                             </td>
-                                            <td class="tittleproducto" style="background-color: #006CCC; color: White">
+                                            <td class="tittleproducto" style="background-color: #006CCC; color: White" 
+                                                width="100">
                                                 <table style="width: 200px">
                                                     <tr>
                                                         <td>
@@ -169,6 +169,7 @@
                                             </td>
                                         </tr>
                                     </table>
+                                    <br />
                                     <div style="overflow: scroll; height: 295px; width: 100%">
                                         <div>
                                             <asp:Repeater ID="rptProductos" runat="server">
@@ -182,9 +183,9 @@
                                                                 Font-Size="0px" OnCheckedChanged="rdbProductoSeccionado_OnCheckedChanged" AutoPostBack="true" />
                                                         </td>
                                                         <td>
-                                                            <asp:Label CssClass="tittleprecios03" ID="lblNombre" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "nombre")%>'></asp:Label>
+                                                            <asp:Label CssClass="tittleprecios03" ID="lblNombre" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "nombre")%>' Width="125"></asp:Label>
                                                         </td>
-                                                        <td>
+                                                        <td align="left">
                                                             <asp:Label ID="lblPesosPrecioUnitario" runat="server" Text="Label" CssClass="tittleprecios03">$ </asp:Label><asp:Label
                                                                 CssClass="tittleprecios03" ID="lblPrecioUnitario" runat="server" Text='<%#String.Format("{0:0.00}",DataBinder.Eval(Container.DataItem, "precio"))%>'></asp:Label>
                                                         </td>
