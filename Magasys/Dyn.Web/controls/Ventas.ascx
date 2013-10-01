@@ -114,7 +114,7 @@
                             <td class="tittleproducto" style="width: 155px; display: none;">
                                 idProducto
                             </td>
-                            <td class="tittleproducto" style="width: 400px">
+                            <td class="tittleproducto" style="width: 300px">
                                 Nombre
                             </td>
                             <td class="tittleproducto" style="width: 160px">
@@ -147,7 +147,7 @@
                                             <asp:Label CssClass="tittleprecios03" ID="lblidProducto" runat="server" Text='<%# Eval("idProducto") %>'></asp:Label>
                                         </td>
                                         <td style="width: 175px">
-                                            <table style="width: 310px">
+                                            <table style="width: 200px">
                                                 <tr>
                                                     <td>
                                                         <asp:Label CssClass="tittleprecios03" ID="lblNombre" runat="server" Text='<%# Eval("nombre") %>'></asp:Label>

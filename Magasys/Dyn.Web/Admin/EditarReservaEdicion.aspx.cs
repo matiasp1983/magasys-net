@@ -51,6 +51,7 @@ namespace Dyn.Web.Admin
                     lblEdicionText.Text = eProductoEdicion.IdProductoEdicion.ToString();
                     Session["Cantidad"] = null;
                     Session["Cantidad"] = Entity.Cantidad.ToString();
+                    lblFechaText.Text = string.Format("{0:dd/MM/yyyy}", Entity.FechaReservaEdicion);
                 }
                 DataBind();
             }
