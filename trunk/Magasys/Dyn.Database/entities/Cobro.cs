@@ -11,17 +11,26 @@ namespace Dyn.Database.entities
 
         public Cobro() { }
 
-        public Cobro(Int32? codCob, DateTime? fechaCob, Int32? nroCli, Double? total, Int16? idEst, Int32? idDetCob, Int32? codVen, Double? subtot)
+        public Cobro(Int32? codCob, DateTime? fechaCob, Int32? nroCli, Double? total, Int16? idEst)
         {
             codCobro = codCob;
             fechaCobro = fechaCob;
             nroCliente = nroCli;
             montoTotal = total;
             idEstado = idEst;
-            idDetalleCobro = idDetCob;
-            codVenta = codVen;
-            subtotal = subtot;
         }
+
+        //public Cobro(Int32? codCob, DateTime? fechaCob, Int32? nroCli, Double? total, Int16? idEst, Int32? idDetCob, Int32? codVen, Double? subtot)
+        //{
+        //    codCobro = codCob;
+        //    fechaCobro = fechaCob;
+        //    nroCliente = nroCli;
+        //    montoTotal = total;
+        //    idEstado = idEst;
+        //    idDetalleCobro = idDetCob;
+        //    codVenta = codVen;
+        //    subtotal = subtot;
+        //}
 
         public Cobro(IDataRecord obj)
         {
@@ -29,10 +38,50 @@ namespace Dyn.Database.entities
             fechaCobro = Convert.ToDateTime(obj["fechaCobro"]);
             nroCliente = Convert.ToInt32(obj["nroCliente"]);
             montoTotal = Convert.ToDouble(obj["montoTotal"]);
-            idEstado = Convert.ToInt16(obj["idEstado"]);
-            idDetalleCobro = Convert.ToInt32(obj["idDetalleCobro"]);
-            codVenta = Convert.ToInt32(obj["codVenta"]);
-            subtotal = Convert.ToInt32(obj["subtotal"]);
+            //if (obj["codCobro"] != DBNull.Value)
+            //{
+            //    codCobro = Convert.ToInt32(obj["codCobro"]);
+            //}
+            //else
+            //{
+            //    codCobro = null;
+            //}
+
+            //if (obj["fechaCobro"] != DBNull.Value)
+            //{
+            //    fechaCobro = Convert.ToDateTime(obj["fechaCobro"]);
+            //}
+            //else
+            //{
+            //    fechaCobro = null;
+            //}
+
+            //if (obj["nroCliente"] != DBNull.Value)
+            //{
+            //    nroCliente = Convert.ToInt32(obj["nroCliente"]);
+            //}
+            //else
+            //{
+            //    nroCliente = null;
+            //}
+
+            //if (obj["montoTotal"] != DBNull.Value)
+            //{
+            //    montoTotal = Convert.ToDouble(obj["montoTotal"]);
+            //}
+            //else
+            //{
+            //    montoTotal = null;
+            //}   
+
+            //if (obj["idEstado"] != DBNull.Value)
+            //{
+            //    idEstado = Convert.ToInt16(obj["idEstado"]);
+            //}
+            //else
+            //{
+            //    idEstado = null;
+            //}
         }
 
         #endregion
@@ -77,30 +126,6 @@ namespace Dyn.Database.entities
         {
             get { return idEstado; }
             set { idEstado = value; }
-        }
-
-        private Int32? idDetalleCobro;
-
-        public Int32? IdDetalleCobro
-        {
-            get { return idDetalleCobro; }
-            set { idDetalleCobro = value; }
-        }
-
-        private Int32? codVenta;
-
-        public Int32? CodVenta
-        {
-            get { return codVenta; }
-            set { codVenta = value; }
-        }
-
-        private Double? subtotal;
-
-        public Double? Subtotal
-        {
-            get { return subtotal; }
-            set { subtotal = value; }
         }
         
         #endregion

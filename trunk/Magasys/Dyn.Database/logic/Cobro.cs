@@ -55,13 +55,13 @@ namespace Dyn.Database.logic
             return codCobro;
         }
 
-        public object InsertDetalleCobro(Dyn.Database.entities.Cobro objCobro)
+        public object InsertDetalleCobro(Dyn.Database.entities.DetalleCobro objCobroDetalle)
         {
             object codDetalleCobro = null;
             CreateCommand("usp_Cobro", true);
-            AddCmdParameter("@codCobro", objCobro.CodCobro, ParameterDirection.Input);
-            AddCmdParameter("@codVenta", objCobro.CodVenta, ParameterDirection.Input);
-            AddCmdParameter("@subtotal", objCobro.Subtotal, ParameterDirection.Input);
+            AddCmdParameter("@codCobro", objCobroDetalle.CodCobro, ParameterDirection.Input);
+            AddCmdParameter("@codVenta", objCobroDetalle.CodVenta, ParameterDirection.Input);
+            AddCmdParameter("@subtotal", objCobroDetalle.Subtotal, ParameterDirection.Input);
             AddCmdParameter("@Action", 3, ParameterDirection.Input);
             ExecuteReader();
             while (Read())
