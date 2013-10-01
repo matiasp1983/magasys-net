@@ -102,6 +102,7 @@ namespace Dyn.Web.Admin
 
         protected void btnGragar_Click(object sender, EventArgs e)
         {
+            Dyn.Database.entities.DetalleCobro eDetalleCobro = new Database.entities.DetalleCobro();
             lCobro = new Database.logic.Cobro();
             lVenta = new Database.logic.Venta();
             Entity = new Database.entities.Cobro();
@@ -129,13 +130,14 @@ namespace Dyn.Web.Admin
                         CheckBox check = row.FindControl("chkVenta") as CheckBox;
 
                         if (check.Checked) //obtiener la key de la row marcada
-                        {   
-                            Entity.CodVenta = Convert.ToInt32(codigoVenta.Text);
+                        {
+                            eDetalleCobro.CodCobro = Entity.CodCobro;
+                            eDetalleCobro.CodVenta = Convert.ToInt32(codigoVenta.Text);
                             string cadena = montoTotal.Text.TrimStart('$');
-                            Entity.Subtotal = Convert.ToDouble(cadena);
-                            lCobro.InsertDetalleCobro(Entity);
+                            eDetalleCobro.Subtotal = Convert.ToDouble(cadena);
+                            lCobro.InsertDetalleCobro(eDetalleCobro);
                             // Actualizar el estado de la Venta a Entregado-Pagado
-                            lVenta.cambiarEstadoEntregadoPagado((int)Entity.CodVenta);
+                            lVenta.cambiarEstadoEntregadoPagado((int)eDetalleCobro.CodVenta);
                         }
                     }
                 }
