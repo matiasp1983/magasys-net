@@ -45,7 +45,7 @@ namespace Dyn.Database.entities
 		{            
             nroCliente = Convert.ToInt32(obj["nroCliente"]);
 
-            tipoDocumento.IdTipoDocumento = Convert.ToInt32(obj["tipoDocumento"]);
+            //tipoDocumento.IdTipoDocumento = Convert.ToInt32(obj["tipoDocumento"]);
             nroDocumento = Convert.ToInt32(obj["nroDocumento"]);
 
             nombre = Convert.ToString(obj["nombre"]);

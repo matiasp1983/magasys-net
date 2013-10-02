@@ -40,15 +40,6 @@ namespace Dyn.Web.Admin {
         protected global::System.Web.UI.WebControls.DropDownList lstTipoDoc;
         
         /// <summary>
-        /// DSTipoDocumento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource DSTipoDocumento;
-        
-        /// <summary>
         /// cvDocumento control.
         /// </summary>
         /// <remarks>
