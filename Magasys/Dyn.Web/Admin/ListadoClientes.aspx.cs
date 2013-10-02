@@ -30,8 +30,8 @@ namespace Dyn.Web.Admin
             if (!IsPostBack)
             {
                 this.Master.TituloPagina = "Clientes";
-                CargarCliente(null, null, null, null, null);
-
+                //CargarCliente(null, null, null, null, null);
+                LlenarTipoDocumento();
             }
             gvClientes.Visible = true;
         }
@@ -103,7 +103,23 @@ namespace Dyn.Web.Admin
         {
             Response.Redirect("~/Admin/ABMClientes.aspx?Id=" + gvClientes.SelectedDataKey.Value);
         }
+        public void LlenarTipoDocumento()
+        {
+            Dyn.Database.logic.TipoDocumento lTipoDoc = new Dyn.Database.logic.TipoDocumento();
+            List<Dyn.Database.entities.TipoDocumento> listaTipoDoc = lTipoDoc.SeleccionarTodosLosTiposDocumento();
+            ListItem li;
+            lstTipoDoc.Items.Clear();
 
+            for (int i = 0; i < listaTipoDoc.Count; i++)
+            {
+                li = new ListItem();
+                li = new ListItem(listaTipoDoc[i].Nombre, listaTipoDoc[i].IdTipoDocumento.ToString());
+                lstTipoDoc.Items.Add(li);
+            }
+
+
+
+        }
 
     }
 }

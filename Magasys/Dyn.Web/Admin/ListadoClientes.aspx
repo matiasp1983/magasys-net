@@ -7,6 +7,12 @@
 <%@ Register src="../controls/MenuAdminCategoria.ascx" tagname="MenuAdmin" tagprefix="uc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .style1
+        {
+            width: 225px;
+        }
+    </style>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
@@ -33,15 +39,10 @@
                     <td width="100" align="left" class="tittleprecios03">
                         Tipo Documento
                     </td>
-                    <td align="left" class="style3">
+                    <td align="left" class="style1">
                         <asp:DropDownList ID="lstTipoDoc" runat="server" CssClass="tittleprecios03" 
-                            DataSourceID="DSTipoDocumento" DataTextField="nombre" 
-                            DataValueField="idTipoDocumento" 
                             onselectedindexchanged="lstTipoDoc_SelectedIndexChanged">
                         </asp:DropDownList>
-                        <asp:SqlDataSource ID="DSTipoDocumento" runat="server" 
-                            ConnectionString="<%$ ConnectionStrings:MagasysConnectionString %>" 
-                            SelectCommand="SELECT * FROM [TipoDocumento]"></asp:SqlDataSource>
                     </td>
                     <td align="left" class="tittleprecios03" width="100">
                         Numero Documento</td>
@@ -63,7 +64,7 @@
                 <tr>
                     <td align="left" class="tittleprecios03" width="100">
                         Nombre</td>
-                    <td align="left" class="style3">
+                    <td align="left" class="style1">
                         <asp:TextBox ID="txtNombre" runat="server" CssClass="tittleprecios03" 
                             MaxLength="50"></asp:TextBox>
                         <br />
@@ -80,7 +81,7 @@
                 <tr>
                     <td align="left" class="tittleprecios03" width="100">
                         Alias</td>
-                    <td align="left" class="style3">
+                    <td align="left" class="style1">
                         <asp:TextBox ID="txtAlias" runat="server" CssClass="tittleprecios03" 
                             MaxLength="100"></asp:TextBox>
                         <br />
@@ -106,7 +107,7 @@
                 <tr>
                     <td align="left" class="tittleprecios03" width="100">
                         &nbsp;</td>
-                    <td align="left" class="style3">
+                    <td align="left" class="style1">
                         &nbsp;</td>
                     <td>
                         &nbsp;</td>

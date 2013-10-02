@@ -195,7 +195,7 @@ namespace Dyn.Web.Admin
                 Dyn.Database.logic.TipoDocumento lTipoDoc = new Dyn.Database.logic.TipoDocumento();
                 List<Dyn.Database.entities.TipoDocumento> listaTipoDoc = lTipoDoc.SeleccionarTodosLosTiposDocumento();
                 ListItem li;
-                lstLocalidades.Items.Clear();
+                lstTipoDoc.Items.Clear();
 
                 for (int i = 0; i < listaTipoDoc.Count; i++)
                 {
