@@ -28,7 +28,9 @@
             <td class="style1">
                 &nbsp;</td>
             <td class="style27">
-                &nbsp;</td>
+                <asp:Button ID="btnUltimoReparto" runat="server" 
+                    onclick="btnUltimoReparto_Click" Text="Buscar Ultimo Reparto" />
+            </td>
             <td>
                 &nbsp;</td>
         </tr>
@@ -97,7 +99,7 @@
             <td class="style28">
                 </td>
             <td class="style29">
-                <asp:Panel ID="panResultados" runat="server">
+                <asp:Panel ID="panResultados" runat="server" Visible="False">
                     <table style="width:100%;">
                         <tr>
                             <td colspan="3" class="tittleproducto">
@@ -124,6 +126,10 @@
                                         <asp:BoundField DataField="ProductoEdicion.Descripcion" 
                                             HeaderText="Descripcion" />
                                         <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" />
+                                        <asp:BoundField DataField="Cliente.Nombre" HeaderText="Nombre" />
+                                        <asp:BoundField DataField="Cliente.Apellido" HeaderText="Apellido" />
+                                        <asp:BoundField DataField="Cliente.DomicilioCalle" HeaderText="Calle" />
+                                        <asp:BoundField DataField="Cliente.DomicilioNro" HeaderText="Numero" />
                                         <asp:CommandField ButtonType="Image" SelectImageUrl="~/images/Iconos/next.png" 
                                             SelectText="" ShowSelectButton="True" />
                                     </Columns>
@@ -168,7 +174,7 @@
                 &nbsp;</td>
 
             <td>
-                <asp:Panel ID="panEntregas" runat="server">
+                <asp:Panel ID="panEntregas" runat="server" Visible="False">
                     <table style="width:100%;">
                         <tr>
                             <td colspan="3" class="tittleproducto">

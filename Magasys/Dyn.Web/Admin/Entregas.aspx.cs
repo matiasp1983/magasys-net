@@ -13,7 +13,11 @@ namespace Dyn.Web.Admin
         public static List<Dyn.Database.entities.Entrega> listaEntregas = new List<Database.entities.Entrega>();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                listaReservas.Clear();
+                listaEntregas.Clear();
+            }
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
@@ -21,6 +25,9 @@ namespace Dyn.Web.Admin
             Int32 nroCliente = ucBuscarClientes.NroCliente;
             Dyn.Database.logic.ReservaEdicion lReservas = new Database.logic.ReservaEdicion();
             listaReservas = lReservas.BuscarReservasPorCliente(nroCliente);
+            btnGuardar.Enabled = false;
+            panBusqueda.Visible = false;
+            panResultados.Visible = true;
             gvReservas.DataSource = listaReservas;
             gvReservas.DataBind();
 
@@ -56,8 +63,10 @@ namespace Dyn.Web.Admin
                 listaEntregas[i].ReservaEdicion.ProductoEdicion.CantidadUnidades -= listaEntregas[i].ReservaEdicion.Cantidad;
                 lProdEdi.Update(listaEntregas[i].ReservaEdicion.ProductoEdicion);
 
-                Response.Redirect("/Home.aspx");
+                
             }
+            Response.Redirect("/Home.aspx");
+
         }
 
         protected void gvReservas_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
@@ -73,6 +82,7 @@ namespace Dyn.Web.Admin
             gvEntregas.Visible = true;
             gvEntregas.DataBind();
             btnGuardar.Enabled = true;
+            panEntregas.Visible = true;
         }
 
         protected void gvEntregas_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -95,6 +105,20 @@ namespace Dyn.Web.Admin
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("/Home.aspx");
+        }
+
+        protected void btnUltimoReparto_Click(object sender, EventArgs e)
+        {
+            Dyn.Database.logic.Reparto lReparto = new Database.logic.Reparto();
+            listaReservas = lReparto.BuscarUltimoReparto();
+            gvReservas.DataSource = listaReservas;
+            gvReservas.DataBind();
+            gvEntregas.DataSource = listaEntregas;
+            gvEntregas.Visible = true;
+            gvEntregas.DataBind();
+            btnGuardar.Enabled = false;
+            panBusqueda.Visible = false;
+            panResultados.Visible = true;
         }
     }
 }
