@@ -52,11 +52,10 @@ namespace Dyn.Web.Admin
                 panReservas.Visible = false;
                 LlenarProveedor();
 
-                gvDetalle.DataSource = null;
-                gvProductos.DataSource = null;
-                gvReservas.DataSource = null;
-                gvReservasOk.DataSource = null;
-                
+                listaProductos.Clear();
+                listaReservasOK.Clear();
+                listaReservas.Clear();
+
                 
                 //repDetalle.DataSource = listaDetalles;
                 lProducto = new Database.logic.Producto();
@@ -149,6 +148,7 @@ namespace Dyn.Web.Admin
                     //Cambiar despues que se cargue la lista de estados
                     nueva.IdEstado = lEstado.BuscarEstado("ReservasEdicion", "Confirmado");
                     nueva.CargarDatosDeReserva();
+                    nueva.CodReserva = nueva.Reserva.CodReserva;
 
                     //nueva.Estado.IdEstado = lEstado.("Ingresos","Registrado");
                     lReservaEdicion.Insert(nueva);

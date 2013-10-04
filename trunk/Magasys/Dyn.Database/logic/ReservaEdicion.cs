@@ -92,6 +92,33 @@ namespace Dyn.Database.logic
 
             return listaReservas;
         }
+        public List<Dyn.Database.entities.ReservaEdicion> BuscarReservasPorProductos(List<Dyn.Database.entities.Producto> listaProductos)
+        {
+            List<Dyn.Database.entities.ReservaEdicion> listaReservas = new List<entities.ReservaEdicion>();
+            Dyn.Database.logic.Producto lProducto = new Dyn.Database.logic.Producto();
+            Dyn.Database.logic.Estado lEstado = new Dyn.Database.logic.Estado();
+            CreateCommand("usp_SeleccionarReservasEdicionPorCliente", true);
+            for (int i = 0; i < listaProductos.Count; i++)
+            {
+                AddCmdParameter("@idProducto", listaProductos[i].IdProducto, ParameterDirection.Input);
+                AddCmdParameter("@Action", 1, ParameterDirection.Input);
+                AddCmdParameter("@idEstado", lEstado.BuscarEstado("ReservasEdicion", "Confirmado"), ParameterDirection.Input);
+                ExecuteReader();
+                while (Read())
+                {
+                    listaReservas.Add(new entities.ReservaEdicion(GetDataReader()));
+
+                }
+            }    
+            
+            for (int i = 0; i < listaReservas.Count; i++)
+            {
+                //CreateCommand("usp_SeleccionarReservasEdicionPorCliente", true);
+                listaReservas[i].CargarPropiedades();
+            }
+
+            return listaReservas;
+        }
 
         public void Entregar(Int32 codReservaEdicion)
         {
