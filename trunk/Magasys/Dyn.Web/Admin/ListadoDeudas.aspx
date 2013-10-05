@@ -1,10 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Admin.Master" AutoEventWireup="true"
-    CodeBehind="ListadoCobro.aspx.cs" Inherits="Dyn.Web.Admin.ListadoCobro" Culture="es-AR" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Admin.Master" AutoEventWireup="true" CodeBehind="ListadoDeudas.aspx.cs" Inherits="Dyn.Web.Admin.ListadoDeudas"  Culture="es-AR"%>
 
 <%@ MasterType VirtualPath="~/Masters/Admin.Master" %>
 <%@ Register Src="../controls/MenuAdmin.ascx" TagName="MenuAdmin" TagPrefix="uc1" %>
 <%@ Register Src="../controls/Date.ascx" TagName="Date" TagPrefix="uc2" %>
-<%@ Register Src="../controls/BuscarClientes.ascx" TagName="BuscarClientes" TagPrefix="uc4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link type="text/css" rel="Stylesheet" href="../GridView/dialog.css" />
     <link type="text/css" rel="Stylesheet" href="../GridView/pager.css" />
@@ -33,7 +31,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphMenu" runat="server">
     <uc1:MenuAdmin ID="MenuAdmin1" runat="server" />
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">    
+<asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
+    <br />
     <table>
         <tr>
             <td class="tittleprecios03">
@@ -47,24 +46,17 @@
             </td>
             <td style="width: 120px;">
                 <uc2:Date ID="calFechaFinal" runat="server" />
-            </td>           
-        </tr>
-         <tr>
-            <td colspan="3">
-                <br />
-                <uc4:buscarclientes ID="ucBuscarClientes" runat="server" />
             </td>
-             <td style="top:15px; padding-bottom:5px;">
-                <asp:Button ID="btnBuscar" runat="server" Text="Buscar Cobros" 
-                     OnClick="btnBuscar_Click" Width="100px" />
+             <td>
+                <asp:Button ID="btnBuscar" runat="server" Text="Buscar Deudas" OnClick="btnBuscar_Click" />
             </td>
-        </tr>
+        </tr>        
     </table>
     <table width="100%">
         <tr>
             <td colspan="5" class="tittleproducto">
                 <br />
-                Detalle de cobros
+                Detalle de ventas
                 <hr />
             </td>
         </tr>
@@ -75,25 +67,40 @@
                 <div class="inner">
                     <div class="content">
                         <asp:Panel CssClass="grid" ID="pnlCust" runat="server">
-                            <asp:UpdatePanel ID="upCobros" runat="server">
+                            <asp:UpdatePanel ID="upVentas" runat="server">
                                 <ContentTemplate>
-                                    <asp:GridView Width="100%" ID="gridCobros" AutoGenerateColumns="False" runat="server"
-                                        OnRowCreated="gridCobros_RowCreated" CellPadding="4" ForeColor="#333333" GridLines="None">
+                                    <asp:GridView Width="100%" ID="gridVentas" AutoGenerateColumns="False" runat="server"
+                                        OnRowCreated="gridVentas_RowCreated" CellPadding="4" ForeColor="#333333" GridLines="None">
                                         <AlternatingRowStyle BackColor="White" />
                                         <Columns>
                                             <asp:TemplateField>
                                                 <HeaderTemplate>
-                                                    <table width="70%" style="background-color: #507CD1">
+                                                    <table width="100%" style="background-color: #507CD1">
                                                         <tr>
                                                             <th style="width: 265px; background: url(sprite.png) repeat-x 0px 0px; border-color: #507CD1 #507CD1 #507CD1 #507CD1;
                                                                 border-style: solid solid solid none; border-width: 1px 1px 1px medium; color: White;
                                                                 padding: 4px 5px 4px 10px; vertical-align: bottom; text-align: center; font-weight: bold">
-                                                                Código de Cobro
+                                                                Código de Venta
                                                             </th>
                                                             <th style="width: 138px; background: url(sprite.png) repeat-x 0px 0px; border-color: #507CD1 #507CD1 #507CD1 #507CD1;
                                                                 border-style: solid solid solid none; border-width: 1px 1px 1px medium; color: White;
                                                                 padding: 4px 5px 4px 10px; vertical-align: bottom; text-align: center; font-weight: bold">
                                                                 Fecha
+                                                            </th>
+                                                            <th style="width: 120px; background: url(sprite.png) repeat-x 0px 0px; border-color: #507CD1 #507CD1 #507CD1 #507CD1;
+                                                                border-style: solid solid solid none; border-width: 1px 1px 1px medium; color: White;
+                                                                padding: 4px 5px 4px 10px; vertical-align: bottom; text-align: center; font-weight: bold">
+                                                                N&uacute;mero Cliente
+                                                            </th>
+                                                            <th style="width: 120px; background: url(sprite.png) repeat-x 0px 0px; border-color: #507CD1 #507CD1 #507CD1 #507CD1;
+                                                                border-style: solid solid solid none; border-width: 1px 1px 1px medium; color: White;
+                                                                padding: 4px 5px 4px 10px; vertical-align: bottom; text-align: center; font-weight: bold">
+                                                                Apellido
+                                                            </th>
+                                                            <th style="width: 120px; background: url(sprite.png) repeat-x 0px 0px; border-color: #507CD1 #507CD1 #507CD1 #507CD1;
+                                                                border-style: solid solid solid none; border-width: 1px 1px 1px medium; color: White;
+                                                                padding: 4px 5px 4px 10px; vertical-align: bottom; text-align: center; font-weight: bold">
+                                                                Nombre
                                                             </th>
                                                             <th style="width: 120px; background: url(sprite.png) repeat-x 0px 0px; border-color: #507CD1 #507CD1 #507CD1 #507CD1;
                                                                 border-style: solid solid solid none; border-width: 1px 1px 1px medium; color: White;
@@ -109,23 +116,23 @@
                                                         <asp:Image ID="imgCollapsible" CssClass="first" ImageUrl="~/GridView/plus.png" Style="margin-right: 5px;"
                                                             runat="server" />
                                                         <span class="header">
-                                                            <asp:Label ID="lblCodCobro" runat="server" Text='<%#Eval("codCobro")%>' Width="220px"
-                                                                Style="text-align: center; color: #333333;"></asp:Label>
-                                                            <asp:Label ID="lblFechaCobro" runat="server" Text='<%#String.Format("{0:dd/MM/yyyy}",Eval("fechaCobro"))%>'
-                                                                Width="105px" Style="text-align: center; color: #333333;"></asp:Label>
-                                                            <asp:Label ID="lblMontoTotal" runat="server" Text='<%#String.Format("{0:c}",Eval("montoTotal"))%>'
-                                                                Width="117px" Style="text-align: center; color: #333333;"></asp:Label>
+                                                            <asp:Label ID="lblCodCVenta" runat="server" Text='<%#Eval("idVenta")%>' Width="132px" Style="text-align: center; color: #333333;"></asp:Label>
+                                                            <asp:Label ID="lblFechaVenta" runat="server" Text='<%#String.Format("{0:dd/MM/yyyy}",Eval("fecha"))%>' Width="140px" Style="text-align: center; color: #333333;"></asp:Label>
+                                                            <asp:Label ID="lblNroCliente" runat="server" Text='<%#Eval("nroCliente")%>' Width="53px" Style="text-align: center; color: #333333;"></asp:Label>
+                                                            <asp:Label ID="lblApellido" runat="server" Text='<%#Eval("Cliente.Apellido")%>' Width="130px" Style="text-align: center; color: #333333;"></asp:Label>
+                                                            <asp:Label ID="lblNombre" runat="server" Text='<%#Eval("Cliente.Nombre")%>' Width="64px" Style="text-align: center; color: #333333;"></asp:Label>
+                                                            <asp:Label ID="lblTotal" runat="server" Text='<%#String.Format("{0:c}",Eval("montotal"))%>' Width="85px" Style="text-align: right; color: #333333;"></asp:Label>
                                                         </span>
                                                         <%--</div>--%>
-                                                        <asp:SqlDataSource ID="sqlDsVentas" runat="server" ConnectionString="<%$ appSettings:keyconnection %>"
-                                                            SelectCommand="SELECT codVenta, fecha, formaDePago, subtotal FROM DetalleCobro d inner join Ventas v on v.idVenta = d.codVenta WHERE codCobro = @CodCobro AND formaDePago LIKE 'Cuenta corriente' ORDER BY codVenta">
+                                                        <asp:SqlDataSource ID="sqlDsDetalleVenta" runat="server" ConnectionString="<%$ appSettings:keyconnection %>"
+                                                            SelectCommand="SELECT p.nombre, d.precioUnidad, d.cantidad, d.subTotal FROM DetalleVentas d inner join Ventas v on v.idVenta = d.idVenta inner join Productos p on p.idProducto = d.idProducto WHERE d.idVenta = @idVenta ORDER BY p.nombre">
                                                             <SelectParameters>
-                                                                <asp:Parameter Name="CodCobro" Type="String" DefaultValue="" />
+                                                                <asp:Parameter Name="idVenta" Type="String" DefaultValue="" />
                                                             </SelectParameters>
                                                         </asp:SqlDataSource>
                                                         <div id='<%#String.Format("order{0}",Container.DataItemIndex) %>' class="order">
                                                             <br />
-                                                            <asp:GridView AutoGenerateColumns="false" CssClass="grid" ID="gridVentas" DataSourceID="sqlDsVentas"
+                                                            <asp:GridView AutoGenerateColumns="false" CssClass="grid" ID="gridDetalleVenta" DataSourceID="sqlDsDetalleVenta"
                                                                 runat="server" ShowHeader="true" EnableViewState="false">
                                                                 <RowStyle CssClass="row" />
                                                                 <Columns>
@@ -134,12 +141,11 @@
                                                                             <%# Container.DataItemIndex + 1 %>
                                                                         </ItemTemplate>
                                                                     </asp:TemplateField>
-                                                                    <asp:BoundField HeaderText="Código de Venta" DataField="codVenta" ItemStyle-HorizontalAlign="Center" />
-                                                                    <asp:BoundField HeaderText="Fecha" DataField="fecha" DataFormatString="{0:MM/dd/yyyy}"
+                                                                    <asp:BoundField HeaderText="Producto" DataField="nombre" ItemStyle-HorizontalAlign="Center" />
+                                                                    <asp:BoundField HeaderText="Precio Unitario" DataField="precioUnidad" DataFormatString="{0:c}" ItemStyle-HorizontalAlign="Center" />
+                                                                    <asp:BoundField HeaderText="Cantidad" DataField="cantidad" ItemStyle-HorizontalAlign="Center" />
+                                                                    <asp:BoundField HeaderText="Subtotal" DataField="subTotal" DataFormatString="{0:c}"
                                                                         ItemStyle-HorizontalAlign="Center" />
-                                                                    <asp:BoundField HeaderText="Forma de Pago" DataField="formaDePago" ItemStyle-HorizontalAlign="Center" />
-                                                                    <asp:BoundField HeaderText="Subtotal" DataField="subtotal" ItemStyle-HorizontalAlign="Center"
-                                                                        DataFormatString="{0:c}" />
                                                                 </Columns>
                                                             </asp:GridView>
                                                         </div>

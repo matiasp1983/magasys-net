@@ -100,5 +100,23 @@ namespace Dyn.Database.logic
             AddCmdParameter("@Action", 4, ParameterDirection.Input);
             ExecuteNonQuery();
         }
+
+        public List<Dyn.Database.entities.Venta> BuscarDeudas(DateTime fechaIni, DateTime fechaFin, int estado)
+        {
+            List<Dyn.Database.entities.Venta> Collection = new List<Dyn.Database.entities.Venta>();
+            CreateCommand("usp_Venta", true);
+            AddCmdParameter("@fechaIni", fechaIni, ParameterDirection.Input);
+            AddCmdParameter("@fechaFin", fechaFin, ParameterDirection.Input);
+            AddCmdParameter("@idEstado", estado, ParameterDirection.Input);
+            AddCmdParameter("@Action", 5, ParameterDirection.Input);
+
+            ExecuteReader();
+            while (Read())
+            {              
+                Collection.Add(new Dyn.Database.entities.Venta(GetDataReader()));
+            }
+            DataSet ds = GetDataSet();
+            return Collection;
+        }
     }
 }
