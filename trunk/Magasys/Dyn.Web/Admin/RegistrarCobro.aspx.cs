@@ -73,8 +73,7 @@ namespace Dyn.Web.Admin
                 {
                     if (codigoVenta.Text.Equals(seleccion.Text))
                     {
-                        string cadena = montoTotal.Text;
-                        //string cadena = montoTotal.Text.TrimStart('$');
+                        string cadena = montoTotal.Text.TrimStart('$');
                         if (seleccion.Checked == true)
                         {
                             total.Text = Convert.ToString(Convert.ToDecimal(total.Text) + Convert.ToDecimal(cadena));
