@@ -25,10 +25,64 @@ namespace Dyn.Database.entities
         {
             idVenta = Convert.ToInt32(obj["idVenta"]);
             fecha = Convert.ToDateTime(obj["fecha"]);
-            idEstado = Convert.ToInt32(obj["idEstado"]);
-            montotal = Convert.ToDouble(obj["total"]);
-            formaPago = Convert.ToString(obj["formaDePago"]);
-            nroCliente = Convert.ToInt32(obj["nroCliente"]);
+            
+            try
+            {
+                idEstado = Convert.ToInt32(obj["idEstado"]);
+            }
+            catch (Exception)
+            {
+                idEstado = 0;    
+            }
+            
+            try
+            {
+                montotal = Convert.ToDouble(obj["total"]);
+            }
+            catch (Exception)
+            {
+                montotal = 0;                
+            }
+
+            try
+            {
+                formaPago = Convert.ToString(obj["formaDePago"]);
+            }
+            catch (Exception)
+            {                
+                formaPago = string.Empty;
+            }
+
+            try
+            {
+                nroCliente = Convert.ToInt32(obj["nroCliente"]);
+            }
+            catch (Exception)
+            {
+                
+                nroCliente = 0;
+            }
+
+            try
+            {
+                cliente.Apellido = obj["apellido"].ToString();
+            }
+            catch (Exception)
+            {
+                
+                cliente.Apellido = string.Empty;
+            }
+
+            try
+            {
+                cliente.Nombre = obj["nombre"].ToString();
+            }
+            catch (Exception)
+            {
+                
+                cliente.Nombre = string.Empty;
+            }
+            
         }
 
         #endregion
@@ -83,6 +137,12 @@ namespace Dyn.Database.entities
             set { nroCliente = value; }
         }
 
+        private Cliente cliente = new Cliente();
+        public Cliente Cliente
+        {
+            get { return cliente; }
+            set { cliente = value; }
+        }
         #endregion
     }
 }

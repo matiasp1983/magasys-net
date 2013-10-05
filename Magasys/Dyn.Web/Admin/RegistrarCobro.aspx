@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Admin.Master" AutoEventWireup="true"
-    CodeBehind="RegistrarCobro.aspx.cs" Inherits="Dyn.Web.Admin.RegistrarCobro" %>
+    CodeBehind="RegistrarCobro.aspx.cs" Inherits="Dyn.Web.Admin.RegistrarCobro" Culture="es-AR" %>
 
 <%@ MasterType VirtualPath="~/Masters/Admin.Master" %>
 <%@ Register Src="../controls/MenuAdmin.ascx" TagName="MenuAdmin" TagPrefix="uc1" %>
@@ -80,7 +80,7 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Monto Total" ItemStyle-HorizontalAlign="Center">
                         <ItemTemplate>
-                            <asp:Label ID="lblMontoTotal" runat="server" Text='<%# Bind("montotal") %>'></asp:Label>
+                            <asp:Label ID="lblMontoTotal" runat="server" Text='<%# Bind("montotal", "{0:c}") %>'></asp:Label>
                         </ItemTemplate>
                         <ItemStyle Width="150px" />
                         <FooterTemplate>

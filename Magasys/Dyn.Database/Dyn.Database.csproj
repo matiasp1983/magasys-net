@@ -98,6 +98,7 @@
     <Compile Include="logic\ProductoEdicion2.cs" />
     <Compile Include="logic\Proveedor.cs" />
     <Compile Include="logic\Provincia.cs" />
+    <Compile Include="logic\Reparto.cs" />
     <Compile Include="logic\Reserva.cs" />
     <Compile Include="logic\ReservaEdicion.cs" />
     <Compile Include="logic\Revista.cs" />
