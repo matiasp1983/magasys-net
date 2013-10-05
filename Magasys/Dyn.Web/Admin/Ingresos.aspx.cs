@@ -299,6 +299,46 @@ namespace Dyn.Web.Admin
             Response.Redirect("/Home.aspx");
         }
 
+        protected void gvReservasOk_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            //int key = Convert.ToInt32(gvDetalle.DataKeys[e.RowIndex].Value);
+            int key = e.RowIndex;
+            //List<Database.entities.ReservaEdicion> det = Entity.DetalleIngreso;
+            for (int i = 0; i < listaReservasOK.Count; i++)
+            {
+                if (i == key)
+                {
+                    listaReservasOK.Remove(listaReservasOK[i]);
+                    // return;
+                }
+            }
+           
+            gvReservasOk.DataSource = listaReservasOK;
+            //gvReservasOk.DataKeyNames = new String[] { "IdDetalleIngresoProducto" };
+            gvReservasOk.DataBind();
+        }
+
+        protected void btnConfirmarTodos_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < listaReservas.Count; i++)
+            {
+                listaReservasOK.Add(listaReservas[i]);
+                
+            }
+            listaReservas.Clear();
+            gvReservasOk.DataSource = listaReservasOK;
+            gvReservasOk.Visible = true;
+            gvReservasOk.DataBind();
+            gvReservas.DataSource = listaReservas;
+            gvReservas.Visible = true;
+            gvReservas.DataBind();
+            if (listaReservas.Count == 0)
+            {
+                lblMensaje.Text = "No hay Reservas sin Confirmar";
+                lblMensaje.ForeColor = System.Drawing.Color.Black;
+            }
+        }
+
 
 
 

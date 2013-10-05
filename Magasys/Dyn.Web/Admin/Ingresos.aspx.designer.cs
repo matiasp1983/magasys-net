@@ -148,6 +148,15 @@ namespace Dyn.Web.Admin {
         protected global::System.Web.UI.WebControls.GridView gvReservas;
         
         /// <summary>
+        /// btnConfirmarTodos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnConfirmarTodos;
+        
+        /// <summary>
         /// gvReservasOk control.
         /// </summary>
         /// <remarks>
