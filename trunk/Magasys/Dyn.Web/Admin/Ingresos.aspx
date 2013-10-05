@@ -300,6 +300,16 @@
                         </tr>
                         <tr>
                             <td>
+                                &nbsp;</td>
+                            <td class="style24">
+                                <asp:Button ID="btnConfirmarTodos" runat="server" 
+                                    onclick="btnConfirmarTodos_Click" Text="Confirmar Todos" CausesValidation="False" OnClientClick="javascript:return confirm('Desea confirmar todas las reservas?');"/>
+                            </td>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
                                 &nbsp;
                             </td>
                             <td class="style24">
@@ -315,7 +325,8 @@
                             </td>
                             <td class="style24">
                                 <asp:GridView ID="gvReservasOk" runat="server" CellPadding="4" ForeColor="#333333"
-                                    GridLines="None" AutoGenerateColumns="False" Visible="False">
+                                    GridLines="None" AutoGenerateColumns="False" Visible="False" 
+                                    onrowdeleting="gvReservasOk_RowDeleting">
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
                                         <asp:BoundField DataField="CodReserva" HeaderText="Codigo" >
@@ -333,6 +344,9 @@
                                         <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" >
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
+                                        <asp:CommandField ButtonType="Image" 
+                                            DeleteImageUrl="~/images/Iconos/edit_remove.png" DeleteText="" 
+                                            ShowDeleteButton="True" />
                                     </Columns>
                                     <EditRowStyle BackColor="#2461BF" />
                                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

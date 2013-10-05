@@ -46,10 +46,23 @@ namespace Dyn.Web.Admin
                 // Datos Venta 
                 newVenta.Fecha = DateTime.Now;
                 newVenta.FormaPago = "Cuenta corriente";
-                newVenta.IdEstado = lEstado.BuscarEstado("Ventas","Entregado-Pagado");
+                newVenta.IdEstado = lEstado.BuscarEstado("Ventas", "Entregado-No Pagado");
                 newVenta.MonTotal = (listaEntregas[i].ReservaEdicion.Cantidad)*(listaEntregas[i].ReservaEdicion.ProductoEdicion.Precio);
                 newVenta.NroCliente = listaEntregas[i].ReservaEdicion.Cliente.NroCliente;
                 int idVenta = Convert.ToInt32(lVenta.Insert(newVenta));
+
+                // Datos Detalle
+                Dyn.Database.logic.DetalleVenta lDetVenta = new Database.logic.DetalleVenta();
+                Dyn.Database.entities.DetalleVenta detVenta = new Database.entities.DetalleVenta();
+                detVenta.Cantidad = listaEntregas[i].ReservaEdicion.Cantidad;
+                detVenta.IdVenta = idVenta;
+                detVenta.IdEdicion = listaEntregas[i].ReservaEdicion.ProductoEdicion.IdProductoEdicion;
+                detVenta.IdProducto = listaEntregas[i].ReservaEdicion.ProductoEdicion.IdProducto;
+                detVenta.PrecioUnidad = listaEntregas[i].ReservaEdicion.ProductoEdicion.Precio;
+                detVenta.SubTotal = newVenta.MonTotal;
+                lDetVenta.Insert(detVenta);
+
+                
 
                 // Actualizar Reserva
                 listaEntregas[i].ReservaEdicion.IdEstado = lEstado.BuscarEstado("ReservasEdicion","Entregado");
