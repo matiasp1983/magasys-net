@@ -107,8 +107,8 @@
                             <td class="style19">
                                 Proveedor:
                             </td>
-                            <td class="style27">
-                                <asp:DropDownList ID="lstProveedores" runat="server" CssClass="style19" Height="45px"
+                            <td>
+                                <asp:DropDownList ID="lstProveedores" runat="server"
                                     Width="200px" AutoPostBack="True" 
                                     OnSelectedIndexChanged="lstProveedores_SelectedIndexChanged">
                                 </asp:DropDownList>
@@ -122,15 +122,14 @@
                 &nbsp;
             </td>
             <td class="style19">
-                &nbsp;<asp:Label ID="lbNombre" runat="server" Text="Nombre Producto:" Visible="False"></asp:Label>
+                &nbsp;<asp:Label ID="lbNombre" runat="server" Text="Nombre Producto:"></asp:Label>
             </td>
-            <td class="style27">
-                <asp:TextBox ID="txtNombreProd" runat="server" MaxLength="50" Width="192px" Visible="False"
-                    CssClass="style19" Height="35px"></asp:TextBox>
+            <td>
+                <asp:TextBox ID="txtNombreProd" runat="server" MaxLength="50" Width="192px"></asp:TextBox>
             </td>
             <td class="style21">
-                <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click"
-                    Visible="False" />
+                <asp:Button ID="btnBuscar" runat="server" Text="Buscar" 
+                    OnClick="btnBuscar_Click" />
             </td>
         </tr>
         <tr>
