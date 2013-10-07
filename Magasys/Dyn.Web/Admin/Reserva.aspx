@@ -5,7 +5,7 @@
 <%@ Register Assembly="CollectionPager" Namespace="SiteUtils" TagPrefix="cc1" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="act" %>
 <%@ Register Src="../controls/Login.ascx" TagName="Login" TagPrefix="uc2" %>
-<%@ Register Src="../controls/MenuAdminCategoria.ascx" TagName="MenuAdmin" TagPrefix="uc1" %>
+<%@ Register Src="../controls/MenuAdminCategoria.ascx" TagName="MenuAdmin" TagPrefix="uc7" %>
 <%@ Register Src="../controls/Date.ascx" TagName="Date" TagPrefix="uc1" %>
 <%@ Register Src="../controls/Ventas.ascx" TagName="Ventas" TagPrefix="uc3" %>
 <%@ Register Src="../controls/BuscarClientes.ascx" TagName="BuscarClientes" TagPrefix="uc4" %>
@@ -141,4 +141,10 @@
     </table>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphReserva" runat="server">
+</asp:Content>
+<asp:Content ID="Content5" runat="server" ContentPlaceHolderID="cphMenu">
+    <!--Control de login de ejemplo-->
+    <uc2:Login ID="Login1" runat="server" />
+    <br />
+    <uc7:MenuAdmin ID="MenuAdmin1" runat="server" />
 </asp:Content>

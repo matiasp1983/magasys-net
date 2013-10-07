@@ -27,7 +27,7 @@ namespace Dyn.Web.Admin
             btnEliminar.Attributes.Add("onclick", "return confirm_delete('Desea eliminar el Proveedor?');");
             if (!IsPostBack)
             {
-                //this.Master.TituloPagina = "Edici&oacute;n Proveedor";
+                this.Master.TituloPagina = "Edici&oacute;n Cliente";
                 lCliente = new Dyn.Database.logic.Cliente();
                 LlenarTipoDocumento();
                 LlenarProvincias();

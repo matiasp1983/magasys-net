@@ -86,7 +86,7 @@ namespace Dyn.Web.controls
                                 {
                                     foreach (DataRow rows in dt.Rows)
                                     {
-                                        if (CheckBoxInRepeater.Text == rows.ItemArray[0].ToString())
+                                        if (CheckBoxInRepeater.Text == rows.ItemArray[2].ToString())
                                         {
                                             encontrado = true;
                                             rptItems.DataSource = dt;
@@ -208,19 +208,22 @@ namespace Dyn.Web.controls
         {
             foreach (RepeaterItem rptitem in rptItems)
             {
-                LabelidProducto = rptitem.FindControl("lblidProducto") as Label;
+                //LabelidProducto = rptitem.FindControl("lblidProducto") as Label;
+                LabelEdicion = rptitem.FindControl("lblEdicion") as Label;
+                string edicion = LabelEdicion.Text;
 
                 foreach (RepeaterItem rptitemProductos in rptproductos)
                 {
                     CheckBoxInRepeater = rptitemProductos.FindControl("chkProductoSeleccionado") as CheckBox;
                     LabelNombre = rptitemProductos.FindControl("lblNombre") as Label;
-                    LabelEdicion = rptitemProductos.FindControl("lblEdicion") as Label;
+                    //LabelEdicion = rptitemProductos.FindControl("lblEdicion") as Label;
                     LabelPrecioUnitario = rptitemProductos.FindControl("lblPrecioUnitario") as Label;
                     LabelStock = rptitemProductos.FindControl("lblStock") as Label;
                     TextBoxCantidad = rptitemProductos.FindControl("txtCantidad") as TextBox;
 
-                    if (int.Parse(LabelidProducto.Text) == int.Parse(CheckBoxInRepeater.Text))
+                    if (edicion == CheckBoxInRepeater.Text)
                     {
+                        LabelEdicion = rptitemProductos.FindControl("lblEdicion") as Label;
                         //Desabilita el item del control rptProductos                               
                         CheckBoxInRepeater.Enabled = false;
                         CheckBoxInRepeater.Checked = true;
@@ -231,7 +234,7 @@ namespace Dyn.Web.controls
                         LabelPrecioUnitario.BackColor = System.Drawing.Color.LightGray;
                         LabelStock.BackColor = System.Drawing.Color.LightGray;
                         /*Carga cantidad*/
-                        TextBoxCantidad.Text = GetCantidad(rptItems, LabelidProducto.Text);
+                        TextBoxCantidad.Text = GetCantidad(rptItems, LabelEdicion.Text);
                         /*Cargar stock y lo resta*/
                         LabelStock.Text = Convert.ToString(int.Parse(LabelStock.Text) - int.Parse(TextBoxCantidad.Text));
                         TextBoxCantidad.BackColor = System.Drawing.Color.LightGray;
@@ -263,6 +266,7 @@ namespace Dyn.Web.controls
             foreach (RepeaterItem rptitem in rptProductos.Items)
             {
                 CheckBoxInRepeater = rptitem.FindControl("chkProductoSeleccionado") as CheckBox;
+                LabelidProducto = rptitem.FindControl("lblIdProducto") as Label;
                 LabelNombre = rptitem.FindControl("lblNombre") as Label;
                 LabelEdicion = rptitem.FindControl("lblEdicion") as Label;
                 LabelPrecioUnitario = rptitem.FindControl("lblPrecioUnitario") as Label;
@@ -271,7 +275,7 @@ namespace Dyn.Web.controls
                 if (CheckBoxInRepeater.Checked)
                 {
                     DataRow dr = dt.NewRow();
-                    dr["idProducto"] = CheckBoxInRepeater.Text;
+                    dr["idProducto"] = LabelidProducto.Text;
                     dr["nombre"] = LabelNombre.Text;
                     dr["idProductoEdicion"] = LabelEdicion.Text;
                     dr["precioUnidad"] = LabelPrecioUnitario.Text;
@@ -286,13 +290,14 @@ namespace Dyn.Web.controls
 
         private DataTable LoadDataTableItem(DataTable dt, RepeaterItem rptitem)
         {
-            CheckBoxInRepeater = rptitem.FindControl("chkProductoSeleccionado") as CheckBox;
+            //CheckBoxInRepeater = rptitem.FindControl("chkProductoSeleccionado") as CheckBox;
+            LabelidProducto = rptitem.FindControl("idProducto") as Label;
             LabelNombre = rptitem.FindControl("lblNombre") as Label;
             LabelEdicion = rptitem.FindControl("lblEdicion") as Label;
             LabelPrecioUnitario = rptitem.FindControl("lblPrecioUnitario") as Label;
             TextBoxCantidad = rptitem.FindControl("txtCantidad") as TextBox;
             DataRow dr = dt.NewRow();
-            dr["idProducto"] = CheckBoxInRepeater.Text;
+            dr["idProducto"] = LabelidProducto;
             dr["nombre"] = LabelNombre.Text;
             dr["idProductoEdicion"] = LabelEdicion.Text;
             dr["precioUnidad"] = LabelPrecioUnitario.Text;
@@ -302,14 +307,14 @@ namespace Dyn.Web.controls
             return dt;
         }
 
-        private string GetCantidad(RepeaterItemCollection rptItems, string productidpd)
+        private string GetCantidad(RepeaterItemCollection rptItems, string productoEdicion)
         {
             int contador = -1;
             foreach (RepeaterItem rptitem in rptItems)
             {
-                LabelidProducto = rptitem.FindControl("lblidProducto") as Label;
+                LabelEdicion = rptitem.FindControl("lblEdicion") as Label;
                 contador++;
-                if (LabelidProducto.Text == productidpd)
+                if (LabelEdicion.Text == productoEdicion)
                 {
                     break;
                 }
@@ -362,6 +367,7 @@ namespace Dyn.Web.controls
 
         private Double GetCalcularValorTotal(RepeaterItemCollection rptItems)
         {
+            ValorTotal = 0;
             foreach (RepeaterItem rptitem in rptItems)
             {
                 CheckBoxInRepeater = rptitem.FindControl("chkProductoSeleccionado") as CheckBox;

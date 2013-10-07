@@ -1,8 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Admin.Master" AutoEventWireup="true" CodeBehind="ListadoDeudas.aspx.cs" Inherits="Dyn.Web.Admin.ListadoDeudas"  Culture="es-AR"%>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Admin.Master" AutoEventWireup="true"
+    CodeBehind="ListadoDeudas.aspx.cs" Inherits="Dyn.Web.Admin.ListadoDeudas" Culture="es-AR" %>
 
 <%@ MasterType VirtualPath="~/Masters/Admin.Master" %>
-<%@ Register Src="../controls/MenuAdmin.ascx" TagName="MenuAdmin" TagPrefix="uc1" %>
+<%@ Register Src="~/controls/MenuAdminCategoria.ascx" TagName="MenuAdmin" TagPrefix="uc1" %>
 <%@ Register Src="../controls/Date.ascx" TagName="Date" TagPrefix="uc2" %>
+<%@ Register Src="../controls/Login.ascx" TagName="Login" TagPrefix="uc3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link type="text/css" rel="Stylesheet" href="../GridView/dialog.css" />
     <link type="text/css" rel="Stylesheet" href="../GridView/pager.css" />
@@ -28,9 +30,6 @@
         }
     </script>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="cphMenu" runat="server">
-    <uc1:MenuAdmin ID="MenuAdmin1" runat="server" />
-</asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
     <br />
     <table>
@@ -47,10 +46,10 @@
             <td style="width: 120px;">
                 <uc2:Date ID="calFechaFinal" runat="server" />
             </td>
-             <td>
+            <td>
                 <asp:Button ID="btnBuscar" runat="server" Text="Buscar Deudas" OnClick="btnBuscar_Click" />
             </td>
-        </tr>        
+        </tr>
     </table>
     <table width="100%">
         <tr>
@@ -116,12 +115,18 @@
                                                         <asp:Image ID="imgCollapsible" CssClass="first" ImageUrl="~/GridView/plus.png" Style="margin-right: 5px;"
                                                             runat="server" />
                                                         <span class="header">
-                                                            <asp:Label ID="lblCodCVenta" runat="server" Text='<%#Eval("idVenta")%>' Width="132px" Style="text-align: center; color: #333333;"></asp:Label>
-                                                            <asp:Label ID="lblFechaVenta" runat="server" Text='<%#String.Format("{0:dd/MM/yyyy}",Eval("fecha"))%>' Width="140px" Style="text-align: center; color: #333333;"></asp:Label>
-                                                            <asp:Label ID="lblNroCliente" runat="server" Text='<%#Eval("nroCliente")%>' Width="53px" Style="text-align: center; color: #333333;"></asp:Label>
-                                                            <asp:Label ID="lblApellido" runat="server" Text='<%#Eval("Cliente.Apellido")%>' Width="130px" Style="text-align: center; color: #333333;"></asp:Label>
-                                                            <asp:Label ID="lblNombre" runat="server" Text='<%#Eval("Cliente.Nombre")%>' Width="64px" Style="text-align: center; color: #333333;"></asp:Label>
-                                                            <asp:Label ID="lblTotal" runat="server" Text='<%#String.Format("{0:c}",Eval("montotal"))%>' Width="85px" Style="text-align: right; color: #333333;"></asp:Label>
+                                                            <asp:Label ID="lblCodCVenta" runat="server" Text='<%#Eval("idVenta")%>' Width="132px"
+                                                                Style="text-align: center; color: #333333;"></asp:Label>
+                                                            <asp:Label ID="lblFechaVenta" runat="server" Text='<%#String.Format("{0:dd/MM/yyyy}",Eval("fecha"))%>'
+                                                                Width="140px" Style="text-align: center; color: #333333;"></asp:Label>
+                                                            <asp:Label ID="lblNroCliente" runat="server" Text='<%#Eval("nroCliente")%>' Width="53px"
+                                                                Style="text-align: center; color: #333333;"></asp:Label>
+                                                            <asp:Label ID="lblApellido" runat="server" Text='<%#Eval("Cliente.Apellido")%>' Width="130px"
+                                                                Style="text-align: center; color: #333333;"></asp:Label>
+                                                            <asp:Label ID="lblNombre" runat="server" Text='<%#Eval("Cliente.Nombre")%>' Width="64px"
+                                                                Style="text-align: center; color: #333333;"></asp:Label>
+                                                            <asp:Label ID="lblTotal" runat="server" Text='<%#String.Format("{0:c}",Eval("montotal"))%>'
+                                                                Width="85px" Style="text-align: right; color: #333333;"></asp:Label>
                                                         </span>
                                                         <%--</div>--%>
                                                         <asp:SqlDataSource ID="sqlDsDetalleVenta" runat="server" ConnectionString="<%$ appSettings:keyconnection %>"
@@ -142,7 +147,8 @@
                                                                         </ItemTemplate>
                                                                     </asp:TemplateField>
                                                                     <asp:BoundField HeaderText="Producto" DataField="nombre" ItemStyle-HorizontalAlign="Center" />
-                                                                    <asp:BoundField HeaderText="Precio Unitario" DataField="precioUnidad" DataFormatString="{0:c}" ItemStyle-HorizontalAlign="Center" />
+                                                                    <asp:BoundField HeaderText="Precio Unitario" DataField="precioUnidad" DataFormatString="{0:c}"
+                                                                        ItemStyle-HorizontalAlign="Center" />
                                                                     <asp:BoundField HeaderText="Cantidad" DataField="cantidad" ItemStyle-HorizontalAlign="Center" />
                                                                     <asp:BoundField HeaderText="Subtotal" DataField="subTotal" DataFormatString="{0:c}"
                                                                         ItemStyle-HorizontalAlign="Center" />
@@ -172,4 +178,10 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphReserva" runat="server">
+</asp:Content>
+<asp:Content ID="Content5" runat="server" ContentPlaceHolderID="cphMenu">
+    <!--Control de login de ejemplo-->
+    <uc3:Login ID="Login1" runat="server" />
+    <br />
+    <uc1:MenuAdmin ID="MenuAdmin1" runat="server" />
 </asp:Content>

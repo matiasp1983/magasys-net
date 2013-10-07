@@ -99,20 +99,19 @@
                                     ForeColor="#333333" GridLines="None" OnSelectedIndexChanging="gvDetalles_SelectedIndexChanging">
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
-                                        <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto" 
-                                            ReadOnly="True" >
-                                        <ItemStyle HorizontalAlign="Center" />
+                                        <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto" ReadOnly="True">
+                                            <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" >
-                                        <ItemStyle HorizontalAlign="Center" />
+                                        <asp:BoundField DataField="Cantidad" HeaderText="Cantidad">
+                                            <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
                                         <asp:CommandField ShowEditButton="True" ButtonType="Image" EditImageUrl="~/images/Iconos/edit.png"
-                                            EditText="" >
-                                        <ItemStyle HorizontalAlign="Center" />
+                                            EditText="">
+                                            <ItemStyle HorizontalAlign="Center" />
                                         </asp:CommandField>
                                         <asp:CommandField ButtonType="Image" SelectImageUrl="~/images/Iconos/next.png" SelectText=""
-                                            ShowSelectButton="True" >
-                                        <ItemStyle HorizontalAlign="Center" />
+                                            ShowSelectButton="True">
+                                            <ItemStyle HorizontalAlign="Center" />
                                         </asp:CommandField>
                                     </Columns>
                                     <EditRowStyle BackColor="#2461BF" />
@@ -156,24 +155,23 @@
                                     GridLines="None" AutoGenerateColumns="False" OnSelectedIndexChanging="gvReservas_SelectedIndexChanging">
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
-                                        <asp:BoundField DataField="CodReserva" HeaderText="C&oacute;digo" >
-                                        <ItemStyle HorizontalAlign="Center" />
+                                        <asp:BoundField DataField="CodReserva" HeaderText="C&oacute;digo">
+                                            <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:BoundField DataField="Cliente.Nombre" HeaderText="Nombre" >
-                                        <ItemStyle HorizontalAlign="Center" />
+                                        <asp:BoundField DataField="Cliente.Nombre" HeaderText="Nombre">
+                                            <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:BoundField DataField="Cliente.Apellido" HeaderText="Apellido" >
-                                        <ItemStyle HorizontalAlign="Center" />
+                                        <asp:BoundField DataField="Cliente.Apellido" HeaderText="Apellido">
+                                            <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto" >
-                                        <ItemStyle HorizontalAlign="Center" />
+                                        <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto">
+                                            <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" >
-                                        <ItemStyle HorizontalAlign="Center" />
+                                        <asp:BoundField DataField="Cantidad" HeaderText="Cantidad">
+                                            <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:CommandField SelectText="" ShowSelectButton="True" ButtonType="Image" 
-                                            SelectImageUrl="~/images/Iconos/button_ok.png" >
-                                        <ItemStyle HorizontalAlign="Center" />
+                                        <asp:CommandField SelectText="" ShowSelectButton="True" ButtonType="Image" SelectImageUrl="~/images/Iconos/button_ok.png">
+                                            <ItemStyle HorizontalAlign="Center" />
                                         </asp:CommandField>
                                     </Columns>
                                     <EditRowStyle BackColor="#2461BF" />
@@ -218,16 +216,15 @@
                     CellPadding="4" ForeColor="#333333" GridLines="None" Visible="False">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
-                        <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto" 
-                            ReadOnly="True" >
-                        <ItemStyle HorizontalAlign="Center" />
+                        <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto" ReadOnly="True">
+                            <ItemStyle HorizontalAlign="Center" />
                         </asp:BoundField>
-                        <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" >
-                        <ItemStyle HorizontalAlign="Center" />
+                        <asp:BoundField DataField="Cantidad" HeaderText="Cantidad">
+                            <ItemStyle HorizontalAlign="Center" />
                         </asp:BoundField>
                         <asp:CommandField ButtonType="Image" DeleteImageUrl="~/images/Iconos/edit_remove.png"
-                            ShowDeleteButton="True" >
-                        <ItemStyle HorizontalAlign="Center" />
+                            ShowDeleteButton="True">
+                            <ItemStyle HorizontalAlign="Center" />
                         </asp:CommandField>
                     </Columns>
                     <EditRowStyle BackColor="#2461BF" />
@@ -265,4 +262,10 @@
     </table>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphReserva" runat="server">
+</asp:Content>
+<asp:Content ID="Content5" runat="server" ContentPlaceHolderID="cphMenu">
+    <!--Control de login de ejemplo-->
+    <uc2:Login ID="Login1" runat="server" />
+    <br />
+    <uc1:MenuAdmin ID="MenuAdmin1" runat="server" />
 </asp:Content>

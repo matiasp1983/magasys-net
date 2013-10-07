@@ -71,8 +71,8 @@
                 <asp:Label ID="lblNroIngreso" runat="server" Text=" N&uacute;mero de Ingreso:"></asp:Label>
             </td>
             <td align="left" class="style18">
-                <asp:TextBox ID="txtNumeroVenta" runat="server" CssClass="tittleprecios03" 
-                    Enabled="False" Width="157px"></asp:TextBox><br />
+                <asp:TextBox ID="txtNumeroVenta" runat="server" CssClass="tittleprecios03" Enabled="False"
+                    Width="157px"></asp:TextBox><br />
             </td>
         </tr>
         <tr>
@@ -92,19 +92,17 @@
                                 <asp:Label ID="lblProveedor" runat="server" Text="Proveedor:" Width="155px"></asp:Label>
                             </td>
                             <td class="tittleprecios03" align="left">
-                                <asp:DropDownList ID="lstProveedor" runat="server"
-                                   AutoPostBack="True" 
-                                    OnSelectedIndexChanged="lstProveedores_SelectedIndexChanged" Width="157px">
+                                <asp:DropDownList ID="lstProveedor" runat="server" AutoPostBack="True" OnSelectedIndexChanged="lstProveedores_SelectedIndexChanged"
+                                    Width="157px">
                                 </asp:DropDownList>
                             </td>
                         </tr>
                         <tr>
-                            <td  class="tittleprecios03" align="left">
+                            <td class="tittleprecios03" align="left">
                                 <asp:Label ID="lbNombre" runat="server" Text="Nombre Producto:" Visible="False"></asp:Label>
                             </td>
                             <td class="tittleprecios03" align="left">
-                                <asp:TextBox ID="txtNombreProd" runat="server" MaxLength="50" Visible="False"
-                                  ></asp:TextBox>
+                                <asp:TextBox ID="txtNombreProd" runat="server" MaxLength="50" Visible="False"></asp:TextBox>
                             </td>
                             <td class="tittleprecios03" align="left">
                                 <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click"
@@ -119,17 +117,17 @@
                                     GridLines="None" AutoGenerateColumns="False" OnSelectedIndexChanging="gvProductos_SelectedIndexChanging">
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
-                                        <asp:BoundField DataField="IdProducto" HeaderText="N&uacute;mero Producto" >
+                                        <asp:BoundField DataField="IdProducto" HeaderText="N&uacute;mero Producto">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:BoundField DataField="Nombre" HeaderText="Nombre" >
+                                        <asp:BoundField DataField="Nombre" HeaderText="Nombre">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:BoundField DataField="Descripcion" HeaderText="Descripci&oacute;n" >
+                                        <asp:BoundField DataField="Descripcion" HeaderText="Descripci&oacute;n">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
                                         <asp:CommandField ShowSelectButton="True" ButtonType="Image" SelectImageUrl="~/images/Iconos/next.png"
-                                            SelectText="" >
+                                            SelectText="">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:CommandField>
                                     </Columns>
@@ -187,13 +185,13 @@
                                         </asp:BoundField>
                                         <asp:CommandField ShowEditButton="True" ButtonType="Image" CancelImageUrl="~/images/Iconos/button_cancel.png"
                                             CancelText="" EditImageUrl="~/images/Iconos/edit.png" EditText="" UpdateImageUrl="~/images/Iconos/button_ok.png"
-                                            UpdateText="" >
+                                            UpdateText="">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:CommandField>
                                         <asp:CommandField ShowDeleteButton="True" ButtonType="Image" CancelImageUrl="~/images/Iconos/button_cancel.png"
                                             CancelText="" DeleteImageUrl="~/images/Iconos/edit_remove.png" DeleteText=""
                                             EditImageUrl="~/images/Iconos/edit.png" EditText="" UpdateImageUrl="~/images/Iconos/button_ok.png"
-                                            UpdateText="" >
+                                            UpdateText="">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:CommandField>
                                     </Columns>
@@ -258,23 +256,22 @@
                                     GridLines="None" AutoGenerateColumns="False" OnSelectedIndexChanging="gvReservas_SelectedIndexChanging">
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
-                                        <asp:BoundField DataField="CodReserva" HeaderText="C&oacute;digo" >
+                                        <asp:BoundField DataField="CodReserva" HeaderText="C&oacute;digo">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:BoundField DataField="Cliente.Nombre" HeaderText="Nombre" >
+                                        <asp:BoundField DataField="Cliente.Nombre" HeaderText="Nombre">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:BoundField DataField="Cliente.Apellido" HeaderText="Apellido" >
+                                        <asp:BoundField DataField="Cliente.Apellido" HeaderText="Apellido">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto" >
+                                        <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" >
+                                        <asp:BoundField DataField="Cantidad" HeaderText="Cantidad">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:CommandField SelectText="" ShowSelectButton="True" ButtonType="Image" 
-                                            SelectImageUrl="~/images/Iconos/button_ok.png" >
+                                        <asp:CommandField SelectText="" ShowSelectButton="True" ButtonType="Image" SelectImageUrl="~/images/Iconos/button_ok.png">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:CommandField>
                                     </Columns>
@@ -300,13 +297,15 @@
                         </tr>
                         <tr>
                             <td>
-                                &nbsp;</td>
+                                &nbsp;
+                            </td>
                             <td class="style24">
-                                <asp:Button ID="btnConfirmarTodos" runat="server" 
-                                    onclick="btnConfirmarTodos_Click" Text="Confirmar Todos" CausesValidation="False" OnClientClick="javascript:return confirm('Desea confirmar todas las reservas?');"/>
+                                <asp:Button ID="btnConfirmarTodos" runat="server" OnClick="btnConfirmarTodos_Click"
+                                    Text="Confirmar Todos" CausesValidation="False" OnClientClick="javascript:return confirm('Desea confirmar todas las reservas?');" />
                             </td>
                             <td>
-                                &nbsp;</td>
+                                &nbsp;
+                            </td>
                         </tr>
                         <tr>
                             <td>
@@ -325,28 +324,26 @@
                             </td>
                             <td class="style24">
                                 <asp:GridView ID="gvReservasOk" runat="server" CellPadding="4" ForeColor="#333333"
-                                    GridLines="None" AutoGenerateColumns="False" Visible="False" 
-                                    onrowdeleting="gvReservasOk_RowDeleting">
+                                    GridLines="None" AutoGenerateColumns="False" Visible="False" OnRowDeleting="gvReservasOk_RowDeleting">
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
-                                        <asp:BoundField DataField="CodReserva" HeaderText="Codigo" >
+                                        <asp:BoundField DataField="CodReserva" HeaderText="Codigo">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:BoundField DataField="Cliente.Nombre" HeaderText="Nombre" >
+                                        <asp:BoundField DataField="Cliente.Nombre" HeaderText="Nombre">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:BoundField DataField="Cliente.Apellido" HeaderText="Apellido" >
+                                        <asp:BoundField DataField="Cliente.Apellido" HeaderText="Apellido">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto" >
+                                        <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" >
+                                        <asp:BoundField DataField="Cantidad" HeaderText="Cantidad">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:CommandField ButtonType="Image" 
-                                            DeleteImageUrl="~/images/Iconos/edit_remove.png" DeleteText="" 
-                                            ShowDeleteButton="True" />
+                                        <asp:CommandField ButtonType="Image" DeleteImageUrl="~/images/Iconos/edit_remove.png"
+                                            DeleteText="" ShowDeleteButton="True" />
                                     </Columns>
                                     <EditRowStyle BackColor="#2461BF" />
                                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -398,4 +395,10 @@
     </table>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphReserva" runat="server">
+</asp:Content>
+<asp:Content ID="Content5" runat="server" ContentPlaceHolderID="cphMenu">
+    <!--Control de login de ejemplo-->
+    <uc2:Login ID="Login1" runat="server" />
+    <br />
+    <uc1:MenuAdmin ID="MenuAdmin1" runat="server" />
 </asp:Content>

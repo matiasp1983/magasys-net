@@ -67,6 +67,15 @@ namespace Dyn.Web.Masters {
         protected global::Dyn.Web.controls.Login Login1;
         
         /// <summary>
+        /// upMenuAdmin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upMenuAdmin;
+        
+        /// <summary>
         /// MenuAdmin1 control.
         /// </summary>
         /// <remarks>

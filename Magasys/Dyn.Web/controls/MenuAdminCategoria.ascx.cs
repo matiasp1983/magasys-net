@@ -30,12 +30,21 @@ namespace Dyn.Web.controls
         {
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
-                int idcategoria = Convert.ToInt32(((Label)e.Item.FindControl("lblIdCategoria")).Text);
-                int idcategoriapadre = idcategoria;
-                Repeater repSubCategoria = (Repeater)e.Item.FindControl("repSubCategoria");
+                /**Inicio modificacion de selección de Sub-Categoria 06-10-2013**/
                 Dyn.Database.logic.MenuCategoria lcategoria = new Dyn.Database.logic.MenuCategoria();
                 Dyn.Database.entities.MenuCategoria ecategoria = new Dyn.Database.entities.MenuCategoria();
                 ecategoria = lcategoria.Load(IdMenuCategoria);
+                int idcategoria = Convert.ToInt32(((Label)e.Item.FindControl("lblIdCategoria")).Text);
+                if (ecategoria.RelacionadaIdMenuCategoria != idcategoria)
+                {
+                    if (idcategoria != IdMenuCategoria)
+                    {
+                        return;
+                    }                    
+                }
+                /**Fin modificacion de selección de Sub-Categoria 06-10-2013**/
+                int idcategoriapadre = idcategoria;
+                Repeater repSubCategoria = (Repeater)e.Item.FindControl("repSubCategoria");
                 if (ecategoria.RelacionadaIdMenuCategoria != null)
                 {
                     idcategoriapadre = (int)ecategoria.IdMenuCategoria;

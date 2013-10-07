@@ -157,5 +157,10 @@ namespace Dyn.Web.Admin
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('No hay ventas asociadas al cobro');", true);
             }
         }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("GestionCobros.aspx");
+        }
     }
 }

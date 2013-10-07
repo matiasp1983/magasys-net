@@ -29,7 +29,7 @@ namespace Dyn.Web.Admin
         {
             if (!IsPostBack)
             {
-                this.Master.TituloPagina = "Clientes";
+                this.Master.TituloPagina = "Listado de clientes";
                 //CargarCliente(null, null, null, null, null);
                 LlenarTipoDocumento();
             }

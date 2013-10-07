@@ -5,7 +5,7 @@
 <%@ Register Assembly="CollectionPager" Namespace="SiteUtils" TagPrefix="cc1" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="act" %>
 <%@ Register Src="../controls/Login.ascx" TagName="Login" TagPrefix="uc2" %>
-<%@ Register Src="../controls/MenuAdminCategoria.ascx" TagName="MenuAdmin" TagPrefix="uc1" %>
+<%@ Register Src="../controls/MenuAdminCategoria.ascx" TagName="MenuAdmin" TagPrefix="uc5" %>
 <%@ Register Src="../controls/Date.ascx" TagName="Date" TagPrefix="uc1" %>
 <%@ Register Src="../controls/Ventas.ascx" TagName="Ventas" TagPrefix="uc3" %>
 <%@ Register Src="../controls/BuscarClientes.ascx" TagName="BuscarClientes" TagPrefix="uc4" %>
@@ -44,7 +44,7 @@
                         </td>
                     </tr>
                     <tr>
-      <%--                  <td class="tittleprecios03" align="left">
+                        <%--                  <td class="tittleprecios03" align="left">
                             <asp:Label ID="lblEntrega" runat="server" Text="Entrega:" Width="100px"></asp:Label>
                             <asp:RadioButton ID="rdbSiEntrega" runat="server" Text="Si" Checked="True" GroupName="Entrega" />
                             <asp:RadioButton ID="rdbNoEntrega" runat="server" Text="No" GroupName="Entrega" />
@@ -93,4 +93,10 @@
     </table>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphReserva" runat="server">
+</asp:Content>
+<asp:Content ID="Content5" runat="server" ContentPlaceHolderID="cphMenu">
+    <!--Control de login de ejemplo-->
+    <uc2:Login ID="Login1" runat="server" />
+    <br />
+    <uc5:MenuAdmin ID="MenuAdmin1" runat="server" />
 </asp:Content>

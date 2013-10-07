@@ -13,15 +13,6 @@ namespace Dyn.Web.Admin {
     public partial class ListadoDeudas {
         
         /// <summary>
-        /// MenuAdmin1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Dyn.Web.controls.MenuAdmin MenuAdmin1;
-        
-        /// <summary>
         /// lblFechaInicio control.
         /// </summary>
         /// <remarks>
@@ -92,6 +83,24 @@ namespace Dyn.Web.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gridVentas;
+        
+        /// <summary>
+        /// Login1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Dyn.Web.controls.Login Login1;
+        
+        /// <summary>
+        /// MenuAdmin1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Dyn.Web.controls.MenuAdminCategoria MenuAdmin1;
         
         /// <summary>
         /// Master property.

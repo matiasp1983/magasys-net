@@ -18,7 +18,7 @@ namespace Dyn.Web.Admin
         {
             if (!IsPostBack)
             {
-                this.Master.TituloPagina = "Reservas";
+                this.Master.TituloPagina = "Listado de reservas";
                 LlenarEstado();
             }
         }

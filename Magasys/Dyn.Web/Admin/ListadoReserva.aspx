@@ -6,7 +6,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="act" %>
 <%@ Register Src="../controls/Login.ascx" TagName="Login" TagPrefix="uc2" %>
 <%@ Register Src="../controls/MenuAdminCategoria.ascx" TagName="MenuAdmin" TagPrefix="uc1" %>
-<%@ Register Src="../controls/Date.ascx" TagName="Date" TagPrefix="uc1" %>
+<%@ Register Src="../controls/Date.ascx" TagName="Date" TagPrefix="uc3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
@@ -25,7 +25,7 @@
                             <asp:Label ID="lblFecha" runat="server" Text="Fecha de reserva:" Width="115px"></asp:Label>
                         </td>
                         <td class="tittleprecios03" align="left" style="width: 180px">
-                            <uc1:Date ID="calFechaReserva" runat="server" Visible="True" />
+                            <uc3:Date ID="calFechaReserva" runat="server" Visible="True" />
                         </td>
                         <td class="tittleprecios03" align="left">
                             <asp:Label ID="lblTipoReserva" runat="server" Text="Tipo de reserva:" Width="105px"></asp:Label>
@@ -195,4 +195,10 @@
     </table>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphReserva" runat="server">
+</asp:Content>
+<asp:Content ID="Content5" runat="server" ContentPlaceHolderID="cphMenu">
+    <!--Control de login de ejemplo-->
+    <uc2:Login ID="Login1" runat="server" />
+    <br />
+    <uc1:MenuAdmin ID="MenuAdmin1" runat="server" />
 </asp:Content>

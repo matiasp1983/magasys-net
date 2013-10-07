@@ -56,7 +56,7 @@
                                     </asp:DropDownList>
                                 </td>
                             </tr>
-<%--                            <tr>
+                            <%--                            <tr>
                                 <td colspan="4">
                                     <uc4:BuscarClientes ID="ucBuscarClientes" runat="server" />
                                 </td>
@@ -121,4 +121,10 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphReserva" runat="server">
+</asp:Content>
+<asp:Content ID="Content5" runat="server" ContentPlaceHolderID="cphMenu">
+    <!--Control de login de ejemplo-->
+    <uc2:Login ID="Login1" runat="server" />
+    <br />
+    <uc1:MenuAdmin ID="MenuAdmin1" runat="server" />
 </asp:Content>
