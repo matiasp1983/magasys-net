@@ -30,7 +30,10 @@ namespace Dyn.Database.logic
             AddCmdParameter("@idEstado", objVenta.IdEstado, ParameterDirection.Input);
             AddCmdParameter("@total", objVenta.MonTotal, ParameterDirection.Input);
             AddCmdParameter("@formaDePago", objVenta.FormaPago, ParameterDirection.Input);
-            AddCmdParameter("@nroCliente", objVenta.NroCliente, ParameterDirection.Input);
+            if (objVenta.NroCliente != 0)
+            {
+                AddCmdParameter("@nroCliente", objVenta.NroCliente, ParameterDirection.Input);
+            }
         }
 
         public object Insert(Dyn.Database.entities.Venta objVenta)

@@ -45,6 +45,7 @@ namespace Dyn.Web.Admin
         {
             if (!IsPostBack)
             {
+                this.Master.TituloPagina = "Repartos";
                 calFecha.CalendarDate = DateTime.Today;
                 LlenarProveedor();
                 listaProductosOK.Clear();

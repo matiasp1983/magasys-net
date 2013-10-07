@@ -2,16 +2,13 @@
     CodeBehind="RegistrarCobro.aspx.cs" Inherits="Dyn.Web.Admin.RegistrarCobro" Culture="es-AR" %>
 
 <%@ MasterType VirtualPath="~/Masters/Admin.Master" %>
-<%@ Register Src="../controls/MenuAdmin.ascx" TagName="MenuAdmin" TagPrefix="uc1" %>
 <%@ Register Src="../controls/Date.ascx" TagName="Date" TagPrefix="uc2" %>
 <%@ Register Src="../controls/BuscarClientes.ascx" TagName="BuscarClientes" TagPrefix="uc4" %>
+<%@ Register Src="../controls/Login.ascx" TagName="Login" TagPrefix="uc2" %>
+<%@ Register Src="../controls/MenuAdminCategoria.ascx" TagName="MenuAdmin" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="cphMenu" runat="server">
-    <uc1:MenuAdmin ID="MenuAdmin1" runat="server" />
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
-    <br />
+<asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">    
     <table>
         <tr>
             <td class="tittleprecios03">
@@ -28,14 +25,13 @@
             </td>
         </tr>
         <tr>
-            <td colspan="4">
+            <td colspan="3">
                 <br />
                 <uc4:BuscarClientes ID="ucBuscarClientes" runat="server" />
             </td>
-        </tr>
-        <tr>
-            <td>
-                <asp:Button ID="btnBuscar" runat="server" Text="Buscar Cobros" OnClick="btnBuscar_Click" />
+            <td style="top: 15px; padding-bottom: 5px;">
+                <asp:Button ID="btnBuscar" runat="server" Text="Buscar Ventas" OnClick="btnBuscar_Click"
+                    Width="100px" />
             </td>
         </tr>
     </table>
@@ -105,7 +101,13 @@
     <br />
     <asp:Button ID="btnGragar" runat="server" Text="Grabar" OnClick="btnGragar_Click"
         Visible="false" />&nbsp;<asp:Button ID="btnCancelar" runat="server" Text="Cancelar"
-            Visible="false" />
+            Visible="false" OnClick="btnCancelar_Click" />
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphReserva" runat="server">
+</asp:Content>
+<asp:Content ID="Content5" runat="server" ContentPlaceHolderID="cphMenu">
+    <!--Control de login de ejemplo-->
+    <uc2:Login ID="Login1" runat="server" />
+    <br />
+    <uc1:MenuAdmin ID="MenuAdmin1" runat="server" />
 </asp:Content>

@@ -15,6 +15,7 @@ namespace Dyn.Web.Admin
         {
             if (!IsPostBack)
             {
+                this.Master.TituloPagina = "Entregas";
                 listaReservas.Clear();
                 listaEntregas.Clear();
             }

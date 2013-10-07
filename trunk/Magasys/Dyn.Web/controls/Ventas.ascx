@@ -167,7 +167,6 @@
                                         </td>
                                         <td style="width: 110px">
                                             <asp:Label ID="lblPesosValorTotal" runat="server" Text="Label" CssClass="tittleprecios03">$ </asp:Label>
-                                            <%--<asp:Label CssClass="tittleprecios03" ID="lblValorTotal" runat="server" Text='<%# String.Format("{0:0.00}", Convert.ToDouble(Convert.ToDouble(Eval("subTotal")))) %>'></asp:Label>--%>
                                             <asp:Label CssClass="tittleprecios03" ID="lblValorTotal" runat="server" Text='<%# Convert.ToDouble(Convert.ToDouble(Eval("subTotal"))) %>'></asp:Label>
                                         </td>
                                         <td>
@@ -262,8 +261,12 @@
                                                 <ItemTemplate>
                                                     <tr>
                                                         <td>
-                                                            <asp:CheckBox ID="chkProductoSeleccionado" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "idProducto")%>'
+                                                            <asp:CheckBox ID="chkProductoSeleccionado" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "idProductoEdicion")%>'
                                                                 Font-Size="0px" />
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label CssClass="tittleprecios03" ID="lblIdProducto" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "idProducto")%>'
+                                                                Font-Size="0px"></asp:Label>
                                                         </td>
                                                         <td>
                                                             <asp:Label CssClass="tittleprecios03" ID="lblNombre" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "nombre")%>'></asp:Label>

@@ -1,11 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Admin.Master" AutoEventWireup="true" CodeBehind="ListadoClientes.aspx.cs" Inherits="Dyn.Web.Admin.ListadoClientes" %>
-<%@ MasterType VirtualPath="~/Masters/Admin.Master" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Admin.Master" AutoEventWireup="true"
+    CodeBehind="ListadoClientes.aspx.cs" Inherits="Dyn.Web.Admin.ListadoClientes" %>
 
+<%@ MasterType VirtualPath="~/Masters/Admin.Master" %>
 <%@ Register Assembly="CollectionPager" Namespace="SiteUtils" TagPrefix="cc1" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="act" %>
-<%@ Register src="../controls/Login.ascx" tagname="Login" tagprefix="uc2" %>
-<%@ Register src="../controls/MenuAdminCategoria.ascx" tagname="MenuAdmin" tagprefix="uc1" %>
-
+<%@ Register Src="../controls/Login.ascx" TagName="Login" TagPrefix="uc2" %>
+<%@ Register Src="../controls/MenuAdminCategoria.ascx" TagName="MenuAdmin" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .style1
@@ -14,10 +14,8 @@
         }
     </style>
 </asp:Content>
-
 <asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
-
-<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <table width="100%" cellpadding="0" cellspacing="5">
                 <tr>
@@ -26,7 +24,7 @@
                             LabelText="P&aacute;gina:" NextText="Siguiente »" ResultsFormat="Resultados {0}-{1} (de {2})"
                             BackText="« Anterior" CurrentPage="1" MaxPages="10" SliderSize="10" IgnoreQueryString="False"
                             QueryStringKey="Page">
-                        </cc1:CollectionPager>                        
+                        </cc1:CollectionPager>
                     </td>
                 </tr>
                 <tr>
@@ -40,21 +38,18 @@
                         Tipo Documento
                     </td>
                     <td align="left" class="style1">
-                        <asp:DropDownList ID="lstTipoDoc" runat="server" CssClass="tittleprecios03" 
-                            onselectedindexchanged="lstTipoDoc_SelectedIndexChanged">
+                        <asp:DropDownList ID="lstTipoDoc" runat="server" CssClass="tittleprecios03" OnSelectedIndexChanged="lstTipoDoc_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                     <td align="left" class="tittleprecios03" width="100">
-                        Numero Documento</td>
+                        Numero Documento
+                    </td>
                     <td align="left" class="style1">
-                        <asp:CompareValidator ID="cvDocumento" runat="server" 
-                            ControlToValidate="txtNroDocumento" CssClass="tittleprecios03" 
-                            Display="Dynamic" ErrorMessage="Debe ingresar un numero" ForeColor="Red" 
-                            Operator="DataTypeCheck" Type="Integer"></asp:CompareValidator>
-                        <asp:TextBox ID="txtNroDocumento" runat="server" CssClass="tittleprecios03" 
-                            MaxLength="10"></asp:TextBox>
+                        <asp:CompareValidator ID="cvDocumento" runat="server" ControlToValidate="txtNroDocumento"
+                            CssClass="tittleprecios03" Display="Dynamic" ErrorMessage="Debe ingresar un numero"
+                            ForeColor="Red" Operator="DataTypeCheck" Type="Integer"></asp:CompareValidator>
+                        <asp:TextBox ID="txtNroDocumento" runat="server" CssClass="tittleprecios03" MaxLength="10"></asp:TextBox>
                         <br />
-                        
                     </td>
                     <td width="233" align="left">
                         <asp:Button ID="btnBuscar" CssClass="adminbutton" runat="server" Text="Buscar" OnClick="btnBuscar_Click"
@@ -63,66 +58,61 @@
                 </tr>
                 <tr>
                     <td align="left" class="tittleprecios03" width="100">
-                        Nombre</td>
+                        Nombre
+                    </td>
                     <td align="left" class="style1">
-                        <asp:TextBox ID="txtNombre" runat="server" CssClass="tittleprecios03" 
-                            MaxLength="50"></asp:TextBox>
+                        <asp:TextBox ID="txtNombre" runat="server" CssClass="tittleprecios03" MaxLength="50"></asp:TextBox>
                         <br />
-                        
                     </td>
                     <td align="left" class="tittleprecios03" width="100">
-                        Apellido</td>
+                        Apellido
+                    </td>
                     <td align="left" class="style1">
-                        <asp:TextBox ID="txtApellido" runat="server" CssClass="tittleprecios03" 
-                            MaxLength="50"></asp:TextBox>
+                        <asp:TextBox ID="txtApellido" runat="server" CssClass="tittleprecios03" MaxLength="50"></asp:TextBox>
                         <br />
                     </td>
                 </tr>
                 <tr>
                     <td align="left" class="tittleprecios03" width="100">
-                        Alias</td>
+                        Alias
+                    </td>
                     <td align="left" class="style1">
-                        <asp:TextBox ID="txtAlias" runat="server" CssClass="tittleprecios03" 
-                            MaxLength="100"></asp:TextBox>
+                        <asp:TextBox ID="txtAlias" runat="server" CssClass="tittleprecios03" MaxLength="100"></asp:TextBox>
                         <br />
                     </td>
                     <td>
-                    
                     </td>
-
                     <td>
-                    
                     </td>
-
                     <td width="700" align="left">
                         <asp:Button ID="btnAdicionarGenero" CssClass="adminbutton" runat="server" Text="Adicionar Cliente"
-                            CausesValidation="False" onclick="btnAdicionarCliente_Click" />
+                            CausesValidation="False" OnClick="btnAdicionarCliente_Click" />
                     </td>
                 </tr>
-
-
-
-
-                
                 <tr>
                     <td align="left" class="tittleprecios03" width="100">
-                        &nbsp;</td>
+                        &nbsp;
+                    </td>
                     <td align="left" class="style1">
-                        &nbsp;</td>
+                        &nbsp;
+                    </td>
                     <td>
-                        &nbsp;</td>
+                        &nbsp;
+                    </td>
                     <td>
-                        &nbsp;</td>
+                        &nbsp;
+                    </td>
                     <td align="left" width="700">
-                        &nbsp;</td>
+                        &nbsp;
+                    </td>
                 </tr>
                 <tr>
                     <td align="left" class="tittleprecios03" width="100">
-                        &nbsp;</td>
+                        &nbsp;
+                    </td>
                     <td align="left" class="style3" colspan="3">
-                        <asp:GridView ID="gvClientes" runat="server" AutoGenerateColumns="False" 
-                            CellPadding="4" ForeColor="#333333" GridLines="None" 
-                            onselectedindexchanged="gvClientes_SelectedIndexChanged">
+                        <asp:GridView ID="gvClientes" runat="server" AutoGenerateColumns="False" CellPadding="4"
+                            ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="gvClientes_SelectedIndexChanged">
                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                             <Columns>
                                 <asp:HyperLinkField DataTextField="NroCliente" HeaderText="NroCliente" />
@@ -146,19 +136,20 @@
                         </asp:GridView>
                     </td>
                     <td align="left" width="700">
-                        &nbsp;</td>
+                        &nbsp;
+                    </td>
                 </tr>
-
-
-
-
-                
             </table>
         </ContentTemplate>
     </asp:UpdatePanel>
     <div style="clear: both">
     </div>
-
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphReserva" runat="server">
+</asp:Content>
+<asp:Content ID="Content5" runat="server" ContentPlaceHolderID="cphMenu">
+    <!--Control de login de ejemplo-->
+    <uc2:Login ID="Login1" runat="server" />
+    <br />
+    <uc1:MenuAdmin ID="MenuAdmin1" runat="server" />
 </asp:Content>

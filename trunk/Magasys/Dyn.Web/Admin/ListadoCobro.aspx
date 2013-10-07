@@ -2,8 +2,10 @@
     CodeBehind="ListadoCobro.aspx.cs" Inherits="Dyn.Web.Admin.ListadoCobro" Culture="es-AR" %>
 
 <%@ MasterType VirtualPath="~/Masters/Admin.Master" %>
-<%@ Register Src="../controls/MenuAdmin.ascx" TagName="MenuAdmin" TagPrefix="uc1" %>
+<%@ Register Src="../controls/MenuAdminCategoria.ascx" TagName="MenuAdminCategoria"
+    TagPrefix="uc1" %>
 <%@ Register Src="../controls/Date.ascx" TagName="Date" TagPrefix="uc2" %>
+<%@ Register Src="../controls/Login.ascx" TagName="Login" TagPrefix="uc3" %>
 <%@ Register Src="../controls/BuscarClientes.ascx" TagName="BuscarClientes" TagPrefix="uc4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link type="text/css" rel="Stylesheet" href="../GridView/dialog.css" />
@@ -30,10 +32,7 @@
         }
     </script>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="cphMenu" runat="server">
-    <uc1:MenuAdmin ID="MenuAdmin1" runat="server" />
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">    
+<asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
     <table>
         <tr>
             <td class="tittleprecios03">
@@ -47,16 +46,16 @@
             </td>
             <td style="width: 120px;">
                 <uc2:Date ID="calFechaFinal" runat="server" />
-            </td>           
+            </td>
         </tr>
-         <tr>
+        <tr>
             <td colspan="3">
                 <br />
                 <uc4:buscarclientes ID="ucBuscarClientes" runat="server" />
             </td>
-             <td style="top:15px; padding-bottom:5px;">
-                <asp:Button ID="btnBuscar" runat="server" Text="Buscar Cobros" 
-                     OnClick="btnBuscar_Click" Width="100px" />
+            <td style="top: 15px; padding-bottom: 5px;">
+                <asp:Button ID="btnBuscar" runat="server" Text="Buscar Cobros" OnClick="btnBuscar_Click"
+                    Width="100px" />
             </td>
         </tr>
     </table>
@@ -166,4 +165,10 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphReserva" runat="server">
+</asp:Content>
+<asp:Content ID="Content5" runat="server" ContentPlaceHolderID="cphMenu">
+    <!--Control de login de ejemplo-->
+    <uc3:Login ID="Login1" runat="server" />
+    <br />
+    <uc1:MenuAdminCategoria ID="MenuAdminCategoria1" runat="server" />
 </asp:Content>
