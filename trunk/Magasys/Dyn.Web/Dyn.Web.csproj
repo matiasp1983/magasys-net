@@ -150,6 +150,9 @@
     <Content Include="images\Boton_buscar.png" />
     <Content Include="images\Boton_cancelar.png" />
     <Content Include="images\Boton_editar.png" />
+    <Content Include="images\Boton_editar_eliminar.png" />
+    <Content Include="images\Boton_next.png" />
+    <Content Include="images\Boton_ok.png" />
     <Content Include="images\eliminar.jpg" />
     <Content Include="images\Flecha.gif" />
     <Content Include="images\Header.jpg" />
