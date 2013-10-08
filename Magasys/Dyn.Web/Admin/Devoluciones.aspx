@@ -105,11 +105,11 @@
                                         <asp:BoundField DataField="Cantidad" HeaderText="Cantidad">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:CommandField ShowEditButton="True" ButtonType="Image" EditImageUrl="~/images/Iconos/edit.png"
+                                        <asp:CommandField ShowEditButton="True" ButtonType="Image" EditImageUrl="~/images/Boton_editar.png"
                                             EditText="">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:CommandField>
-                                        <asp:CommandField ButtonType="Image" SelectImageUrl="~/images/Iconos/next.png" SelectText=""
+                                        <asp:CommandField ButtonType="Image" SelectImageUrl="~/images/Boton_next.png" SelectText=""
                                             ShowSelectButton="True">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:CommandField>
@@ -170,7 +170,8 @@
                                         <asp:BoundField DataField="Cantidad" HeaderText="Cantidad">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:CommandField SelectText="" ShowSelectButton="True" ButtonType="Image" SelectImageUrl="~/images/Iconos/button_ok.png">
+                                        <asp:CommandField SelectText="" ShowSelectButton="True" ButtonType="Image" 
+                                            SelectImageUrl="~/images/Boton_ok.png">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:CommandField>
                                     </Columns>
@@ -222,7 +223,7 @@
                         <asp:BoundField DataField="Cantidad" HeaderText="Cantidad">
                             <ItemStyle HorizontalAlign="Center" />
                         </asp:BoundField>
-                        <asp:CommandField ButtonType="Image" DeleteImageUrl="~/images/Iconos/edit_remove.png"
+                        <asp:CommandField ButtonType="Image" DeleteImageUrl="~/images/Boton_editar_eliminar.png"
                             ShowDeleteButton="True">
                             <ItemStyle HorizontalAlign="Center" />
                         </asp:CommandField>

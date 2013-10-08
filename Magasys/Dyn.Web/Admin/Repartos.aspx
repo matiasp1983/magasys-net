@@ -155,7 +155,8 @@
                                         <asp:BoundField DataField="Descripcion" HeaderText="Descripci&oacute;n">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:CommandField ShowSelectButton="True" ButtonType="Image" SelectImageUrl="~/images/Iconos/next.png">
+                                        <asp:CommandField ShowSelectButton="True" ButtonType="Image" 
+                                            SelectImageUrl="~/images/Boton_next.png">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:CommandField>
                                     </Columns>

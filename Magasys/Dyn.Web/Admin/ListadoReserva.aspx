@@ -122,7 +122,7 @@
                                 <asp:TemplateField ShowHeader="False">
                                     <ItemTemplate>
                                         <asp:ImageButton ID="imbBorrar" runat="server" CausesValidation="False" CommandName="DeleteRow"
-                                            ImageUrl="~/images/Boton_cancelar.png" Text="Borrar" CommandArgument="<%#((GridViewRow) Container).RowIndex%>"
+                                            ImageUrl="~/images/Boton_editar_eliminar.png" Text="Borrar" CommandArgument="<%#((GridViewRow) Container).RowIndex%>"
                                             OnClientClick="javascript:return confirm('Desea eliminar la reserva?');" />
                                     </ItemTemplate>
                                     <ControlStyle CssClass="estilosBotonesGrid" />
@@ -171,7 +171,7 @@
                                     <asp:TemplateField ShowHeader="False">
                                         <ItemTemplate>
                                             <asp:ImageButton ID="imbBorrar" runat="server" CausesValidation="False" CommandName="DeleteRow"
-                                                ImageUrl="~/images/Boton_cancelar.png" Text="Borrar" CommandArgument="<%#((GridViewRow) Container).RowIndex%>"
+                                                ImageUrl="~/images/Boton_editar_eliminar.png" Text="Borrar" CommandArgument="<%#((GridViewRow) Container).RowIndex%>"
                                                 OnClientClick="javascript:return confirm('Desea eliminar la reserva?');" />
                                         </ItemTemplate>
                                         <ControlStyle CssClass="estilosBotonesGrid" />

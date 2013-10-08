@@ -148,7 +148,7 @@
                                         <asp:BoundField DataField="Cliente.Apellido" HeaderText="Apellido" />
                                         <asp:BoundField DataField="Cliente.DomicilioCalle" HeaderText="Calle" />
                                         <asp:BoundField DataField="Cliente.DomicilioNro" HeaderText="Numero" />
-                                        <asp:CommandField ButtonType="Image" SelectImageUrl="~/images/Iconos/next.png" SelectText=""
+                                        <asp:CommandField ButtonType="Image" SelectImageUrl="~/images/Boton_next.png" SelectText=""
                                             ShowSelectButton="True" />
                                     </Columns>
                                     <EditRowStyle BackColor="#999999" />
@@ -219,7 +219,7 @@
                                         <asp:BoundField DataField="ReservaEdicion.ProductoEdicion.Producto.Nombre" HeaderText="Producto" />
                                         <asp:BoundField DataField="ReservaEdicion.ProductoEdicion.Descripcion" HeaderText="Descripcion" />
                                         <asp:BoundField DataField="ReservaEdicion.Cantidad" HeaderText="Cantidad" />
-                                        <asp:CommandField ButtonType="Image" DeleteImageUrl="~/images/Iconos/edit_remove.png"
+                                        <asp:CommandField ButtonType="Image" DeleteImageUrl="~/images/Boton_editar_eliminar.png"
                                             DeleteText="" ShowDeleteButton="True" />
                                     </Columns>
                                     <EditRowStyle BackColor="#999999" />

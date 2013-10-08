@@ -126,7 +126,7 @@
                                         <asp:BoundField DataField="Descripcion" HeaderText="Descripci&oacute;n">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:CommandField ShowSelectButton="True" ButtonType="Image" SelectImageUrl="~/images/Iconos/next.png"
+                                        <asp:CommandField ShowSelectButton="True" ButtonType="Image" SelectImageUrl="~/images/Boton_next.png"
                                             SelectText="">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:CommandField>
@@ -183,14 +183,14 @@
                                             <HeaderStyle Width="50px" />
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:CommandField ShowEditButton="True" ButtonType="Image" CancelImageUrl="~/images/Iconos/button_cancel.png"
-                                            CancelText="" EditImageUrl="~/images/Iconos/edit.png" EditText="" UpdateImageUrl="~/images/Iconos/button_ok.png"
+                                        <asp:CommandField ShowEditButton="True" ButtonType="Image" CancelImageUrl="~/images/Boton_cancelar.png"
+                                            CancelText="" EditImageUrl="~/images/Boton_editar.png" EditText="" UpdateImageUrl="~/images/Iconos/button_ok.png"
                                             UpdateText="">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:CommandField>
-                                        <asp:CommandField ShowDeleteButton="True" ButtonType="Image" CancelImageUrl="~/images/Iconos/button_cancel.png"
-                                            CancelText="" DeleteImageUrl="~/images/Iconos/edit_remove.png" DeleteText=""
-                                            EditImageUrl="~/images/Iconos/edit.png" EditText="" UpdateImageUrl="~/images/Iconos/button_ok.png"
+                                        <asp:CommandField ShowDeleteButton="True" ButtonType="Image" CancelImageUrl="~/images/Boton_cancelar.png"
+                                            CancelText="" DeleteImageUrl="~/images/Boton_editar_eliminar.png" DeleteText=""
+                                            EditImageUrl="~/images/Boton_editar.png" EditText="" UpdateImageUrl="~/images/Iconos/button_ok.png"
                                             UpdateText="">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:CommandField>
@@ -271,7 +271,8 @@
                                         <asp:BoundField DataField="Cantidad" HeaderText="Cantidad">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:CommandField SelectText="" ShowSelectButton="True" ButtonType="Image" SelectImageUrl="~/images/Iconos/button_ok.png">
+                                        <asp:CommandField SelectText="" ShowSelectButton="True" ButtonType="Image" 
+                                            SelectImageUrl="~/images/Boton_ok.png">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:CommandField>
                                     </Columns>
@@ -342,7 +343,7 @@
                                         <asp:BoundField DataField="Cantidad" HeaderText="Cantidad">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:CommandField ButtonType="Image" DeleteImageUrl="~/images/Iconos/edit_remove.png"
+                                        <asp:CommandField ButtonType="Image" DeleteImageUrl="~/images/Boton_editar_eliminar.png"
                                             DeleteText="" ShowDeleteButton="True" />
                                     </Columns>
                                     <EditRowStyle BackColor="#2461BF" />
