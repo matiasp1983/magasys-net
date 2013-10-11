@@ -56,7 +56,20 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="cal\calendar.gif" />
+    <Content Include="cal\close.gif" />
+    <Content Include="cal\divider.gif" />
+    <Content Include="cal\drop1.gif" />
+    <Content Include="cal\drop2.gif" />
+    <Content Include="cal\left1.gif" />
+    <Content Include="cal\left2.gif" />
+    <Content Include="cal\popcalendar.css" />
+    <Content Include="cal\popcalendar.js" />
+    <Content Include="cal\right1.gif" />
+    <Content Include="cal\right2.gif" />
+    <Content Include="cal\up2.gif" />
     <Content Include="contacto.html" />
+    <Content Include="controls\Date.ascx" />
     <Content Include="images\0DIARIOS090520120509090247.jpg" />
     <Content Include="images\1265749210_LaRevistaSeventeen-2.jpg" />
     <Content Include="images\200911200911485cdd3b30349c864f6453dc529cccfd98.jpeg" />
@@ -105,7 +118,9 @@
     <Content Include="inicio.html" />
     <Content Include="jquery.js" />
     <Content Include="mi-kiosco.html" />
+    <Content Include="mi-kiosco\ListadoDeudas.aspx" />
     <Content Include="mi-kiosco\mi-cuenta.html" />
+    <Content Include="mi-kiosco\MiCuenta.aspx" />
     <Content Include="mi-kiosco\mis-datos.html" />
     <Content Include="mi-kiosco\mis-pagos.html" />
     <Content Include="mi-kiosco\mis-reservas.html" />
@@ -172,6 +187,13 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="controls\Date.ascx.cs">
+      <DependentUpon>Date.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\Date.ascx.designer.cs">
+      <DependentUpon>Date.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -181,6 +203,20 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="mi-kiosco\ListadoDeudas.aspx.cs">
+      <DependentUpon>ListadoDeudas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mi-kiosco\ListadoDeudas.aspx.designer.cs">
+      <DependentUpon>ListadoDeudas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mi-kiosco\MiCuenta.aspx.cs">
+      <DependentUpon>MiCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mi-kiosco\MiCuenta.aspx.designer.cs">
+      <DependentUpon>MiCuenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -206,7 +242,7 @@
     <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="PaginaTemplate.artx" />
+    <None Include="cal\vssver.scc" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

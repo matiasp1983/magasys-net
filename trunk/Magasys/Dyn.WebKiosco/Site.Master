@@ -170,12 +170,13 @@
                           <div class="cleared"></div>
                         </div>
                         <div class="art-layout-cell art-content">
-<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"/>
-        </div>
+<%--<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"/>--%>
+        
 
                           <div class="main">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
-        </div>
+                                <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+                          </div>
+                         </div>
                         </div>
                     </div>
                 </div>
