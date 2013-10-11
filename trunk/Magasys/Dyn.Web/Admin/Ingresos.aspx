@@ -184,7 +184,7 @@
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
                                         <asp:CommandField ShowEditButton="True" ButtonType="Image" CancelImageUrl="~/images/Boton_cancelar.png"
-                                            CancelText="" EditImageUrl="~/images/Boton_editar.png" EditText="" UpdateImageUrl="~/images/Iconos/button_ok.png"
+                                            CancelText="" EditImageUrl="~/images/Boton_editar.png" EditText="" UpdateImageUrl="~/images/Boton_ok.png"
                                             UpdateText="">
                                             <ItemStyle HorizontalAlign="Center" />
                                         </asp:CommandField>
