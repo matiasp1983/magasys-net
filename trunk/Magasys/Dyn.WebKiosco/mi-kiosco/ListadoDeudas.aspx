@@ -1,36 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Admin.Master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
     CodeBehind="ListadoDeudas.aspx.cs" Inherits="Dyn.Web.Admin.ListadoDeudas" Culture="es-AR" %>
 
-<%@ MasterType VirtualPath="~/Masters/Admin.Master" %>
+<%@ MasterType VirtualPath="~/Site.Master"" %>
 <%@ Register Src="~/controls/MenuAdminCategoria.ascx" TagName="MenuAdmin" TagPrefix="uc1" %>
 <%@ Register Src="../controls/Date.ascx" TagName="Date" TagPrefix="uc2" %>
 <%@ Register Src="../controls/Login.ascx" TagName="Login" TagPrefix="uc3" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link type="text/css" rel="Stylesheet" href="../GridView/dialog.css" />
-    <link type="text/css" rel="Stylesheet" href="../GridView/pager.css" />
-    <link type="text/css" rel="Stylesheet" href="../GridView/grid.css" />
-    <link type="text/css" rel="Stylesheet" href="../GridView/subgrid.css" />
-    <script type="text/javascript">
-        //master: id of div element that contains the information about master data
-        //details: id of div element wrapping the details grid
-        function showhide(master, detail) {
-            //First child of master div is the image
-            var src = $(master).children()[0].src;
-            //Switch image from (+) to (-) or vice versa.
-            if (src.endsWith("plus.png"))
-                src = src.replace('plus.png', 'minus.png');
-            else
-                src = src.replace('minus.png', 'plus.png');
 
-            //Set new image
-            $(master).children()[0].src = src;
-
-            //Toggle expand/collapse                   
-            $(detail).slideToggle("normal");
-        }
-    </script>
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <br />
     <table>
         <tr>
@@ -176,12 +152,4 @@
             </div>
         </div>
     </div>
-</asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="cphReserva" runat="server">
-</asp:Content>
-<asp:Content ID="Content5" runat="server" ContentPlaceHolderID="cphMenu">
-    <!--Control de login de ejemplo-->
-    <uc3:Login ID="Login1" runat="server" />
-    <br />
-    <uc1:MenuAdmin ID="MenuAdmin1" runat="server" />
-</asp:Content>
+
