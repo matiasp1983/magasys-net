@@ -15,7 +15,7 @@ namespace Dyn.Web.Admin
         {
             if (!IsPostBack)
             {
-                this.Master.TituloPagina = "Listado de deudas";
+                //this.Master.TituloPagina = "Listado de deudas";
                 calFechaInicial.CalendarDate = DateTime.Now.AddDays(-2);
                 calFechaFinal.CalendarDate = DateTime.Now.AddDays(2);
             }
