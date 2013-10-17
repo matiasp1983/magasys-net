@@ -43,41 +43,41 @@
 <div class="art-nav-outer">
 	<ul class="art-hmenu">
 		<li>
-			<a href="./inicio.html" class="active">Inicio</a>
+			<a href="/inicio.html" class="active">Inicio</a>
 		</li>	
 		<li>
-			<a href="./quienes-somos.html">Quienes Somos</a>
+			<a href="/quienes-somos.html">Quienes Somos</a>
 		</li>	
 		<li>
-			<a href="./novedades.html">Novedades</a>
+			<a href="/novedades.html">Novedades</a>
 		</li>	
 		<li>
-			<a href="./mi-kiosco.html">Mi Kiosco</a>
+			<a href="/mi-kiosco.html">Mi Kiosco</a>
 			<ul>
 				<li>
-                    <a href="./mi-kiosco/mis-datos.html">Mis Datos</a>
+                    <a href="/mi-kiosco/mis-datos.html">Mis Datos</a>
 
                 </li>
 				<li>
-                    <a href="./mi-kiosco/mi-cuenta.html">Mi Cuenta</a>
+                    <a href="/mi-kiosco/micuenta.aspx">Mi Cuenta</a>
 
                 </li>
 				<li>
-                    <a href="./mi-kiosco/mis-pagos.html">Mis Pagos</a>
+                    <a href="/mi-kiosco/mis-pagos.html">Mis Pagos</a>
 
                 </li>
 				<li>
-                    <a href="./mi-kiosco/realizar-reserva.html">Realizar Reserva</a>
+                    <a href="/mi-kiosco/realizar-reserva.html">Realizar Reserva</a>
 
                 </li>
 				<li>
-                    <a href="./mi-kiosco/mis-reservas.html">Mis Reservas</a>
+                    <a href="/mi-kiosco/mis-reservas.html">Mis Reservas</a>
 
                 </li>
 			</ul>
 		</li>	
 		<li>
-			<a href="./contacto.html">Contacto</a>
+			<a href="/contacto.html">Contacto</a>
 		</li>	
 	</ul>
 </div>
@@ -95,7 +95,7 @@
 
 <p><span style="color: rgb(40, 67, 82); font-family: Arial, Helvetica, sans-serif; font-size: 24px; font-weight: bold; line-height: 24px; -webkit-border-horizontal-spacing: 2px; -webkit-border-vertical-spacing: 2px;"><br /></span></p>
 
-<p style="text-align: center;"><img width="40" height="40" style="float: left; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px;" alt="" src="./images/usuario-2.png" /> Nombre, Apellido<span style="color: rgb(40, 67, 82); font-family: Arial, Helvetica, sans-serif; font-size: 24px; font-weight: bold; line-height: 24px; -webkit-border-horizontal-spacing: 2px; -webkit-border-vertical-spacing: 2px;"><br /></span></p>
+<p style="text-align: center;"><img width="40" height="40" style="float: left; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px;" alt="" src="/images/usuario-2.png" /> Nombre, Apellido<span style="color: rgb(40, 67, 82); font-family: Arial, Helvetica, sans-serif; font-size: 24px; font-weight: bold; line-height: 24px; -webkit-border-horizontal-spacing: 2px; -webkit-border-vertical-spacing: 2px;"><br /></span></p>
 
 <p style="text-align: center;"><br /></p>
 
@@ -115,7 +115,7 @@
 
 <p><br /></p>
 
-<p><img width="160" height="218" alt="" src="./images/guillermina%20vald%c3%a9s%20tapa%20revista%20caras%20foto%20desmiente-2.jpg" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px;" /><br /></p>
+<p><img width="160" height="218" alt="" src="/images/guillermina%20vald%c3%a9s%20tapa%20revista%20caras%20foto%20desmiente-2.jpg" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px;" /><br /></p>
 
 <p><br /></p>
 
@@ -133,7 +133,7 @@
 
 <p><br /></p>
 
-<p><img width="161" height="214" alt="" src="./images/revista-fortuna-20-08-2011.jpg" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px;" /><br /></p>
+<p><img width="161" height="214" alt="" src="/images/revista-fortuna-20-08-2011.jpg" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px;" /><br /></p>
 
 <p><br /></p>
 
@@ -147,7 +147,7 @@
 
 <p><br /></p>
 
-<p><img width="162" height="216" alt="" src="./images/revista-muy-interesante-esp-historia-pasion-por-egipto-css_MLM-F-67591873_1897.jpg" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px;" /><br /></p>
+<p><img width="162" height="216" alt="" src="/images/revista-muy-interesante-esp-historia-pasion-por-egipto-css_MLM-F-67591873_1897.jpg" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px;" /><br /></p>
 
 <p><br /></p>
 
