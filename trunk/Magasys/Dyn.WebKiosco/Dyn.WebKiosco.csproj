@@ -119,6 +119,7 @@
     <Content Include="index.html" />
     <Content Include="inicio.html" />
     <Content Include="jquery.js" />
+    <Content Include="Login.aspx" />
     <Content Include="mi-kiosco.html" />
     <Content Include="mi-kiosco\ListadoDeudas.aspx" />
     <Content Include="mi-kiosco\mi-cuenta.html" />
@@ -221,6 +222,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="mi-kiosco\ListadoDeudas.aspx.cs">
       <DependentUpon>ListadoDeudas.aspx</DependentUpon>
