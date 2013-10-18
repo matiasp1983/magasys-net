@@ -110,6 +110,7 @@ namespace Dyn.Web.Admin
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('No se puede eliminar la revista, porque está asociado a una transacción');", true);
                 }
             }
+            LimpiarCampos();
         }
 
         public void Update()
@@ -149,6 +150,14 @@ namespace Dyn.Web.Admin
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             Update();
+            LimpiarCampos();
+        }
+
+        public void LimpiarCampos()
+        {
+            txtDescripcion.Text = string.Empty;
+            txtNombre.Text = string.Empty;
+            txtPrecio.Text = string.Empty;
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)

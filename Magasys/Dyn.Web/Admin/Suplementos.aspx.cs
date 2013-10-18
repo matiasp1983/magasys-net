@@ -214,11 +214,20 @@ namespace Dyn.Web.Admin
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('No se puede eliminar la coleccion, porque está asociado a una venta o reserva');", true);
                 }
             }
+            LimpiarCampos();
+        }
+
+        public void LimpiarCampos()
+        {
+            txtDescripcion.Text = string.Empty;
+            txtNombre.Text = string.Empty;
+            txtPrecio.Text = string.Empty;
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             Update();
+            LimpiarCampos();
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
