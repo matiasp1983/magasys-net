@@ -56,6 +56,14 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\CollectionPager.dll" />
+    <Content Include="bin\Dyn.Database.dll" />
+    <Content Include="bin\Dyn.Database.pdb" />
+    <Content Include="bin\Dyn.Web.dll" />
+    <Content Include="bin\Dyn.Web.pdb" />
+    <Content Include="bin\Dyn.WebKiosco.dll" />
+    <Content Include="bin\Dyn.WebKiosco.pdb" />
     <Content Include="cal\calendar.gif" />
     <Content Include="cal\close.gif" />
     <Content Include="cal\divider.gif" />
@@ -69,9 +77,25 @@
     <Content Include="cal\right2.gif" />
     <Content Include="cal\up2.gif" />
     <Content Include="contacto.html" />
-    <Content Include="controls\Date.ascx" />
     <Content Include="controls\Login.ascx" />
     <Content Include="controls\MenuAdminCategoria.ascx" />
+    <Content Include="GridView\bottom-left.png" />
+    <Content Include="GridView\bottom-mid.png" />
+    <Content Include="GridView\bottom-right.png" />
+    <Content Include="GridView\dialog.css" />
+    <Content Include="GridView\footer.gif" />
+    <Content Include="GridView\grid.css" />
+    <Content Include="GridView\left.png" />
+    <Content Include="GridView\minus.png" />
+    <Content Include="GridView\pager.css" />
+    <Content Include="GridView\pager_bg.gif" />
+    <Content Include="GridView\plus.png" />
+    <Content Include="GridView\right.png" />
+    <Content Include="GridView\sprite.png" />
+    <Content Include="GridView\subgrid.css" />
+    <Content Include="GridView\top-left.png" />
+    <Content Include="GridView\top-mid.png" />
+    <Content Include="GridView\top-right.png" />
     <Content Include="images\0DIARIOS090520120509090247.jpg" />
     <Content Include="images\1265749210_LaRevistaSeventeen-2.jpg" />
     <Content Include="images\200911200911485cdd3b30349c864f6453dc529cccfd98.jpeg" />
@@ -127,6 +151,7 @@
     <Content Include="mi-kiosco\mis-datos.html" />
     <Content Include="mi-kiosco\mis-pagos.html" />
     <Content Include="mi-kiosco\mis-reservas.html" />
+    <Content Include="mi-kiosco\MisDatos.aspx" />
     <Content Include="mi-kiosco\realizar-reserva.html" />
     <Content Include="new-page-2.html" />
     <Content Include="new-page.html" />
@@ -136,6 +161,8 @@
     <Content Include="novedades.html" />
     <Content Include="quienes-somos.html" />
     <Content Include="script.js" />
+    <Content Include="Scripts\AC_RunActiveContent.js" />
+    <Content Include="Scripts\jquery-1.2.3.min.js" />
     <Content Include="style.css" />
     <Content Include="style.ie6.css" />
     <Content Include="style.ie7.css" />
@@ -192,13 +219,6 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="controls\Date.ascx.cs">
-      <DependentUpon>Date.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="controls\Date.ascx.designer.cs">
-      <DependentUpon>Date.ascx</DependentUpon>
-    </Compile>
     <Compile Include="controls\Login.ascx.cs">
       <DependentUpon>Login.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -243,6 +263,13 @@
     </Compile>
     <Compile Include="mi-kiosco\MiCuenta.aspx.designer.cs">
       <DependentUpon>MiCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mi-kiosco\MisDatos.aspx.cs">
+      <DependentUpon>MisDatos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mi-kiosco\MisDatos.aspx.designer.cs">
+      <DependentUpon>MisDatos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
