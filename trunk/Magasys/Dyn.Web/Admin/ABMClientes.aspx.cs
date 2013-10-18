@@ -91,6 +91,24 @@ namespace Dyn.Web.Admin
 
             return Entity;
         }
+
+        public void LimpiarControles()
+        {
+            txtNumero.Text = string.Empty;
+            txtAlias.Text = string.Empty;
+            txtApellido.Text = string.Empty;
+            txtBarrio.Text = string.Empty;
+            txtCalle.Text = string.Empty;
+            txtCelular.Text = string.Empty;
+            txtCodPostal.Text = string.Empty;
+            txtDpto.Text = string.Empty;
+            txtEMail.Text = string.Empty;
+            txtNombre.Text = string.Empty;
+            txtNroDocumento.Text = string.Empty;
+            txtPiso.Text = string.Empty;
+            txtTelefono.Text = string.Empty;
+        }
+
         public void Update()
         {
             lCliente = new Dyn.Database.logic.Cliente();
@@ -125,6 +143,7 @@ namespace Dyn.Web.Admin
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             Update();
+            LimpiarControles();
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -150,6 +169,7 @@ namespace Dyn.Web.Admin
                 }
                 
             }
+              LimpiarControles();
         }
         protected void btnCancelar_Click(object sender, EventArgs e)
         {

@@ -78,20 +78,22 @@ namespace Dyn.Web.Admin
                 }
             }
         }
-        public void CargarCliente(string nombre, string apellido, string alias, int? tipoDoc, int? nroDoc)
+        public void CargarCliente(string nombre, string apellido, string alias, int? nroDoc, int? tipoDoc)
         {
             lCliente = new Dyn.Database.logic.Cliente();
             List<Dyn.Database.entities.Cliente> listaClientes = lCliente.SeleccionarClientePorNombrePaginadoAdmin(nombre, apellido, alias, nroDoc, tipoDoc, Pagina, ref numeropaginas);
+      
             int[] array;
             array = new int[numeropaginas];
             gvClientes.DataSource = listaClientes;
-            gvClientes.DataKeyNames = new String[] { "nroCliente" };
+            gvClientes.DataKeyNames = new String[] { "nroDocumento" };
             gvClientes.DataBind();
         }
 
         protected void btnAdicionarCliente_Click(object sender, EventArgs e)
         {
             Response.Redirect("/Admin/ABMClientes.aspx");
+            
         }
 
         protected void lstTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
