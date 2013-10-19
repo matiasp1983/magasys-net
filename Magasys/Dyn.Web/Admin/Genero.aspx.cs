@@ -93,9 +93,17 @@ namespace Dyn.Web.Admin
             }
         }
 
+        public void LimpiarCampos()
+        {
+            txtDescripcion.Text = string.Empty;
+            txtNombre.Text = string.Empty;
+            
+        }
+
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             Update();
+            LimpiarCampos();
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)

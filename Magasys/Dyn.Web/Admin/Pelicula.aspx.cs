@@ -140,6 +140,8 @@ namespace Dyn.Web.Admin
             Entity.IdGenero = int.Parse(ddlGenero.SelectedValue);
             Entity.Precio = Convert.ToDouble(txtPrecio.Text.Trim());
             Entity.Anio = Convert.ToInt16(ddlAnio.SelectedValue);
+            txtNombre.Enabled = false;
+            txtDescripcion.Visible = false;
             return Entity;
         }
 

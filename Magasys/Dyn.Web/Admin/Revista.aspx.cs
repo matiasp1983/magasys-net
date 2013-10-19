@@ -144,7 +144,10 @@ namespace Dyn.Web.Admin
             Entity.IdPeriodicidad = int.Parse(lstPeriodicidad.SelectedValue);
             Entity.Precio = Convert.ToDouble(txtPrecio.Text.Trim());
             Entity.DiaSemana = lstDiaSemana.SelectedValue.ToString();
+            txtDescripcion.Enabled = false;
+            txtNombre.Enabled = false;
             return Entity;
+            
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)

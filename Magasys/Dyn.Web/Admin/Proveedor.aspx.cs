@@ -72,6 +72,23 @@ namespace Dyn.Web.Admin
             Entity.ResponsableEmail = txtResponsableEmail.Text.Trim();
             Entity.Nombre = txtRazonSocial.Text.Trim();
             return Entity;
+            
+        }
+
+        public void LimpiarCampos()
+        {
+            txtCalle.Text = string.Empty;
+            txtCuit.Text = string.Empty;
+            txtDetalle.Text = string.Empty;
+            txtDpto.Text = string.Empty;
+            txtEMail.Text = string.Empty;
+            txtNumero.Text = string.Empty;
+            txtPiso.Text = string.Empty;
+            txtRazonSocial.Text = string.Empty;
+            txtResponsableApellido.Text = string.Empty;
+            txtResponsableEmail.Text = string.Empty;
+            txtResponsableNombre.Text = string.Empty;
+            txtTelefono.Text = string.Empty;
         }
 
         public void Update()
@@ -116,6 +133,7 @@ namespace Dyn.Web.Admin
                     lProveedor.Update(Entity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se actualizaron los datos correctamente');", true);
                 }
+            
         }
 
         public void LlenarProvincias()
@@ -174,7 +192,8 @@ namespace Dyn.Web.Admin
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            Update();  
+            Update();
+            LimpiarCampos();
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
