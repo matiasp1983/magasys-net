@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Dyn.Database.logic;
 using Dyn.Database.entities;
+using Dyn.Web.weblogic;
 
 namespace Dyn.Web.Admin
 {
@@ -30,6 +31,7 @@ namespace Dyn.Web.Admin
         {
             if (!IsPostBack)
             {
+                CurrentUser.Regresar();
                 this.Master.TituloPagina = "Edici&oacute;n G&eacute;nero";
                 lGenero = new Dyn.Database.logic.Genero();
                 if (Request["Id"] == null)
@@ -96,8 +98,7 @@ namespace Dyn.Web.Admin
         public void LimpiarCampos()
         {
             txtDescripcion.Text = string.Empty;
-            txtNombre.Text = string.Empty;
-            
+            txtNombre.Text = string.Empty;            
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
