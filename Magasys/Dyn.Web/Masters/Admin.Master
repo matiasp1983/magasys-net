@@ -8,8 +8,6 @@
     <title>Magasys</title>
     <!--Referencia a hoja de estilo-->
     <link href="../Theme/admin.css" rel="stylesheet" type="text/css" />
-    <!--Referencia a script para la ejecucion del flash-->
-    <script type="text/javascript" src="../scripts/AC_RunActiveContent.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -17,10 +15,9 @@
     <form id="form1" runat="server">
     <!--El ScriptManager es necesario para utilizar Ajax-->
     <asp:ScriptManager ID="ScriptManager1" runat="server">
-       <Scripts>
-           <asp:ScriptReference Path="~/scripts/jquery-1.2.3.min.js" ScriptMode="Release" />
-       </Scripts>
-   </asp:ScriptManager>
+        <Scripts>
+            <asp:ScriptReference Path="~/scripts/jquery-1.2.3.min.js" ScriptMode="Release" />
+        </Scripts>
     </asp:ScriptManager>
     <table width="960" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
@@ -28,53 +25,6 @@
                 <table width="960" border="0" cellpadding="0" cellspacing="0">
                     <tr>
                         <td height="160" align="right" colspan="2" background="/images/Header.jpg">
-                            <br />
-                            <!--Inicio del control del flash-->
-                            <span style="margin-right: 10px;">
-                                <%--<script language="javascript" type="text/javascript">
-                                    if (AC_FL_RunContent == 0) {
-                                        alert("This page requires AC_RunActiveContent.js.");
-                                    } else {
-                                        AC_FL_RunContent(
-			'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0',
-			'width', '589',
-			'height', '137',
-			'src', '/flash/mainBanner',
-			'quality', 'high',
-			'pluginspage', 'http://www.macromedia.com/go/getflashplayer',
-			'align', 'middle',
-			'play', 'true',
-			'loop', 'true',
-			'scale', 'showall',
-			'wmode', 'window',
-			'devicefont', 'false',
-			'id', '/flash/mainBanner',
-			'bgcolor', '#ffffff',
-			'name', '/flash/mainBanner',
-			'menu', 'true',
-			'allowFullScreen', 'false',
-			'allowScriptAccess', 'sameDomain',
-			'movie', 'mainBanner',
-			'salign', ''
-			); //end AC code
-                                    }
-                                </script>
-                                <noscript>
-                                    <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"
-                                        width="478" height="168" id="mainBanner" align="middle">
-                                        <param name="allowScriptAccess" value="sameDomain" />
-                                        <param name="allowFullScreen" value="false" />
-                                        <param name="movie" value="mainBanner.swf" />
-                                        <param name="quality" value="high" />
-                                        <param name="bgcolor" value="#ffffff" />
-                                        <embed src="mainBanner.swf" quality="high" bgcolor="#ffffff" width="478" height="168"
-                                            name="mainBanner" align="middle" allowscriptaccess="sameDomain" allowfullscreen="false"
-                                            type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
-                                    </object>
-                                </noscript>--%>
-                            </span>
-                            <!--Fin del control del flash-->
-                            <br />
                         </td>
                     </tr>
                     <tr>
@@ -99,20 +49,21 @@
                     <uc2:Login ID="Login1" runat="server" />
                     <br />
                     <asp:UpdatePanel ID="upMenuAdmin" runat="server">
-                    <ContentTemplate>
-                    <uc1:MenuAdmin ID="MenuAdmin1" runat="server" />
-                    </ContentTemplate>
+                        <ContentTemplate>
+                            <uc1:MenuAdmin ID="MenuAdmin1" runat="server" />
+                        </ContentTemplate>
                     </asp:UpdatePanel>
                 </asp:ContentPlaceHolder>
-            </td>           
+            </td>
             <td width="585">
                 <table width="585" border="0" cellspacing="0" cellpadding="0" style="margin: 5px 0px 5px 5px;">
                     <tr>
-                        <td style="background: url(/images/BarraTituloSeccion_02.jpg); height:33px; width:585px; margin-left: 4px;" class="tittlecategorias">
+                        <td style="background: url(/images/BarraTituloSeccion_02.jpg); height: 33px; width: 585px;
+                            margin-left: 4px;" class="tittlecategorias">
                             <h4 style="margin-top: 8px; margin-left: 12px;">
                                 <asp:Label ID="lblTitulo" runat="server"></asp:Label></h4>
                         </td>
-                    </tr>                 
+                    </tr>
                     <tr>
                         <td align="center" valign="top" style="background: url(/images/PixelRepeticionDer_admin.jpg);">
                             <asp:ContentPlaceHolder ID="cphCentral" runat="server">

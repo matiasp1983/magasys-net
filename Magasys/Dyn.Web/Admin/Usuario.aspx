@@ -13,13 +13,12 @@
                 Nombre:
             </td>
             <td align="left">
-                <asp:TextBox ID="txtNombre" CssClass="tittleprecios03" Text="<%# Entity.nombres %>"
-                    MaxLength="50" runat="server"></asp:TextBox><br />
-                <asp:RequiredFieldValidator Display="Dynamic" ID="rfvNombres" runat="server" ControlToValidate="txtNombres"
+                <asp:TextBox ID="txtNombreUsuario" CssClass="tittleprecios03" MaxLength="50" runat="server"></asp:TextBox><br />
+                <asp:RequiredFieldValidator Display="Dynamic" ID="rfvNombres" runat="server" ControlToValidate="txtNombreUsuario"
                     CssClass="tittleprecios02" ErrorMessage="Debe ingresar  su nombre"></asp:RequiredFieldValidator>
             </td>
         </tr>
-        <tr>
+        <%--        <tr>
             <td align="left" class="tittleprecios03">
                 Apellido:
             </td>
@@ -29,8 +28,8 @@
                 <asp:RequiredFieldValidator Display="Dynamic" CssClass="tittleprecios02" ID="rfvApellidos"
                     runat="server" ControlToValidate="txtApellidos" ErrorMessage="Debe ingresar su apellido"></asp:RequiredFieldValidator>
             </td>
-        </tr>
-        <tr>
+        </tr>--%>
+        <%--        <tr>
             <td align="left" class="tittleprecios03">
                 Tipo Documento:
             </td>
@@ -38,8 +37,8 @@
                 <asp:DropDownList ID="ddlTipoDoc" runat="server">
                 </asp:DropDownList>
             </td>
-        </tr>
-        <tr>
+        </tr>--%>
+        <%--        <tr>
             <td align="left" class="tittleprecios03">
                 N&uacute;mero Documento:
             </td>
@@ -52,13 +51,13 @@
                     Display="Dynamic" Operator="DataTypeCheck" ControlToValidate="txtNroDoc" CssClass="tittleprecios03"
                     Type="Integer" ForeColor="Red"></asp:CompareValidator>
             </td>
-        </tr>
+        </tr>--%>
         <tr>
             <td align="left" class="tittleprecios03">
-                Login:
+                Nombre de Usuario:
             </td>
             <td align="left">
-                <asp:TextBox ID="txtLogin" CssClass="tittleprecios03" runat="server" Text="<%# Entity.login %>"></asp:TextBox><br />
+                <asp:TextBox ID="txtLogin" CssClass="tittleprecios03" runat="server"></asp:TextBox><br />
                 <asp:RequiredFieldValidator Display="Dynamic" ID="rfvLogin" CssClass="tittleprecios02"
                     runat="server" ControlToValidate="txtLogin" ErrorMessage="Debe ingresar su login"></asp:RequiredFieldValidator>
             </td>
@@ -68,30 +67,28 @@
                 Rol:
             </td>
             <td align="left">
-                <asp:DropDownList ID="lstRol" runat="server">
-                    <asp:ListItem Value="Usuario">Usuario</asp:ListItem>
-                    <asp:ListItem Value="Administrador">Administrador</asp:ListItem>
-                    <asp:ListItem>Empleado</asp:ListItem>
+                <asp:DropDownList ID="ddlRol" runat="server">
+                    <asp:ListItem Value="ADMINISTRADOR">ADMINISTRADOR</asp:ListItem>
+                    <asp:ListItem>EMPLEADO</asp:ListItem>
                 </asp:DropDownList>
-                <asp:Label ID="lblRolText" runat="server" Text="Usuario" class="tittleprecios03" Enabled="false"></asp:Label>
             </td>
         </tr>
         <tr>
             <td align="left" class="tittleprecios03">
-                Password:
+                Contrase&ntilde;a:
             </td>
             <td align="left">
                 <asp:TextBox ID="txtPassword" TextMode="Password" CssClass="tittleprecios03" runat="server"></asp:TextBox><br />
                 <asp:RequiredFieldValidator Display="Dynamic" CssClass="tittleprecios02" ID="rfvPassword"
-                    runat="server" ErrorMessage="Debe ingresar el password" ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
+                    runat="server" ErrorMessage="Debe ingresar la contrase&ntilde;a" ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
                 <asp:CompareValidator Display="Dynamic" CssClass="tittleprecios02" ID="cvPassword"
                     runat="server" ControlToCompare="txtRepetirPassword" ControlToValidate="txtPassword"
-                    ErrorMessage="El password no coincide"></asp:CompareValidator>
+                    ErrorMessage="La contrase&ntilde;a no coincide"></asp:CompareValidator>
             </td>
         </tr>
         <tr>
             <td align="left" class="tittleprecios03">
-                Repetir Password:
+                Confirmar Contrase&ntilde;a:
             </td>
             <td align="left">
                 <asp:TextBox ID="txtRepetirPassword" CssClass="tittleprecios03" TextMode="Password"

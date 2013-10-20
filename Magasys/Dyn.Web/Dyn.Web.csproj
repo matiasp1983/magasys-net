@@ -99,6 +99,7 @@
     <Content Include="Admin\Reserva.aspx" />
     <Content Include="Admin\Revista.aspx" />
     <Content Include="Admin\Suplementos.aspx" />
+    <Content Include="Admin\Usuario.aspx" />
     <Content Include="Admin\Venta.aspx" />
     <Content Include="cal\calendar.gif" />
     <Content Include="cal\close.gif" />
@@ -114,6 +115,8 @@
     <Content Include="cal\up2.gif" />
     <Content Include="controls\BuscarClientes.ascx" />
     <Content Include="controls\BuscarProducto.ascx" />
+    <Content Include="controls\SiteHeader.ascx" />
+    <Content Include="controls\SiteLogin.ascx" />
     <Content Include="controls\Date.ascx" />
     <Content Include="controls\Login.ascx" />
     <Content Include="controls\MenuAdmin.ascx" />
@@ -122,6 +125,8 @@
     <Content Include="controls\Ventas.ascx" />
     <Content Include="controls\WUCBuscarProducto.ascx" />
     <Content Include="controls\WUCBuscarReservas.ascx" />
+    <Content Include="custom.xml" />
+    <Content Include="flash\header.swf" />
     <Content Include="GridView\bottom-left.png" />
     <Content Include="GridView\bottom-mid.png" />
     <Content Include="GridView\bottom-right.png" />
@@ -139,6 +144,7 @@
     <Content Include="GridView\top-left.png" />
     <Content Include="GridView\top-mid.png" />
     <Content Include="GridView\top-right.png" />
+    <Content Include="Admin\HomeAdmin.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="images\BarraMenuCategorias_01.jpg" />
     <Content Include="images\BarraMenuCategorias_02.jpg" />
@@ -400,10 +406,104 @@
     <Content Include="images\TopInferiorContentIzq.jpg" />
     <Content Include="images\TopInferiorDer_admin.jpg" />
     <Content Include="images\TopSuperiorDer_admin.jpg" />
-    <Content Include="mainBanner.swf" />
     <Content Include="scripts\AC_RunActiveContent.js" />
     <Content Include="scripts\jquery-1.2.3.min.js" />
+    <Content Include="scripts\jquery.js" />
+    <Content Include="scripts\jquery142.js" />
+    <Content Include="scripts\main.js" />
+    <Content Include="scripts\script.js" />
+    <Content Include="scripts\sound.js" />
+    <Content Include="SiteImages\0DIARIOS090520120509090247.jpg" />
+    <Content Include="SiteImages\1265749210_LaRevistaSeventeen-2.jpg" />
+    <Content Include="SiteImages\200911200911485cdd3b30349c864f6453dc529cccfd98.jpeg" />
+    <Content Include="SiteImages\528528_10151289328577878_313256022_n-2.jpg" />
+    <Content Include="SiteImages\aaaaaaaaa-2.jpg" />
+    <Content Include="SiteImages\b1.gif" />
+    <Content Include="SiteImages\b1.png" />
+    <Content Include="SiteImages\b2.gif" />
+    <Content Include="SiteImages\b2.png" />
+    <Content Include="SiteImages\b3.gif" />
+    <Content Include="SiteImages\b3.png" />
+    <Content Include="SiteImages\b4.gif" />
+    <Content Include="SiteImages\b4.png" />
+    <Content Include="SiteImages\b5.gif" />
+    <Content Include="SiteImages\b5.png" />
+    <Content Include="SiteImages\b6.gif" />
+    <Content Include="SiteImages\b6.png" />
+    <Content Include="SiteImages\b7.gif" />
+    <Content Include="SiteImages\b7.png" />
+    <Content Include="SiteImages\bandeau.jpg" />
+    <Content Include="SiteImages\BarraTituloLogin.jpg" />
+    <Content Include="SiteImages\blockcontentbullets.png" />
+    <Content Include="SiteImages\bouton.png" />
+    <Content Include="SiteImages\button.gif" />
+    <Content Include="SiteImages\button.png" />
+    <Content Include="SiteImages\CANILLITA.jpg" />
+    <Content Include="SiteImages\ecommerce-shopping-cart1.jpg" />
+    <Content Include="SiteImages\flash.jpg" />
+    <Content Include="SiteImages\flashimages\header1.jpg" />
+    <Content Include="SiteImages\flashimages\header2.jpg" />
+    <Content Include="SiteImages\flashimages\header3.jpg" />
+    <Content Include="SiteImages\fond.gif" />
+    <Content Include="SiteImages\fond_bloc2a.jpg" />
+    <Content Include="SiteImages\fond_haut.gif" />
+    <Content Include="SiteImages\footer.png" />
+    <Content Include="SiteImages\footerbullets.png" />
+    <Content Include="SiteImages\goes-presenta-scooter-reparto.jpg" />
+    <Content Include="SiteImages\guillermina valdés tapa revista caras foto desmiente-2.jpg" />
+    <Content Include="SiteImages\guillermina valdés tapa revista caras foto desmiente.jpg" />
+    <Content Include="SiteImages\header-object.png" />
+    <Content Include="SiteImages\ico_puce.gif" />
+    <Content Include="SiteImages\ico_puce_bleu.gif" />
+    <Content Include="SiteImages\ico_puce_fushia.gif" />
+    <Content Include="SiteImages\ico_puce_orange.gif" />
+    <Content Include="SiteImages\ico_puce_rouge.gif" />
+    <Content Include="SiteImages\ico_puce_vert.gif" />
+    <Content Include="SiteImages\ico_puce_violet.gif" />
+    <Content Include="SiteImages\input_text.gif" />
+    <Content Include="SiteImages\LogoMagasys.jpg" />
+    <Content Include="SiteImages\Logo_Magasys3-2.png" />
+    <Content Include="SiteImages\mapa.jpg" />
+    <Content Include="SiteImages\menuitem.png" />
+    <Content Include="SiteImages\menuseparator.png" />
+    <Content Include="SiteImages\nav.png" />
+    <Content Include="SiteImages\pb1a.gif" />
+    <Content Include="SiteImages\pb2a.gif" />
+    <Content Include="SiteImages\postauthoricon.png" />
+    <Content Include="SiteImages\postbullets.png" />
+    <Content Include="SiteImages\postcategoryicon.png" />
+    <Content Include="SiteImages\postcommentsicon.png" />
+    <Content Include="SiteImages\postdateicon.png" />
+    <Content Include="SiteImages\postediticon.png" />
+    <Content Include="SiteImages\postheadericon.png" />
+    <Content Include="SiteImages\postquote.png" />
+    <Content Include="SiteImages\posttagicon.png" />
+    <Content Include="SiteImages\preview.jpg" />
+    <Content Include="SiteImages\puce1.gif" />
+    <Content Include="SiteImages\puce2.gif" />
+    <Content Include="SiteImages\puce3.gif" />
+    <Content Include="SiteImages\puce4.gif" />
+    <Content Include="SiteImages\puce5.gif" />
+    <Content Include="SiteImages\recorte-lavoz-premio-2.jpg" />
+    <Content Include="SiteImages\revista-fortuna-20-08-2011-2.jpg" />
+    <Content Include="SiteImages\revista-fortuna-20-08-2011.jpg" />
+    <Content Include="SiteImages\revista-muy-interesante-esp-historia-pasion-por-egipto-css_MLM-F-67591873_1897-2.jpg" />
+    <Content Include="SiteImages\revista-muy-interesante-esp-historia-pasion-por-egipto-css_MLM-F-67591873_1897.jpg" />
+    <Content Include="SiteImages\sheet.png" />
+    <Content Include="SiteImages\sheet_b.png" />
+    <Content Include="SiteImages\sheet_t.png" />
+    <Content Include="SiteImages\spacer.gif" />
+    <Content Include="SiteImages\subitem.png" />
+    <Content Include="SiteImages\Tapa_Pagina_12-756a9-2.jpg" />
+    <Content Include="SiteImages\usuario-2.png" />
+    <Content Include="SiteImages\usuario-3-2.png" />
+    <Content Include="SiteImages\verimg-2.jpg" />
+    <Content Include="sounds\music.mp3" />
+    <Content Include="sounds\page_transition_effect.mp3" />
     <Content Include="Theme\admin.css" />
+    <Content Include="Theme\user.css" />
+    <Content Include="Theme\styleSiteHeader.css" />
+    <Content Include="User\MiCuenta.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -414,7 +514,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="WebService\AutoComplete.asmx" />
-    <Content Include="xml\banner_main.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\ABMClientes.aspx.cs">
@@ -697,6 +796,13 @@
     <Compile Include="Admin\Suplementos.aspx.designer.cs">
       <DependentUpon>Suplementos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Usuario.aspx.cs">
+      <DependentUpon>Usuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Usuario.aspx.designer.cs">
+      <DependentUpon>Usuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Venta.aspx.cs">
       <DependentUpon>Venta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -717,6 +823,20 @@
     </Compile>
     <Compile Include="controls\BuscarProducto.ascx.designer.cs">
       <DependentUpon>BuscarProducto.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\SiteHeader.ascx.cs">
+      <DependentUpon>SiteHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\SiteHeader.ascx.designer.cs">
+      <DependentUpon>SiteHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\SiteLogin.ascx.cs">
+      <DependentUpon>SiteLogin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\SiteLogin.ascx.designer.cs">
+      <DependentUpon>SiteLogin.ascx</DependentUpon>
     </Compile>
     <Compile Include="controls\Date.ascx.cs">
       <DependentUpon>Date.ascx</DependentUpon>
@@ -774,6 +894,13 @@
     <Compile Include="controls\WUCBuscarReservas.ascx.designer.cs">
       <DependentUpon>WUCBuscarReservas.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\HomeAdmin.aspx.cs">
+      <DependentUpon>HomeAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\HomeAdmin.aspx.designer.cs">
+      <DependentUpon>HomeAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -788,13 +915,29 @@
     <Compile Include="Masters\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="Masters\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\MiCuenta.aspx.cs">
+      <DependentUpon>MiCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\MiCuenta.aspx.designer.cs">
+      <DependentUpon>MiCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="weblogic\CurrentUser.cs" />
     <Compile Include="WebService\AutoComplete.cs">
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cal\vssver.scc" />
+    <Content Include="Masters\Site.Master" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Masters\Admin.Master" />
@@ -805,6 +948,7 @@
       <Name>Dyn.Database</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
@@ -813,7 +957,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>22812</DevelopmentServerPort>
+          <DevelopmentServerPort>12484</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

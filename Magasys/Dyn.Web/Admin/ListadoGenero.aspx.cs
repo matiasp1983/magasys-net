@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using Dyn.Web.weblogic;
 
 namespace Dyn.Web.Admin
 {
@@ -27,6 +28,7 @@ namespace Dyn.Web.Admin
         {
             if (!IsPostBack)
             {
+                CurrentUser.Regresar();
                 this.Master.TituloPagina = "G&eacute;nero";
                 CargarGeneros("");
             }

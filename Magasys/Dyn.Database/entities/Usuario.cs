@@ -11,24 +11,76 @@ namespace Dyn.Database.entities
 
         public Usuario() { }
 
-        public Usuario(Int32? idUsu, Int32? legajo, string log, string pass, string rl)
+        public Usuario(Int32? idUsu, string nombre, Int32? legajo, string log, string pass, string rl, Int32? est)
         {
             idUsuario = idUsu;
+            nombreUsuario = nombre;
             legajoEmpleado = legajo;
             login = log;
             password = pass;
             rol = rl;
+            idEstado = est;
         }
 
         public Usuario(IDataRecord obj)
         {
             idUsuario = Convert.ToInt32(obj["idUsuario"]);
-            Cliente.NroCliente = Convert.ToInt32(obj["nroCliente"]);
-            legajoEmpleado = Convert.ToInt32(obj["legajoEmpleado"]);
-            Cliente.NroDocumento = Convert.ToInt32(obj["nroDocumento"]);
-            Cliente.TipoDocumento.IdTipoDocumento = Convert.ToInt32(obj["tipoDocumento"]);
-            Cliente.Nombre = Convert.ToString(obj["nombre"]);
-            Cliente.Apellido = Convert.ToString(obj["apellido"]);
+            try
+            {
+                NombreUsuario = Convert.ToString(obj["nombre"]);
+            }
+            catch (Exception)
+            {
+                NombreUsuario = string.Empty;
+            }
+            try
+            {
+                Cliente.NroCliente = Convert.ToInt32(obj["nroCliente"]);
+            }
+            catch (Exception)
+            {
+                Cliente.NroCliente = 0;
+            }
+            try
+            {
+                legajoEmpleado = Convert.ToInt32(obj["legajoEmpleado"]);
+            }
+            catch (Exception)
+            {
+                legajoEmpleado = 0;
+            }
+            try
+            {
+                Cliente.NroDocumento = Convert.ToInt32(obj["nroDocumento"]);
+            }
+            catch (Exception)
+            {
+                Cliente.NroDocumento = 0;
+            }
+            try
+            {
+                Cliente.TipoDocumento.IdTipoDocumento = Convert.ToInt32(obj["tipoDocumento"]);
+            }
+            catch (Exception)
+            {
+                Cliente.TipoDocumento.IdTipoDocumento = 0;
+            }
+            try
+            {
+                Cliente.Nombre = Convert.ToString(obj["nombre"]);
+            }
+            catch (Exception)
+            {
+                Cliente.Nombre = string.Empty;
+            }
+            try
+            {
+                Cliente.Apellido = Convert.ToString(obj["apellido"]);
+            }
+            catch (Exception)
+            {
+                Cliente.Apellido = string.Empty;
+            }
             login = Convert.ToString(obj["login"]);
             password = Convert.ToString(obj["password"]);
             rol = Convert.ToString(obj["rol"]);
@@ -44,6 +96,14 @@ namespace Dyn.Database.entities
         {
             get { return idUsuario; }
             set { idUsuario = value; }
+        }
+
+        private string nombreUsuario;
+
+        public string NombreUsuario
+        {
+            get { return nombreUsuario; }
+            set { nombreUsuario = value; }
         }
 
         private Cliente cliente = new Cliente();
@@ -86,9 +146,9 @@ namespace Dyn.Database.entities
             set { rol = value; }
         }
 
-        private Int16? idEstado;
+        private Int32? idEstado;
 
-        public Int16? IdEstado
+        public Int32? IdEstado
         {
             get { return idEstado; }
             set { idEstado = value; }

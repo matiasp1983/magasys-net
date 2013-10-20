@@ -1,0 +1,176 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Dyn.Web.Masters.SiteMaster" %>
+
+<%@ Register Src="~/controls/SiteLogin.ascx" TagName="Login" TagPrefix="uc1" %>
+<%@ Register Src="../controls/SiteHeader.ascx" TagName="SiteHeaderCustom" TagPrefix="uc2" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>El Kiosco de Julian</title>
+    <link rel="stylesheet" href="../Theme/user.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../Theme/styleSiteHeader.css" type="text/css" />
+    <script type="text/javascript" src="../scripts/AC_RunActiveContent.js"></script>
+    <script src="../scripts/jquery142.js" type="text/javascript"></script>
+    <script src="../scripts/sound.js" type="text/javascript"></script>
+    <script src="../scripts/main.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../scripts/jquery.js"></script>
+    <script type="text/javascript" src="../scripts/script.js"></script>    
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div id="art-main">
+        <div class="cleared reset-box">
+        </div>
+        <div id="art-hmenu-bg" class="art-bar art-nav">
+        </div>
+        <div class="cleared reset-box">
+        </div>
+        <div class="art-box art-sheet">
+            <div class="art-box-body art-sheet-body">
+                <uc2:SiteHeaderCustom ID="SiteHeader" runat="server" />
+                <div class="cleared reset-box">
+                </div>
+                <div class="art-layout-wrapper">
+                    <div class="art-content-layout">
+                        <div class="art-content-layout-row">
+                            <div class="art-layout-cell art-sidebar1">
+                                <div class="art-box art-block">
+                                    <div class="art-box-body art-block-body">
+                                        <div class="art-box art-blockcontent">
+                                            <div class="art-box-body art-blockcontent-body">
+                                                <uc1:Login ID="Login1" runat="server" />
+                                                <p>
+                                                    <span style="color: rgb(40, 67, 82); font-family: Arial, Helvetica, sans-serif; font-size: 24px;
+                                                        font-weight: bold; line-height: 24px; -webkit-border-horizontal-spacing: 2px;
+                                                        -webkit-border-vertical-spacing: 2px;">
+                                                        <br />
+                                                    </span>
+                                                </p>
+                                                <p>
+                                                    <span style="color: rgb(40, 67, 82); font-family: Arial, Helvetica, sans-serif; font-size: 24px;
+                                                        font-weight: bold; line-height: 24px; -webkit-border-horizontal-spacing: 2px;
+                                                        -webkit-border-vertical-spacing: 2px;">Novedades</span></p>
+                                                <p>
+                                                    <br />
+                                                </p>
+                                                <p>
+                                                    <span style="color: rgb(10, 13, 16);"><span><span
+                                                        style="font-size: 18px;">Revista Caras - Nueva Edicion!!</span></span></span></p>
+                                                <p>
+                                                    <br />
+                                                </p>
+                                                <p>
+                                                    <img width="160" height="218" alt="" src="../SiteImages/guillermina valdés tapa revista caras foto desmiente-2.jpg"
+                                                        style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+                                                        border-left-width: 1px;" /><br />
+                                                </p>
+                                                <p>
+                                                    <br />
+                                                </p>
+                                                <p>
+                                                    <a href="" class="button2 blue" style="color:White; text-decoration:none">Reservala Ya!</a>
+                                                </p>
+                                                <p>
+                                                    <span style="font-size: 18px;"></span>
+                                                </p>
+                                                <p>
+                                                    <span class="art-button-wrapper"></span>
+                                                    <br />
+                                                </p>
+                                                <p>
+                                                    <span style="font-size: 18px;">Revista Fortuna - Nueva Edicion!!</span></p>
+                                                <p>
+                                                    <br />
+                                                </p>
+                                                <p>
+                                                    <img width="161" height="214" alt="" src="../SiteImages/revista-fortuna-20-08-2011.jpg"
+                                                        style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+                                                        border-left-width: 1px;" /><br />
+                                                </p>
+                                                <p>
+                                                    <br />
+                                                </p>
+                                                <p>
+                                                    <a href="" class="button2 blue" style="color:White; text-decoration:none">Reservala Ya!</a>
+                                                </p>
+                                                <p>
+                                                    <br />
+                                                </p>
+                                                <p>
+                                                    <br />
+                                                </p>
+                                                <p>
+                                                    <span style="font-size: 18px;">Revista Muy Interesante - Nueva Edicion!!</span></p>
+                                                <p>
+                                                    <br />
+                                                </p>
+                                                <p>
+                                                    <img width="162" height="216" alt="" src="../SiteImages/revista-muy-interesante-esp-historia-pasion-por-egipto-css_MLM-F-67591873_1897.jpg"
+                                                        style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px;
+                                                        border-left-width: 1px;" /><br />
+                                                </p>
+                                                <p>
+                                                    <br />
+                                                </p>
+                                                <p>
+                                                    <a href="" class="button2 blue" style="color:White; text-decoration:none">Reservala Ya!</a>
+                                                </p>
+                                                <p>
+                                                    <br />
+                                                </p>
+                                                <p>
+                                                    <br />
+                                                </p>
+                                                <p>
+                                                    <br />
+                                                </p>
+                                                <p>
+                                                    <br />
+                                                </p>
+                                                <div class="cleared">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cleared">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cleared">
+                                </div>
+                            </div>
+                            <div class="art-layout-cell art-content">
+                                <div class="main">
+                                    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cleared">
+            </div>
+            <div class="art-footer">
+                <div class="art-footer-body">
+                    <div class="art-footer-text">
+                        <p style="text-align: center;">
+                            Copyright © 2013 Todos los derechos reservados.</p>
+                        <p style="text-align: center;">
+                            <img width="178" height="80" alt="" src="../SiteImages/LogoMagasys.jpg" /></p>
+                    </div>
+                    <div class="cleared">
+                    </div>
+                </div>
+            </div>
+            <div class="cleared">
+            </div>
+        </div>
+    </div>
+    <div class="cleared">
+    </div>
+    <p class="art-page-footer">
+    </p>
+    </form>
+</body>
+</html>

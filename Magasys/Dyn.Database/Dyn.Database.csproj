@@ -73,6 +73,7 @@
     <Compile Include="entities\Suplemento.cs" />
     <Compile Include="entities\TipoDocumento.cs" />
     <Compile Include="entities\TipoProducto.cs" />
+    <Compile Include="entities\Usuario.cs" />
     <Compile Include="entities\Venta.cs" />
     <Compile Include="logic\Cliente.cs" />
     <Compile Include="logic\Cobro.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="logic\Revista.cs" />
     <Compile Include="logic\Suplemento.cs" />
     <Compile Include="logic\TipoDocumento.cs" />
+    <Compile Include="logic\Usuario.cs" />
     <Compile Include="logic\Venta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
