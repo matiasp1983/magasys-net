@@ -29,7 +29,7 @@ namespace Dyn.Web.Admin
             {
                 LlenarProveedor();
                 this.Master.TituloPagina = "Pel&iacute;cula";
-                CargarPeliculas("", 0);
+              //  CargarPeliculas("", 0);
             }
         }
 

@@ -35,16 +35,16 @@ namespace Dyn.Database.logic
         //    }
         //    return Collection;
         //}
-        public List<Dyn.Database.entities.Cliente> SeleccionarClientePorNombrePaginadoAdmin(string nombre, string apellido, string alias, int? nroDoc, int? tipoDoc, int paginaactual, ref int numeropaginas)
+        public List<Dyn.Database.entities.Cliente> SeleccionarClientePorNombrePaginadoAdmin(int? tipoDoc, int? nroDoc, string nombre, string apellido, string alias, int paginaactual, ref int numeropaginas)
         {
             List<Dyn.Database.entities.Cliente> Collection = new List<Dyn.Database.entities.Cliente>();
             Dyn.Database.logic.Estado lEstado = new Dyn.Database.logic.Estado();
             CreateCommand("usp_Clientes", true);
+            AddCmdParameter("@tipoDocumento", tipoDoc, ParameterDirection.Input);
+            AddCmdParameter("@nroDocumento", nroDoc, ParameterDirection.Input);
             AddCmdParameter("@nombre", nombre, ParameterDirection.Input);
             AddCmdParameter("@apellido", apellido, ParameterDirection.Input);
-            AddCmdParameter("@alias", alias, ParameterDirection.Input);
-            AddCmdParameter("@nroDocumento", nroDoc, ParameterDirection.Input);
-            AddCmdParameter("@tipoDocumento", tipoDoc, ParameterDirection.Input);
+            AddCmdParameter("@alias", alias, ParameterDirection.Input);          
             AddCmdParameter("@Action", 4, ParameterDirection.Input);
             AddCmdParameter("@idEstado", lEstado.BuscarEstado("Clientes", "Alta"), ParameterDirection.Input);
 

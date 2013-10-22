@@ -30,7 +30,7 @@ namespace Dyn.Web.Admin
             {
                 CurrentUser.Regresar();
                 this.Master.TituloPagina = "G&eacute;nero";
-                CargarGeneros("");
+              //  CargarGeneros("");
             }
         }
 

@@ -38,15 +38,23 @@ namespace Dyn.Web.Admin
                 {
                     IdEntity = 0;
                     Entity = new Dyn.Database.entities.Genero();
+                    btnEliminar.Visible = false;
+                    btnModificar.Visible = false;
                 }
                 else
                     if (Request["Id"] != null)
                     {
                         IdEntity = Convert.ToInt32(Request["Id"]);
                         Entity = lGenero.Load(IdEntity);
+                        btnEliminar.Visible = true;
+                        txtDescripcion.Enabled = false;
+                        txtNombre.Enabled = false;
+                        btnGuardar.Enabled = false;
+                        btnModificar.Visible = true;
                     }
                 DataBind();
             }
+           
         }
 
         public Dyn.Database.entities.Genero CargarDatosGenero()
@@ -54,6 +62,7 @@ namespace Dyn.Web.Admin
             Entity = new Dyn.Database.entities.Genero();
             Entity.Nombre = txtNombre.Text.Trim();
             Entity.Descripcion = txtDescripcion.Text.Trim();
+           
             return Entity;
         }
 
@@ -64,6 +73,7 @@ namespace Dyn.Web.Admin
             if (IdEntity == 0)
             {
                 Entity = CargarDatosGenero();
+                
                 lGenero.Insert(Entity);
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');", true);
             }
@@ -74,6 +84,7 @@ namespace Dyn.Web.Admin
                     Entity.IdGenero = IdEntity;
                     lGenero.Update(Entity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se actualizaron los datos correctamente');", true);
+                   // Response.Redirect("ListadoGenero.aspx?IdMenuCategoria=27");
                 }
         }
 
@@ -105,11 +116,20 @@ namespace Dyn.Web.Admin
         {
             Update();
             LimpiarCampos();
+           // Response.Redirect("ListadoGenero.aspx?IdMenuCategoria=27");
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("/Home.aspx");
+        }
+
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+            txtNombre.Enabled = true;
+            txtDescripcion.Enabled = true;
+            btnGuardar.Enabled = true;
+            btnModificar.Enabled = false;
         }
 
     }
