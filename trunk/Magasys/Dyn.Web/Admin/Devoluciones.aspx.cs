@@ -42,6 +42,7 @@ namespace Dyn.Web.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             this.Master.TituloPagina = "Devoluciones";
+            listaDevoluciones.Clear();
             LlenarProveedor();
             if (!IsPostBack)
             {
