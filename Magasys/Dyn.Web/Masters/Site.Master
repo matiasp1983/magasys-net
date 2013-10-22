@@ -20,6 +20,12 @@
 </head>
 <body>
     <form runat="server">
+    <!--El ScriptManager es necesario para utilizar Ajax-->
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+        <Scripts>
+            <asp:ScriptReference Path="~/scripts/jquery-1.2.3.min.js" ScriptMode="Release" />
+        </Scripts>
+    </asp:ScriptManager>
     <div id="art-main">
         <div class="cleared reset-box">
         </div>
@@ -70,7 +76,7 @@
                                                     <br />
                                                 </p>
                                                 <p>
-                                                    <a href="" class="button2 blue" style="color:White; text-decoration:none">Reservala Ya!</a>
+                                                    <a href="javascript:;" class="button2 blue" style="color:White; text-decoration:none">Reservala Ya!</a>
                                                 </p>
                                                 <p>
                                                     <span style="font-size: 18px;"></span>
@@ -93,7 +99,7 @@
                                                     <br />
                                                 </p>
                                                 <p>
-                                                    <a href="" class="button2 blue" style="color:White; text-decoration:none">Reservala Ya!</a>
+                                                    <a href="javascript:;" class="button2 blue" style="color:White; text-decoration:none">Reservala Ya!</a>
                                                 </p>
                                                 <p>
                                                     <br />
@@ -115,7 +121,7 @@
                                                     <br />
                                                 </p>
                                                 <p>
-                                                    <a href="" class="button2 blue" style="color:White; text-decoration:none">Reservala Ya!</a>
+                                                    <a href="javascript:;" class="button2 blue" style="color:White; text-decoration:none">Reservala Ya!</a>
                                                 </p>
                                                 <p>
                                                     <br />
