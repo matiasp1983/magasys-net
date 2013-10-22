@@ -198,7 +198,8 @@ namespace Dyn.Web.Admin
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ListadoProveedor.aspx");
+            Response.Redirect("~/Home.aspx");
+            //Response.Redirect("ListadoProveedor.aspx");
         }
 
 

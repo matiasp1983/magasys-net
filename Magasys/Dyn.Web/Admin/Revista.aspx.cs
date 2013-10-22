@@ -165,7 +165,8 @@ namespace Dyn.Web.Admin
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ListadoRevista.aspx?IdMenuCategoria=3");
+            Response.Redirect("~/Home.aspx");
+           // Response.Redirect("ListadoRevista.aspx?IdMenuCategoria=3");
         }
     }
 }
