@@ -13,183 +13,156 @@ namespace Dyn.Web.User {
     public partial class MisDatos {
         
         /// <summary>
-        /// txtNroCliente control.
+        /// labNroCliente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNroCliente;
+        protected global::System.Web.UI.WebControls.Label labNroCliente;
         
         /// <summary>
-        /// lstTipoDoc control.
+        /// labTipoDoc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lstTipoDoc;
+        protected global::System.Web.UI.WebControls.Label labTipoDoc;
         
         /// <summary>
-        /// txtNroDocumento control.
+        /// labNroDocumento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNroDocumento;
+        protected global::System.Web.UI.WebControls.Label labNroDocumento;
         
         /// <summary>
-        /// txtNombre control.
+        /// labNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre;
+        protected global::System.Web.UI.WebControls.Label labNombre;
         
         /// <summary>
-        /// txtApellido control.
+        /// labApellido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellido;
+        protected global::System.Web.UI.WebControls.Label labApellido;
         
         /// <summary>
-        /// txtAlias control.
+        /// labAlias control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAlias;
+        protected global::System.Web.UI.WebControls.Label labAlias;
         
         /// <summary>
-        /// txtTelefono control.
+        /// labTelefono control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelefono;
+        protected global::System.Web.UI.WebControls.Label labTelefono;
         
         /// <summary>
-        /// txtCelular control.
+        /// labCelular control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCelular;
+        protected global::System.Web.UI.WebControls.Label labCelular;
         
         /// <summary>
-        /// txtEMail control.
+        /// labEMail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEMail;
+        protected global::System.Web.UI.WebControls.Label labEMail;
         
         /// <summary>
-        /// txtBarrio control.
+        /// labBarrio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBarrio;
+        protected global::System.Web.UI.WebControls.Label labBarrio;
         
         /// <summary>
-        /// txtCalle control.
+        /// labCalle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCalle;
+        protected global::System.Web.UI.WebControls.Label labCalle;
         
         /// <summary>
-        /// txtNumero control.
+        /// labNumero control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNumero;
+        protected global::System.Web.UI.WebControls.Label labNumero;
         
         /// <summary>
-        /// txtPiso control.
+        /// labPiso control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPiso;
+        protected global::System.Web.UI.WebControls.Label labPiso;
         
         /// <summary>
-        /// txtDpto control.
+        /// labDpto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDpto;
+        protected global::System.Web.UI.WebControls.Label labDpto;
         
         /// <summary>
-        /// lstProvincias control.
+        /// labProvincias control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lstProvincias;
+        protected global::System.Web.UI.WebControls.Label labProvincias;
         
         /// <summary>
-        /// lstLocalidades control.
+        /// labLocalidades control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList lstLocalidades;
+        protected global::System.Web.UI.WebControls.Label labLocalidades;
         
         /// <summary>
-        /// txtCodPostal control.
+        /// labCodPostal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodPostal;
-        
-        /// <summary>
-        /// btnGuardar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardar;
-        
-        /// <summary>
-        /// btnCancelar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancelar;
-        
-        /// <summary>
-        /// btnEliminar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEliminar;
+        protected global::System.Web.UI.WebControls.Label labCodPostal;
     }
 }

@@ -2,6 +2,30 @@
     CodeBehind="Contacto.aspx.cs" Inherits="Dyn.Web.Contacto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .style2
+        {
+            width: 130px;
+            height: 29px;
+        }
+        .style3
+        {
+            height: 29px;
+        }
+        .style4
+        {
+            width: 130px;
+        }
+        .style5
+        {
+            width: 130px;
+            height: 24px;
+        }
+        .style6
+        {
+            height: 24px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="art-layout-cell art-content">
@@ -27,41 +51,44 @@
                                         <table class="art-article" border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
                                             <tbody>
                                                 <tr>
-                                                    <td>
+                                                    <td class="style4">
                                                         <span style="font-size: 16px;">Nombre</span>
                                                     </td>
                                                     <td>
+                                                        <asp:TextBox ID="TextBox1" runat="server" Width="400px"></asp:TextBox>
                                                         <br />
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>
+                                                    <td class="style5">
                                                         <span style="font-size: 16px;">Apellido</span>
                                                     </td>
-                                                    <td>
+                                                    <td class="style6">
+                                                        <asp:TextBox ID="TextBox2" runat="server" Width="400px"></asp:TextBox>
                                                         <br />
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>
-                                                        <span style="font-size: 16px;">Correo Electronico</span>
-                                                    </td>
-                                                    <td>
+                                                    <td class="style2">
+                                                        <span style="font-size: 16px;">Correo Electronico</span></td>
+                                                    <td class="style3">
+                                                        <asp:TextBox ID="TextBox3" runat="server" Width="400px"></asp:TextBox>
                                                         <span style="font-size: 16px;">
                                                             <br />
                                                         </span>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>
+                                                    <td class="style4">
                                                         <span style="font-size: 16px;">Mensaje</span>
                                                     </td>
                                                     <td>
+                                                        <asp:TextBox ID="TextBox4" runat="server" Height="200px" Rows="6" Width="400px"></asp:TextBox>
                                                         <br />
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>
+                                                    <td class="style4">
                                                         <br />
                                                     </td>
                                                     <td>
