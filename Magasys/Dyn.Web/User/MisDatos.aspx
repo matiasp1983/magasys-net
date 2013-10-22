@@ -72,8 +72,8 @@
                 Numero Cliente
             </td>
             <td align="left">
-                <asp:TextBox ID="txtNroCliente" runat="server" CssClass="art-box-body" Text="<%# Entity.NroCliente %>"
-                    Enabled="False" Width="200px"></asp:TextBox><br />
+                <asp:Label ID="labNroCliente" runat="server" CssClass="tittleprecios03" Text="<%# Entity.NroCliente %>"
+                    Enabled="False" Width="200px"></asp:Label><br />
             </td>
         </tr>
         <tr>
@@ -83,16 +83,15 @@
                 Tipo Documento
             </td>
             <td align="left">
-                <asp:DropDownList CssClass="tittleprecios03" ID="lstTipoDoc" runat="server" OnSelectedIndexChanged="lstProvincias_SelectedIndexChanged"
-                    Enabled="False" Width="200px">
-                </asp:DropDownList>
+                <asp:Label CssClass="tittleprecios03" ID="labTipoDoc" runat="server" OnSelectedIndexChanged="lstProvincias_SelectedIndexChanged"
+                    Enabled="False" Width="200px"></asp:Label>
             </td>
             <td style="font-size: 16px;" align="left">
                 Numero Documento
             </td>
             <td align="left">
-                <asp:TextBox ID="txtNroDocumento" runat="server" CssClass="tittleprecios03" Text="<%# Entity.NroDocumento %>"
-                    MaxLength="10" Enabled="False" Width="200px"></asp:TextBox><br />
+                <asp:Label ID="labNroDocumento" runat="server" CssClass="tittleprecios03" Text="<%# Entity.NroDocumento %>"
+                    MaxLength="10" Enabled="False" Width="200px"></asp:Label><br />
             </td>
             <td align="left" class="style1">
                 &nbsp;
@@ -105,15 +104,15 @@
                 Nombre
             </td>
             <td align="left">
-                <asp:TextBox ID="txtNombre" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Nombre %>"
-                    MaxLength="50" Enabled="False" Width="200px"></asp:TextBox><br />
+                <asp:Label ID="labNombre" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Nombre %>"
+                    MaxLength="50" Enabled="False" Width="200px"></asp:Label><br />
             </td>
             <td style="font-size: 16px;" align="left">
                 Apellido
             </td>
             <td align="left">
-                <asp:TextBox ID="txtApellido" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Apellido %>"
-                    MaxLength="50" Enabled="False" Width="200px"></asp:TextBox><br />
+                <asp:Label ID="labApellido" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Apellido %>"
+                    MaxLength="50" Enabled="False" Width="200px"></asp:Label><br />
             </td>
             <td align="left" class="style1">
                 &nbsp;
@@ -126,8 +125,8 @@
                 Alias
             </td>
             <td align="left">
-                <asp:TextBox ID="txtAlias" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Alias %>"
-                    MaxLength="100" Enabled="False" Width="200px"></asp:TextBox><br />
+                <asp:Label ID="labAlias" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Alias %>"
+                    MaxLength="100" Enabled="False" Width="200px"></asp:Label><br />
             </td>
         </tr>
         <tr>
@@ -143,15 +142,15 @@
                 Telefono
             </td>
             <td align="left">
-                <asp:TextBox ID="txtTelefono" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Telefono %>"
-                    MaxLength="10" Enabled="False" Width="200px"></asp:TextBox><br />
+                <asp:Label ID="labTelefono" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Telefono %>"
+                    MaxLength="10" Enabled="False" Width="200px"></asp:Label><br />
             </td>
             <td style="font-size: 16px;" align="left">
                 Celular
             </td>
             <td align="left">
-                <asp:TextBox ID="txtCelular" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Celular %>"
-                    MaxLength="12" Enabled="False" Width="200px"></asp:TextBox><br />
+                <asp:Label ID="labCelular" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Celular %>"
+                    MaxLength="12" Enabled="False" Width="200px"></asp:Label><br />
             </td>
             <td align="left" class="style1">
                 &nbsp;
@@ -164,8 +163,8 @@
                 Correo Electronico
             </td>
             <td align="left">
-                <asp:TextBox ID="txtEMail" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Email %>"
-                    Width="200px" MaxLength="50" Enabled="False"></asp:TextBox><br />
+                <asp:Label ID="labEMail" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Email %>"
+                    Width="200px" MaxLength="50" Enabled="False"></asp:Label><br />
             </td>
         </tr>
         <tr>
@@ -188,8 +187,8 @@
                 Barrio
             </td>
             <td align="left">
-                <asp:TextBox ID="txtBarrio" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioBarrio %>"
-                    MaxLength="100" Width="200px" Enabled="False"></asp:TextBox><br />
+                <asp:Label ID="labBarrio" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioBarrio %>"
+                    MaxLength="100" Width="200px" Enabled="False"></asp:Label><br />
             </td>
         </tr>
         <tr>
@@ -199,15 +198,15 @@
                 Calle
             </td>
             <td align="left">
-                <asp:TextBox ID="txtCalle" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioCalle %>"
-                    MaxLength="50" Width="200px" Enabled="False"></asp:TextBox><br />
+                <asp:Label ID="labCalle" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioCalle %>"
+                    MaxLength="50" Width="200px" Enabled="False"></asp:Label><br />
             </td>
             <td style="font-size: 16px;" align="left">
                 Numero
             </td>
             <td align="left">
-                <asp:TextBox ID="txtNumero" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioNro %>"
-                    MaxLength="6" Width="200px" Enabled="False"></asp:TextBox><br />
+                <asp:Label ID="labNumero" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioNro %>"
+                    MaxLength="6" Width="200px" Enabled="False"></asp:Label><br />
             </td>
             <td align="left">
                 &nbsp;
@@ -220,15 +219,15 @@
                 Piso
             </td>
             <td align="left">
-                <asp:TextBox ID="txtPiso" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioPiso %>"
-                    MaxLength="5" Width="200px" Enabled="False"></asp:TextBox><br />
+                <asp:Label ID="labPiso" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioPiso %>"
+                    MaxLength="5" Width="200px" Enabled="False"></asp:Label><br />
             </td>
             <td style="font-size: 16px;" align="left">
                 Departamento
             </td>
             <td align="left">
-                <asp:TextBox ID="txtDpto" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioDpto %>"
-                    MaxLength="5" Width="200px" Enabled="False"></asp:TextBox><br />
+                <asp:Label ID="labDpto" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioDpto %>"
+                    MaxLength="5" Width="200px" Enabled="False"></asp:Label><br />
             </td>
             <td align="left">
                 &nbsp;
@@ -241,17 +240,17 @@
                 Provincia
             </td>
             <td align="left">
-                <asp:DropDownList CssClass="tittleprecios03" ID="lstProvincias" runat="server" OnSelectedIndexChanged="lstProvincias_SelectedIndexChanged"
+                <asp:Label CssClass="tittleprecios03" ID="labProvincias" runat="server" OnSelectedIndexChanged="lstProvincias_SelectedIndexChanged"
                     AutoPostBack="True" Width="200px" Enabled="False">
-                </asp:DropDownList>
+                </asp:Label>
             </td>
             <td style="font-size: 16px;" align="left">
                 Localidad
             </td>
             <td align="left">
-                <asp:DropDownList CssClass="tittleprecios03" ID="lstLocalidades" runat="server" Enabled="False"
+                <asp:Label CssClass="tittleprecios03" ID="labLocalidades" runat="server" Enabled="False"
                     Width="200px">
-                </asp:DropDownList>
+                </asp:Label>
             </td>
             <td align="left" class="style1">
                 &nbsp;
@@ -264,8 +263,8 @@
                 Codigo Postal
             </td>
             <td align="left">
-                <asp:TextBox ID="txtCodPostal" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioCodPostal %>"
-                    MaxLength="5" Width="200px" Enabled="False"></asp:TextBox><br />
+                <asp:Label ID="labCodPostal" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioCodPostal %>"
+                    MaxLength="5" Width="200px" Enabled="False"></asp:Label><br />
             </td>
         </tr>
         <tr>
@@ -279,11 +278,9 @@
             </td>
             <td colspan="2" style="height: 24px">
                 <br />
-                <asp:Button CssClass="art-button" ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />&nbsp;
-                <asp:Button CssClass="art-button" ID="btnCancelar" runat="server" Text="Cancelar"
-                    OnClick="btnCancelar_Click" CausesValidation="False" />&nbsp;
-                <asp:Button CssClass="art-button" ID="btnEliminar" runat="server" Text="Eliminar"
-                    OnClick="btnEliminar_Click" CausesValidation="False" />
+                &nbsp;
+                &nbsp;
+                
             </td>
         </tr>
     </table>
