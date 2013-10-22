@@ -29,7 +29,7 @@ namespace Dyn.Web.Admin
             {
                 LlenarProveedor();
                 this.Master.TituloPagina = "Revista";
-                CargarRevistas("", 0);
+             //   CargarRevistas("", 0);
             }
         }
 

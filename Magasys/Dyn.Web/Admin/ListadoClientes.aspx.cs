@@ -40,6 +40,11 @@ namespace Dyn.Web.Admin
         {
             string nombre, apellido, alias;
             int? nroDoc, tipoDoc;
+            if (txtNroDocumento.Text == "")
+            { nroDoc = null; }
+            else
+            { nroDoc = Convert.ToInt32(txtNroDocumento.Text.Trim()); }
+            tipoDoc = Convert.ToInt32(lstTipoDoc.SelectedValue.ToString());
             if (txtNombre.Text == "")
             {
                 nombre = null;
@@ -56,13 +61,9 @@ namespace Dyn.Web.Admin
             { alias = null; }
             else
             { alias = txtAlias.Text.Trim(); }
-            if (txtNroDocumento.Text == "")
-            { nroDoc = null; }
-            else 
-            { nroDoc = Convert.ToInt32(txtNroDocumento.Text.Trim()); }
-            tipoDoc = Convert.ToInt32(lstTipoDoc.SelectedValue.ToString());
+            
 
-            CargarCliente(nombre, apellido, alias, tipoDoc, nroDoc);
+            CargarCliente(tipoDoc, nroDoc, nombre, apellido, alias);
 
             if (txtNombre.Text == string.Empty)
             {
@@ -78,22 +79,23 @@ namespace Dyn.Web.Admin
                 }
             }
         }
-        public void CargarCliente(string nombre, string apellido, string alias, int? nroDoc, int? tipoDoc)
+        public void CargarCliente(int? tipoDoc, int? nroDoc, string nombre, string apellido, string alias)
         {
             lCliente = new Dyn.Database.logic.Cliente();
-            List<Dyn.Database.entities.Cliente> listaClientes = lCliente.SeleccionarClientePorNombrePaginadoAdmin(nombre, apellido, alias, nroDoc, tipoDoc, Pagina, ref numeropaginas);
+            List<Dyn.Database.entities.Cliente> listaClientes = lCliente.SeleccionarClientePorNombrePaginadoAdmin(tipoDoc, nroDoc, nombre, apellido, alias, Pagina, ref numeropaginas);
       
             int[] array;
             array = new int[numeropaginas];
             gvClientes.DataSource = listaClientes;
-            gvClientes.DataKeyNames = new String[] { "nroDocumento" };
+            gvClientes.DataKeyNames = new String[] {"nroDocumento"};
             gvClientes.DataBind();
         }
 
         protected void btnAdicionarCliente_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Admin/ABMClientes.aspx");
-            
+           // Response.Redirect("/Admin/ABMClientes.aspx");
+           // Admin/ABMClientes.aspx?IdMenuCategoria=2
+            Response.Redirect("ABMClientes.aspx?IdMenuCategoria=2");
         }
 
         protected void lstTipoDoc_SelectedIndexChanged(object sender, EventArgs e)

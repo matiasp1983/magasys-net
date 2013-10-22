@@ -29,7 +29,7 @@ namespace Dyn.Web.Admin
             {
                 LlenarProveedor();
                 this.Master.TituloPagina = "Libro";
-                CargarLibros("", 0);
+             //   CargarLibros("", 0);
             }
         }
 

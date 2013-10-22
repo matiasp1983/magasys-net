@@ -50,7 +50,7 @@ namespace Dyn.Web.Admin
 
         protected void btnVolveraListadoReserva_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ListadoReserva.aspx");
+            Response.Redirect("ListadoReserva.aspx?IdMenuCategoria=12");
         }
     }
 }
