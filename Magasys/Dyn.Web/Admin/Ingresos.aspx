@@ -99,14 +99,14 @@
                         </tr>
                         <tr>
                             <td class="tittleprecios03" align="left">
-                                <asp:Label ID="lbNombre" runat="server" Text="Nombre Producto:" Visible="False"></asp:Label>
+                                <asp:Label ID="lbNombre" runat="server" Text="Nombre Producto:"></asp:Label>
                             </td>
                             <td class="tittleprecios03" align="left">
-                                <asp:TextBox ID="txtNombreProd" runat="server" MaxLength="50" Visible="False"></asp:TextBox>
+                                <asp:TextBox ID="txtNombreProd" runat="server" MaxLength="50"></asp:TextBox>
                             </td>
                             <td class="tittleprecios03" align="left">
-                                <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click"
-                                    Visible="False" />
+                                <asp:Button ID="btnBuscar" runat="server" Text="Buscar" 
+                                    OnClick="btnBuscar_Click" />
                             </td>
                         </tr>
                         <tr>
@@ -114,7 +114,9 @@
                             </td>
                             <td class="style17">
                                 <asp:GridView ID="gvProductos" runat="server" Visible="False" CellPadding="4" ForeColor="#333333"
-                                    GridLines="None" AutoGenerateColumns="False" OnSelectedIndexChanging="gvProductos_SelectedIndexChanging">
+                                    GridLines="None" AutoGenerateColumns="False" 
+                                    OnSelectedIndexChanging="gvProductos_SelectedIndexChanging" 
+                                    ViewStateMode="Enabled">
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
                                         <asp:BoundField DataField="IdProducto" HeaderText="N&uacute;mero Producto">
@@ -156,6 +158,14 @@
             <td class="style24" colspan="2">
                 <asp:Panel ID="panDetalleIngreso" runat="server">
                     <table>
+                        <tr>
+                            <td class="style24">
+                                <asp:Label ID="labAyuda" runat="server" Font-Size="Medium" ForeColor="Red" 
+                                    Text="* Seleccione los Productos que desea ingresar"></asp:Label>
+                            </td>
+                            <td class="style17">
+                                &nbsp;</td>
+                        </tr>
                         <tr>
                             <td class="style24">
                                 Detalle Ingresos
