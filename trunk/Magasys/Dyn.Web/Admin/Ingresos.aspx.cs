@@ -191,6 +191,8 @@ namespace Dyn.Web.Admin
             gvDetalle.DataBind();
             gvProductos.Visible = false;
             gvProductos.DataSource = null;
+            labAyuda.Text = "Indique Cantidad, Precio y Descripcion para los Productos";
+            labAyuda.ForeColor = System.Drawing.Color.Black;
         }
 
         protected void gvDetalle_RowEditing(object sender, GridViewEditEventArgs e)
@@ -248,6 +250,8 @@ namespace Dyn.Web.Admin
             gvDetalle.EditIndex = -1;
             gvDetalle.DataBind();
             btnGuardar.Enabled = true;
+            labAyuda.Text = "Seleccione los Productos que desea ingresar";
+            labAyuda.ForeColor = System.Drawing.Color.Black;
         }
         public void ValidarReservas()
         {
@@ -296,7 +300,7 @@ namespace Dyn.Web.Admin
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Home.aspx");
+            Response.Redirect("/Admin/HomeAdmin.aspx");
         }
 
         protected void gvReservasOk_RowDeleting(object sender, GridViewDeleteEventArgs e)

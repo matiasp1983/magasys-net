@@ -97,9 +97,10 @@ namespace Dyn.Database.logic
             List<Dyn.Database.entities.ReservaEdicion> listaReservas = new List<entities.ReservaEdicion>();
             Dyn.Database.logic.Producto lProducto = new Dyn.Database.logic.Producto();
             Dyn.Database.logic.Estado lEstado = new Dyn.Database.logic.Estado();
-            CreateCommand("usp_SeleccionarReservasEdicionPorCliente", true);
+            
             for (int i = 0; i < listaProductos.Count; i++)
             {
+                CreateCommand("usp_SeleccionarReservasEdicionPorCliente", true);
                 AddCmdParameter("@idProducto", listaProductos[i].IdProducto, ParameterDirection.Input);
                 AddCmdParameter("@Action", 1, ParameterDirection.Input);
                 AddCmdParameter("@idEstado", lEstado.BuscarEstado("ReservasEdicion", "Confirmado"), ParameterDirection.Input);
