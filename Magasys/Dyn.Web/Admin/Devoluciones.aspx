@@ -42,6 +42,10 @@
         {
             width: 149px;
         }
+        .style22
+        {
+            height: 20px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
@@ -91,27 +95,38 @@
                 <asp:Panel ID="panProductos" runat="server">
                     <table style="width: 100%;">
                         <tr>
+                            <td class="style22">
+                            </td>
+                            <td class="style22">
+                                <asp:Label ID="Label2" runat="server" CssClass="style17" Font-Bold="True" 
+                                    ForeColor="Red" Text="* Existen Reservas sin Entregar" Visible="False"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
                             <td class="style18">
                             </td>
                             <td class="style16">
-                                <asp:GridView ID="gvDetalles" runat="server" AutoGenerateColumns="False" OnRowCancelingEdit="gvDetalles_RowCancelingEdit"
-                                    OnRowEditing="gvDetalles_RowEditing" OnRowUpdating="gvDetalles_RowUpdating" CellPadding="4"
-                                    ForeColor="#333333" GridLines="None" OnSelectedIndexChanging="gvDetalles_SelectedIndexChanging">
+                                <asp:GridView ID="gvDetalles" runat="server" AutoGenerateColumns="False" 
+                                    CellPadding="4" ForeColor="#333333" GridLines="None" 
+                                    OnRowCancelingEdit="gvDetalles_RowCancelingEdit" 
+                                    OnRowEditing="gvDetalles_RowEditing" OnRowUpdating="gvDetalles_RowUpdating" 
+                                    OnSelectedIndexChanging="gvDetalles_SelectedIndexChanging">
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
-                                        <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto" ReadOnly="True">
-                                            <ItemStyle HorizontalAlign="Center" />
+                                        <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto" 
+                                            ReadOnly="True">
+                                        <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
                                         <asp:BoundField DataField="Cantidad" HeaderText="Cantidad">
-                                            <ItemStyle HorizontalAlign="Center" />
+                                        <ItemStyle HorizontalAlign="Center" />
                                         </asp:BoundField>
-                                        <asp:CommandField ShowEditButton="True" ButtonType="Image" EditImageUrl="~/images/Boton_editar.png"
-                                            EditText="">
-                                            <ItemStyle HorizontalAlign="Center" />
+                                        <asp:CommandField ButtonType="Image" EditImageUrl="~/images/Boton_editar.png" 
+                                            EditText="" ShowEditButton="True">
+                                        <ItemStyle HorizontalAlign="Center" />
                                         </asp:CommandField>
-                                        <asp:CommandField ButtonType="Image" SelectImageUrl="~/images/Boton_next.png" SelectText=""
-                                            ShowSelectButton="True">
-                                            <ItemStyle HorizontalAlign="Center" />
+                                        <asp:CommandField ButtonType="Image" SelectImageUrl="~/images/Boton_next.png" 
+                                            SelectText="" ShowSelectButton="True">
+                                        <ItemStyle HorizontalAlign="Center" />
                                         </asp:CommandField>
                                     </Columns>
                                     <EditRowStyle BackColor="#2461BF" />

@@ -114,7 +114,7 @@ namespace Dyn.Web.Admin
 
                 lDevolucion.Insert(Entity);
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
-                Response.Redirect("/Home.aspx");
+                Response.Redirect("/Admin/HomeAdmin.aspx");
             //}
 
         }
@@ -246,7 +246,7 @@ namespace Dyn.Web.Admin
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Home.aspx");
+            Response.Redirect("/Admin/HomeAdmin.aspx");
         }
 
         protected void gvReservas_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
