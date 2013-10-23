@@ -124,7 +124,7 @@ namespace Dyn.Web.Admin
             lReparto.Delete();
             lReparto.Insert(listaReservas);
             ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
-            Response.Redirect("/Home.aspx");
+            Response.Redirect("/Admin/HomeAdmin.aspx");
             
         }
 
