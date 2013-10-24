@@ -81,9 +81,19 @@ namespace Dyn.Database.entities
             {
                 Cliente.Apellido = string.Empty;
             }
+
             login = Convert.ToString(obj["login"]);
+
             password = Convert.ToString(obj["password"]);
-            rol = Convert.ToString(obj["rol"]);
+
+            try
+            {
+                rol = Convert.ToString(obj["rol"]);
+            }
+            catch (Exception)
+            {
+                rol = string.Empty;
+            }
         }
 
         #endregion

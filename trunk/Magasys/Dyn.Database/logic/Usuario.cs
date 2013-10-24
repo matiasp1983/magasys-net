@@ -87,5 +87,30 @@ namespace Dyn.Database.logic
             }
             return IdUsuario;
         }
+
+        public void actualizarPasswordCliente(int nroCliente, string login, string password)
+        {
+            CreateCommand("usp_Usuario", true);
+            AddCmdParameter("@nroCliente", nroCliente, ParameterDirection.Input);
+            AddCmdParameter("@login", login, ParameterDirection.Input);
+            AddCmdParameter("@password", password, ParameterDirection.Input);
+            AddCmdParameter("@Action", 7, ParameterDirection.Input);
+            ExecuteNonQuery();
+        }
+
+        public Dyn.Database.entities.Usuario BuscarUsuarioCliente(int nroCliente)
+        {
+            Dyn.Database.entities.Usuario objusuario = new entities.Usuario();
+
+            CreateCommand("usp_Usuario", true);
+            AddCmdParameter("@nroCliente", nroCliente, ParameterDirection.Input);
+            AddCmdParameter("@Action", 6, ParameterDirection.Input);
+            ExecuteReader();
+            while (Read())
+            {
+                objusuario = new Dyn.Database.entities.Usuario(GetDataReader());
+            }
+            return objusuario;
+        }
     }
 }

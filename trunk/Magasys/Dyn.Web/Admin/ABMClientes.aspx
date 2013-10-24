@@ -199,7 +199,50 @@
             </td>
         </tr>
         <tr>
-            <td class="tittleprecios03" align="left" width="100">
+            <td colspan="4" class="tittleproducto">
+                <br />
+                Datos de Usuario
+                <hr />
+            </td>
+        </tr>
+        <tr>
+            <td align="left" class="tittleprecios03">
+                Nombre de Usuario:
+            </td>
+            <td align="left">
+                <asp:TextBox ID="txtLogin" CssClass="tittleprecios03" runat="server" Enabled="False"></asp:TextBox><br />
+            </td>
+            <td class="tittleprecios03">
+                <asp:Button ID="btnModificarUsuario" runat="server" Text="Modificar Usuario" OnClick="btnModificarUsuario_Click" />
+            </td>
+        </tr>
+        <tr>
+            <td align="left" class="tittleprecios03">
+                <asp:Label ID="lblPasswordActual" runat="server" Text="Contrase&ntilde;a Actual:"></asp:Label>
+            </td>
+            <td align="left">
+                <asp:TextBox ID="txtPasswordActual" CssClass="tittleprecios03" runat="server" Enabled="False"></asp:TextBox><br />
+            </td>
+        </tr>
+        <tr>
+            <td align="left" class="tittleprecios03">
+                Nueva Contrase&ntilde;a:
+            </td>
+            <td align="left">
+                <asp:TextBox ID="txtPassword" TextMode="Password" CssClass="tittleprecios03" runat="server"
+                    Enabled="False"></asp:TextBox><br />
+                <asp:CompareValidator Display="Dynamic" CssClass="tittleprecios02" ID="cvPassword"
+                    runat="server" ControlToCompare="txtRepetirPassword" ControlToValidate="txtPassword"
+                    ErrorMessage="La contrase&ntilde;a no coincide"></asp:CompareValidator>
+            </td>
+        </tr>
+        <tr>
+            <td align="left" class="tittleprecios03">
+                Confirmar Contrase&ntilde;a:
+            </td>
+            <td align="left">
+                <asp:TextBox ID="txtRepetirPassword" CssClass="tittleprecios03" TextMode="Password"
+                    runat="server" Enabled="False"></asp:TextBox>
             </td>
         </tr>
         <tr>
