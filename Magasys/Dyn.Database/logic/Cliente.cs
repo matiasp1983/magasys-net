@@ -93,7 +93,6 @@ namespace Dyn.Database.logic
             AddCmdParameter("@domCodigoPostal", objusuario.DomicilioCodPostal, ParameterDirection.Input);
             AddCmdParameter("@domIdLocalidad", objusuario.IdLocalidad, ParameterDirection.Input);
 
-            AddCmdParameter("@fechaAlta", objusuario.FechaAlta, ParameterDirection.Input);
             AddCmdParameter("@idEstado", objusuario.Estado.IdEstado, ParameterDirection.Input);
             AddCmdParameter("@motivoBaja", objusuario.MotivoBaja, ParameterDirection.Input);
 
@@ -104,7 +103,7 @@ namespace Dyn.Database.logic
             object IdProveedor = null;
             AddParameters(objCliente);
 
-
+            AddCmdParameter("@fechaAlta", objCliente.FechaAlta, ParameterDirection.Input);
             AddCmdParameter("@Action", 2, ParameterDirection.Input);
             ExecuteReader();
             while (Read())
