@@ -53,7 +53,6 @@ namespace Dyn.Web.Admin
             }
         }
 
-
         public void LlenarItemsVenta()
         {
             Dyn.Database.logic.DetalleVenta lDetalleVenta = new Database.logic.DetalleVenta();
@@ -72,7 +71,7 @@ namespace Dyn.Web.Admin
 
         protected void btnVolveralistadoventa_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ListadoVenta.aspx");
+            Response.Redirect("ListadoVenta.aspx?IdMenuCategoria=6");
         }
     }
 }
