@@ -45,15 +45,40 @@ namespace Dyn.Database.entities
 		{            
             nroCliente = Convert.ToInt32(obj["nroCliente"]);
 
-            //tipoDocumento.IdTipoDocumento = Convert.ToInt32(obj["tipoDocumento"]);
-            nroDocumento = Convert.ToInt32(obj["nroDocumento"]);
+            tipoDocumento.IdTipoDocumento = Convert.ToInt32(obj["tipoDocumento"]);
+            if (obj["nroDocumento"] != DBNull.Value)
+            {
+                nroDocumento = null;
+            }
+            else
+            {
+                nroDocumento = Convert.ToInt32(obj["nroDocumento"]);
+            }
 
+            
             nombre = Convert.ToString(obj["nombre"]);
             apellido = Convert.ToString(obj["apellido"]);
             alias = Convert.ToString(obj["alias"]);
 
-            telefono = Convert.ToString(obj["telefono"]); 
-            celular = Convert.ToString(obj["celular"]); 
+            if (obj["telefono"] != DBNull.Value)
+            {
+                telefono = Convert.ToString(obj["telefono"]);
+            }
+            else
+            {
+                telefono = null;
+            }
+            //telefono = Convert.ToString(obj["telefono"]); 
+
+            if (obj["celular"] != DBNull.Value)
+            {
+                celular = Convert.ToString(obj["celular"]);
+            }
+            else
+            {
+                celular = null;
+            }
+            //celular = Convert.ToString(obj["celular"]); 
             email = Convert.ToString(obj["email"]);
 
 

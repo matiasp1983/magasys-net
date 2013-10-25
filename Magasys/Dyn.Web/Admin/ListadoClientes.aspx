@@ -1,155 +1,262 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Admin.Master" AutoEventWireup="true"
-    CodeBehind="ListadoClientes.aspx.cs" Inherits="Dyn.Web.Admin.ListadoClientes" %>
-
-<%@ MasterType VirtualPath="~/Masters/Admin.Master" %>
-<%@ Register Assembly="CollectionPager" Namespace="SiteUtils" TagPrefix="cc1" %>
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="act" %>
-<%@ Register Src="../controls/Login.ascx" TagName="Login" TagPrefix="uc2" %>
-<%@ Register Src="../controls/MenuAdminCategoria.ascx" TagName="MenuAdmin" TagPrefix="uc1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Admin.Master" AutoEventWireup="true" CodeBehind="ListadoClientes.aspx.cs" Inherits="Dyn.Web.Admin.ListadoClientes2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .style1
-        {
-            width: 225px;
-        }
+<style type="text/css">
+    /*-------Custom Style------------*/
+<%--    .row
+    {
+        display: table-row;
+    }
+    .cell
+    {
+        display: table-cell;
+    }
+    
+    #search
+    {
+        display: table;
+        border: dashed 1px gray;
+    }
+    
+    .searchcell
+    {
+        padding: 5px;
+    }
+    
+    #gridcontainer
+    {
+        display: table;
+        width: 100%;
+    }
+    
+    .gridcontainercell
+    {
+        padding: 5px;
+    }
+    
+    
+    #popupcontainer
+    {
+        display: table;
+        border: solid 1px gray;
+    }
+    
+    .popupcontainercell
+    {
+        padding: 5px;
+        border-spacing: 5px;
+    }
+    
+    .popupcontainertitle
+    {
+        background-color: Gray;
+        color: White;
+    }
+    
+    #ordereditcontainer
+    {
+        display: table;
+        width: 100%;
+    }
+    
+    .ordereditcell
+    {
+        width: 150px;
+        font-weight: bold;
+    }
+    
+    .backgroundColor
+    {
+        background-color: Gray; /*filter: alpha(opacity=70);
+        opacity: 0.7;*/
+        -moz-opacity: 0.7;
+    }
+    .button
+    {
+        font-weight: bold;
+        color: #FFFFFF;
+        background-color: #555555;
+        border-style: solid;
+        border-color: #000000;
+        border-width: 1px;
+    }
+    .style1
+    {
+        font-style: normal;
+        color: #7f7f7f; /*font-size: 11px;*/;
+        font-weight: bold;
+        height: 32px;
+    }--%>
+    .style1
+    {
+        width: 48px;
+    }
+    .style1
+    {
+        font-weight: bold;
+        font-style: normal;
+        color: #0e85cd;
+        text-decoration: none;
+        font-weight: bold;
+        width: 51px;
+    }
+    .style25
+    {
+        width: 49px;
+    }
+    .style26
+    {
+        font-weight: bold;
+        font-style: normal;
+        color: #0e85cd;
+        text-decoration: none;
+        font-weight: bold;
+        width: 150px;
+    }
+    .style27
+    {
+        font-weight: bold;
+        font-style: normal;
+        color: #0e85cd;
+        text-decoration: none;
+        font-weight: bold;
+        width: 100px;
+    }
     </style>
 </asp:Content>
+
 <asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-        <ContentTemplate>
-            <table width="100%" cellpadding="0" cellspacing="5">
-                <tr>
-                    <td colspan="3">
-                        <cc1:CollectionPager ID="CollectionPager" runat="server" PageSize="100" PagingMode="QueryString"
-                            LabelText="P&aacute;gina:" NextText="Siguiente »" ResultsFormat="Resultados {0}-{1} (de {2})"
-                            BackText="« Anterior" CurrentPage="1" MaxPages="10" SliderSize="10" IgnoreQueryString="False"
-                            QueryStringKey="Page">
-                        </cc1:CollectionPager>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3" class="tittleproducto" width="700" align="left">
-                        <h2>
-                            Listado de Clientes</h2>
-                    </td>
-                </tr>
-                <tr>
-                    <td width="100" align="left" class="tittleprecios03">
-                        Tipo Documento
-                    </td>
-                    <td align="left" class="style1">
-                        <asp:DropDownList ID="lstTipoDoc" runat="server" CssClass="tittleprecios03" OnSelectedIndexChanged="lstTipoDoc_SelectedIndexChanged">
-                        </asp:DropDownList>
-                    </td>
-                    <td align="left" class="tittleprecios03" width="100">
-                        Numero Documento
-                    </td>
-                    <td align="left" class="style1">
-                        <asp:CompareValidator ID="cvDocumento" runat="server" ControlToValidate="txtNroDocumento"
-                            CssClass="tittleprecios03" Display="Dynamic" ErrorMessage="Debe ingresar un numero"
-                            ForeColor="Red" Operator="DataTypeCheck" Type="Integer"></asp:CompareValidator>
-                        <asp:TextBox ID="txtNroDocumento" runat="server" CssClass="tittleprecios03" MaxLength="10"></asp:TextBox>
-                        <br />
-                    </td>
-                    <td width="233" align="left">
-                        <asp:Button ID="btnBuscar" CssClass="adminbutton" runat="server" Text="Buscar" OnClick="btnBuscar_Click"
-                            ValidationGroup="busqueda" />
-                    </td>
-                </tr>
-                <tr>
-                    <td align="left" class="tittleprecios03" width="100">
-                        Nombre
-                    </td>
-                    <td align="left" class="style1">
-                        <asp:TextBox ID="txtNombre" runat="server" CssClass="tittleprecios03" MaxLength="50"></asp:TextBox>
-                        <br />
-                    </td>
-                    <td align="left" class="tittleprecios03" width="100">
-                        Apellido
-                    </td>
-                    <td align="left" class="style1">
-                        <asp:TextBox ID="txtApellido" runat="server" CssClass="tittleprecios03" MaxLength="50"></asp:TextBox>
-                        <br />
-                    </td>
-                </tr>
-                <tr>
-                    <td align="left" class="tittleprecios03" width="100">
-                        Alias
-                    </td>
-                    <td align="left" class="style1">
-                        <asp:TextBox ID="txtAlias" runat="server" CssClass="tittleprecios03" MaxLength="100"></asp:TextBox>
-                        <br />
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td width="700" align="left">
-                        <asp:Button ID="btnAdicionarGenero" CssClass="adminbutton" runat="server" Text="Adicionar Cliente"
-                            CausesValidation="False" OnClick="btnAdicionarCliente_Click" />
-                    </td>
-                </tr>
-                <tr>
-                    <td align="left" class="tittleprecios03" width="100">
-                        &nbsp;
-                    </td>
-                    <td align="left" class="style1">
-                        &nbsp;
-                    </td>
-                    <td>
-                        &nbsp;
-                    </td>
-                    <td>
-                        &nbsp;
-                    </td>
-                    <td align="left" width="700">
-                        &nbsp;
-                    </td>
-                </tr>
-                <tr>
-                    <td align="left" class="tittleprecios03" width="100">
-                        &nbsp;
-                    </td>
-                    <td align="left" class="style3" colspan="3">
-                        <asp:GridView ID="gvClientes" runat="server" AutoGenerateColumns="False" CellPadding="4"
-                            ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="gvClientes_SelectedIndexChanged">
-                            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-                            <Columns>
-                                <asp:HyperLinkField DataTextField="NroCliente" HeaderText="NroCliente" />
-                                <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
-                                <asp:BoundField DataField="Apellido" HeaderText="Apellido" />
-                                <asp:BoundField DataField="Alias" HeaderText="Alias" />
-                                <asp:BoundField DataField="DomicilioCalle" HeaderText="Calle" />
-                                <asp:BoundField DataField="DomicilioNro" HeaderText="Numero" />
-                                <asp:CommandField ShowSelectButton="True" />
-                            </Columns>
-                            <EditRowStyle BackColor="#999999" />
-                            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-                            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                            <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                            <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                            <SortedAscendingHeaderStyle BackColor="#506C8C" />
-                            <SortedDescendingCellStyle BackColor="#FFFDF8" />
-                            <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-                        </asp:GridView>
-                    </td>
-                    <td align="left" width="700">
-                        &nbsp;
-                    </td>
-                </tr>
-            </table>
+<ContentTemplate>
+            <div id="popupcontainer">
+                <div class="row popupcontainertitle">
+                    <div>
+                        Selecci&oacute;n de clientes:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell popupcontainercell">
+                        <div id="ordereditcontainer">
+                            <div class="row">
+                                <div class="cell">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="cell">
+                                    <table cellpadding="0" cellspacing="5" width="100%">
+                                        <tr>
+                                            <td class="tittleprecios03" align="left">
+                                                <asp:Label ID="lblAlias" runat="server" Text="Alias:" Width="105px"></asp:Label>
+                                                &nbsp;<asp:TextBox ID="txtAlias" runat="server" Width="150px"></asp:TextBox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="style1" align="left">
+                                                <asp:Label ID="lblNombre" runat="server" Text="Nombre:" Width="105px"></asp:Label>
+                                                &nbsp;<asp:TextBox ID="txtNombre" runat="server" Width="150px"></asp:TextBox>
+                                            </td>
+                                            <td class="style1" align="left">
+                                                <asp:Label ID="lblApellido" runat="server" Text="Apellido:" Width="127px"></asp:Label>
+                                                &nbsp;<asp:TextBox ID="txtApellido" runat="server" Width="150px"></asp:TextBox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tittleprecios03" align="left">
+                                                <asp:Label ID="lblTipoDoc" runat="server" Text="Tipo Documento: "></asp:Label>
+                                                <asp:DropDownList CssClass="tittleprecios03" ID="ddlTipoDoc" runat="server" Width="159px">
+                                                </asp:DropDownList>
+                                            </td>
+                                            <td class="tittleprecios03" align="left">
+                                                <asp:Label ID="lblNroDoc" runat="server" Text="N&uacute;mero Documento: "></asp:Label>
+                                                <asp:TextBox ID="txtNroDoc" runat="server" Width="150px"></asp:TextBox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tittleprecios03" align="left">
+                                                <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tittleprecios03" align="left">
+                                                &nbsp;</td>
+                                        </tr>
+                                    </table>
+                                    <asp:Label ID="lblMensajeError" runat="server" Text="" ForeColor="Red"></asp:Label>
+                                    <br />
+                                    <br />
+                                                <table width="100%">
+                                                    <tr>
+                                                        <td class="style25">
+                                                        </td>
+                                                        <td align="left" class="style27">
+                                                            Nombre</td>
+                                                        <td class="style27" align="left">
+                                                            Apellido
+                                                         </td>
+                                                        <td class="style26" align="left">
+                                                            Alias
+                                                        </td>
+                                                        <td class="style26" align="left">
+                                                            Domicilio
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="style25">
+                                                            &nbsp;</td>
+                                                        <td align="left" class="style27">
+                                                            &nbsp;</td>
+                                                        <td class="style27" align="left">
+                                                            &nbsp;</td>
+                                                        <td class="style26" align="left">
+                                                            &nbsp;</td>
+                                                        <td class="style26" align="left">
+                                                            &nbsp;</td>
+                                                    </tr>
+                                                </table>
+
+                                    <div style="overflow: scroll; height: 295px; width: 100%">
+                                        <div>
+                                            <asp:Repeater ID="rptClientes" runat="server">
+                                                <HeaderTemplate>
+                                                    <table width="100%" border="0">
+                                                </HeaderTemplate>
+                                                <ItemTemplate>
+                                                    <tr>
+                                                        <td align="left">
+                                                            <asp:HyperLink ID="hpNombre" CssClass="tittleprecios03" NavigateUrl='<%# "/Admin/ABMClientes.aspx?Id=" + Eval("nroCliente") %>'
+                                                            Text='<%# Eval("nroCliente") %>' runat="server" Width="50"></asp:HyperLink>
+                                                        </td>
+                                                        <td align="left">
+                                                            <asp:Label CssClass="tittleprecios03" ID="lblNombre" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "nombre")%>' Width="100"></asp:Label>
+                                                        </td>
+                                                        <td align="left">
+                                                            <asp:Label CssClass="tittleprecios03" ID="lblApellido" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "apellido")%>' Width="100"></asp:Label>
+                                                        </td>
+                                                        <td align="left">
+                                                            <asp:Label CssClass="tittleprecios03" ID="lblAlias" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "alias")%>' Width="150"></asp:Label>
+                                                        </td>
+                                                        <td align="left">
+                                                            <asp:Label CssClass="tittleprecios03" ID="lblDomicilio" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "domCalle")%>' Width="150"></asp:Label>
+                                                        </td>
+                                                    </tr>
+                                                </ItemTemplate>
+                                                <FooterTemplate>
+                                                    </table>
+                                                </FooterTemplate>
+                                            </asp:Repeater>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="cell" align="center">
+                                    <asp:Button ID="btnCerrar" runat="server" CausesValidation="false"
+                                        OnClick="btnCerrar_Click" Text="Cerrar" Width="130px" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </ContentTemplate>
-    </asp:UpdatePanel>
-    <div style="clear: both">
-    </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphReserva" runat="server">
-</asp:Content>
-<asp:Content ID="Content5" runat="server" ContentPlaceHolderID="cphMenu">
-    <!--Control de login de ejemplo-->
-    <uc2:Login ID="Login1" runat="server" />
-    <br />
-    <uc1:MenuAdmin ID="MenuAdmin1" runat="server" />
 </asp:Content>

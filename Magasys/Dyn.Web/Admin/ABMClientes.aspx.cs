@@ -33,7 +33,7 @@ namespace Dyn.Web.Admin
                 lCliente = new Dyn.Database.logic.Cliente();
                 LlenarTipoDocumento();
                 LlenarProvincias();
-                lstProvincias.SelectedIndex = 1;
+                //lstProvincias.SelectedIndex = 1;
                 LlenarLocalidades();
                 if (Request["Id"] == null)
                 {
