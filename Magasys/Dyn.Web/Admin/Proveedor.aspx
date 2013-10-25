@@ -8,25 +8,18 @@
     <style type="text/css">
         .style1
         {
-            width: 25px;
+            width: 150px;
         }
         .style2
         {
-            width: 100px;
+            width: 110px;
         }
         .style3
         {
-            width: 25px;
-            height: 20px;
-        }
-        .style4
-        {
-            width: 100px;
-            height: 20px;
-        }
-        .style5
-        {
-            height: 20px;
+            font-style: normal;
+            color: #7f7f7f; /*font-size: 11px;*/;
+            font-weight: bold;
+            width: 140px;
         }
     </style>
 
@@ -40,16 +33,16 @@
             <td class="tittleprecios03" align="left" width="100">
                 CUIT(*)
             </td>
-            <td align="left" class="style1">
+            <td align="left" class="style2">
                 <asp:TextBox ID="txtCuit" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Cuit %>"></asp:TextBox><br />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Debe ingresar Razon Social"
                     ControlToValidate="txtCuit" CssClass="tittleprecios03" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
 
-            <td class="style2" align="left">
+            <td class="tittleprecios03" align="left" style="text-align: center">
                 Razon Social(*)
             </td>
-            <td align="left" width="150">
+            <td class="style3" align="left">
                 <asp:TextBox ID="txtRazonSocial" runat="server" CssClass="tittleprecios03" Text="<%# Entity.RazonSocial %>"></asp:TextBox><br />
                 <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ErrorMessage="Debe ingresar Razon Social"
                     ControlToValidate="txtRazonSocial" CssClass="tittleprecios03" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -61,18 +54,19 @@
             <td class="tittleprecios03" align="left" width="100">
                 Correo Electronico(*)
             </td>
-            <td align="left" class="style1">
+            <td align="left" class="style2">
                 <asp:TextBox ID="txtEMail" runat="server" CssClass="tittleprecios03" Text="<%#Entity.Email%>"></asp:TextBox><br />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Debe ingresar Razon Social"
                     ControlToValidate="txtEMail" CssClass="tittleprecios03" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
-            <td class="style2" align="left">
+            <td class="tittleprecios03" align="left" style="text-align: center">
                 Detalle
             </td>
 
             <td class="style1">
                 <asp:TextBox ID="txtDetalle" runat="server" Height="100px" Width="400px" CssClass="tittleprecios03"
-                    Text="<%# Entity.Detalle %>" TextMode="MultiLine"></asp:TextBox><br />
+                    Text="<%# Entity.Detalle %>" TextMode="MultiLine" 
+                    ontextchanged="txtDetalle_TextChanged"></asp:TextBox><br/>
             </td>
         </tr>
 
@@ -80,7 +74,7 @@
             <td class="tittleprecios03" align="left" width="100">
                 Telefono
             </td>
-            <td align="left" class="style1">
+            <td align="left" class="style2">
                 <asp:TextBox ID="txtTelefono" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Telefono %>"></asp:TextBox><br />
             </td>
         </tr>
@@ -100,11 +94,11 @@
             <td class="tittleprecios03" align="left" width="100">
                 Calle
             </td>
-            <td align="left" class="style1">
+            <td align="left" class="style2">
                 <asp:TextBox ID="txtCalle" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioCalle %>"></asp:TextBox><br />
             </td>
 
-            <td class="style2" align="left">
+            <td class="tittleprecios03" align="left" style="text-align: center">
                 Numero
             </td>
             <td align="left" class="style1">
@@ -116,11 +110,11 @@
             <td class="tittleprecios03" align="left" width="100">
                 Piso
             </td>
-            <td align="left" class="style1">
+            <td align="left" class="style2">
                 <asp:TextBox ID="txtPiso" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioPiso %>"></asp:TextBox><br />
             </td>
 
-            <td class="style2" align="left">
+            <td class="tittleprecios03" align="left" style="text-align: center">
                 Departamento
             </td>
             <td align="left" class="style1">
@@ -134,14 +128,14 @@
             <td class="tittleprecios03" align="left" width="100">
                 Provincia
             </td>
-            <td align="left" class="style1">
+            <td align="left" class="style2">
                 <asp:DropDownList CssClass="tittleprecios03" ID="lstProvincias" runat="server" 
                     onselectedindexchanged="lstProvincias_SelectedIndexChanged" 
                     Enabled="False">
                 </asp:DropDownList>
                     </td>
 
-            <td class="style2" align="left">
+            <td class="tittleprecios03" align="left" style="text-align: center">
                 Localidad
             </td>
             <td align="left" class="style1">
@@ -166,11 +160,11 @@
             <td class="tittleprecios03" align="left" width="100">
                 Nombre
             </td>
-            <td align="left" class="style1">
+            <td align="left" class="style2">
                 <asp:TextBox ID="txtResponsableNombre" runat="server" CssClass="tittleprecios03" Text="<%# Entity.ResponsableNombre %>"></asp:TextBox><br />
             </td>
 
-            <td class="style2" align="left">
+            <td class="tittleprecios03" align="left" style="text-align: center">
                 Apellido
             </td>
             <td align="left" class="style1">
@@ -182,7 +176,7 @@
             <td class="tittleprecios03" align="left" width="100">
                 Correo Electronico
             </td>
-            <td align="left" class="style1">
+            <td align="left" class="style2">
                 <asp:TextBox ID="txtResponsableEmail" runat="server" CssClass="tittleprecios03" Text="<%# Entity.ResponsableEmail %>"></asp:TextBox><br />
             </td>
         </tr>
@@ -196,6 +190,8 @@
                     OnClick="btnGuardar_Click" />&nbsp;
                 <asp:Button CssClass="adminbutton" ID="btnCancelar" runat="server" Text="Cancelar"
                     OnClick="btnCancelar_Click" CausesValidation="False" />&nbsp;
+                <asp:Button CssClass="adminbutton" ID="btnModificar" runat="server" Text="Modificar"
+                    OnClick="btnModificar_Click" />&nbsp;
                 <asp:Button CssClass="adminbutton" ID="btnEliminar" runat="server" Text="Eliminar"
                     OnClick="btnEliminar_Click" CausesValidation="False" />
             </td>

@@ -38,6 +38,8 @@ namespace Dyn.Web.Admin
                 {
                     IdEntity = 0;
                     Entity = new Dyn.Database.entities.Proveedor();
+                    btnEliminar.Visible = false;
+                    btnModificar.Visible = false;
                 }
                 else
                     if (Request["Id"] != null)
@@ -45,6 +47,23 @@ namespace Dyn.Web.Admin
                         IdEntity = Convert.ToInt32(Request["Id"]);
                         Entity = lProveedor.Load(IdEntity);
                         lstLocalidades.SelectedValue = Entity.IdLocalidad.ToString();
+                        txtCalle.Enabled = false;
+                        txtDpto.Enabled = false;
+                        txtEMail.Enabled = false;
+                        txtNumero.Enabled = false;
+                        txtPiso.Enabled = false;
+                        txtTelefono.Enabled = false;
+                        txtCuit.Enabled = false;
+                        txtDetalle.Enabled = false;
+                        txtRazonSocial.Enabled = false;
+                        txtResponsableApellido.Enabled = false;
+                        txtResponsableEmail.Enabled = false;
+                        txtResponsableNombre.Enabled = false;
+                        lstLocalidades.Enabled = false;
+                        lstProvincias.Enabled = false;
+                        btnEliminar.Visible = true;
+                        btnModificar.Visible = true;
+                        btnGuardar.Enabled = false;
                     }
                 DataBind();
             }
@@ -198,7 +217,7 @@ namespace Dyn.Web.Admin
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Home.aspx");
+            Response.Redirect("HomeAdmin.aspx");
             //Response.Redirect("ListadoProveedor.aspx");
         }
 
@@ -206,6 +225,31 @@ namespace Dyn.Web.Admin
         protected void lstProvincias_SelectedIndexChanged(object sender, EventArgs e)
         {
             LlenarLocalidades();
+        }
+
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+            txtCalle.Enabled = true;
+            txtDpto.Enabled = true;
+            txtEMail.Enabled = true;
+            txtNumero.Enabled = true;
+            txtPiso.Enabled = true;
+            txtTelefono.Enabled = true;
+            txtCuit.Enabled = true;
+            txtDetalle.Enabled = true;
+            txtRazonSocial.Enabled = true;
+            txtResponsableApellido.Enabled = true;
+            txtResponsableEmail.Enabled = true;
+            txtResponsableNombre.Enabled = true;
+            lstLocalidades.Enabled = true;
+            lstProvincias.Enabled = true;
+            btnModificar.Enabled = false;
+            btnGuardar.Enabled = true;
+        }
+
+        protected void txtDetalle_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

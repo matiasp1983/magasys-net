@@ -97,6 +97,7 @@ namespace Dyn.Web.Admin
                 rdbItem.Checked = false;
             }
             ((RadioButton)sender).Checked = true;
+           // Response.Redirect("ABMClientes.aspx?IdMenuCategoria=2");
         }
 
         private void LimpiarControles()

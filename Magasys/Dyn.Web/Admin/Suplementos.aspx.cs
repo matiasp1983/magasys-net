@@ -47,6 +47,8 @@ namespace Dyn.Web.Admin
                 {
                     IdEntity = 0;
                     Entity = new Dyn.Database.entities.Suplemento();
+                    btnEliminar.Visible = false;
+                    btnModificar.Visible = false;
                 }
                 else
                     if (Request["Id"] != null)
@@ -57,6 +59,17 @@ namespace Dyn.Web.Admin
                         lstPeriodicidad.SelectedValue = Entity.IdPeriodicidad.ToString();
                         LlenarProveedor(Convert.ToInt32(Entity.IdProveedor));
                         lstDiario.SelectedValue = Entity.IdDiario.ToString();
+                        btnEliminar.Visible = true;
+                        txtDescripcion.Enabled = false;
+                        txtNombre.Enabled = false;
+                        txtPrecio.Enabled = false;
+                        txtProveedor.Enabled = false;
+                        lstDiaSemana.Enabled = false;
+                        lstGenero.Enabled = false;
+                        lstPeriodicidad.Enabled = false;
+                        lstDiario.Enabled = false;
+                        btnGuardar.Enabled = false;
+                        btnModificar.Visible = true;
                     }
                 DataBind();
             }
@@ -232,8 +245,22 @@ namespace Dyn.Web.Admin
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Home.aspx");
+            Response.Redirect("HomeAdmin.aspx");
             //Response.Redirect("ListadoSuplemento.aspx?IdMenuCategoria=3");
+        }
+
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+            txtDescripcion.Enabled = true;
+            txtNombre.Enabled = true;
+            txtPrecio.Enabled = true;
+            txtProveedor.Enabled = true;
+            lstDiaSemana.Enabled = true;
+            lstGenero.Enabled = true;
+            lstPeriodicidad.Enabled = true;
+            lstDiario.Enabled = true;
+            btnGuardar.Enabled = true;
+            btnModificar.Enabled = false;
         }
 
     }

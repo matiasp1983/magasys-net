@@ -157,12 +157,12 @@ namespace Dyn.Web.Admin
             ////ucBuscarProductoEdicion
             //txtCantidad.Text = string.Empty;
             //Response.Redirect("/Admin/Reserva.aspx");
-            Response.Redirect("/Home.aspx");
+            Response.Redirect("HomeAdmin.aspx");
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Home.aspx");
+            Response.Redirect("HomeAdmin.aspx");
         }
     }
 }
