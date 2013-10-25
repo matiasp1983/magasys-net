@@ -100,10 +100,11 @@
                             <Columns>
                                 <asp:HyperLinkField DataTextField="codReserva" HeaderText="Reserva" />
                                 <asp:BoundField DataField="fechaReserva" HeaderText="Fecha" DataFormatString="{0:dd/MM/yyyy}" />
-                                <asp:BoundField DataField="nroCliente" HeaderText="Número Cliente" />
+                                <asp:BoundField DataField="Cliente.Nombre" HeaderText="Nombre" />
+                                <asp:BoundField DataField="Cliente.Apellido" HeaderText="Apellido" />
                                 <asp:BoundField DataField="fechaInicio" HeaderText="Desde" DataFormatString="{0:dd/MM/yyyy}" />
                                 <asp:BoundField DataField="fechaFin" HeaderText="Hasta" DataFormatString="{0:dd/MM/yyyy}" />
-                                <asp:BoundField DataField="idProducto" HeaderText="Producto" />
+                                <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto" />
                                 <asp:BoundField DataField="cantidad" HeaderText="Cantidad" />
                                 <asp:TemplateField ShowHeader="False">
                                     <ItemTemplate>
