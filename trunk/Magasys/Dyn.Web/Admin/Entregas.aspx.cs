@@ -79,7 +79,7 @@ namespace Dyn.Web.Admin
 
                 
             }
-            Response.Redirect("/Home.aspx");
+            Response.Redirect("HomeAdmin.aspx");
 
         }
 

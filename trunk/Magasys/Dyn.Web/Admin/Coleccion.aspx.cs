@@ -44,6 +44,8 @@ namespace Dyn.Web.Admin
                 {
                     IdEntity = 0;
                     Entity = new Dyn.Database.entities.Coleccion();
+                    btnEliminar.Visible = false;
+                    btnModificar.Visible = false;
                 }
                 else
                     if (Request["Id"] != null)
@@ -53,7 +55,16 @@ namespace Dyn.Web.Admin
                         lstGenero.SelectedValue = Entity.IdGenero.ToString();
                         lstPeriodicidad.SelectedValue = Entity.IdPeriodicidad.ToString();
                         lstProveedor.SelectedValue = Entity.IdProveedor.ToString();
-
+                        btnEliminar.Visible = true;
+                        txtDescripcion.Enabled = false;
+                        txtNombre.Enabled = false;
+                        txtCantidad.Enabled = false;
+                        txtPrecio.Enabled = false;
+                        lstGenero.Enabled = false;
+                        lstPeriodicidad.Enabled = false;
+                        lstProveedor.Enabled = false;
+                        btnGuardar.Enabled = false;
+                        btnModificar.Visible = true;
                         
                     }
                 DataBind();
@@ -196,8 +207,21 @@ namespace Dyn.Web.Admin
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Home.aspx");
+            Response.Redirect("HomeAdmin.aspx");
             // Response.Redirect("ListadoColeccion.aspx?IdMenuCategoria=3");
+        }
+
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+            txtDescripcion.Enabled = true;
+            txtNombre.Enabled = true;
+            txtCantidad.Enabled = true;
+            txtPrecio.Enabled = true;
+            lstGenero.Enabled = true;
+            lstPeriodicidad.Enabled = true;
+            lstProveedor.Enabled = true;
+            btnGuardar.Enabled = true;
+            btnModificar.Enabled = false;
         }
 
     }

@@ -39,6 +39,8 @@ namespace Dyn.Web.Admin
                 {
                     IdEntity = 0;
                     Entity = new Dyn.Database.entities.Pelicula();
+                    btnEliminar.Visible = false;
+                    btnModificar.Visible = false;
                 }
                 else
                     if (Request["Id"] != null)
@@ -48,6 +50,12 @@ namespace Dyn.Web.Admin
                         ddlProveedor.SelectedValue = Entity.IdProveedor.ToString();
                         ddlGenero.SelectedValue = Entity.IdGenero.ToString();
                         ddlAnio.SelectedValue = Entity.Anio.ToString();
+                        btnEliminar.Visible = true;
+                        txtDescripcion.Enabled = false;
+                        txtNombre.Enabled = false;
+                        txtPrecio.Enabled = false;
+                        btnGuardar.Enabled = false;
+                        btnModificar.Visible = true;
                     }
                 DataBind();
             }
@@ -161,8 +169,17 @@ namespace Dyn.Web.Admin
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Home.aspx");
+            Response.Redirect("HomeAdmin.aspx");
             //Response.Redirect("ListadoPelicula.aspx?IdMenuCategoria=3");
+        }
+
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+            txtDescripcion.Enabled = true;
+            txtNombre.Enabled = true;
+            txtPrecio.Enabled = true;
+            btnGuardar.Enabled = true;
+            btnModificar.Enabled = false;
         }
     }
 }

@@ -5,6 +5,12 @@
 <%@ Register Src="../controls/Login.ascx" TagName="Login" TagPrefix="uc2" %>
 <%@ Register Src="../controls/MenuAdminCategoria.ascx" TagName="MenuAdmin" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .style1
+        {
+            width: 173px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphCentral" runat="server">
     <table width="100%" cellpadding="0" cellspacing="5" border="0">
@@ -12,7 +18,7 @@
             <td class="tittleprecios03" align="left" width="100">
                 Nombre(*)
             </td>
-            <td align="left" width="150">
+            <td align="left" class="style1">
                 <asp:TextBox ID="txtNombre" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Nombre %>"></asp:TextBox><br />
                 <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ErrorMessage="Debe ingresar el nombre"
                     ControlToValidate="txtNombre" CssClass="tittleprecios03" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -22,7 +28,7 @@
             <td class="tittleprecios03" align="left" width="100">
                 Descripci&oacute;n(*)
             </td>
-            <td>
+            <td class="style1">
                 <asp:TextBox ID="txtDescripcion" runat="server" Height="100px" Width="400px" CssClass="tittleprecios03"
                     Text="<%# Entity.Descripcion %>" TextMode="MultiLine"></asp:TextBox><br />
                 <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ErrorMessage="Debe ingresar la descripci&oacute;n"
@@ -34,7 +40,7 @@
             <td class="tittleprecios03" align="left" width="100">
                 Proveedor
             </td>
-            <td align="left" width="150">
+            <td align="left" class="style1">
                 <asp:DropDownList CssClass="tittleprecios03" ID="ddlProveedor" runat="server">
                 </asp:DropDownList>
             </td>
@@ -43,7 +49,7 @@
             <td class="tittleprecios03" align="left" width="100">
                 Autor(*)
             </td>
-            <td align="left" width="150">
+            <td align="left" class="style1">
                 <asp:TextBox ID="txtAutor" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Autor %>"></asp:TextBox><br />
                 <asp:RequiredFieldValidator ID="rfvAutor" runat="server" ErrorMessage="Debe ingresar el autor"
                     ControlToValidate="txtAutor" CssClass="tittleprecios03" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -60,7 +66,7 @@
             <td class="tittleprecios03" align="left" width="100">
                 G&eacute;nero
             </td>
-            <td align="left" width="150">
+            <td align="left" class="style1">
                 <asp:DropDownList CssClass="tittleprecios03" ID="ddlGenero" runat="server">
                 </asp:DropDownList>
             </td>
@@ -83,6 +89,8 @@
                     OnClick="btnGuardar_Click" />&nbsp;
                 <asp:Button CssClass="adminbutton" ID="btnCancelar" runat="server" Text="Cancelar"
                     OnClick="btnCancelar_Click" CausesValidation="False" />&nbsp;
+                <asp:Button CssClass="adminbutton" ID="btnModificar" runat="server" Text="Modificar"
+                    OnClick="btnModificar_Click" />&nbsp;
                 <asp:Button CssClass="adminbutton" ID="btnEliminar" runat="server" Text="Eliminar"
                     OnClick="btnEliminar_Click" CausesValidation="False" OnClientClick="javascript:return confirm('Desea eliminar el libro?');" />
             </td>

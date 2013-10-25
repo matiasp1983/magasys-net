@@ -44,7 +44,8 @@ namespace Dyn.Web.Admin
                 {
                     IdEntity = 0;
                     Entity = new Dyn.Database.entities.Diario();
-
+                    btnEliminar.Visible = false;
+                    btnModificar.Visible = false;
                 }
                 else
                     if (Request["Id"] != null)
@@ -53,7 +54,19 @@ namespace Dyn.Web.Admin
                         Entity = lDiario.Load(IdEntity);
                         LlenarDiarioPorDia();
                         lstProveedor.SelectedValue = Entity.IdProveedor.ToString();
-
+                        btnEliminar.Visible = true;
+                        txtDescripcion.Enabled = false;
+                        txtNombre.Enabled = false;
+                        txtDomingo.Enabled = false;
+                        txtJueves.Enabled = false;
+                        txtLunes.Enabled = false;
+                        txtMartes.Enabled = false;
+                        txtMiercoles.Enabled = false;
+                        txtSabado.Enabled = false;
+                        txtViernes.Enabled = false;
+                        lstProveedor.Enabled = false;
+                        btnGuardar.Enabled = false;
+                        btnModificar.Visible = true;
 
                     }
                 DataBind();
@@ -306,8 +319,24 @@ namespace Dyn.Web.Admin
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Home.aspx");
+            Response.Redirect("HomeAdmin.aspx");
             //  Response.Redirect("ListadoDiario.aspx?IdMenuCategoria=3");
+        }
+
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+            txtDescripcion.Enabled = true;
+            txtNombre.Enabled = true;
+            txtDomingo.Enabled = true;
+            txtJueves.Enabled = true;
+            txtLunes.Enabled = true;
+            txtMartes.Enabled = true;
+            txtMiercoles.Enabled = true;
+            txtSabado.Enabled = true;
+            txtViernes.Enabled = true;
+            lstProveedor.Enabled = true;
+            btnGuardar.Enabled = true;
+            btnModificar.Enabled = false;
         }
 
     }
