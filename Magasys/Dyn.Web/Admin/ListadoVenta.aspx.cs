@@ -79,5 +79,10 @@ namespace Dyn.Web.Admin
             }
         }
 
+        protected void rptVenta_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+
+        }
+
     }
 }
