@@ -143,6 +143,10 @@ namespace Dyn.Database.logic
             {
                 Collection.Add(new Dyn.Database.entities.Reserva(GetDataReader()));
             }
+            for (int i = 0; i < Collection.Count; i++)
+            {
+                Collection[i].CargarPropiedades();
+            }
             DataSet ds = GetDataSet();
             return Collection;
         }
