@@ -45,7 +45,7 @@ namespace Dyn.Database.logic
             AddCmdParameter("@nombre", nombre, ParameterDirection.Input);
             AddCmdParameter("@apellido", apellido, ParameterDirection.Input);
             AddCmdParameter("@alias", alias, ParameterDirection.Input);          
-            AddCmdParameter("@Action", 4, ParameterDirection.Input);
+            AddCmdParameter("@Action", 5, ParameterDirection.Input);
             AddCmdParameter("@idEstado", lEstado.BuscarEstado("Clientes", "Alta"), ParameterDirection.Input);
 
             ExecuteReader();
@@ -57,17 +57,31 @@ namespace Dyn.Database.logic
             //numeropaginas = (int)GetValueCmdParameter("@TotalRecords");
             return Collection;
         }
-        //public List<Dyn.Database.entities.Genero> SeleccionarTodosLosGeneros()
-        //{
-        //    List<Dyn.Database.entities.Genero> Collection = new List<Dyn.Database.entities.Genero>();
-        //    CreateCommand("usp_SeleccionarTodosLosGeneros", true);
-        //    ExecuteReader();
-        //    while (Read())
-        //    {
-        //        Collection.Add(new Dyn.Database.entities.Genero(GetDataReader()));
-        //    }
-        //    return Collection;
-        //}
+        public List<Dyn.Database.entities.Cliente> SeleccionarCliente(string alias, string nombre, string apellido, int tipoDoc, int nroDoc)
+        {
+            List<Dyn.Database.entities.Cliente> Collection = new List<Dyn.Database.entities.Cliente>();
+            Dyn.Database.logic.Estado lEstado = new Dyn.Database.logic.Estado();
+            CreateCommand("usp_Clientes", true);
+            AddCmdParameter("@alias", alias, ParameterDirection.Input);
+            AddCmdParameter("@nombre", nombre, ParameterDirection.Input);
+            AddCmdParameter("@apellido", apellido, ParameterDirection.Input);
+            AddCmdParameter("@tipoDocumento", tipoDoc, ParameterDirection.Input);
+            AddCmdParameter("@idEstado", lEstado.BuscarEstado("Clientes", "Alta"), ParameterDirection.Input);
+            if (nroDoc != 0)
+            {
+                AddCmdParameter("@nroDocumento", nroDoc, ParameterDirection.Input);
+            }
+            AddCmdParameter("@Action", 5, ParameterDirection.Input);
+            DataSet ds = GetDataSet();
+            ExecuteReader();
+            while (Read())
+            {
+                Collection.Add(new Dyn.Database.entities.Cliente(GetDataReader()));
+            }
+            //numeropaginas = (int)GetValueCmdParameter("@TotalRecords");
+            return Collection;
+        }
+
 
         private void AddParameters(Dyn.Database.entities.Cliente objusuario)
         {
