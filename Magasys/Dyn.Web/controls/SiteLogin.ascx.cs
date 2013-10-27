@@ -72,7 +72,7 @@ namespace Dyn.Web.controls
             FormsAuthentication.SetAuthCookie(dbusuario.Login, true);
             CurrentUser.ClearInstace();
 
-            if (dbusuario.Rol == "USUARIO")
+            if (dbusuario.Rol == "CLIENTE")
             {
                 System.Web.HttpContext.Current.Response.Redirect("Home.aspx");
             }

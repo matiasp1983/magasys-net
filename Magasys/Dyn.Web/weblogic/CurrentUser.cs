@@ -107,7 +107,7 @@ namespace Dyn.Web.weblogic
         {
             if (CurrentUser.Instance.Usuario.Rol != "CLIENTE")
             {
-                System.Web.HttpContext.Current.Response.Redirect("Home.aspx");
+                System.Web.HttpContext.Current.Response.Redirect("/Home.aspx");
             }
         }
 

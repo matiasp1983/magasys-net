@@ -20,6 +20,19 @@ namespace Dyn.Database.logic
             }
             return Collection;
         }
-      
+
+        public Dyn.Database.entities.TipoDocumento BuscarTipoDocumento(int tipoDoc)
+        {
+            Dyn.Database.entities.TipoDocumento objTipoDoc = new entities.TipoDocumento();
+            CreateCommand("usp_TipoDocumento", true);
+            AddCmdParameter("@tipoDocumento", tipoDoc, ParameterDirection.Input);
+            ExecuteReader();
+            while (Read())
+            {
+                objTipoDoc = new Dyn.Database.entities.TipoDocumento(GetDataReader());
+            }
+            return objTipoDoc;
+        }
+
     }
 }

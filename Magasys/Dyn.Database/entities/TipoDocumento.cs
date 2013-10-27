@@ -19,9 +19,33 @@ namespace Dyn.Database.entities
         }
         public TipoDocumento(IDataRecord obj)
         {
-            idTipoDocumento = Convert.ToInt32(obj["idTipoDocumento"]);
-            nombre = Convert.ToString(obj["nombre"]);
-            descripcion = Convert.ToString(obj["descripcion"]);
+            try
+            {
+                idTipoDocumento = Convert.ToInt32(obj["idTipoDocumento"]);
+            }
+            catch (Exception)
+            {
+                idTipoDocumento = 0;
+            }
+
+            try
+            {
+                nombre = Convert.ToString(obj["nombre"]);
+            }
+            catch (Exception)
+            {
+                nombre = string.Empty;
+            }
+
+            try
+            {
+                descripcion = Convert.ToString(obj["descripcion"]);
+            }
+            catch (Exception)
+            {
+                descripcion = string.Empty;
+            }
+            
         }
 
         #endregion

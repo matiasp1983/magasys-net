@@ -121,5 +121,24 @@ namespace Dyn.Database.logic
             DataSet ds = GetDataSet();
             return Collection;
         }
+
+        public List<Dyn.Database.entities.Venta> BuscarDeudasPorCliente(DateTime fechaIni, DateTime fechaFin, int estado, int nroCliente)
+        {
+            List<Dyn.Database.entities.Venta> Collection = new List<Dyn.Database.entities.Venta>();
+            CreateCommand("usp_Venta", true);
+            AddCmdParameter("@fechaIni", fechaIni, ParameterDirection.Input);
+            AddCmdParameter("@fechaFin", fechaFin, ParameterDirection.Input);
+            AddCmdParameter("@idEstado", estado, ParameterDirection.Input);
+            AddCmdParameter("@nroCliente", nroCliente, ParameterDirection.Input);
+            AddCmdParameter("@Action", 6, ParameterDirection.Input);
+
+            ExecuteReader();
+            while (Read())
+            {
+                Collection.Add(new Dyn.Database.entities.Venta(GetDataReader()));
+            }
+            DataSet ds = GetDataSet();
+            return Collection;
+        }
     }
 }

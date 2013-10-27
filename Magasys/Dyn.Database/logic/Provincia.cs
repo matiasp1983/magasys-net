@@ -9,12 +9,12 @@ namespace Dyn.Database.logic
     {
         public Provincia() { }
 
-        public Dyn.Database.entities.Provincia Load(int idProvincia)
+        public Dyn.Database.entities.Provincia BuscarProvincia(int idProvincia)
         {
             Dyn.Database.entities.Provincia objProvincia = new Dyn.Database.entities.Provincia();
             CreateCommand("usp_Provincia", true);
             AddCmdParameter("@idProvincia", idProvincia, ParameterDirection.Input);
-            AddCmdParameter("@Action", 0, ParameterDirection.Input);
+            AddCmdParameter("@Action", 1, ParameterDirection.Input);
             ExecuteReader();
             while (Read())
             {
@@ -22,6 +22,7 @@ namespace Dyn.Database.logic
             }
             return objProvincia;
         }
+
         public List<Dyn.Database.entities.Provincia> SeleccionarTodasLasProvicias()
         {
             List<Dyn.Database.entities.Provincia> Collection = new List<Dyn.Database.entities.Provincia>();

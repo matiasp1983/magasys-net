@@ -46,93 +46,104 @@ namespace Dyn.Database.entities
             nroCliente = Convert.ToInt32(obj["nroCliente"]);
 
             tipoDocumento.IdTipoDocumento = Convert.ToInt32(obj["tipoDocumento"]);
-            if (obj["nroDocumento"] != DBNull.Value)
-            {
-                nroDocumento = null;
-            }
-            else
+            try
             {
                 nroDocumento = Convert.ToInt32(obj["nroDocumento"]);
             }
-
+            catch (Exception)
+            {
+                nroDocumento = null;
+            }
             
             nombre = Convert.ToString(obj["nombre"]);
             apellido = Convert.ToString(obj["apellido"]);
             alias = Convert.ToString(obj["alias"]);
 
-            if (obj["telefono"] != DBNull.Value)
+            try
             {
                 telefono = Convert.ToString(obj["telefono"]);
             }
-            else
+            catch (Exception)
             {
                 telefono = null;
             }
-            //telefono = Convert.ToString(obj["telefono"]); 
 
-            if (obj["celular"] != DBNull.Value)
+            try
             {
                 celular = Convert.ToString(obj["celular"]);
             }
-            else
+            catch (Exception)
             {
                 celular = null;
             }
-            //celular = Convert.ToString(obj["celular"]); 
+
             email = Convert.ToString(obj["email"]);
 
-
-            if (obj["domBarrio"]!= DBNull.Value)
+            try
             {
                 domicilioBarrio = Convert.ToString(obj["domBarrio"]);
             }
-            else
+            catch (Exception)
             {
                 domicilioBarrio = null;
             }
+
             domicilioCalle = Convert.ToString(obj["domCalle"]);
-            if (obj["domNro"]!= DBNull.Value)
+
+            try
             {
                 domicilioNro = Convert.ToInt32(obj["domNro"]);
             }
-            else
+            catch (Exception)
             {
                 domicilioNro = null;
-            }          
+            }
+      
             domicilioDpto = Convert.ToString(obj["domDpto"]);
-            if (obj["domPiso"] != DBNull.Value)
+
+            try
             {
                 domicilioPiso = Convert.ToString(obj["domPiso"]);
             }
-            else
+            catch (Exception)
             {
                 domicilioPiso = null;
             }
 
-            if (obj["domCodigoPostal"] != DBNull.Value)
+            try
+            {
+                domicilioPiso = Convert.ToString(obj["domPiso"]);
+            }
+            catch (Exception)
+            {
+                domicilioPiso = null;
+            }
+
+            try
             {
                 domicilioCodPostal = Convert.ToString(obj["domCodigoPostal"]);
             }
-            else
+            catch (Exception)
             {
                 domicilioCodPostal = null;
             }
-            if (obj["domIdLocalidad"] != DBNull.Value)
+
+            try
             {
                 idLocalidad = Convert.ToInt32(obj["domIdLocalidad"]);
             }
-            else
+            catch (Exception)
             {
                 idLocalidad = null;
             }
 
             fechaAlta = Convert.ToDateTime(obj["fechaAlta"]);
             estado.IdEstado = Convert.ToInt32(obj["idEstado"]);
-            if (obj["motivoBaja"] != DBNull.Value)
+            try
             {
                 motivoBaja = Convert.ToString(obj["motivoBaja"]);
             }
-            else
+            catch (Exception)
             {
                 motivoBaja = null;
             }

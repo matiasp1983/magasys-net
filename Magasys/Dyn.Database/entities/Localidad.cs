@@ -17,13 +17,20 @@ namespace Dyn.Database.entities
             nombre = nom;
             idProvincia = idProv;
         }
-        public Localidad (IDataRecord obj)
-		{
+
+        public Localidad(IDataRecord obj)
+        {
             idLocalidad = Convert.ToInt32(obj["idLocalidad"]);
             nombre = Convert.ToString(obj["nombre"]);
-            idProvincia = Convert.ToInt32(obj["idProvincia"]);
-            
-		}
+            try
+            {
+                Provincia.Nombre = Convert.ToString(obj["provincia"]);
+            }
+            catch (Exception)
+            {
+                Provincia.Nombre = string.Empty;
+            }
+        }
 
         #endregion
 
@@ -51,6 +58,14 @@ namespace Dyn.Database.entities
         {
             get { return idProvincia; }
             set { idProvincia = value; }
+        }
+
+        private Provincia provincia = new Provincia();
+
+        public Provincia Provincia
+        {
+            get { return provincia; }
+            set { provincia = value; }
         }
 
         #endregion
