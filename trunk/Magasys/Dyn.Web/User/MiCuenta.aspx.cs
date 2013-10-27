@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Dyn.Web.weblogic;
 
 namespace Dyn.Web.User
 {
@@ -15,7 +16,7 @@ namespace Dyn.Web.User
         {
             if (!IsPostBack)
             {
-                //this.Master.TituloPagina = "Listado de deudas";
+                CurrentUser.RegresarHome();
                 calFechaInicial.CalendarDate = DateTime.Now.AddDays(-2);
                 calFechaFinal.CalendarDate = DateTime.Now.AddDays(2);
             }
@@ -28,10 +29,17 @@ namespace Dyn.Web.User
 
         private void CargarVentas(DateTime fechaInicio, DateTime fechaFin)
         {
+            Dyn.Database.logic.Usuario lUsuario = new Dyn.Database.logic.Usuario();
+            Dyn.Database.entities.Usuario eusuario = new Database.entities.Usuario();
             Dyn.Database.logic.Estado lEstado = lEstado = new Database.logic.Estado();
+
+            System.Security.Principal.IIdentity user = HttpContext.Current.User.Identity;
+
+            eusuario = lUsuario.SeleccionarUsuarioPorLogin(user.Name);
+
             lVenta = new Dyn.Database.logic.Venta();
             int estado = lEstado.BuscarEstado("Ventas", "Entregado-No Pagado");
-            List<Dyn.Database.entities.Venta> listaCobros = lVenta.BuscarDeudas(fechaInicio, fechaFin, estado);
+            List<Dyn.Database.entities.Venta> listaCobros = lVenta.BuscarDeudasPorCliente(fechaInicio, fechaFin, estado, (int)eusuario.Cliente.NroCliente);
             gridVentas.DataSource = listaCobros;
             gridVentas.DataKeyNames = new String[] { "idVenta" };
             gridVentas.DataBind();

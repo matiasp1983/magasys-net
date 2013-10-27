@@ -16,7 +16,7 @@
         .style3
         {
             height: 20px;
-        }       
+        }
     </style>
     <link type="text/css" rel="Stylesheet" href="../GridView/dialog.css" />
     <link type="text/css" rel="Stylesheet" href="../GridView/pager.css" />
@@ -91,8 +91,7 @@
                 &nbsp;
             </td>
             <td style="font-size: 16px;">
-                Aquí puedas conocer el estado de tu cuenta y las compras realizadas que aun no han
-                sido abonadas.
+                Aquí podrás ver las compras realizadas que aun no han sido abonadas.
             </td>
             <td>
                 &nbsp;
@@ -165,32 +164,17 @@
                                                             <HeaderTemplate>
                                                                 <table width="100%" style="background-color: #507CD1">
                                                                     <tr>
-                                                                        <th style="width: 265px; background: url(sprite.png) repeat-x 0px 0px; border-color: #507CD1 #507CD1 #507CD1 #507CD1;
+                                                                        <th style="width: 232px; background: url(sprite.png) repeat-x 0px 0px; border-color: #507CD1 #507CD1 #507CD1 #507CD1;
                                                                             border-style: solid solid solid none; border-width: 1px 1px 1px medium; color: White;
                                                                             padding: 4px 5px 4px 10px; vertical-align: bottom; text-align: center; font-weight: bold">
                                                                             Código de Venta
                                                                         </th>
-                                                                        <th style="width: 138px; background: url(sprite.png) repeat-x 0px 0px; border-color: #507CD1 #507CD1 #507CD1 #507CD1;
+                                                                        <th style="width: 210px; background: url(sprite.png) repeat-x 0px 0px; border-color: #507CD1 #507CD1 #507CD1 #507CD1;
                                                                             border-style: solid solid solid none; border-width: 1px 1px 1px medium; color: White;
                                                                             padding: 4px 5px 4px 10px; vertical-align: bottom; text-align: center; font-weight: bold">
                                                                             Fecha
                                                                         </th>
-                                                                        <th style="width: 120px; background: url(sprite.png) repeat-x 0px 0px; border-color: #507CD1 #507CD1 #507CD1 #507CD1;
-                                                                            border-style: solid solid solid none; border-width: 1px 1px 1px medium; color: White;
-                                                                            padding: 4px 5px 4px 10px; vertical-align: bottom; text-align: center; font-weight: bold">
-                                                                            N&uacute;mero Cliente
-                                                                        </th>
-                                                                        <th style="width: 120px; background: url(sprite.png) repeat-x 0px 0px; border-color: #507CD1 #507CD1 #507CD1 #507CD1;
-                                                                            border-style: solid solid solid none; border-width: 1px 1px 1px medium; color: White;
-                                                                            padding: 4px 5px 4px 10px; vertical-align: bottom; text-align: center; font-weight: bold">
-                                                                            Apellido
-                                                                        </th>
-                                                                        <th style="width: 120px; background: url(sprite.png) repeat-x 0px 0px; border-color: #507CD1 #507CD1 #507CD1 #507CD1;
-                                                                            border-style: solid solid solid none; border-width: 1px 1px 1px medium; color: White;
-                                                                            padding: 4px 5px 4px 10px; vertical-align: bottom; text-align: center; font-weight: bold">
-                                                                            Nombre
-                                                                        </th>
-                                                                        <th style="width: 120px; background: url(sprite.png) repeat-x 0px 0px; border-color: #507CD1 #507CD1 #507CD1 #507CD1;
+                                                                        <th style="width: 220px; background: url(sprite.png) repeat-x 0px 0px; border-color: #507CD1 #507CD1 #507CD1 #507CD1;
                                                                             border-style: solid solid solid none; border-width: 1px 1px 1px medium; color: White;
                                                                             padding: 4px 5px 4px 10px; vertical-align: bottom; text-align: center; font-weight: bold">
                                                                             Total
@@ -204,18 +188,12 @@
                                                                     <asp:Image ID="imgCollapsible" CssClass="first" ImageUrl="~/GridView/plus.png" Style="margin-right: 5px;"
                                                                         runat="server" />
                                                                     <span class="header">
-                                                                        <asp:Label ID="lblCodCVenta" runat="server" Text='<%#Eval("idVenta")%>' Width="132px"
+                                                                        <asp:Label ID="lblCodCVenta" runat="server" Text='<%#Eval("idVenta")%>' Width="200px"
                                                                             Style="text-align: center; color: #333333;"></asp:Label>
                                                                         <asp:Label ID="lblFechaVenta" runat="server" Text='<%#String.Format("{0:dd/MM/yyyy}",Eval("fecha"))%>'
-                                                                            Width="140px" Style="text-align: center; color: #333333;"></asp:Label>
-                                                                        <asp:Label ID="lblNroCliente" runat="server" Text='<%#Eval("nroCliente")%>' Width="53px"
-                                                                            Style="text-align: center; color: #333333;"></asp:Label>
-                                                                        <asp:Label ID="lblApellido" runat="server" Text='<%#Eval("Cliente.Apellido")%>' Width="130px"
-                                                                            Style="text-align: center; color: #333333;"></asp:Label>
-                                                                        <asp:Label ID="lblNombre" runat="server" Text='<%#Eval("Cliente.Nombre")%>' Width="64px"
-                                                                            Style="text-align: center; color: #333333;"></asp:Label>
+                                                                            Width="250px" Style="text-align: center; color: #333333;"></asp:Label>
                                                                         <asp:Label ID="lblTotal" runat="server" Text='<%#String.Format("{0:c}",Eval("montotal"))%>'
-                                                                            Width="85px" Style="text-align: right; color: #333333;"></asp:Label>
+                                                                            Width="160px" Style="text-align: center; color: #333333;"></asp:Label>
                                                                     </span>
                                                                     <%--</div>--%>
                                                                     <asp:SqlDataSource ID="sqlDsDetalleVenta" runat="server" ConnectionString="<%$ appSettings:keyconnection %>"

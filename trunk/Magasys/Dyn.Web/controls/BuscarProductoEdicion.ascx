@@ -80,6 +80,22 @@
         border-color: #000000;
         border-width: 1px;
     }
+    .style1
+    {
+        width: 213px;
+    }
+    .style2
+    {
+        width: 206px;
+    }
+    .style3
+    {
+        width: 137px;
+    }
+    .style4
+    {
+        width: 77px;
+    }
 </style>
 <asp:UpdatePanel ID="uplProductoEdicion" runat="server">
     <contenttemplate>
@@ -132,14 +148,13 @@
                                     <table cellpadding="0" cellspacing="5" width="100%">
                                         <tr>
                                             <td class="tittleprecios03" align="left">
-                                                <asp:Label ID="lblNombreProd" runat="server" Text="Nombre del producto:" 
-                                                    Width="135px"></asp:Label>
+                                                <asp:Label ID="lblNombreProd" runat="server" Text="Nombre del producto:"></asp:Label>
                                                 &nbsp;<asp:TextBox ID="txtNombreProd" runat="server" Width="150px"></asp:TextBox>
                                             </td>
                                             <td class="tittleprecios03" align="left">
-                                                <asp:Label ID="lblNroEdicion" runat="server" Text="Edici&oacute;n:" Width="127px"></asp:Label>
+                                                <asp:Label ID="lblNroEdicion" runat="server" Text="Edici&oacute;n:"></asp:Label>
                                                 &nbsp;<asp:TextBox ID="txtEdicion" runat="server" Width="150px"></asp:TextBox>
-											</td>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td class="tittleprecios03" align="left">
@@ -147,34 +162,33 @@
                                                 <asp:DropDownList CssClass="tittleprecios03" ID="ddlProveedor" runat="server" Width="159px">
                                                 </asp:DropDownList>
                                             </td>
-                                                <td class="tittleprecios03" align="left">
+                                            <td class="tittleprecios03" align="left">
                                                 <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
-											</td>
+                                            </td>
                                         </tr>
                                     </table>
                                     <asp:Label ID="lblMensajeError" runat="server" Text="" ForeColor="Red"></asp:Label>
                                     <br />
                                     <br />
-                                    <table style="background-color: #006CCC; width: 412px;">
+                                    <table style="background-color: #006CCC; width: 550px;">
                                         <tr>
                                             <td class="tittleproducto">
                                                 &nbsp; &nbsp;
                                             </td>
-                                            <td class="tittleproducto" style="background-color: #006CCC; color: White">
-                                                <table style="width: 200px">
+                                            <td class="style1" style="background-color: #006CCC; color: White">
+                                                <table style="width: 211px; height: 23px;">
                                                     <tr>
-                                                        <td>
+                                                        <td class="style2">
                                                             Nombre
                                                         </td>
                                                     </tr>
                                                 </table>
                                             </td>
-                                            <td class="tittleproducto" style="background-color: #006CCC; color: White">
+                                            <td class="style4" style="background-color: #006CCC; color: White">
                                                 Edici&oacute;n
                                             </td>
-                                            <td class="tittleproducto" style="background-color: #006CCC; color: White">
-                                                Precio<br />
-                                                unitario
+                                            <td class="style3" style="background-color: #006CCC; color: White">
+                                                Precio unitario
                                             </td>
                                             <td class="tittleproducto" style="background-color: #006CCC; color: White">
                                                 Stock
@@ -189,7 +203,7 @@
                                                 </HeaderTemplate>
                                                 <ItemTemplate>
                                                     <tr>
-                                                        <td>
+                                                        <td style="width: 30px;">
                                                             <asp:RadioButton ID="rdbProductoSeccionado" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "idProducto")%>'
                                                                 Font-Size="0px" OnCheckedChanged="rdbProductoSeccionado_OnCheckedChanged" AutoPostBack="true" />
                                                         </td>
@@ -203,7 +217,7 @@
                                                             <asp:Label ID="lblPesosPrecioUnitario" runat="server" Text="Label" CssClass="tittleprecios03">$ </asp:Label><asp:Label
                                                                 CssClass="tittleprecios03" ID="lblPrecioUnitario" runat="server" Text='<%#String.Format("{0:0.00}",DataBinder.Eval(Container.DataItem, "precio"))%>'></asp:Label>
                                                         </td>
-                                                        <td style="width: 40px;" align="center">
+                                                        <td style="width: 40px;">
                                                             <asp:Label CssClass="tittleprecios03" ID="lblStock" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "cantidadDisponible")%>'></asp:Label>
                                                         </td>
                                                     </tr>

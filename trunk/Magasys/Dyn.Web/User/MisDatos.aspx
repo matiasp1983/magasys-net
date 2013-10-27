@@ -26,7 +26,7 @@
             </td>
             <td class="art-nav-outer" colspan="4">
                 <h2 class="art-postheader">
-                    <span class="art-postheadericon">Mi Cuenta </span>
+                    <span class="art-postheadericon">Mis Datos </span>
                 </h2>
             </td>
             <td class="art-nav-outer">
@@ -46,10 +46,10 @@
             <td class="style1">
                 &nbsp;
             </td>
-            <td style="font-size: 16px;" colspan="4" class="art-post">
+            <%--            <td style="font-size: 16px;" colspan="4" class="art-post">
                 Aquí puedas conocer el estado de tu cuenta y las compras realizadas que aun no han
                 sido abonadas.
-            </td>
+            </td>--%>
             <td style="font-size: 16px;" class="art-post">
                 &nbsp;
             </td>
@@ -69,29 +69,88 @@
             <td>
             </td>
             <td style="font-size: 16px;" align="left">
-                Numero Cliente
+                N&uacute;mero Cliente:
             </td>
             <td align="left">
-                <asp:Label ID="labNroCliente" runat="server" CssClass="tittleprecios03" Text="<%# Entity.NroCliente %>"
+                <asp:Label ID="lblNroCliente" runat="server" CssClass="tittleprecios03" Enabled="False"
+                    Width="200px"></asp:Label><br />
+            </td>
+        </tr>
+        <tr>
+            <td class="style1">
+            </td>
+            <td style="font-size: 16px;" align="left">
+                Tipo Documento:
+            </td>
+            <td align="left">
+                <asp:Label CssClass="tittleprecios03" ID="lblTipoDoc" runat="server" OnSelectedIndexChanged="lstProvincias_SelectedIndexChanged"
+                    Enabled="False" Width="200px"></asp:Label>
+            </td>
+            <td style="font-size: 16px;" align="left">
+                N&uacute;mero Documento:
+            </td>
+            <td align="left">
+                <asp:Label ID="lblNroDocumento" runat="server" CssClass="tittleprecios03" MaxLength="10"
+                    Enabled="False" Width="200px"></asp:Label><br />
+            </td>
+            <td align="left" class="style1">
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td class="style1">
+            </td>
+            <td style="font-size: 16px;" align="left">
+                Nombre:
+            </td>
+            <td align="left">
+                <asp:Label ID="lblNombre" runat="server" CssClass="tittleprecios03" MaxLength="50"
+                    Enabled="False" Width="200px"></asp:Label><br />
+            </td>
+            <td style="font-size: 16px;" align="left">
+                Apellido:
+            </td>
+            <td align="left">
+                <asp:Label ID="lblApellido" runat="server" CssClass="tittleprecios03" MaxLength="50"
+                    Enabled="False" Width="200px"></asp:Label><br />
+            </td>
+            <td align="left" class="style1">
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td class="style1">
+            </td>
+            <td style="font-size: 16px;" align="left">
+                Alias:
+            </td>
+            <td align="left">
+                <asp:Label ID="lblAlias" runat="server" CssClass="tittleprecios03" MaxLength="100"
                     Enabled="False" Width="200px"></asp:Label><br />
             </td>
         </tr>
         <tr>
             <td class="style1">
             </td>
+            <td align="left">
+            </td>
+        </tr>
+        <tr>
+            <td class="style1">
+            </td>
             <td style="font-size: 16px;" align="left">
-                Tipo Documento
+                Tel&eacute;fono:
             </td>
             <td align="left">
-                <asp:Label CssClass="tittleprecios03" ID="labTipoDoc" runat="server" OnSelectedIndexChanged="lstProvincias_SelectedIndexChanged"
-                    Enabled="False" Width="200px"></asp:Label>
+                <asp:Label ID="lblTelefono" runat="server" CssClass="tittleprecios03" MaxLength="10"
+                    Enabled="False" Width="200px"></asp:Label><br />
             </td>
             <td style="font-size: 16px;" align="left">
-                Numero Documento
+                Celular:
             </td>
             <td align="left">
-                <asp:Label ID="labNroDocumento" runat="server" CssClass="tittleprecios03" Text="<%# Entity.NroDocumento %>"
-                    MaxLength="10" Enabled="False" Width="200px"></asp:Label><br />
+                <asp:Label ID="lblCelular" runat="server" CssClass="tittleprecios03" MaxLength="12"
+                    Enabled="False" Width="200px"></asp:Label><br />
             </td>
             <td align="left" class="style1">
                 &nbsp;
@@ -101,32 +160,11 @@
             <td class="style1">
             </td>
             <td style="font-size: 16px;" align="left">
-                Nombre
+                Correo Electr&oacute;nico:
             </td>
             <td align="left">
-                <asp:Label ID="labNombre" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Nombre %>"
-                    MaxLength="50" Enabled="False" Width="200px"></asp:Label><br />
-            </td>
-            <td style="font-size: 16px;" align="left">
-                Apellido
-            </td>
-            <td align="left">
-                <asp:Label ID="labApellido" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Apellido %>"
-                    MaxLength="50" Enabled="False" Width="200px"></asp:Label><br />
-            </td>
-            <td align="left" class="style1">
-                &nbsp;
-            </td>
-        </tr>
-        <tr>
-            <td class="style1">
-            </td>
-            <td style="font-size: 16px;" align="left">
-                Alias
-            </td>
-            <td align="left">
-                <asp:Label ID="labAlias" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Alias %>"
-                    MaxLength="100" Enabled="False" Width="200px"></asp:Label><br />
+                <asp:Label ID="lblEMail" runat="server" CssClass="tittleprecios03" Width="200px"
+                    MaxLength="50" Enabled="False"></asp:Label><br />
             </td>
         </tr>
         <tr>
@@ -137,76 +175,32 @@
         </tr>
         <tr>
             <td class="style1">
-            </td>
+<%--            </td>
             <td style="font-size: 16px;" align="left">
-                Telefono
-            </td>
-            <td align="left">
-                <asp:Label ID="labTelefono" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Telefono %>"
-                    MaxLength="10" Enabled="False" Width="200px"></asp:Label><br />
-            </td>
-            <td style="font-size: 16px;" align="left">
-                Celular
-            </td>
-            <td align="left">
-                <asp:Label ID="labCelular" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Celular %>"
-                    MaxLength="12" Enabled="False" Width="200px"></asp:Label><br />
-            </td>
-            <td align="left" class="style1">
-                &nbsp;
+                Direcci&oacute;n
+            </td>--%>
+            <td colspan="5" class="tittleproducto">
+                <br />
+                Direcci&oacute;n
+                <hr />
             </td>
         </tr>
         <tr>
             <td class="style1">
             </td>
             <td style="font-size: 16px;" align="left">
-                Correo Electronico
+                Calle:
             </td>
             <td align="left">
-                <asp:Label ID="labEMail" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Email %>"
-                    Width="200px" MaxLength="50" Enabled="False"></asp:Label><br />
-            </td>
-        </tr>
-        <tr>
-            <td class="style1">
-            </td>
-            <td align="left">
-            </td>
-        </tr>
-        <tr>
-            <td class="style1">
+                <asp:Label ID="lblCalle" runat="server" CssClass="tittleprecios03" MaxLength="50"
+                    Width="200px" Enabled="False"></asp:Label><br />
             </td>
             <td style="font-size: 16px;" align="left">
-                Direccion
-            </td>
-        </tr>
-        <tr>
-            <td class="style1">
-            </td>
-            <td style="font-size: 16px;" align="left">
-                Barrio
+                N&uacute;mero:
             </td>
             <td align="left">
-                <asp:Label ID="labBarrio" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioBarrio %>"
-                    MaxLength="100" Width="200px" Enabled="False"></asp:Label><br />
-            </td>
-        </tr>
-        <tr>
-            <td class="style1">
-            </td>
-            <td style="font-size: 16px;" align="left">
-                Calle
-            </td>
-            <td align="left">
-                <asp:Label ID="labCalle" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioCalle %>"
-                    MaxLength="50" Width="200px" Enabled="False"></asp:Label><br />
-            </td>
-            <td style="font-size: 16px;" align="left">
-                Numero
-            </td>
-            <td align="left">
-                <asp:Label ID="labNumero" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioNro %>"
-                    MaxLength="6" Width="200px" Enabled="False"></asp:Label><br />
+                <asp:Label ID="lblNumero" runat="server" CssClass="tittleprecios03" MaxLength="6"
+                    Width="200px" Enabled="False"></asp:Label><br />
             </td>
             <td align="left">
                 &nbsp;
@@ -216,18 +210,18 @@
             <td class="style1">
             </td>
             <td style="font-size: 16px;" align="left">
-                Piso
+                Piso:
             </td>
             <td align="left">
-                <asp:Label ID="labPiso" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioPiso %>"
-                    MaxLength="5" Width="200px" Enabled="False"></asp:Label><br />
+                <asp:Label ID="lblPiso" runat="server" CssClass="tittleprecios03" MaxLength="5" Width="200px"
+                    Enabled="False"></asp:Label><br />
             </td>
             <td style="font-size: 16px;" align="left">
-                Departamento
+                Departamento:
             </td>
             <td align="left">
-                <asp:Label ID="labDpto" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioDpto %>"
-                    MaxLength="5" Width="200px" Enabled="False"></asp:Label><br />
+                <asp:Label ID="lblDpto" runat="server" CssClass="tittleprecios03" MaxLength="5" Width="200px"
+                    Enabled="False"></asp:Label><br />
             </td>
             <td align="left">
                 &nbsp;
@@ -237,18 +231,36 @@
             <td class="style1">
             </td>
             <td style="font-size: 16px;" align="left">
-                Provincia
+                Barrio:
             </td>
             <td align="left">
-                <asp:Label CssClass="tittleprecios03" ID="labProvincias" runat="server" OnSelectedIndexChanged="lstProvincias_SelectedIndexChanged"
-                    AutoPostBack="True" Width="200px" Enabled="False">
+                <asp:Label ID="lblBarrio" runat="server" CssClass="tittleprecios03" MaxLength="100"
+                    Width="200px" Enabled="False"></asp:Label><br />
+            </td>
+            <td style="font-size: 16px;" align="left">
+                C&oacute;digo Postal:
+            </td>
+            <td align="left">
+                <asp:Label ID="lblCodPostal" runat="server" CssClass="tittleprecios03" MaxLength="5"
+                    Width="200px" Enabled="False"></asp:Label><br />
+            </td>
+        </tr>
+        <tr>
+            <td class="style1">
+            </td>
+            <td style="font-size: 16px;" align="left">
+                Localidad:
+            </td>
+            <td align="left">
+                <asp:Label CssClass="tittleprecios03" ID="lblLocalidad" runat="server" AutoPostBack="True"
+                    Width="200px" Enabled="False">
                 </asp:Label>
             </td>
             <td style="font-size: 16px;" align="left">
-                Localidad
+                Provincia:
             </td>
             <td align="left">
-                <asp:Label CssClass="tittleprecios03" ID="labLocalidades" runat="server" Enabled="False"
+                <asp:Label CssClass="tittleprecios03" ID="lblProvincia" runat="server" Enabled="False"
                     Width="200px">
                 </asp:Label>
             </td>
@@ -259,28 +271,9 @@
         <tr>
             <td class="style1">
             </td>
-            <td style="font-size: 16px;" align="left">
-                Codigo Postal
-            </td>
-            <td align="left">
-                <asp:Label ID="labCodPostal" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioCodPostal %>"
-                    MaxLength="5" Width="200px" Enabled="False"></asp:Label><br />
-            </td>
-        </tr>
-        <tr>
-            <td class="style1">
-            </td>
-            <td align="left">
-            </td>
-        </tr>
-        <tr>
-            <td class="style1">
-            </td>
             <td colspan="2" style="height: 24px">
                 <br />
-                &nbsp;
-                &nbsp;
-                
+                &nbsp; &nbsp;
             </td>
         </tr>
     </table>

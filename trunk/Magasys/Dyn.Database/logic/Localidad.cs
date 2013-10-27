@@ -21,6 +21,7 @@ namespace Dyn.Database.logic
             }
             return objLocalidad;
         }
+
         public List<Dyn.Database.entities.Localidad> SeleccionarLocalidadesPorProvincia (int idProvincia)
         {
             List<Dyn.Database.entities.Localidad> Collection = new List<Dyn.Database.entities.Localidad>();
@@ -33,6 +34,20 @@ namespace Dyn.Database.logic
                 Collection.Add(new Dyn.Database.entities.Localidad(GetDataReader()));
             }
             return Collection;
+        }
+
+        public Dyn.Database.entities.Localidad LocalidadProvincia(int idLocalidad)
+        {
+            Dyn.Database.entities.Localidad objLocalidad = new Dyn.Database.entities.Localidad();
+            CreateCommand("usp_Localidad", true);
+            AddCmdParameter("@idLocalidad", idLocalidad, ParameterDirection.Input);
+            AddCmdParameter("@Action", 2, ParameterDirection.Input);
+            ExecuteReader();
+            while (Read())
+            {
+                objLocalidad = new Dyn.Database.entities.Localidad(GetDataReader());
+            }
+            return objLocalidad;
         }
     }
 }
