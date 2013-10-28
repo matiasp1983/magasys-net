@@ -67,7 +67,7 @@
                 &nbsp;
             </td>
             <td style="font-size: 16px;">
-                Aquí podrás ver tus reservas realizadas.
+                Aquí podrás modificar los datos de tu reserva.
             </td>
             <td>
                 &nbsp;
@@ -101,34 +101,20 @@
                         <td colspan="2">
                             <table>
                                 <tr>
-                                    <td class="tittleprecios03" align="left" style="width: 115px">
+                                    <td class="tittleprecios03" align="left">
                                         <asp:Label ID="lblFecha" runat="server" Text="Fecha de reserva:"></asp:Label>
                                     </td>
                                     <td class="tittleprecios03" align="left">
                                         <asp:Label ID="lblFechaText" runat="server" Width="160px"></asp:Label>
                                     </td>
                                     <td class="tittleprecios03" align="left">
-                                        <asp:Label ID="lblTipoReserva" runat="server" Text="  Tipo de reserva:" Width="120px"></asp:Label>
+                                        <asp:Label ID="lblTipoReserva" runat="server" Text="  Tipo de reserva:"></asp:Label>
                                     </td>
                                     <td class="tittleprecios03" align="left">
                                         <asp:DropDownList ID="ddlTipoReserva" runat="server">
                                             <asp:ListItem>Única</asp:ListItem>
                                             <asp:ListItem>Periódica</asp:ListItem>
                                         </asp:DropDownList>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="tittleprecios03" align="left">
-                                        <asp:Label ID="lblNroCliente" runat="server" Text="N&uacute;mero de Cliente:" Width="125px"></asp:Label>
-                                    </td>
-                                    <td class="tittleprecios03" align="left">
-                                        <asp:Label ID="lblNroClienteText" runat="server" Width="160px"></asp:Label>
-                                    </td>
-                                    <td class="tittleprecios03" align="left">
-                                        <asp:Label ID="lblNombApell" runat="server" Text="  Nombre y apellido:" Width="125px"></asp:Label>
-                                    </td>
-                                    <td class="tittleprecios03" align="left">
-                                        <asp:Label ID="lblNombApellText" runat="server"></asp:Label>
                                     </td>
                                 </tr>
                             </table>
@@ -142,19 +128,19 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="tittleprecios03" align="left">
+                        <td align="left">
                             <table>
                                 <tr>
-                                    <td>
+                                    <td class="tittleprecios03">
                                         <asp:Label ID="lblInicio" runat="server" Text="Inicio:"></asp:Label>
                                     </td>
-                                    <td>
+                                    <td style="width: 120px">
                                         <uc1:Date ID="calFechaInicio" runat="server" Visible="True" CalendarDate="<%# Entity.FechaInicio %>" />
                                     </td>
-                                    <td>
+                                    <td class="tittleprecios03">
                                         <asp:Label ID="lblFin" runat="server" Text="Fin:"></asp:Label>
                                     </td>
-                                    <td>
+                                    <td style="width: 120px">
                                         <uc1:Date ID="calFechaFin" runat="server" Visible="True" CalendarDate="<%# Entity.FechaFin %>" />
                                     </td>
                                 </tr>
@@ -166,18 +152,18 @@
                         <td class="tittleprecios03" align="left">
                             <table>
                                 <tr>
-                                    <td>
+                                    <td class="tittleprecios03">
                                         <asp:Label ID="lblidProducto" runat="server" Text="C&oacute;digo Producto:"></asp:Label>
                                     </td>
-                                    <td>
+                                    <td class="tittleprecios03">
                                         <asp:Label ID="lblidProductoText" runat="server"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
+                                    <td class="tittleprecios03">
                                         <asp:Label ID="lblNombreProducto" runat="server" Text="Nombre:"></asp:Label>
                                     </td>
-                                    <td>
+                                    <td class="tittleprecios03">
                                         <asp:Label ID="lblNombreProductoText" runat="server"></asp:Label>
                                     </td>
                                 </tr>

@@ -26,8 +26,6 @@ namespace Dyn.Web.User
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Dyn.Database.logic.Cliente lCliente = new Database.logic.Cliente();
-            Dyn.Database.entities.Cliente eCliente = new Database.entities.Cliente();
             Dyn.Database.logic.Producto lProducto = new Database.logic.Producto();
             Dyn.Database.entities.Producto eProducto = new Database.entities.Producto();
 
@@ -40,9 +38,6 @@ namespace Dyn.Web.User
                     Entity = lReserva.Load_Reserva(IdEntity);
                     ddlTipoReserva.SelectedValue = Entity.TipoReserva;
                     ucBuscarProducto.CodigoProducto = Convert.ToInt32(Entity.IdProducto);
-                    eCliente = lCliente.Load((int)(Entity.NroCliente));
-                    lblNroClienteText.Text = eCliente.NroCliente.ToString();
-                    lblNombApellText.Text = eCliente.Nombre.ToString() + " " + eCliente.Apellido.ToString();
                     eProducto = lProducto.Load((int)Entity.IdProducto);
                     lblidProductoText.Text = eProducto.IdProducto.ToString();
                     lblNombreProductoText.Text = eProducto.Nombre.ToString();
