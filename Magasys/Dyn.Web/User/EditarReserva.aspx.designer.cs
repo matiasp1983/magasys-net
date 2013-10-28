@@ -49,42 +49,6 @@ namespace Dyn.Web.User {
         protected global::System.Web.UI.WebControls.DropDownList ddlTipoReserva;
         
         /// <summary>
-        /// lblNroCliente control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNroCliente;
-        
-        /// <summary>
-        /// lblNroClienteText control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNroClienteText;
-        
-        /// <summary>
-        /// lblNombApell control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombApell;
-        
-        /// <summary>
-        /// lblNombApellText control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombApellText;
-        
-        /// <summary>
         /// lblInicio control.
         /// </summary>
         /// <remarks>

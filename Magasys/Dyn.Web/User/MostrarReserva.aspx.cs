@@ -38,6 +38,8 @@ namespace Dyn.Web.User
                 lblidProductoText.Text = eProducto.IdProducto.ToString();
                 lblNombreProductoText.Text = eProducto.Nombre.ToString();
                 lblFechaText.Text = string.Format("{0:dd/MM/yyyy}", Entity.FechaReserva);
+                lblFechaInicio.Text = string.Format("{0:dd/MM/yyyy}", Entity.FechaInicio);
+                lblFechaFin.Text = string.Format("{0:dd/MM/yyyy}", Entity.FechaFin);
             }
             DataBind();
         }

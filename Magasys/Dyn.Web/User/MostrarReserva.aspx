@@ -60,6 +60,20 @@
             <td class="style3">
             </td>
         </tr>
+                <tr>
+            <td class="style1">
+                &nbsp;
+            </td>
+            <td style="font-size: 16px;">
+                Aquí podrás visualizar tu reserva.
+            </td>
+            <td>
+                &nbsp;
+            </td>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
         <tr>
             <td class="style1">
                 &nbsp;
@@ -98,54 +112,27 @@
                                         <asp:Label ID="lblTipoReservaText" runat="server" Text="<%# Entity.TipoReserva %>"></asp:Label>
                                     </td>
                                 </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-            <td>
-                &nbsp;
-            </td>
-            <td>
-                &nbsp;
-            </td>
-        </tr>
-        <tr>
-            <td class="style5">
-                &nbsp;
-            </td>
-            <td>
-                <table>
-                    <tr>
-                        <td colspan="4" class="tittleproducto">
-                            <br />
-                            Per&iacute;odo de reserva
-                            <hr />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <table>
+                                <tr>
+                                    <td colspan="4" class="tittleproducto">
+                                        <br />
+                                        Per&iacute;odo de reserva
+                                        <hr />
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td class="tittleprecios03" align="left">
                                         <asp:Label ID="lblInicio" runat="server" Text="Inicio:"></asp:Label>
                                     </td>
                                     <td class="tittleprecios03" align="left">
-                                        <asp:Label ID="lblFechaInicio" runat="server" Text="<%# Entity.FechaInicio %>" Width="160px"></asp:Label>
+                                        <asp:Label ID="lblFechaInicio" runat="server" Width="160px"></asp:Label>
                                     </td>
                                     <td class="tittleprecios03" align="left">
                                         <asp:Label ID="lblFin" runat="server" Text="Fin:"></asp:Label>
                                     </td>
                                     <td class="tittleprecios03" align="left">
-                                        <asp:Label ID="lblFechaFin" runat="server" Text="<%# Entity.FechaFin %>" Width="160px"></asp:Label>
+                                        <asp:Label ID="lblFechaFin" runat="server" Width="160px"></asp:Label>
                                     </td>
                                 </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="tittleprecios03" align="left">
-                            <table>
                                 <tr>
                                     <td class="tittleprecios03" align="left">
                                         <asp:Label ID="lblidProducto" runat="server" Text="C&oacute;digo Producto:"></asp:Label>
@@ -170,24 +157,28 @@
                                         <asp:Label ID="lblCantidadText" runat="server" Text="<%# Entity.Cantidad %>" Width="25px"></asp:Label>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td>
+                                        <br />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="center">
+                                        <asp:Button ID="btnVolver" CssClass="adminbutton" runat="server" Text="Volver a listado reserva"
+                                            OnClick="btnVolveraListadoReserva_Click" />
+                                    </td>
+                                </tr>
                             </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" align="center">
-                            <asp:Button ID="btnVolver" CssClass="adminbutton" runat="server" Text="Volver a listado reserva"
-                                OnClick="btnVolveraListadoReserva_Click" />
                         </td>
                     </tr>
                 </table>
             </td>
-        </tr>
-        <td>
-            &nbsp;
-        </td>
-        <td>
-            &nbsp;
-        </td>
+            <td>
+                &nbsp;
+            </td>
+            <td>
+                &nbsp;
+            </td>
         </tr>
         <tr>
             <td class="style5">

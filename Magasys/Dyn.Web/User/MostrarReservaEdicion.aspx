@@ -65,7 +65,7 @@
                 &nbsp;
             </td>
             <td style="font-size: 16px;">
-                Aquí podrás ver tus reservas realizadas.
+                Aquí podrás visualizar tu reserva.
             </td>
             <td>
                 &nbsp;
