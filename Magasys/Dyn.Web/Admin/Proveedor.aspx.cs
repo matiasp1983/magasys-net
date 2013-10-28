@@ -114,9 +114,7 @@ namespace Dyn.Web.Admin
         {
             lProveedor = new Dyn.Database.logic.Proveedor();
             Entity = new Dyn.Database.entities.Proveedor();
-            
-            
-            
+                       
             if (IdEntity == 0)
             {
 
@@ -151,6 +149,7 @@ namespace Dyn.Web.Admin
                     Entity.IdProveedor = IdEntity;
                     lProveedor.Update(Entity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se actualizaron los datos correctamente');", true);
+                    Response.Redirect("ListadoProveedor.aspx?IdMenuCategoria=25");
                 }
             
         }
@@ -200,11 +199,12 @@ namespace Dyn.Web.Admin
                 if (gen.VerificaRelacionGenero(IdEntity) == 0)
                 {
                     lProveedor.Delete(IdEntity);
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el género correctamente');document.location.href='/Admin/ListadoProveedor.aspx';", true);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el proveedor correctamente');document.location.href='/Admin/ListadoProveedor.aspx?IdMenuCategoria=25';", true);
+                    Response.Redirect("ListadoProveedor.aspx?IdMenuCategoria=25");
                 }
                 else
                 {
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('No se puede eliminar el género, porque está asociado a un producto');", true);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('No se puede eliminar el proveedor, porque está asociado a un producto');", true);
                 }
             }
         }
@@ -218,7 +218,7 @@ namespace Dyn.Web.Admin
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("HomeAdmin.aspx");
-            //Response.Redirect("ListadoProveedor.aspx");
+            //Response.Redirect("ListadoProveedor.aspx?IdMenuCategoria=25");
         }
 
 

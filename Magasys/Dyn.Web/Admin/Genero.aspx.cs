@@ -84,7 +84,7 @@ namespace Dyn.Web.Admin
                     Entity.IdGenero = IdEntity;
                     lGenero.Update(Entity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se actualizaron los datos correctamente');", true);
-                   // Response.Redirect("ListadoGenero.aspx?IdMenuCategoria=27");
+                    Response.Redirect("ListadoGenero.aspx?IdMenuCategoria=27");
                 }
         }
 
@@ -98,6 +98,7 @@ namespace Dyn.Web.Admin
                 {
                     lGenero.Delete(IdEntity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el género correctamente');document.location.href='/Admin/ListadoGenero.aspx';", true);
+                    Response.Redirect("ListadoGenero.aspx?IdMenuCategoria=27");
                 }
                 else
                 {

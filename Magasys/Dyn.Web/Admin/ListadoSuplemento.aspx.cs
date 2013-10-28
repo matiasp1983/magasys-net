@@ -67,7 +67,7 @@ namespace Dyn.Web.Admin
 
             if (lstProveedor.SelectedValue == "0")
             {
-                DataSet ds = lProducto.SeleccionarProductoPorNombrePaginado(criterio, Pagina, ref numeropaginas,2);
+                DataSet ds = lProducto.SeleccionarProductoPorNombrePaginado(criterio, Pagina, ref numeropaginas, 2);
                 int[] array;
                 array = new int[numeropaginas];
                 CollectionPager.DataSource = array;

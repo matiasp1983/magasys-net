@@ -57,6 +57,9 @@ namespace Dyn.Web.Admin
                         txtPrecio.Enabled = false;
                         btnGuardar.Enabled = false;
                         btnModificar.Visible = true;
+                        ddlAnio.Enabled = false;
+                        ddlGenero.Enabled = false;
+                        ddlProveedor.Enabled = false;
                     }
                 DataBind();
             }
@@ -109,7 +112,8 @@ namespace Dyn.Web.Admin
                 if (pro.VerificaRelacionProducto(IdEntity) == 0)
                 {
                     lLibro.Delete(IdEntity);
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el libro correctamente');document.location.href='/Admin/ListadoLibro.aspx?IdMenuCategoria=3';", true);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el libro correctamente');document.location.href='/Admin/ListadoLibro.aspx?IdMenuCategoria=10';", true);
+                    Response.Redirect("ListadoLibro.aspx?IdMenuCategoria=10");
                 }
                 else
                 {
@@ -136,6 +140,7 @@ namespace Dyn.Web.Admin
                     Entity.IdLibro = IdEntity;
                     lLibro.Update(Entity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se actualizaron los datos correctamente');", true);
+                    Response.Redirect("ListadoLibro.aspx?IdMenuCategoria=10");
                 }
         }
 
@@ -180,6 +185,9 @@ namespace Dyn.Web.Admin
             txtAutor.Enabled = true;
             txtPrecio.Enabled = true;
             btnGuardar.Enabled = true;
+            ddlAnio.Enabled = true;
+            ddlGenero.Enabled = true;
+            ddlProveedor.Enabled = true;
             btnModificar.Enabled = false;
         }
     }

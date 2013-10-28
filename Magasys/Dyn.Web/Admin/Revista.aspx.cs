@@ -115,7 +115,8 @@ namespace Dyn.Web.Admin
                 if (pro.VerificaRelacionProducto(IdEntity) == 0)
                 {
                     lRevista.Delete(IdEntity);
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró la revista correctamente');document.location.href='/Admin/ListadoRevista.aspx?IdMenuCategoria=3';", true);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró la revista correctamente');document.location.href='/Admin/ListadoRevista.aspx?IdMenuCategoria=19';", true);
+                    Response.Redirect("ListadoRevista.aspx?IdMenuCategoria=19");
                 }
                 else
                 {
@@ -142,6 +143,7 @@ namespace Dyn.Web.Admin
                     Entity.IdRevista = IdEntity;
                     lRevista.Update(Entity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se actualizaron los datos correctamente');", true);
+                    Response.Redirect("ListadoRevista.aspx?IdMenuCategoria=19");
                 }
         }
 
@@ -156,8 +158,6 @@ namespace Dyn.Web.Admin
             Entity.IdPeriodicidad = int.Parse(lstPeriodicidad.SelectedValue);
             Entity.Precio = Convert.ToDouble(txtPrecio.Text.Trim());
             Entity.DiaSemana = lstDiaSemana.SelectedValue.ToString();
-            txtDescripcion.Enabled = false;
-            txtNombre.Enabled = false;
             return Entity;
             
         }
