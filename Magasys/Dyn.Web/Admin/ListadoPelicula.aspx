@@ -59,7 +59,7 @@
                 </tr>
                 <tr>
                     <td colspan="3" width="700" align="left">
-                        <asp:Button ID="btnAdicionarPelicula" CssClass="adminbutton" runat="server" Text="Adicionar Película"
+                        <asp:Button ID="btnAdicionarPelicula" CssClass="adminbutton" runat="server" Text="Nueva Película"
                             CausesValidation="False" OnClick="btnAdicionarPelicula_Click" />
                     </td>
                 </tr>
