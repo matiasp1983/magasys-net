@@ -77,7 +77,7 @@
 
                 <tr>
                     <td colspan="3" width="700" align="left">
-                        <asp:Button ID="btnAdicionarRevista" CssClass="adminbutton" runat="server" Text="Adicionar Diario"
+                        <asp:Button ID="btnAdicionarRevista" CssClass="adminbutton" runat="server" Text="Nuevo Diario"
                             CausesValidation="False" OnClick="btnAdicionarRevista_Click" />
                     </td>
                 </tr>

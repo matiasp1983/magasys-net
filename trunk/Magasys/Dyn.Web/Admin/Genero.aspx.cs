@@ -75,7 +75,7 @@ namespace Dyn.Web.Admin
                 Entity = CargarDatosGenero();
                 
                 lGenero.Insert(Entity);
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');", true);
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
             }
             else
                 if (IdEntity > 0)

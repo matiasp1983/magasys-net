@@ -46,7 +46,7 @@
                 </tr>
                 <tr>
                     <td colspan="3" width="700" align="left">
-                        <asp:Button ID="btnAdicionarGenero" CssClass="adminbutton" runat="server" Text="Adicionar Género"
+                        <asp:Button ID="btnAdicionarGenero" CssClass="adminbutton" runat="server" Text="Nuevo Género"
                             CausesValidation="False" onclick="btnAdicionarGenero_Click" />
                     </td>
                 </tr>
