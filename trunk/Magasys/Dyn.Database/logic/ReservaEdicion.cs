@@ -154,5 +154,30 @@ namespace Dyn.Database.logic
             DataSet ds = GetDataSet();
             return Collection;
         }
+
+        public List<Dyn.Database.entities.ReservaEdicion> BuscarReservasEdicionPorCliente(DateTime fecReservaEdic, string tipoReserva, int idEstado, int nroCliente)
+        {
+            List<Dyn.Database.entities.ReservaEdicion> Collection = new List<Dyn.Database.entities.ReservaEdicion>();
+            CreateCommand("usp_ReservaEdicion", true);
+
+            if (!fecReservaEdic.Equals(DateTime.MaxValue))
+            {
+                AddCmdParameter("@fechaReservaEdicion", fecReservaEdic, ParameterDirection.Input);
+            }
+            if (tipoReserva != string.Empty)
+            {
+                AddCmdParameter("@tipoReserva", tipoReserva, ParameterDirection.Input);
+            }
+            AddCmdParameter("@idEstado", idEstado, ParameterDirection.Input);
+            AddCmdParameter("@nroCliente", nroCliente, ParameterDirection.Input);
+            AddCmdParameter("@Action", 4, ParameterDirection.Input);
+            ExecuteReader();
+            while (Read())
+            {
+                Collection.Add(new Dyn.Database.entities.ReservaEdicion(GetDataReader()));
+            }
+            DataSet ds = GetDataSet();
+            return Collection;
+        }
     }
 }

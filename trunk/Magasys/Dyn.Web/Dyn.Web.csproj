@@ -506,6 +506,8 @@
     <Content Include="Theme\user.css" />
     <Content Include="Theme\styleSiteHeader.css" />
     <Content Include="User\custom.xml" />
+    <Content Include="User\EditarReserva.aspx" />
+    <Content Include="User\EditarReservaEdicion.aspx" />
     <Content Include="User\flashimages\header1.jpg" />
     <Content Include="User\flashimages\header2.jpg" />
     <Content Include="User\flashimages\header3.jpg" />
@@ -513,6 +515,8 @@
     <Content Include="User\MisDatos.aspx" />
     <Content Include="User\MisPagos.aspx" />
     <Content Include="User\MisReservas.aspx" />
+    <Content Include="User\MostrarReserva.aspx" />
+    <Content Include="User\MostrarReservaEdicion.aspx" />
     <Content Include="User\Novedades.aspx" />
     <Content Include="User\RealizarReserva.aspx" />
     <Content Include="Web.config">
@@ -949,6 +953,20 @@
     <Compile Include="QuienesSomos.aspx.designer.cs">
       <DependentUpon>QuienesSomos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="User\EditarReserva.aspx.cs">
+      <DependentUpon>EditarReserva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\EditarReserva.aspx.designer.cs">
+      <DependentUpon>EditarReserva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\EditarReservaEdicion.aspx.cs">
+      <DependentUpon>EditarReservaEdicion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\EditarReservaEdicion.aspx.designer.cs">
+      <DependentUpon>EditarReservaEdicion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User\MiCuenta.aspx.cs">
       <DependentUpon>MiCuenta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -976,6 +994,20 @@
     </Compile>
     <Compile Include="User\MisReservas.aspx.designer.cs">
       <DependentUpon>MisReservas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\MostrarReserva.aspx.cs">
+      <DependentUpon>MostrarReserva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\MostrarReserva.aspx.designer.cs">
+      <DependentUpon>MostrarReserva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\MostrarReservaEdicion.aspx.cs">
+      <DependentUpon>MostrarReservaEdicion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\MostrarReservaEdicion.aspx.designer.cs">
+      <DependentUpon>MostrarReservaEdicion.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\Novedades.aspx.cs">
       <DependentUpon>Novedades.aspx</DependentUpon>

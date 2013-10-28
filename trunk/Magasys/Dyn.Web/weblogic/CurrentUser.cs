@@ -105,9 +105,16 @@ namespace Dyn.Web.weblogic
 
         public static void RegresarHome()
         {
-            if (CurrentUser.Instance.Usuario.Rol != "CLIENTE")
+            if (CurrentUser.Instance.Usuario == null)
             {
                 System.Web.HttpContext.Current.Response.Redirect("/Home.aspx");
+            }
+            else
+            {
+                if (CurrentUser.Instance.Usuario.Rol != "CLIENTE")
+                {
+                    System.Web.HttpContext.Current.Response.Redirect("/Home.aspx");
+                }
             }
         }
 
