@@ -54,6 +54,9 @@ namespace Dyn.Web.Admin
                         txtDescripcion.Enabled = false;
                         txtNombre.Enabled = false;
                         txtPrecio.Enabled = false;
+                        ddlAnio.Enabled = false;
+                        ddlGenero.Enabled = false;
+                        ddlProveedor.Enabled = false;
                         btnGuardar.Enabled = false;
                         btnModificar.Visible = true;
                     }
@@ -108,7 +111,8 @@ namespace Dyn.Web.Admin
                 if (pro.VerificaRelacionProducto(IdEntity) == 0)
                 {
                     lPelicula.Delete(IdEntity);
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró la película correctamente');document.location.href='/Admin/ListadoRevista.aspx?IdMenuCategoria=3';", true);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró la película correctamente');document.location.href='/Admin/ListadoPelicula.aspx?IdMenuCategoria=3';", true);
+                    Response.Redirect("ListadoPelicula.aspx?IdMenuCategoria=3");
                 }
                 else
                 {
@@ -135,6 +139,7 @@ namespace Dyn.Web.Admin
                     Entity.IdPelicula = IdEntity;
                     lPelicula.Update(Entity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se actualizaron los datos correctamente');", true);
+                    Response.Redirect("ListadoPelicula.aspx?IdMenuCategoria=3");
                 }
         }
 
@@ -148,8 +153,6 @@ namespace Dyn.Web.Admin
             Entity.IdGenero = int.Parse(ddlGenero.SelectedValue);
             Entity.Precio = Convert.ToDouble(txtPrecio.Text.Trim());
             Entity.Anio = Convert.ToInt16(ddlAnio.SelectedValue);
-            txtNombre.Enabled = false;
-            txtDescripcion.Visible = false;
             return Entity;
         }
 
@@ -178,6 +181,9 @@ namespace Dyn.Web.Admin
             txtDescripcion.Enabled = true;
             txtNombre.Enabled = true;
             txtPrecio.Enabled = true;
+            ddlAnio.Enabled = true;
+            ddlGenero.Enabled = true;
+            ddlProveedor.Enabled = true;
             btnGuardar.Enabled = true;
             btnModificar.Enabled = false;
         }

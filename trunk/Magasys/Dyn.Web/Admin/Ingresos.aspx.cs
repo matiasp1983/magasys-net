@@ -55,12 +55,8 @@ namespace Dyn.Web.Admin
                 listaProductos.Clear();
                 listaReservasOK.Clear();
                 listaReservas.Clear();
-
-                
-                //repDetalle.DataSource = listaDetalles;
                 lProducto = new Database.logic.Producto();
                 
-
                 if (Request["Id"] == null)
                 {
                     IdEntity = 0;

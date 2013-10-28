@@ -223,6 +223,10 @@
             <td align="left">
                 <asp:TextBox ID="txtPasswordActual" CssClass="tittleprecios03" runat="server" Enabled="False"></asp:TextBox><br />
             </td>
+            <td class="tittleprecios03">
+             <asp:Button ID="btnNuevoUsuario" runat="server" Text="Nuevo Usuario" 
+                    OnClick="btnNuevoUsuario_Click" Width="112px" />
+            </td>
         </tr>
         <tr>
             <td align="left" class="tittleprecios03">
@@ -252,6 +256,8 @@
                     OnClick="btnGuardar_Click" />&nbsp;
                 <asp:Button CssClass="adminbutton" ID="btnCancelar" runat="server" Text="Cancelar"
                     OnClick="btnCancelar_Click" CausesValidation="False" />&nbsp;
+                <asp:Button CssClass="adminbutton" ID="btnModificar" runat="server" Text="Modificar"
+                    OnClick="btnModificar_Click" />&nbsp;
                 <asp:Button CssClass="adminbutton" ID="btnEliminar" runat="server" Text="Eliminar"
                     OnClick="btnEliminar_Click" CausesValidation="False" />
             </td>

@@ -148,8 +148,6 @@ namespace Dyn.Web.Admin
             lDiarioPorDia = new Dyn.Database.logic.DiarioPorDia();
             Entity = new Dyn.Database.entities.Diario();
 
-
-
             if (IdEntity == 0)
             {
 
@@ -205,6 +203,7 @@ namespace Dyn.Web.Admin
                     }
 
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se actualizaron los datos correctamente');", true);
+                    Response.Redirect("ListadoDiario.aspx?IdMenuCategoria=3");
                 }
         }
         public Dyn.Database.entities.Diario CargarDatosDiario()
@@ -287,7 +286,7 @@ namespace Dyn.Web.Admin
                 if (diario.validarVentas(IdEntity))
                 {
                     lDiario.Delete(IdEntity);
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el género correctamente');document.location.href='/Admin/ListadoUsuario.aspx';", true);
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el diario correctamente');document.location.href='/Admin/ListadoUsuario.aspx';", true);
                     Response.Redirect("ListadoDiario.aspx?IdMenuCategoria=3");
                 }
                 else

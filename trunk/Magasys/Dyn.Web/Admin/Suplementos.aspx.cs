@@ -190,6 +190,7 @@ namespace Dyn.Web.Admin
                     lSuplemento.Update(Entity);
                     lProducto.Update(Entity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se actualizaron los datos correctamente');", true);
+                    Response.Redirect("ListadoSuplemento.aspx?IdMenuCategoria=24");
                 }
         }
         public Dyn.Database.entities.Suplemento CargarDatosSuplemento(String nombre)
@@ -219,8 +220,8 @@ namespace Dyn.Web.Admin
                 if (suplemento.validarVentas(IdEntity))
                 {
                     lSuplemento.Delete(IdEntity);
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el género correctamente');document.location.href='/Admin/ListadoUsuario.aspx';", true);
-                    Response.Redirect("ListadoSuplemento.aspx?IdMenuCategoria=3");
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se borró el género correctamente');document.location.href='/Admin/ListadoSuplemento.aspx?IdMenuCategoria=24';", true);
+                    Response.Redirect("ListadoSuplemento.aspx?IdMenuCategoria=24");
                 }
                 else
                 {

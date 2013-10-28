@@ -114,8 +114,6 @@ namespace Dyn.Web.Admin
             lProducto = new Dyn.Database.logic.Producto();
             Entity = new Dyn.Database.entities.Coleccion();
 
-
-
             if (IdEntity == 0)
             {
 
@@ -131,7 +129,7 @@ namespace Dyn.Web.Admin
                     Entity.IdColeccion = Convert.ToInt16(lProducto.Insert(Entity));
                     lColeccion.Insert(Entity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
-                    Response.Redirect("ListadoColeccion.aspx");
+                    Response.Redirect("ListadoColeccion.aspx?IdMenuCategoria=3");
                 }
 
             }
@@ -139,19 +137,11 @@ namespace Dyn.Web.Admin
                 if (IdEntity > 0)
                 {
                     Entity = CargarDatosColeccion();
-                    //if (lProveedor.existeCuit(idProveedor))
-                    //{
-                    //    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Ya existe un proveedor con ese CUIT');location.href('/Admin/ListadoUsuario.aspx');", true);
-                    //}
-                    //else
-                    //{
-                    //    lProveedor.Insert(Entity);
-                    //    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('/Admin/ListadoUsuario.aspx');", true);
-                    //}
                     Entity.IdProducto = IdEntity;
                     lColeccion.Update(Entity);
                     lProducto.Update(Entity);
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se actualizaron los datos correctamente');", true);
+                    Response.Redirect("ListadoColeccion.aspx?IdMenuCategoria=3");
                 }
         }
         public Dyn.Database.entities.Coleccion CargarDatosColeccion()
