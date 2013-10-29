@@ -55,6 +55,13 @@
                                         <asp:ListItem>Contado</asp:ListItem>
                                     </asp:DropDownList>
                                 </td>
+                                <td colspan="2" class="tittleprecios03" align="left">
+                                    <asp:Label ID="lblEstado" runat="server" Text="Estado:" Width="139px"></asp:Label>
+                                    <asp:DropDownList ID="ddlEstado" runat="server">
+                                        <asp:ListItem>Entregado-Pagado</asp:ListItem>
+                                        <asp:ListItem>Entregado-No Pagado</asp:ListItem>
+                                    </asp:DropDownList>
+                                </td>
                             </tr>
                             <%--                            <tr>
                                 <td colspan="4">

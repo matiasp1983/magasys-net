@@ -291,13 +291,13 @@ namespace Dyn.Web.controls
         private DataTable LoadDataTableItem(DataTable dt, RepeaterItem rptitem)
         {
             //CheckBoxInRepeater = rptitem.FindControl("chkProductoSeleccionado") as CheckBox;
-            LabelidProducto = rptitem.FindControl("idProducto") as Label;
+            LabelidProducto = rptitem.FindControl("lblIdProducto") as Label;
             LabelNombre = rptitem.FindControl("lblNombre") as Label;
             LabelEdicion = rptitem.FindControl("lblEdicion") as Label;
             LabelPrecioUnitario = rptitem.FindControl("lblPrecioUnitario") as Label;
             TextBoxCantidad = rptitem.FindControl("txtCantidad") as TextBox;
             DataRow dr = dt.NewRow();
-            dr["idProducto"] = LabelidProducto;
+            dr["idProducto"] = LabelidProducto.Text;
             dr["nombre"] = LabelNombre.Text;
             dr["idProductoEdicion"] = LabelEdicion.Text;
             dr["precioUnidad"] = LabelPrecioUnitario.Text;
