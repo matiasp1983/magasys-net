@@ -94,24 +94,6 @@ namespace Dyn.Web.Admin {
         protected global::System.Web.UI.WebControls.GridView gridCobros;
         
         /// <summary>
-        /// Login1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Dyn.Web.controls.Login Login1;
-        
-        /// <summary>
-        /// MenuAdminCategoria1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Dyn.Web.controls.MenuAdminCategoria MenuAdminCategoria1;
-        
-        /// <summary>
         /// Master property.
         /// </summary>
         /// <remarks>

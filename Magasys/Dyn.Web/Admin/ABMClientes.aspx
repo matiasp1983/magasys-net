@@ -20,7 +20,7 @@
     <table width="100%" cellpadding="0" cellspacing="5" border="0">
         <tr>
             <td class="tittleprecios03" align="left" width="100">
-                Numero Cliente
+                N&uacute;mero Cliente:
             </td>
             <td align="left" class="style3">
                 <asp:TextBox ID="txtNroCliente" runat="server" CssClass="tittleprecios03" Text="<%# Entity.NroCliente %>"
@@ -29,29 +29,29 @@
         </tr>
         <tr>
             <td class="tittleprecios03" align="left" width="100">
-                Tipo Documento (*)
+                Tipo Documento: (*)
             </td>
             <td align="left" class="style3">
                 <asp:DropDownList CssClass="tittleprecios03" ID="lstTipoDoc" runat="server" OnSelectedIndexChanged="lstProvincias_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
             <td class="tittleprecios03" align="left" width="100">
-                Numero Documento (*)
+                N&uacute;mero Documento: (*)
             </td>
             <td align="left" class="style1">
-                <asp:CompareValidator ID="cvDocumento" runat="server" ErrorMessage="Debe ingresar un numero"
+                <asp:CompareValidator ID="cvDocumento" runat="server" ErrorMessage="Debe ingresar un número"
                     Display="Dynamic" Operator="DataTypeCheck" ControlToValidate="txtNroDocumento"
                     CssClass="tittleprecios03" Type="Integer" ForeColor="Red"></asp:CompareValidator>
                 <asp:TextBox ID="txtNroDocumento" runat="server" CssClass="tittleprecios03" Text="<%# Entity.NroDocumento %>"
                     MaxLength="10"></asp:TextBox><br />
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Debe ingresar un Numero de Documento"
-                    ControlToValidate="lstProvincias" CssClass="tittleprecios03" ForeColor="Red"
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Debe ingresar un Número de Documento"
+                    ControlToValidate="txtNroDocumento" CssClass="tittleprecios03" ForeColor="Red"
                     Display="Dynamic"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="tittleprecios03" align="left" width="100">
-                Nombre (*)
+                Nombre: (*)
             </td>
             <td align="left" class="style3">
                 <asp:TextBox ID="txtNombre" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Nombre %>"
@@ -60,7 +60,7 @@
                     ControlToValidate="txtNombre" CssClass="tittleprecios03" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
             </td>
             <td class="tittleprecios03" align="left" width="100">
-                Apellido (*)
+                Apellido: (*)
             </td>
             <td align="left" class="style1">
                 <asp:TextBox ID="txtApellido" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Apellido %>"
@@ -71,7 +71,7 @@
         </tr>
         <tr>
             <td class="tittleprecios03" align="left" width="100">
-                Alias
+                Alias:
             </td>
             <td align="left" class="style3">
                 <asp:TextBox ID="txtAlias" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Alias %>"
@@ -84,14 +84,14 @@
         </tr>
         <tr>
             <td class="tittleprecios03" align="left" width="100">
-                Telefono
+                Tel&eacute;fono:
             </td>
             <td align="left" class="style3">
                 <asp:TextBox ID="txtTelefono" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Telefono %>"
                     MaxLength="10"></asp:TextBox><br />
             </td>
             <td class="tittleprecios03" align="left" width="100">
-                Celular
+                Celular:
             </td>
             <td align="left" class="style1">
                 <asp:TextBox ID="txtCelular" runat="server" CssClass="tittleprecios03" Text="<%# Entity.Celular %>"
@@ -100,7 +100,7 @@
         </tr>
         <tr>
             <td class="tittleprecios03" align="left" width="100">
-                Correo Electronico
+                Correo Electr&oacute;nico:
             </td>
             <td align="left" class="style3">
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtEMail"
@@ -116,12 +116,12 @@
         </tr>
         <tr>
             <td class="tittleprecios03" align="left" width="100">
-                Direccion
+                Direcci&oacute;n:
             </td>
         </tr>
         <tr>
             <td class="tittleprecios03" align="left" width="100">
-                Barrio (*)
+                Barrio: (*)
             </td>
             <td align="left" class="style3">
                 <asp:TextBox ID="txtBarrio" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioBarrio %>"
@@ -132,7 +132,7 @@
         </tr>
         <tr>
             <td class="tittleprecios03" align="left" width="100">
-                Calle (*)
+                Calle: (*)
             </td>
             <td align="left" class="style3">
                 <asp:TextBox ID="txtCalle" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioCalle %>"
@@ -141,31 +141,31 @@
                     ControlToValidate="txtCalle" CssClass="tittleprecios03" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
             </td>
             <td class="tittleprecios03" align="left">
-                Numero (*)
+                N&uacute;mero: (*)
             </td>
             <td align="left" class="style3">
                 <asp:TextBox ID="txtNumero" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioNro %>"
                     MaxLength="6"></asp:TextBox><br />
-                <asp:CompareValidator ID="cvDomNumero" runat="server" ErrorMessage="Debe ingresar un numero"
+                <asp:CompareValidator ID="cvDomNumero" runat="server" ErrorMessage="Debe ingresar un número"
                     Display="Dynamic" Operator="DataTypeCheck" ControlToValidate="txtNumero" CssClass="tittleprecios03"
                     Type="Integer" ForeColor="Red"></asp:CompareValidator>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Debe ingresar la Numeracion"
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Debe ingresar la Numeración"
                     ControlToValidate="txtNumero" CssClass="tittleprecios03" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="tittleprecios03" align="left" width="100">
-                Piso
+                Piso:
             </td>
             <td align="left" class="style3">
                 <asp:TextBox ID="txtPiso" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioPiso %>"
                     MaxLength="5"></asp:TextBox><br />
-                <asp:CompareValidator ID="cvDomPiso" runat="server" ErrorMessage="Debe ingresar un numero"
+                <asp:CompareValidator ID="cvDomPiso" runat="server" ErrorMessage="Debe ingresar un número"
                     Display="Dynamic" Operator="DataTypeCheck" ControlToValidate="txtPiso" CssClass="tittleprecios03"
                     Type="Integer" ForeColor="Red"></asp:CompareValidator>
             </td>
             <td class="tittleprecios03" align="left">
-                Departamento
+                Departamento:
             </td>
             <td align="left" class="style3">
                 <asp:TextBox ID="txtDpto" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioDpto %>"
@@ -174,7 +174,7 @@
         </tr>
         <tr>
             <td class="tittleprecios03" align="left" width="100">
-                Provincia
+                Provincia:
             </td>
             <td align="left" class="style3">
                 <asp:DropDownList CssClass="tittleprecios03" ID="lstProvincias" runat="server" OnSelectedIndexChanged="lstProvincias_SelectedIndexChanged"
@@ -182,7 +182,7 @@
                 </asp:DropDownList>
             </td>
             <td class="tittleprecios03" align="left">
-                Localidad
+                Localidad:
             </td>
             <td align="left" class="style1">
                 <asp:DropDownList CssClass="tittleprecios03" ID="lstLocalidades" runat="server">
@@ -191,7 +191,7 @@
         </tr>
         <tr>
             <td class="tittleprecios03" align="left">
-                Codigo Postal
+                C&oacute;digo Postal:
             </td>
             <td align="left" class="style3">
                 <asp:TextBox ID="txtCodPostal" runat="server" CssClass="tittleprecios03" Text="<%# Entity.DomicilioCodPostal %>"
@@ -213,7 +213,7 @@
                 <asp:TextBox ID="txtLogin" CssClass="tittleprecios03" runat="server" Enabled="False"></asp:TextBox><br />
             </td>
             <td class="tittleprecios03">
-                <asp:Button ID="btnModificarUsuario" runat="server" Text="Modificar Usuario" OnClick="btnModificarUsuario_Click" />
+                <asp:Button ID="btnModificarUsuario" runat="server" OnClick="btnModificarUsuario_Click" />
             </td>
         </tr>
         <tr>
@@ -222,10 +222,6 @@
             </td>
             <td align="left">
                 <asp:TextBox ID="txtPasswordActual" CssClass="tittleprecios03" runat="server" Enabled="False"></asp:TextBox><br />
-            </td>
-            <td class="tittleprecios03">
-             <asp:Button ID="btnNuevoUsuario" runat="server" Text="Nuevo Usuario" 
-                    OnClick="btnNuevoUsuario_Click" Width="112px" />
             </td>
         </tr>
         <tr>
@@ -266,9 +262,4 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphReserva" runat="server">
 </asp:Content>
-<asp:Content ID="Content5" runat="server" ContentPlaceHolderID="cphMenu">
-    <!--Control de login de ejemplo-->
-    <uc2:Login ID="Login1" runat="server" />
-    <br />
-    <uc1:MenuAdmin ID="MenuAdmin1" runat="server" />
-</asp:Content>
+
