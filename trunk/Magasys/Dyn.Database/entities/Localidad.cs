@@ -30,6 +30,14 @@ namespace Dyn.Database.entities
             {
                 Provincia.Nombre = string.Empty;
             }
+            try
+            {
+                idProvincia = Convert.ToInt32(obj["idProvincia"]);
+            }
+            catch (Exception)
+            {
+                idProvincia = 0;
+            }
         }
 
         #endregion

@@ -33,12 +33,13 @@ namespace Dyn.Web.Admin
                 lCliente = new Dyn.Database.logic.Cliente();
                 LlenarTipoDocumento();
                 LlenarProvincias();
+                Entity = new Dyn.Database.entities.Cliente();
                 //lstProvincias.SelectedIndex = 1;
                 LlenarLocalidades();
                 if (Request["Id"] == null)
                 {
                     IdEntity = 0;
-                    Entity = new Dyn.Database.entities.Cliente();
+                    btnModificarUsuario.Text = "Crear Usuario";
                 }
                 else
                     if (Request["Id"] != null)
@@ -57,11 +58,13 @@ namespace Dyn.Web.Admin
                         if (eUsuario.Password != null)
                         {
                             txtPasswordActual.Text = eUsuario.Password;//Contraseña
+                            btnModificarUsuario.Text = "Modificar Usuario";
                         }
                         else
                         {
                             txtPasswordActual.Enabled = false;
                             lblPasswordActual.Enabled = false;
+                            btnModificarUsuario.Text = "Crear Usuario";
                         }
                     }
                 DataBind();
@@ -152,7 +155,7 @@ namespace Dyn.Web.Admin
                     int estado = lEstado.BuscarEstado("Clientes", "Alta");
                     Entity.Estado.IdEstado = estado;
                     Entity.FechaAlta = DateTime.Now;
-                    IdEntity = (int)lCliente.Insert(Entity);
+                    IdEntity = Convert.ToInt32(lCliente.Insert(Entity));
 
                     if (txtLogin.Text != string.Empty && txtPassword.Text != string.Empty)
                     {
@@ -161,7 +164,8 @@ namespace Dyn.Web.Admin
                     }
 
                     LimpiarControles();
-                    ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('ListadoClientes.aspx?IdMenuCategoria=14');", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Se guardaron los datos correctamente');", true);
+                    //ClientScript.RegisterClientScriptBlock(this.GetType(), "script", "alert('Se guardaron los datos correctamente');location.href('ListadoClientes.aspx?IdMenuCategoria=14');", true);
                 }
 
                 else
@@ -335,6 +339,11 @@ namespace Dyn.Web.Admin
             }
             txtPassword.Enabled = true;
             txtRepetirPassword.Enabled = true;
+        }
+
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

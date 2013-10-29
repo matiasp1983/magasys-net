@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Site.Master" AutoEventWireup="true"
     CodeBehind="EditarReserva.aspx.cs" Inherits="Dyn.Web.User.EditarReserva" %>
 
-<%@ Register Src="../controls/Date.ascx" TagName="Date" TagPrefix="uc1" %>
+<%@ Register Src="~/controls/Date.ascx" TagName="Date" TagPrefix="uc1" %>
 <%@ Register Src="../controls/BuscarProducto.ascx" TagName="BuscarProducto" TagPrefix="uc5" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">

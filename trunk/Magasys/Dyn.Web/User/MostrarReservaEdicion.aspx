@@ -99,7 +99,7 @@
                         <td colspan="2">
                             <table>
                                 <tr>
-                                    <td class="tittleprecios03" align="left" style="width: 115px">
+                                    <td class="tittleprecios03" align="left">
                                         <asp:Label ID="lblFecha" runat="server" Text="Fecha de reserva:"></asp:Label>
                                     </td>
                                     <td class="tittleprecios03" align="left">
@@ -123,20 +123,20 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="tittleprecios03" align="left">
+                        <td align="left">
                             <table>
                                 <tr>
-                                    <td>
+                                    <td class="tittleprecios03">
                                         <asp:Label ID="lblInicio" runat="server" Text="Inicio:"></asp:Label>
                                     </td>
-                                    <td>
-                                        <asp:Label ID="lblFechaInicio" runat="server" Text="<%# Entity.FechaInicio %>" Width="160px"></asp:Label>
+                                    <td class="tittleprecios03">
+                                        <asp:Label ID="lblFechaInicio" runat="server" Width="160px"></asp:Label>
                                     </td>
-                                    <td>
+                                    <td class="tittleprecios03">
                                         <asp:Label ID="lblFin" runat="server" Text="Fin:"></asp:Label>
                                     </td>
-                                    <td>
-                                        <asp:Label ID="lblFechaFin" runat="server" Text="<%# Entity.FechaFin %>" Width="160px"></asp:Label>
+                                    <td class="tittleprecios03">
+                                        <asp:Label ID="lblFechaFin" runat="server" Width="160px"></asp:Label>
                                     </td>
                                 </tr>
                             </table>
@@ -144,37 +144,37 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="tittleprecios03" align="left">
+                        <td align="left">
                             <table>
                                 <tr>
-                                    <td>
+                                    <td class="tittleprecios03">
                                         <asp:Label ID="lblidProducto" runat="server" Text="C&oacute;digo Producto:"></asp:Label>
                                     </td>
-                                    <td>
+                                    <td class="tittleprecios03">
                                         <asp:Label ID="lblidProductoText" runat="server"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
+                                    <td class="tittleprecios03">
                                         <asp:Label ID="lblNombreProducto" runat="server" Text="Nombre:"></asp:Label>
                                     </td>
-                                    <td>
+                                    <td class="tittleprecios03">
                                         <asp:Label ID="lblNombreProductoText" runat="server"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
+                                    <td class="tittleprecios03">
                                         <asp:Label ID="lblEdicion" runat="server" Text="Edici&oacute;n:"></asp:Label>
                                     </td>
-                                    <td>
+                                    <td class="tittleprecios03">
                                         <asp:Label ID="lblEdicionText" runat="server" Text="<%# Entity.IdProductoEdicion %>"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
+                                    <td class="tittleprecios03">
                                         <asp:Label ID="lblCantidad" runat="server" Text="Cantidad: "></asp:Label>
                                     </td>
-                                    <td>
+                                    <td class="tittleprecios03">
                                         <asp:Label ID="lblCantidadText" runat="server" Text="<%# Entity.Cantidad %>" Width="25px"></asp:Label>
                                     </td>
                                 </tr>

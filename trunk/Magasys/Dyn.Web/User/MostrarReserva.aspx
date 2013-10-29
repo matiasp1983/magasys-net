@@ -60,7 +60,7 @@
             <td class="style3">
             </td>
         </tr>
-                <tr>
+        <tr>
             <td class="style1">
                 &nbsp;
             </td>
@@ -131,6 +131,11 @@
                                     </td>
                                     <td class="tittleprecios03" align="left">
                                         <asp:Label ID="lblFechaFin" runat="server" Width="160px"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <hr />
                                     </td>
                                 </tr>
                                 <tr>
