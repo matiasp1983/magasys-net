@@ -38,7 +38,7 @@ namespace Dyn.Web.Admin
         {
             lVenta = new Dyn.Database.logic.Venta();
             Dyn.Database.logic.Estado lEstado = new Dyn.Database.logic.Estado();
-            int estado = Convert.ToInt16(lEstado.BuscarEstado("Ventas", "Entregado-Pagado"));// definir estado
+            int estado = Convert.ToInt16(lEstado.BuscarEstado("Ventas", ddlEstado.SelectedValue));
             //int nroCliente = ucBuscarClientes.NroCliente;
             string formaPago = ddlTipoVenta.SelectedValue.ToString();
             DataSet ds = lVenta.SeleccionarVentasPorNombrePaginadoAdmin(fechainicial, fechafinal, estado, formaPago, Pagina, ref numeropaginas);
