@@ -151,7 +151,7 @@
                                                 <asp:BoundField DataField="fechaReserva" HeaderText="Fecha" DataFormatString="{0:dd/MM/yyyy}" />
                                                 <asp:BoundField DataField="fechaInicio" HeaderText="Desde" DataFormatString="{0:dd/MM/yyyy}" />
                                                 <asp:BoundField DataField="fechaFin" HeaderText="Hasta" DataFormatString="{0:dd/MM/yyyy}" />
-                                                <asp:BoundField DataField="idProducto" HeaderText="Producto" />
+                                                <asp:BoundField DataField="Producto.Nombre" HeaderText="Producto" />
                                                 <asp:BoundField DataField="cantidad" HeaderText="Cantidad" />
                                                 <asp:TemplateField ShowHeader="False">
                                                     <ItemTemplate>
@@ -197,7 +197,7 @@
                                                 <asp:BoundField DataField="fechaReservaEdicion" HeaderText="Fecha" DataFormatString="{0:dd/MM/yyyy}" />
                                                 <asp:BoundField DataField="fechaInicio" HeaderText="Desde" DataFormatString="{0:dd/MM/yyyy}" />
                                                 <asp:BoundField DataField="fechaFin" HeaderText="Hasta" DataFormatString="{0:dd/MM/yyyy}" />
-                                                <asp:BoundField DataField="idProductoEdicion" HeaderText="Edici&oacute;n" />
+                                                <asp:BoundField DataField="ProductoEdicion.Producto.Nombre" HeaderText="Edici&oacute;n" />
                                                 <asp:BoundField DataField="cantidad" HeaderText="Cantidad" />
                                                 <asp:TemplateField ShowHeader="False">
                                                     <ItemTemplate>

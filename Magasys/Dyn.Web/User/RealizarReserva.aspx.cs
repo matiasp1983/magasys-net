@@ -21,6 +21,7 @@ namespace Dyn.Web.User
             {
                 CurrentUser.RegresarHome();
                 calFechaReserva.CalendarDate = DateTime.Now;
+                calFechaInicio.CalendarDate = DateTime.Now;
             }
         }
 
