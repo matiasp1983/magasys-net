@@ -221,7 +221,8 @@
                 <asp:Label ID="lblPasswordActual" runat="server" Text="Contrase&ntilde;a Actual:"></asp:Label>
             </td>
             <td align="left">
-                <asp:TextBox ID="txtPasswordActual" CssClass="tittleprecios03" runat="server" Enabled="False"></asp:TextBox><br />
+                <asp:TextBox ID="txtPasswordActual" CssClass="tittleprecios03" runat="server" 
+                    Enabled="False" TextMode="Password">d</asp:TextBox><br />
             </td>
         </tr>
         <tr>
