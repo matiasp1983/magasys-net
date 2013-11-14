@@ -24,17 +24,7 @@ namespace Dyn.Database.logic
             return objCliente;
         }
 
-        //public List<Dyn.Database.entities.Cliente> SeleccionarTodosLosProveedores()
-        //{
-        //    List<Dyn.Database.entities.Proveedor> Collection = new List<Dyn.Database.entities.Proveedor>();
-        //    CreateCommand("usp_SeleccionarTodosLosProveedores", true);
-        //    ExecuteReader();
-        //    while (Read())
-        //    {
-        //        Collection.Add(new Dyn.Database.entities.Proveedor(GetDataReader()));
-        //    }
-        //    return Collection;
-        //}
+      
         public List<Dyn.Database.entities.Cliente> SeleccionarClientePorNombrePaginadoAdmin(int? tipoDoc, int? nroDoc, string nombre, string apellido, string alias, int paginaactual, ref int numeropaginas)
         {
             List<Dyn.Database.entities.Cliente> Collection = new List<Dyn.Database.entities.Cliente>();
