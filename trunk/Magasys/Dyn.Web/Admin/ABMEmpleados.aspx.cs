@@ -7,8 +7,23 @@ using System.Web.UI.WebControls;
 
 namespace Dyn.Web.Admin
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class AMBEmpleados : System.Web.UI.Page
     {
+        public Dyn.Database.entities.Empleado Entity;
+        public Dyn.Database.logic.Empleado lEmpleado;
+
+        public int IdEntity
+        {
+            get
+            {
+                return (int)ViewState["IdEntity"];
+            }
+            set 
+            {
+                ViewState["IdEntity"] = value;  
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
