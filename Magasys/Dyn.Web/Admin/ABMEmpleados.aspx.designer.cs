@@ -274,13 +274,13 @@ namespace Dyn.Web.Admin {
         protected global::System.Web.UI.WebControls.Label lblPasswordActual;
         
         /// <summary>
-        /// Control txtPassword Actual.
+        /// Control txtPasswordActual.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword Actual;
+        protected global::System.Web.UI.WebControls.TextBox txtPasswordActual;
         
         /// <summary>
         /// Control txtPassword.
