@@ -1,0 +1,1 @@
+Procesar y brindar información precisa y necesaria para la gestión de un kiosco de Diarios y Revistas típico y pueda ser insertado en el mercado actual y que brinde soporte al negocio dando un valor agregado al uso de tecnologías informáticas.
